@@ -6,19 +6,23 @@ use yii\helpers\Html;
 /* @var $model common\models\Profile */
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
-    'modelClass' => 'Profile',
-]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'View {modelClass}: ', [
-    'modelClass' => 'Profile',
-]), 'url' => ['view']];
+            'modelClass' => 'Profile',
+        ]);
+$this->params['breadcrumbs'][] = ['label' =>
+    Yii::t('app', 'View {modelClass}: ', [
+        'modelClass' => 'Profile',
+    ]),
+    'url' => ['view']];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="profile-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
+    <?=
+    $this->render('_form', [
         'model' => $model,
-    ]) ?>
+    ])
+    ?>
 
 </div>
