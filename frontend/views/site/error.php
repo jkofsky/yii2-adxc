@@ -17,7 +17,7 @@ $this->title = $name;
                 request for:
             </p>
             <div  class="alert alert-warning" style="font-size: larger;">
-                    <?= Yii::$app->request->absoluteUrl; ?>
+                <?= Yii::$app->request->absoluteUrl; ?>
             </div>
             <?php if (!empty(Yii::$app->request->referrer)): ?>
                 <p>Requested from:

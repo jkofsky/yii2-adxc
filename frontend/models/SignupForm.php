@@ -26,7 +26,6 @@ class SignupForm extends Model {
             ['username', 'unique', 'targetClass' => '\common\models\User',
                 'message' => Yii::t('app', 'This username has already been taken.')],
             ['username', 'string', 'min' => 2, 'max' => 255],
- 
             ['email', 'trim'],
             ['email', 'filter', 'filter' => 'strtolower'],
             ['email', 'required'],
@@ -34,7 +33,6 @@ class SignupForm extends Model {
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User',
                 'message' => Yii::t('app', 'This email address has already been taken.')],
-
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
         ];

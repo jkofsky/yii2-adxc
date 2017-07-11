@@ -1,4 +1,5 @@
 <?php
+
 return [
     'components' => [
         'db' => [
@@ -8,7 +9,7 @@ return [
             'password' => 'J8X8k4Q',
             'charset' => 'utf8',
         ],
-       'mailer' => [
+        'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
             // send all mails to a file by default. You have to set
