@@ -19,8 +19,8 @@ class m130524_201442_init extends Migration {
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
             'is_active' => $this->boolean()->notNull()->defaultValue(1),
-            'last_login'=> $this->integer()->null(),
-            'role_id'=>  $this->integer()->unsigned()->defaultValue(1),
+            'last_login' => $this->integer()->null(),
+            'role_id' => $this->integer()->unsigned()->defaultValue(1),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
                 ], $tableOptions);

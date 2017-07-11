@@ -18,13 +18,20 @@ AppAsset::register($this);
         <meta charset="<?= Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
     <body>
         <?php $this->beginBody() ?>
-
+        <?=
+        \jkofsky\scrollTop\ScrollTop::widget([
+            'btnColorClass' => 'btn-info',
+            'linkText' => 'Top',
+            'glyphicon' => 'glyphicon-circle-arrow-up',
+        ])
+        ?>
         <div class="wrap">
             <?php
             NavBar::begin([
@@ -39,8 +46,15 @@ AppAsset::register($this);
                     'url' => ['/site/index'],
                     'linkOptions' => ['title' => Yii::t('app', 'Home')]
                 ],
-                ['label' => Yii::t('app', 'About'), 'url' => ['/site/about']],
-                ['label' => Yii::t('app', 'Contact'), 'url' => ['/site/contact']],
+                ['label' => 'Employees', 'url' => ['/employee/index'], 'visible' => !Yii::$app->user->isGuest],
+                ['label' => 'Discrepencies', 'url' => ['/discrep/index'], 'visible' => !Yii::$app->user->isGuest],
+                ['label' => 'Podcasts', 'url' => ['/podcast/index'], 'items' => [
+                        ['label' => 'WNRP', 'url' => ['/podcast/wnrp']],
+                        ['label' => 'WYCT', 'url' => ['/podcast/wyct']],
+                    ],
+                    'visible' => !Yii::$app->user->isGuest],
+                ['label' => 'Engineering', 'url' => ['/engineering/index'], 'visible' => !Yii::$app->user->isGuest],
+                ['label' => 'Documents', 'url' => ['/document/index'], 'visible' => !Yii::$app->user->isGuest],
                 ['label' => '<span class="glyphicon glyphicon-info-sign"></span>', 'url' => ['/reading/index'], 'items' => [
                         ['label' => Yii::t('app', 'My Profile'), 'url' => ['/profile/index'], 'visible' => !Yii::$app->user->isGuest],
                         ['label' => Yii::t('app', 'Weather Information'), 'url' => ['/site/weather']],
@@ -48,6 +62,7 @@ AppAsset::register($this);
                     ]
                 ],
             ];
+
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => Yii::t('app', 'Signup'), 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => '<span class="glyphicon glyphicon-log-in"></span>',
@@ -70,6 +85,7 @@ AppAsset::register($this);
             ]);
             NavBar::end();
             ?>
+
             <div class="container">
                 <div class="alert alert-danger" role="alert">
                     Information on this site is <strong>For Internal Use Only!</strong>

@@ -16,11 +16,9 @@ $this->title = $name;
                 The above error occurred while the Web server was processing your 
                 request for:
             </p>
-            <p style="font-size: x-large;">
-                <span class="label label-info" >
+            <div  class="alert alert-warning" style="font-size: larger;">
                     <?= Yii::$app->request->absoluteUrl; ?>
-                </span>
-            </p>
+            </div>
             <?php if (!empty(Yii::$app->request->referrer)): ?>
                 <p>Requested from:
                     <?=

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2099dd55ad0ea56853b9f025aa8e2928",
+    "content-hash": "ea99a02345aa60ef2c76f282330e0f9f",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -313,6 +313,51 @@
                 "html"
             ],
             "time": "2017-06-03T02:28:16+00:00"
+        },
+        {
+            "name": "jkofsky/yii2-scroll-top",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jkofsky/yii2-scroll-top.git",
+                "reference": "1f031c5642c8491e1a571cb99f4f335967d9d5fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jkofsky/yii2-scroll-top/zipball/1f031c5642c8491e1a571cb99f4f335967d9d5fc",
+                "reference": "1f031c5642c8491e1a571cb99f4f335967d9d5fc",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "jkofsky\\scrollTop\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Kofsky",
+                    "email": "jkofsky@newsradio1620.com"
+                }
+            ],
+            "description": "This Yii 2 widget adds a simple scroll-to-top button to your site.",
+            "keywords": [
+                "button",
+                "extension",
+                "scroll",
+                "scroll-to",
+                "scroll-to-top",
+                "top",
+                "yii2"
+            ],
+            "time": "2017-07-06T19:13:10+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3053,7 +3098,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jkofsky/yii2-scroll-top": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
