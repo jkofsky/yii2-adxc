@@ -21,8 +21,8 @@ class LoginForm extends Model {
     public function rules() {
         return [
             // filter username to case insensitive
+            ['username', 'trim'],
             ['username', 'filter', 'filter' => 'strtolower'],
-            ['username', 'filter', 'filter' => 'trim'],
             // username and password are both required
             [['username', 'password'], 'required'],
             // rememberMe must be a boolean value
@@ -37,8 +37,8 @@ class LoginForm extends Model {
      */
     public function attributeHints() {
         return [
-            'username' => Yii::t('app', '{field} is case insensitve', [
-                'field' => $this->getAttributeLabel('username')]),
+            'username' => Yii::t('app', '{fieldName} is case insensitve', [
+                'fieldName' => $this->getAttributeLabel('username')]),
         ];
     }
 

@@ -36,16 +36,17 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
             <div class="panel-body">
                 <?=
                 Nav::widget(['items' => [
-                        'Administrator Logon: User: SysCat, Pswd: J8<br>',
-                        'OMT General User: User: mts, Pswd: omt<br>',
-                        'OMT On-Air User (default): User: oplog, Pswd: mts<br>',
+                        '<li>Administrator Logon: User: SysCat, Pswd: J8</li>',
+                        '<li>OMT General User: User: mts, Pswd: omt</li>',
+                        '<li>OMT On-Air User (default): User: oplog, Pswd: mts</li>',
                         ['label' => 'NetComm WAN Network Details', 'url' => array('info', 'view' => 'netComm')],
                         ['label' => 'External Public IP Assignments', 'url' => array('info', 'view' => 'public_ips')],
                         ['label' => 'IANA IPv4 Address Usage (RFC 1319/5735)', 'url' => array('info', 'view' => 'rfc5735_info')],
+                        '<li class="nav-divider"></li>',
                     ],
                 ]);
                 ?>
-                <p>Password: $6Blu3Go | C9IwSWmB | XP1Med9I | N0$a1nt$ </p>
+                <p style="font-family: monospace">Password: $6Blu3Go | C9IwSWmB | XP1Med9I | N0$a1nt$ </p>
             </div>
         </div>
     </div>

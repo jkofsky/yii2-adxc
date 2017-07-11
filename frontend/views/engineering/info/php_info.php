@@ -7,7 +7,6 @@ $this->title = Yii::$app->name . ' - PHP Info';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
 $this->params['breadcrumbs'][] = 'PHP Server Info';
 
-//$this->menu = $this->getSidebarMenu();
 ?>
 <style type="text/css">
     body, td, th, h1, h2 {font-family: sans-serif;}
@@ -31,7 +30,7 @@ $this->params['breadcrumbs'][] = 'PHP Server Info';
 <div id="phpinfo">
     <?php
     ob_start();
-    phpinfo(INFO_GENERAL);
+    phpinfo();
     $pinfo = ob_get_contents();
     ob_end_clean();
 
