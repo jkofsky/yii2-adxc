@@ -59,8 +59,7 @@ class SiteController extends Controller {
             ],
             'reading' => [
                 'class' => 'yii\web\ViewAction',
-                'viewParam' => 'read',
-                'viewPrefix' => 'reading',
+                'viewParam' => 'page',
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',

@@ -23,7 +23,7 @@ foreach (scandir(dirname(__FILE__)) as $value) {
         $label = ucwords(trim(strtolower(str_replace(array('-', '_', '.'), ' ', preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $value)))));
         $menuItems[] = [
             'label' => $label,
-            'url' => ['reading', 'read' => $value],
+            'url' => ['reading', 'page' => $value],
         ];
     }
 }

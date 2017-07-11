@@ -44,7 +44,7 @@ AppAsset::register($this);
                 ['label' => '<span class="glyphicon glyphicon-info-sign"></span>', 'url' => ['/reading/index'], 'items' => [
                         ['label' => Yii::t('app', 'My Profile'), 'url' => ['/profile/index'], 'visible' => !Yii::$app->user->isGuest],
                         ['label' => Yii::t('app', 'Weather Information'), 'url' => ['/site/weather']],
-                        ['label' => Yii::t('app', 'Useful Reading'), 'url' => ['/site/reading',['read'=>'index']]],
+                        ['label' => Yii::t('app', 'Useful Reading'), 'url' => ['/site/reading', 'page' => 'index']],
                     ]
                 ],
             ];
