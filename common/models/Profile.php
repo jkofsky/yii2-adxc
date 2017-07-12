@@ -55,7 +55,8 @@ class Profile extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone'], 'trim'],
+            [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone'], 'trim', 'skipOnEmpty' => true],
+            [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone', 'birth_date', 'aniversary_date', 'hire_date'], 'default', 'value' => null],
             [['first_name', 'last_name'], 'required'],
             [['department_id', 'is_management', 'extension', 'speed_dial'], 'integer'],
             [['birth_date', 'aniversary_date', 'hire_date'], 'safe'],

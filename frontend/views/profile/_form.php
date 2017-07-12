@@ -11,7 +11,7 @@ use yii\jui\DatePicker;
 ?>
 
 <div class="profile-form">
-
+<?= Yii::$app->formatter->dateFormat; ?>
     <div class="row">
         <?php
         $form = ActiveForm::begin([
@@ -47,8 +47,9 @@ use yii\jui\DatePicker;
 
                     <?php
                     echo $form->field($model, 'birth_date')->widget(DatePicker::className(), [
+                        'options' => ['class' => 'form-control'],
+                        'dateFormat' => 'short',
                         'clientOptions' => [
-                            'dateFormat' => 'yy-mm-dd',
                             'showOn' => "button",
                             'buttonImage' => Url::to('@web/images/calendar.gif'),
                             'buttonImageOnly' => true,
@@ -61,8 +62,9 @@ use yii\jui\DatePicker;
 
                     <?php
                     echo $form->field($model, 'aniversary_date')->widget(DatePicker::className(), [
+                        'options' => ['class' => 'form-control'],
+                        'dateFormat' => 'short',
                         'clientOptions' => [
-                            'dateFormat' => 'yy-mm-dd',
                             'showOn' => "button",
                             'buttonImage' => Url::to('@web/images/calendar.gif'),
                             'buttonImageOnly' => true,
@@ -80,8 +82,9 @@ use yii\jui\DatePicker;
                 <div class="panel-body">
                     <?php
                     echo $form->field($model, 'hire_date')->widget(DatePicker::className(), [
+                        'options' => ['class' => 'form-control'],
+                        'dateFormat' => 'short',
                         'clientOptions' => [
-                            'dateFormat' => 'yy-mm-dd',
                             'showOn' => "button",
                             'buttonImage' => Url::to('@web/images/calendar.gif'),
                             'buttonImageOnly' => true,
