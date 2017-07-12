@@ -6,7 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Profile */
 
-$this->title = $model->first_name."'s Profile";
+$this->title = Yii::t('app', 'My Profile');
+
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profile-view">
@@ -15,9 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->user_id], ['class' => 'btn btn-primary']) ?>
-   </p>
+    </p>
 
-    <?= DetailView::widget([
+    <?=
+    DetailView::widget([
         'model' => $model,
         'attributes' => [
             'first_name',
@@ -28,17 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'postal_code',
             'cell_phone',
             'home_phone',
-            'birth_date',
-            'aniversary_date',
+            'birth_date:date',
+            'aniversary_date:date',
             'spouse_name',
-            'hire_date',
+            'hire_date:date',
             'department_id',
-            'is_management',
+            'is_management:boolean',
             'extension',
             'speed_dial',
-            'created_at',
-            'updated_at',
+            'created_at:date',
+            'updated_at:date',
         ],
-    ]) ?>
+    ])
+    ?>
 
 </div>

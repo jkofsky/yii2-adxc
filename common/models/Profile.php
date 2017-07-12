@@ -18,9 +18,9 @@ use yii\db\ActiveRecord;
  * @property string $state
  * @property string $postal_code
  * @property string $cell_phone
- * @property string $home_phone
- * @property string $birth_date
- * @property string $aniversary_date
+ * @property integer $home_phone
+ * @property integer $birth_date
+ * @property integer $aniversary_date
  * @property string $spouse_name
  * @property string $hire_date
  * @property string $department_id
@@ -59,7 +59,10 @@ class Profile extends \yii\db\ActiveRecord {
             [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone', 'birth_date', 'aniversary_date', 'hire_date'], 'default', 'value' => null],
             [['first_name', 'last_name'], 'required'],
             [['department_id', 'is_management', 'extension', 'speed_dial'], 'integer'],
-            [['birth_date', 'aniversary_date', 'hire_date'], 'safe'],
+            [['birth_date'], 'date', 'format' => 'short', 'skipOnEmpty' => true],
+            [['aniversary_date'], 'date', 'timestampAttribute' => 'aniversary_date', 'skipOnEmpty' => true],
+            [['hire_date'], 'date', 'timestampAttribute' => 'hire_date', 'skipOnEmpty' => true],
+            //[['birth_date', 'aniversary_date', 'hire_date'], 'filter', 'filter'=>'strtotime'],
             [['first_name', 'last_name', 'city', 'spouse_name'], 'string', 'max' => 64],
             [['address'], 'string', 'max' => 128],
             [['state'], 'string', 'max' => 2],

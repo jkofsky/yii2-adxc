@@ -5,13 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Profile */
 
-$this->title = Yii::t('app', 'Update {modelClass}: ', [
-            'modelClass' => 'Profile',
-        ]);
+$this->title = Yii::t('app', 'Update Profile');
+
 $this->params['breadcrumbs'][] = ['label' =>
-    Yii::t('app', 'View {modelClass}: ', [
-        'modelClass' => 'Profile',
-    ]),
+    Yii::t('app', 'View Profile'),
     'url' => ['view']];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>

@@ -84,7 +84,7 @@ class ProfileController extends Controller {
      */
     public function actionUpdate() {
         $model = $this->findModel(Yii::$app->user->identity->id);
-
+//return var_dump(Yii::$app->request->post());
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view']);
         } else {

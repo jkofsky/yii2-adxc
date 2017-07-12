@@ -11,7 +11,7 @@ use yii\jui\DatePicker;
 ?>
 
 <div class="profile-form">
-<?= Yii::$app->formatter->dateFormat; ?>
+
     <div class="row">
         <?php
         $form = ActiveForm::begin([
@@ -48,7 +48,7 @@ use yii\jui\DatePicker;
                     <?php
                     echo $form->field($model, 'birth_date')->widget(DatePicker::className(), [
                         'options' => ['class' => 'form-control'],
-                        'dateFormat' => 'short',
+                        'dateFormat' => 'php: m/d/y',
                         'clientOptions' => [
                             'showOn' => "button",
                             'buttonImage' => Url::to('@web/images/calendar.gif'),
