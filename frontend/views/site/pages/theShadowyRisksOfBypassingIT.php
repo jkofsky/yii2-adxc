@@ -3,12 +3,14 @@
 
 use yii\helpers\Html;
 
-$this->title = Html::encode(Yii::$app->name . ' - Risks Of Bypassing IT');
+$pageTitle = Html::encode('Risks Of Bypassing IT');
+
+$this->title = Html::encode(Yii::$app->name . ' - ' . $pageTitle);
 $this->params['breadcrumbs'][] = ['label' => 'Useful Reading', 'url' => ['site/reading']];
-$this->params['breadcrumbs'][] = Html::encode('Bypassing IT');
+$this->params['breadcrumbs'][] = $pageTitle;
 ?>
 
-<h1><?= Html::encode('Data Snapshot: Security, privacy, and the shadowy risks of bypassing IT'); ?></h1>
+<h1><?= Html::encode('Data Snapshot: Security, Privacy, and the Shadowy Risks of Bypassing IT'); ?></h1>
 
 <address>Originally posted by Peter on: 
     <?=

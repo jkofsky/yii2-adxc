@@ -3,12 +3,14 @@
 
 use yii\helpers\Html;
 
-$this->title = Html::encode(Yii::$app->name . ' - Mission Statement');
+$pageTitle = Html::encode('Mission Statement');
+
+$this->title = Html::encode(Yii::$app->name . ' - ' . $pageTitle);
 $this->params['breadcrumbs'][] = ['label' => 'Useful Reading', 'url' => ['site/reading']];
-$this->params['breadcrumbs'][] = Html::encode('Mission Statement');
+$this->params['breadcrumbs'][] = $pageTitle;
 ?>
 
-<h1><?php echo Html::encode('Our Mission Statement'); ?></h1>
+<h1><?= Html::encode('Our Mission Statement'); ?></h1>
 <ol>
     <li class="odd">To serve our community with compelling and informative content.</li>
     <li class="even">To broadcast radio entertainment and information that appeals to the largest number of people.</li>

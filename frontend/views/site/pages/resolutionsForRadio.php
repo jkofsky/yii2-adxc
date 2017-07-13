@@ -3,12 +3,15 @@
 
 use yii\helpers\Html;
 
-$this->title = Html::encode(Yii::$app->name . ' - 12 Resolutions for Radio');
+$pageTitle = Html::encode('Resolutions For Radio');
+
+$this->title = Html::encode(Yii::$app->name . ' - ' . $pageTitle);
 $this->params['breadcrumbs'][] = ['label' => 'Useful Reading', 'url' => ['site/reading']];
-$this->params['breadcrumbs'][] = Html::encode('Resolutions');
+$this->params['breadcrumbs'][] = $pageTitle;
 ?>
 
-<h1><?php echo Html::encode('Twelve Resolutions For Radio'); ?></h1>
+<h1><?= Html::encode('12 Resolutions For Radio') ?></h1>
+
 <address>published by Eric Rhoads on: Radio Ink (2011)</address>
 
 <ol>

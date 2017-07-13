@@ -3,14 +3,17 @@
 
 use yii\helpers\Html;
 
-$this->title = Html::encode(Yii::$app->name . ' - 7 Things Successful People Never Say');
+$pageTitle = Html::encode('Things Successful People Never Say');
+
+$this->title = Html::encode(Yii::$app->name . ' - ' . $pageTitle);
 $this->params['breadcrumbs'][] = ['label' => 'Useful Reading', 'url' => ['site/reading']];
-$this->params['breadcrumbs'][] = Html::encode('7 Things');
+$this->params['breadcrumbs'][] = $pageTitle;
 ?>
 
 <h1><?= Html::encode('The 7 Things Successful People Never Say'); ?></h1>
 
-<address>Originally posted by Ilya Pozin on: <?=
+<address>Originally posted by Ilya Pozin on: 
+    <?=
     Html::a('LinkedIn', 'https://www.linkedin.com/today/post/article/20140401151943-5799319-the-7-things-successful-people-never-say', [
         'target' => '_new', 'title' => 'Link To: Original Article'
     ]);
