@@ -10,7 +10,8 @@ $this->params['breadcrumbs'][] = 'PHP Server Info';
 <style type="text/css">
     body, td, th, h1, h2 {font-family: sans-serif;}
     pre {margin: 0px; font-family: monospace;}
-    table {border-collapse: collapse; width: 100%}
+    table {border-collapse: collapse; width: 100%;}
+    td {padding: 0.25em 0.5em;}
     .center {text-align: center;}
     .center table {margin-left: auto; margin-right: auto; text-align: left;}
     .center th {text-align: center !important; }
