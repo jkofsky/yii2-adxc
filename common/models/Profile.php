@@ -22,7 +22,7 @@ use yii\db\ActiveRecord;
  * @property integer $birth_date
  * @property integer $aniversary_date
  * @property string $spouse_name
- * @property string $hire_date
+ * @property integer  $hire_date
  * @property string $department_id
  * @property integer $is_management
  * @property integer $extension

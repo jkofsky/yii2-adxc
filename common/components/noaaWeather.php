@@ -24,6 +24,7 @@
  * 
  * @since      File available since Initial Release 
  */
+
 class noaaWeather {
 
     public $latatude = 30.4447;
@@ -39,7 +40,7 @@ class noaaWeather {
      */
     public function __construct() {
         // Check & Setup the cache directory
-        $this->_jsonFile = 'cache' . DIRECTORY_SEPARATOR;
+        $this->_jsonFile = Yii::getAlias('@runtime/cache/');
         if (!is_dir($this->_jsonFile)) {
             mkdir($this->_jsonFile, 0777, true);
         }
@@ -56,7 +57,7 @@ class noaaWeather {
         // Check for the cache file OR if the cached data is outdated
         if (!file_exists($this->_jsonFile) ||
                 (filemtime($this->_jsonFile) < strtotime('-15 minutes'))) {
-            $options = array('http' => array('user_agent' => 'noaaWeatherAgent v0.9'));
+            $options = array('http' => array('user_agent' => 'adxcWeatherAgent v0.9'));
             $context = stream_context_create($options);
 
             $this->jsonData = file_get_contents($this->url, false, $context);
