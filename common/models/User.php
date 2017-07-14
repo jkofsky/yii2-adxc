@@ -13,16 +13,18 @@ use yii\web\IdentityInterface;
  *
  * @property integer $id
  * @property string $username
+ * @property string $auth_key
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
- * @property string $auth_key
  * @property boolean $is_active
  * @property integer $last_login 
  * @property integer $role_id
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ *
+ * @property Profile $profile
  */
 class User extends ActiveRecord implements IdentityInterface {
 
@@ -133,6 +135,13 @@ class User extends ActiveRecord implements IdentityInterface {
      */
     public function getId() {
         return $this->getPrimaryKey();
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProfile() {
+        return $this->hasOne(Profile::className(), ['user_id' => 'id']);
     }
 
     /**

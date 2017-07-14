@@ -3,10 +3,11 @@
 /**
  * Description of noaaWeather
  *
- * Gets current and 7 day forecast weather data from weather.gov.
+ * Get the current and 7 day forecast weather data from weather.gov.
  * The current conditions is only updated approximately once an hour.
- * Using weather.gov recommendations, the data is actually only requested a 
- * limited number of times per hour from the server. (15min intervals) 
+ * Using weather.gov recommendations, that the data is actually only requested 
+ * a limited number of times per hour from thier servers. 
+ * (I set to 15min intervals) 
  * 
  * These default to Pensacola, Florida.
  * @property float $latatude  Latatude for requested weather forecast
@@ -36,7 +37,7 @@ class noaaWeather {
     private $_heatIndexStr;
 
     /**
-     * 
+     * Pull and Save forecast data in a cache file
      */
     public function __construct() {
         // Check & Setup the cache directory
@@ -45,11 +46,11 @@ class noaaWeather {
             mkdir($this->_jsonFile, 0777, true);
         }
         //        
-        // Setup the request URL
+        // Setup the request URL to receive the forcast in JSON format
         $this->url = 'http://forecast.weather.gov/MapClick.php?'
                 . 'lat=' . $this->latatude
                 . '&lon=' . $this->longitude
-                . '&e=1&FcstType=json';
+                . '&e=1&FcstType=json';     // request JSON format (FcstType=json)
         //
         // Add the actual cache filename
         $this->_jsonFile .= 'noaa-' . md5($this->url) . '.json';
@@ -57,9 +58,10 @@ class noaaWeather {
         // Check for the cache file OR if the cached data is outdated
         if (!file_exists($this->_jsonFile) ||
                 (filemtime($this->_jsonFile) < strtotime('-15 minutes'))) {
+            // NOAA requires a "Browser" to access the data
             $options = array('http' => array('user_agent' => 'adxcWeatherAgent v0.9'));
-            $context = stream_context_create($options);
 
+            $context = stream_context_create($options);
             $this->jsonData = file_get_contents($this->url, false, $context);
             file_put_contents($this->_jsonFile, $this->jsonData);
         }
