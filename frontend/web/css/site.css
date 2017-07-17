@@ -123,7 +123,11 @@ a[target="_blank"]:after,a[target="_new"]:after  {
 .list-striped > li:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
-
+div.required label.control-label:after {
+    content: " *";
+    color: red;
+    font-weight: bolder;
+}
 @media(max-width:767px) {
     .nav li > form > button.logout {
         display:block;

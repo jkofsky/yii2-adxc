@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\helpers\Html;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -92,10 +93,11 @@ class SiteController extends Controller {
             $userModel = \common\models\User::findIdentity(Yii::$app->user->id);
             if (empty($userModel->last_login)) {
                 // First Time
-                Yii::$app->session->setFlash('success', Yii::t('app', 'Congratulations, You have logged in for the first time.')
+                Yii::$app->session->setFlash('success', Yii::t('app', '<strong>Welcome</strong>. Make sure create your {profileLink}.', [
+                            'profileLink' => Html::a('Profile', ['profile/index'], ['class' => "alert-link"])])
                 );
             } else {
-                Yii::$app->session->setFlash('success', Yii::t('app', 'Welcome Back. You last visited on: {date} @ {time}', [
+                Yii::$app->session->setFlash('success', Yii::t('app', '<strong>Welcome Back</strong>. You last visited on: {date} @ {time}', [
                             'date' => Yii::$app->formatter->asDate($userModel->last_login, 'full'),
                             'time' => Yii::$app->formatter->asTime($userModel->last_login, 'medium')
                         ])
