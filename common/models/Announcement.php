@@ -4,6 +4,9 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\BlameableBehavior;
+
+//use yii\helpers\FormatConverter;
+
 /**
  * This is the model class for table "{{%announcement}}".
  *
@@ -15,13 +18,12 @@ use yii\behaviors\BlameableBehavior;
  *
  * @property User $postedBy
  */
-class Announcement extends \yii\db\ActiveRecord
-{
+class Announcement extends \yii\db\ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return '{{%announcement}}';
     }
 
@@ -41,21 +43,23 @@ class Announcement extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['start_date', 'announcement'], 'required'],
-            [['start_date', 'end_date', 'posted_by'], 'integer'],
+            [['end_date'], 'safe'],
+            [['start_date', 'end_date'], 'default', 'value' => null],
+            [['start_date'], 'date', 'format' => 'm/d/yyyy', 'timestampAttribute' => 'start_date'],
+            [['end_date'], 'date', 'format' => 'm/d/yyyy', 'timestampAttribute' => 'end_date'],
+            //[['start_date', 'end_date'], 'date', 'format' => 'medium'],
+            //[['start_date', 'end_date'], 'filter', 'filter' => 'strtotime'],
             [['announcement'], 'string', 'max' => 255],
-            [['posted_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['posted_by' => 'id']],
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => Yii::t('app', 'ID'),
             'start_date' => Yii::t('app', 'Start Date'),
@@ -68,8 +72,8 @@ class Announcement extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPostedBy()
-    {
+    public function getPostedBy() {
         return $this->hasOne(User::className(), ['id' => 'posted_by']);
     }
+
 }

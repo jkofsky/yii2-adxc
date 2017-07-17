@@ -47,13 +47,23 @@ use yii\jui\DatePicker;
 
                     <?php
                     echo $form->field($model, 'birth_date')->widget(DatePicker::className(), [
-                        'options' => ['class' => 'form-control'],
-                        'dateFormat' => 'php: m/d/y',
+                        'options' => [
+                            'class' => 'form-control',
+                            'placeholder' => 'm/d/yyyy',
+                        ],
+                        'value' => $model->birth_date,
+                        'dateFormat' => 'm/d/yyyy',
                         'clientOptions' => [
-                            'showOn' => "button",
-                            'buttonImage' => Url::to('@web/images/calendar.gif'),
                             'buttonImageOnly' => true,
-                            'buttonText' => "Select date"
+                            'buttonText' => 'Select',
+                            'changeMonth' => true,
+                            'changeYear' => true,
+                            'selectOtherMonths' => true,
+                            'showAnim' => 'fold',
+                            'showButtonPanel' => true,
+                            'showOn' => 'button',
+                            'showOtherMonths' => true,
+                            'buttonImage' => Url::to('@web/images/calendar.gif'),
                         ],
                     ]);
                     ?>
@@ -62,13 +72,21 @@ use yii\jui\DatePicker;
 
                     <?php
                     echo $form->field($model, 'aniversary_date')->widget(DatePicker::className(), [
-                        'options' => ['class' => 'form-control'],
-                        'dateFormat' => 'short',
+                        'options' => [
+                            'class' => 'form-control',
+                            'placeholder' => 'm/d/yyyy',
+                        ],
                         'clientOptions' => [
-                            'showOn' => "button",
-                            'buttonImage' => Url::to('@web/images/calendar.gif'),
                             'buttonImageOnly' => true,
-                            'buttonText' => "Select date"
+                            'buttonText' => 'Select',
+                            'changeMonth' => true,
+                            'changeYear' => true,
+                            'selectOtherMonths' => true,
+                            'showAnim' => 'fold',
+                            'showButtonPanel' => true,
+                            'showOn' => 'button',
+                            'showOtherMonths' => true,
+                            'buttonImage' => Url::to('@web/images/calendar.gif'),
                         ],
                     ]);
                     ?>
@@ -82,13 +100,22 @@ use yii\jui\DatePicker;
                 <div class="panel-body">
                     <?php
                     echo $form->field($model, 'hire_date')->widget(DatePicker::className(), [
-                        'options' => ['class' => 'form-control'],
-                        'dateFormat' => 'short',
+                        'options' => [
+                            'class' => 'form-control',
+                            'placeholder' => 'm/d/yyyy',
+                        ],
+                        'dateFormat' => 'm/d/yyyy',
                         'clientOptions' => [
-                            'showOn' => "button",
-                            'buttonImage' => Url::to('@web/images/calendar.gif'),
                             'buttonImageOnly' => true,
-                            'buttonText' => "Select date"
+                            'buttonText' => 'Select',
+                            'changeMonth' => true,
+                            'changeYear' => true,
+                            'selectOtherMonths' => true,
+                            'showAnim' => 'fold',
+                            'showButtonPanel' => true,
+                            'showOn' => 'button',
+                            'showOtherMonths' => true,
+                            'buttonImage' => Url::to('@web/images/calendar.gif'),
                         ],
                     ]);
                     ?>
