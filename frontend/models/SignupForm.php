@@ -35,7 +35,7 @@ class SignupForm extends Model {
             ['email', 'unique', 'targetClass' => '\common\models\User',
                 'message' => Yii::t('app', 'This email address has already been taken.')],
             // password specific rules
-            ['password', StrengthValidator::className(), 'preset' => StrengthValidator::NORMAL, 'min' => 7],
+            ['password', StrengthValidator::className(), 'preset' => 'normal'],
         ];
     }
 

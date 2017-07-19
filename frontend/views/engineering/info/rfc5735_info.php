@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 $this->title = Yii::$app->name . ' -  RFC 1918/5735 Info';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
-$this->params['breadcrumbs'][] = ['label' => 'ADX Networks', 'url' => ['engineering/localnetwork']];
+$this->params['breadcrumbs'][] = ['label' => 'ADX Networks', 'url' => ['engineering/local-network']];
 $this->params['breadcrumbs'][] = 'RFC 1918/5735 Info';
 
 //$this->menu = $this->getSidebarMenu();

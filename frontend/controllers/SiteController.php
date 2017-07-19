@@ -104,7 +104,7 @@ class SiteController extends Controller {
                 );
             }
             // Update last_login
-            $userModel->updateAttributes(['last_login' => time()]);
+            $userModel->touch('last_login');
 
             return $this->goBack();
         } else {
@@ -115,7 +115,7 @@ class SiteController extends Controller {
     }
 
     /**
-     * Logs out the current user.
+     * Logs the current user out.
      *
      * @return mixed
      */

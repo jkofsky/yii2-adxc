@@ -50,4 +50,20 @@ class Department extends \yii\db\ActiveRecord {
         return $this->hasMany(Profile::className(), ['department_id' => 'id']);
     }
 
+    /**
+     * get Department name
+     *
+     */
+    public function getDepartmentName() {
+        return $this->dept_name ? $this->dept_name : '- not assigned -';
+    }
+
+    /**
+     * get list of Department for dropdown
+     */
+    public static function getDepartmentList() {
+        $droptions = Department::find()->asArray()->all();
+        return ArrayHelper::map($droptions, 'id', 'dept_name');
+    }
+
 }

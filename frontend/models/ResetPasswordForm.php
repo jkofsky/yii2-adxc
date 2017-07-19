@@ -43,7 +43,7 @@ class ResetPasswordForm extends Model {
     public function rules() {
         return [
             ['password', 'required'],
-            ['password', StrengthValidator::className(), 'preset' => StrengthValidator::NORMAL, 'min' => 7],
+            ['password', StrengthValidator::className(), 'preset' => StrengthValidator::NORMAL],
         ];
     }
 

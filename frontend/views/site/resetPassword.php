@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>Please choose your new password:</p>
 
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-md-6">
             <?php $form = ActiveForm::begin(['id' => 'reset-password-form']); ?>
 
             <?= $form->field($model, 'password')->widget(PasswordInput::classname()) ?>
@@ -27,5 +27,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php ActiveForm::end(); ?>
         </div>
+        <?= $this->render('_passwordRequirements.php'); ?>
     </div>
 </div>

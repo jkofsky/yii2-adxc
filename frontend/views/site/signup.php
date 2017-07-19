@@ -3,6 +3,7 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\SignupForm */
 
+use yii\base\Controller;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use kartik\password\PasswordInput;
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>Please fill out the following fields to signup:</p>
 
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-md-6">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
             <?= $form->field($model, 'username')->textInput(['autofocus' => true])->hint(null) ?>
@@ -28,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="form-group">
                 <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
             </div>
-
             <?php ActiveForm::end(); ?>
         </div>
+        <?= $this->render('_passwordRequirements.php'); ?>
     </div>
 </div>

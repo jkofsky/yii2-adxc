@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 $this->title = Yii::$app->name . ' -  Public IP Addresses';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
-$this->params['breadcrumbs'][] = ['label' => 'ADX Networks', 'url' => ['engineering/localnetwork']];
+$this->params['breadcrumbs'][] = ['label' => 'ADX Networks', 'url' => ['engineering/local-network']];
 $this->params['breadcrumbs'][] = 'Public IP Addresses';
 
 //$this->menu = $this->getSidebarMenu();
