@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
         moment to review these, and consider strengthening some 
         of your passwords if they fall short.</p>
     <ul class="list-striped">
-        <li>Create unique passwords that that use a combination of words, numbers, 
+        <li>Create unique passwords that use a combination of words, numbers, 
             symbols, and both upper- and lower-case letters.</li>
         <li>Do not use your network username as your password.</li>
         <li>Don’t use easily guessed passwords, such as “password” or “user.”</li>
@@ -50,8 +50,9 @@ $this->params['breadcrumbs'][] = $pageTitle;
             tens of millions of possible password combinations per second. Just 
             remember that each character you add to a password or passphrase makes 
             it an order of magnitude harder to attack via 
-            <?= Html::a("brute-force methods", "http://www.it-observer.com/preventing-brute-force-or-dictionary-attack.html", ['target' => "_blank", 'title' => "Brute Force"]); ?>.
-        </li>
+            <?=
+            Html::a("brute-force methods", "http://www.it-observer.com/preventing-brute-force-or-dictionary-attack.html", ['target' => "_blank", 'title' => "Brute Force"]);
+            ?>.</li>
         <li>Avoid using the same password at multiple Web sites. It’s generally 
             safe to re-use the same password at sites that do not store 
             sensitive information about you (like a news Web site) provided you 
@@ -99,4 +100,3 @@ $this->params['breadcrumbs'][] = $pageTitle;
             if you forget the master password you are pretty much out of luck.</li>
     </ul>
 </article>
-</div>
