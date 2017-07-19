@@ -5,6 +5,7 @@ namespace frontend\models;
 use yii\base\Model;
 use yii\base\InvalidParamException;
 use common\models\User;
+use kartik\password\StrengthValidator;
 
 /**
  * Password reset form
@@ -42,7 +43,7 @@ class ResetPasswordForm extends Model {
     public function rules() {
         return [
             ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            ['password', StrengthValidator::className(), 'preset' => StrengthValidator::NORMAL, 'min' => 7],
         ];
     }
 

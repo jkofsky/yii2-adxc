@@ -5,6 +5,7 @@ namespace frontend\models;
 use Yii;
 use yii\base\Model;
 use common\models\User;
+use kartik\password\StrengthValidator;
 
 /**
  * Signup form
@@ -20,21 +21,21 @@ class SignupForm extends Model {
      */
     public function rules() {
         return [
-            ['username', 'trim'],
-            ['username', 'filter', 'filter' => 'strtolower'],
-            ['username', 'required'],
+            // common validation rules
+            [['username', 'email'], 'trim'],
+            [['username', 'email'], 'filter', 'filter' => 'strtolower'],
+            [['username', 'email', 'password'], 'required'],
+            // username specific rules
             ['username', 'unique', 'targetClass' => '\common\models\User',
                 'message' => Yii::t('app', 'This username has already been taken.')],
             ['username', 'string', 'min' => 2, 'max' => 255],
-            ['email', 'trim'],
-            ['email', 'filter', 'filter' => 'strtolower'],
-            ['email', 'required'],
+            // email specific rules
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User',
                 'message' => Yii::t('app', 'This email address has already been taken.')],
-            ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            // password specific rules
+            ['password', StrengthValidator::className(), 'preset' => StrengthValidator::NORMAL, 'min' => 7],
         ];
     }
 
@@ -46,7 +47,7 @@ class SignupForm extends Model {
             'username' => Yii::t('app', '{fieldName} is case insensitve', [
                 'fieldName' => $this->getAttributeLabel('username')]),
             'email' => Yii::t('app', '{fieldName} is case insensitve', [
-                'fieldName' => $this->getAttributeLabel('username')]),
+                'fieldName' => $this->getAttributeLabel('email')]),
         ];
     }
 

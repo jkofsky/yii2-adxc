@@ -5,6 +5,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use kartik\password\PasswordInput;
 
 $this->title = 'Reset password';
 $this->params['breadcrumbs'][] = $this->title;
@@ -18,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'reset-password-form']); ?>
 
-            <?= $form->field($model, 'password')->passwordInput(['autofocus' => true]) ?>
+            <?= $form->field($model, 'password')->widget(PasswordInput::classname()) ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Save', ['class' => 'btn btn-primary']) ?>
