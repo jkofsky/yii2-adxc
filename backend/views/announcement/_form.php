@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use dosamigos\datepicker\DateRangePicker;
+use dosamigos\datepicker\DatePicker;
 use yii\helpers\FormatConverter;
 
 /* @var $this yii\web\View */
@@ -11,28 +11,38 @@ use yii\helpers\FormatConverter;
 ?>
 
 <div class="announcement-form">
-    <?= '<pre>' . print_r(Yii::$app->request->post(), true) . '</pre>'; ?>
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?=
-    DateRangePicker::widget([
-        'form' => $form, // best for correct client validation
-        'model' => $model,
-        'attribute' => 'start_date',
-        'options'=>['placeholder'=>'mm/dd/yyyy'],
-        'value' => Yii::$app->formatter->asDate($model->start_date, 'mm/dd/yyyy'),
-        'attributeTo' => 'end_date',
-        'optionsTo'=>['placeholder'=>'mm/dd/yyyy - Blank for UFN'],
-        //'size' => 'lg',
-        'clientOptions' => [
-            'autoclose' => true,
-            'format' => 'mm/dd/yyyy',
-        ]
-    ]);
-    ?>
+    <div class="input-group">
+        <?php
+        echo $form->field($model, 'start_date')->widget(DatePicker::className(), [
+            'options' => [
+                'autofocus' => true,
+                'placeholder' => Yii::$app->params['datePickerFormat'],
+            ],
+            'size' => 'lg',
+            'clientOptions' => [
+                'autoclose' => true,
+                'showTodayButton' => true,
+                'format' => Yii::$app->params['datePickerFormat'],
+            ]
+        ]);
+        ?>
+        <span class="input-group-addon"> to </span>
+        <?php
+        echo $form->field($model, 'end_date')->widget(DatePicker::className(), [
+            'options' => ['placeholder' => 'Until Further Notice'],
+            'size' => 'lg',
+            'clientOptions' => [
+                'autoclose' => true,
+                'format' => Yii::$app->params['datePickerFormat'],
+            ]
+        ]);
+        ?>
+    </div>
 
-    <?= $form->field($model, 'announcement')->textarea(['rows' => 4, 'maxlength' => true]) ?>
+    <?= $form->field($model, 'announcement')->textarea(['rows' => 6, 'maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

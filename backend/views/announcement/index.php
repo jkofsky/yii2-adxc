@@ -22,12 +22,13 @@ $this->params['breadcrumbs'][] = $this->title;
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'formatter' => ['class' => 'yii\i18n\Formatter','nullDisplay' => '<span class="hint-block">Until Further Notice</span>'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'start_date:date',
             'end_date:date',
             'announcement',
-            'user.username',
+            'postedBy.username',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);

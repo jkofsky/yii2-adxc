@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this yii\web\View */
 /* @var $name string */
 /* @var $message string */
@@ -10,18 +9,27 @@ use yii\helpers\Html;
 $this->title = $name;
 ?>
 <div class="site-error">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+    <div class="panel panel-danger">
+        <div class="panel-heading"><h1><?= Html::encode($this->title) . ' - ', $message ?></h1></div>
+        <div class="panel-body">
+            <p>
+                The above error occurred while the Web server was processing your 
+                request for:
+            </p>
+            <div  class="alert alert-warning" style="font-size: larger;">
+                <?= Yii::$app->request->absoluteUrl; ?>
+            </div>
+            <?php if (!empty(Yii::$app->request->referrer)): ?>
+                <p>Requested from:
+                    <?=
+                    Html::a(Yii::$app->request->referrer, Yii::$app->request->referrer, array('class' => 'noicon'));
+                    ?>
+                <hr />
+                </p>
+            <?php endif; ?>
+            <p>
+                Please contact us if you think this is a server error. Thank you.
+            </p>
+        </div>
     </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
 </div>

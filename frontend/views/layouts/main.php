@@ -35,7 +35,7 @@ AppAsset::register($this);
         <div class="wrap">
             <?php
             NavBar::begin([
-                'brandLabel' => 'ADXC IntraNet',
+                'brandLabel' => Yii::$app->name,
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -105,7 +105,9 @@ AppAsset::register($this);
 
         <footer class="footer">
             <div class="container">
-                <p class="pull-right">&copy;<?= date('Y') ?> ADX Communications of Escambia, LLC</p>
+                <p class="pull-left">&copy;<?= date('Y') ?>
+                    <?= Yii::$app->params['companyName'] ?>
+                </p>
             </div>
         </footer>
 
