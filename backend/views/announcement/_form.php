@@ -2,8 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use dosamigos\datepicker\DatePicker;
-use yii\helpers\FormatConverter;
+use dosamigos\datepicker\DateRangePicker;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Announcement */
@@ -14,33 +13,27 @@ use yii\helpers\FormatConverter;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <div class="input-group">
-        <?php
-        echo $form->field($model, 'start_date')->widget(DatePicker::className(), [
-            'options' => [
-                'autofocus' => true,
-                'placeholder' => Yii::$app->params['datePickerFormat'],
-            ],
-            'size' => 'lg',
-            'clientOptions' => [
-                'autoclose' => true,
-                'showTodayButton' => true,
-                'format' => Yii::$app->params['datePickerFormat'],
-            ]
-        ]);
-        ?>
-        <span class="input-group-addon"> to </span>
-        <?php
-        echo $form->field($model, 'end_date')->widget(DatePicker::className(), [
-            'options' => ['placeholder' => 'Until Further Notice'],
-            'size' => 'lg',
-            'clientOptions' => [
-                'autoclose' => true,
-                'format' => Yii::$app->params['datePickerFormat'],
-            ]
-        ]);
-        ?>
-    </div>
+    <?=
+    $form->field($model, 'start_date')->widget(DateRangePicker::className(), [
+        'options' => [
+            'placeholder' => Yii::$app->params['datePickerFormat'],
+        ],
+        'attributeTo' => 'end_date',
+        'optionsTo' => [
+            'placeholder' => 'Until Further Notice'
+        ],
+        'size' => 'lg',
+        'clientOptions' => [
+            'autoclose' => true,
+            'keepEmptyValues' => true,
+            'format' => Yii::$app->params['datePickerFormat'],
+            'startDate' => '-1d',
+            'clearBtn' => true,
+            'todayBtn' => true,
+            'todayHighlight' => true,
+        ]
+    ]);
+    ?>
 
     <?= $form->field($model, 'announcement')->textarea(['rows' => 6, 'maxlength' => true]) ?>
 

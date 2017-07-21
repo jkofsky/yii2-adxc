@@ -17,12 +17,22 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a(Yii::t('app', 'Create Announcement'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?=
+        Html::a(Yii::t('app', 'Purge Expired'), ['purge'], [
+            'class' => 'btn btn-danger',
+            'data' => [
+                'confirm' => Yii::t('app', 'Are you sure you want to purge announcements?'),
+                'method' => 'post',
+            ],
+        ])
+        ?>
     </p>
+
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'formatter' => ['class' => 'yii\i18n\Formatter','nullDisplay' => '<span class="hint-block">Until Further Notice</span>'],
+        'formatter' => ['class' => 'yii\i18n\Formatter', 'nullDisplay' => '<span class="hint-block">Until Further Notice</span>'],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             'start_date:date',

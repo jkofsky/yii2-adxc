@@ -41,10 +41,10 @@ class ProfileController extends Controller {
         if (($model = Profile::findOne(Yii::$app->user->identity->id)) !== null) {
             return $this->render('view', [
                         'model' => $model,
-        ]);
+            ]);
         } else {
             return $this->redirect(['create']);
-    }
+        }
     }
 
     /**
@@ -70,6 +70,11 @@ class ProfileController extends Controller {
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view']);
         } else {
+            $dateFormat = Yii::$app->params['datePickerFormat'];
+            $model->birth_date = !empty($model->birth_date) ? Yii::$app->formatter->asDate($model->birth_date, $dateFormat) : null;
+            $model->aniversary_date = !empty($model->aniversary_date) ? Yii::$app->formatter->asDate($model->aniversary_date, $dateFormat) : null;
+            $model->hire_date = !empty($model->hire_date) ? Yii::$app->formatter->asDate($model->hire_date, $dateFormat) : null;
+
             return $this->render('create', [
                         'model' => $model,
             ]);
@@ -84,10 +89,15 @@ class ProfileController extends Controller {
      */
     public function actionUpdate() {
         $model = $this->findModel(Yii::$app->user->identity->id);
-//return var_dump(Yii::$app->request->post());
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view']);
         } else {
+            $dateFormat = Yii::$app->params['datePickerFormat'];
+            $model->birth_date = !empty($model->birth_date) ? Yii::$app->formatter->asDate($model->birth_date, $dateFormat) : null;
+            $model->aniversary_date = !empty($model->aniversary_date) ? Yii::$app->formatter->asDate($model->aniversary_date, $dateFormat) : null;
+            $model->hire_date = !empty($model->hire_date) ? Yii::$app->formatter->asDate($model->hire_date, $dateFormat) : null;
+
             return $this->render('update', [
                         'model' => $model,
             ]);

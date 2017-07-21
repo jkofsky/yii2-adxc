@@ -64,6 +64,10 @@ class AnnouncementController extends Controller {
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            $dateFormat = Yii::$app->params['datePickerFormat'];
+            $model->start_date = !empty($model->start_date) ? Yii::$app->formatter->asDate($model->start_date, $dateFormat) : null;
+            $model->end_date = !empty($model->end_date) ? Yii::$app->formatter->asDate($model->end_date, $dateFormat) : null;
+
             return $this->render('create', [
                         'model' => $model,
             ]);
@@ -78,14 +82,15 @@ class AnnouncementController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->findModel($id);
-        
-        $dateFormat=Yii::$app->params['datePickerFormat'];
-        $model->start_date = !empty($model->start_date) ? Yii::$app->formatter->asDate($model->start_date, $dateFormat) : null;
-        $model->end_date = !empty($model->end_date) ? Yii::$app->formatter->asDate($model->end_date, $dateFormat) : null;
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            $dateFormat = Yii::$app->params['datePickerFormat'];
+            $model->start_date = !empty($model->start_date) ? Yii::$app->formatter->asDate($model->start_date, $dateFormat) : null;
+            $model->end_date = !empty($model->end_date) ? Yii::$app->formatter->asDate($model->end_date, $dateFormat) : null;
+
             return $this->render('update', [
                         'model' => $model,
             ]);
@@ -102,6 +107,19 @@ class AnnouncementController extends Controller {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    /**
+     * Purge ALL expired Announcement models.
+     * If purging is successful, the browser will be redirected to the 'index' page.
+     * @return mixed
+     */
+    public function actionPurge() {
+        throw new \yii\web\HttpException(501, 'Purging has not been implimented.');
+
+
+        //$this->findModel($id)->delete();
+        //return $this->redirect(['index']);
     }
 
     /**

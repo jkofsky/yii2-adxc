@@ -38,8 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'is_management:boolean',
             'extension',
             'speed_dial',
-            'created_at:date',
-            'updated_at:date',
+            'created_at:datetime',
+            'updated_at:datetime',
         ],
     ])
     ?>

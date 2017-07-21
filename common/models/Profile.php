@@ -20,7 +20,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $birth_date
  * @property integer $aniversary_date
  * @property string  $spouse_name
- * @property integer  $hire_date
+ * @property integer $hire_date
  * @property integer $department_id
  * @property boolean $is_management
  * @property integer $extension
@@ -54,14 +54,24 @@ class Profile extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone'], 'trim', 'skipOnEmpty' => true],
-            [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone', 'birth_date', 'aniversary_date', 'hire_date'], 'default', 'value' => null],
+            [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone'], 'trim'],
+            [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone',], 'default', 'value' => null],
             [['first_name', 'last_name'], 'required'],
             [['department_id', 'is_management', 'extension', 'speed_dial'], 'integer'],
-            [['birth_date'], 'date', 'format' => 'm/d/yyyy', 'timestampAttribute' => 'birth_date'],
-            [['aniversary_date'], 'date', 'timestampAttribute' => 'aniversary_date'],
-            [['hire_date'], 'date', 'timestampAttribute' => 'hire_date', 'skipOnEmpty' => true],
-            //[['birth_date', 'aniversary_date', 'hire_date'], 'filter', 'filter'=>'strtotime'],
+
+            [['birth_date', 'aniversary_date','hire_date'], 'default', 'value' => null],
+            [['birth_date'], 'date',
+                'format' => Yii::$app->params['datePickerFormat'],
+                'timestampAttribute' => 'birth_date'
+            ],
+            [['aniversary_date'], 'date',
+                'format' => Yii::$app->params['datePickerFormat'],
+                'timestampAttribute' => 'aniversary_date'
+            ],
+            [['hire_date'], 'date',
+                'format' => Yii::$app->params['datePickerFormat'],
+                'timestampAttribute' => 'hire_date'
+            ],
             [['first_name', 'last_name', 'city', 'spouse_name'], 'string', 'max' => 64],
             [['address'], 'string', 'max' => 128],
             [['state'], 'string', 'max' => 2],

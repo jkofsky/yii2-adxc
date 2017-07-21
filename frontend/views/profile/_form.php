@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
-use yii\jui\DatePicker;
+use common\models\Department;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Profile */
@@ -45,49 +46,37 @@ use yii\jui\DatePicker;
 
                     <?= $form->field($model, 'home_phone')->textInput(['maxlength' => true]) ?>
 
-                    <?php
-                    echo $form->field($model, 'birth_date')->widget(DatePicker::className(), [
+                    <?=
+                    $form->field($model, 'birth_date')->widget(DatePicker::className(), [
                         'options' => [
-                            'class' => 'form-control',
-                            'placeholder' => 'm/d/yyyy',
+                            'placeholder' => Yii::$app->params['datePickerFormat'],
                         ],
-                        'value' => $model->birth_date,
-                        'dateFormat' => 'm/d/yyyy',
                         'clientOptions' => [
-                            'buttonImageOnly' => true,
-                            'buttonText' => 'Select',
-                            'changeMonth' => true,
-                            'changeYear' => true,
-                            'selectOtherMonths' => true,
-                            'showAnim' => 'fold',
-                            'showButtonPanel' => true,
-                            'showOn' => 'button',
-                            'showOtherMonths' => true,
-                            'buttonImage' => Url::to('@web/images/calendar.gif'),
-                        ],
+                            'autoclose' => true,
+                            'format' => Yii::$app->params['datePickerFormat'],
+                            //'startDate' => '-1d',
+                            'clearBtn' => true,
+                            'todayBtn' => true,
+                            'todayHighlight' => true,
+                        ]
                     ]);
                     ?>
 
                     <?= $form->field($model, 'spouse_name')->textInput(['maxlength' => true]) ?>
 
-                    <?php
-                    echo $form->field($model, 'aniversary_date')->widget(DatePicker::className(), [
+                    <?=
+                    $form->field($model, 'aniversary_date')->widget(DatePicker::className(), [
                         'options' => [
-                            'class' => 'form-control',
-                            'placeholder' => 'm/d/yyyy',
+                            'placeholder' => Yii::$app->params['datePickerFormat'],
                         ],
                         'clientOptions' => [
-                            'buttonImageOnly' => true,
-                            'buttonText' => 'Select',
-                            'changeMonth' => true,
-                            'changeYear' => true,
-                            'selectOtherMonths' => true,
-                            'showAnim' => 'fold',
-                            'showButtonPanel' => true,
-                            'showOn' => 'button',
-                            'showOtherMonths' => true,
-                            'buttonImage' => Url::to('@web/images/calendar.gif'),
-                        ],
+                            'autoclose' => true,
+                            'format' => Yii::$app->params['datePickerFormat'],
+                            //'startDate' => '-1d',
+                            'clearBtn' => true,
+                            'todayBtn' => true,
+                            'todayHighlight' => true,
+                        ]
                     ]);
                     ?>
                 </div>
@@ -98,29 +87,28 @@ use yii\jui\DatePicker;
             <div class="panel panel-success">
                 <div class="panel-heading">Employment Information</div>
                 <div class="panel-body">
-                    <?php
-                    echo $form->field($model, 'hire_date')->widget(DatePicker::className(), [
+                    <?=
+                    $form->field($model, 'hire_date')->widget(DatePicker::className(), [
                         'options' => [
-                            'class' => 'form-control',
-                            'placeholder' => 'm/d/yyyy',
+                            'placeholder' => Yii::$app->params['datePickerFormat'],
                         ],
-                        'dateFormat' => 'm/d/yyyy',
                         'clientOptions' => [
-                            'buttonImageOnly' => true,
-                            'buttonText' => 'Select',
-                            'changeMonth' => true,
-                            'changeYear' => true,
-                            'selectOtherMonths' => true,
-                            'showAnim' => 'fold',
-                            'showButtonPanel' => true,
-                            'showOn' => 'button',
-                            'showOtherMonths' => true,
-                            'buttonImage' => Url::to('@web/images/calendar.gif'),
-                        ],
+                            'autoclose' => true,
+                            'format' => Yii::$app->params['datePickerFormat'],
+                            //'startDate' => '-1d',
+                            'clearBtn' => true,
+                            'todayBtn' => true,
+                            'todayHighlight' => true,
+                        ]
                     ]);
                     ?>
 
-                    <?= $form->field($model, 'department_id')->textInput() ?>
+                    <?=
+                    $form->field($model, 'department_id')->dropDownList(
+                            Department::getDepartmentList(), [
+                        'prompt' => 'Not Assigned'
+                    ])
+                    ?>
 
                     <?= $form->field($model, 'is_management')->checkbox() ?>
 
