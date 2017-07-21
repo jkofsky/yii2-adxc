@@ -58,8 +58,7 @@ class Profile extends \yii\db\ActiveRecord {
             [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone',], 'default', 'value' => null],
             [['first_name', 'last_name'], 'required'],
             [['department_id', 'is_management', 'extension', 'speed_dial'], 'integer'],
-
-            [['birth_date', 'aniversary_date','hire_date'], 'default', 'value' => null],
+            [['birth_date', 'aniversary_date', 'hire_date'], 'default', 'value' => null],
             [['birth_date'], 'date',
                 'format' => Yii::$app->params['datePickerFormat'],
                 'timestampAttribute' => 'birth_date'
@@ -74,6 +73,7 @@ class Profile extends \yii\db\ActiveRecord {
             ],
             [['first_name', 'last_name', 'city', 'spouse_name'], 'string', 'max' => 64],
             [['address'], 'string', 'max' => 128],
+            [['state'], 'filter', 'filter' => 'strtoupper'],
             [['state'], 'string', 'max' => 2],
             [['postal_code'], 'string', 'max' => 10],
             [['cell_phone', 'home_phone'], 'string', 'max' => 16],
@@ -90,6 +90,7 @@ class Profile extends \yii\db\ActiveRecord {
             'user_id' => Yii::t('app', 'User ID'),
             'first_name' => Yii::t('app', 'First Name'),
             'last_name' => Yii::t('app', 'Last Name'),
+            'fullname' => Yii::t('app', 'Name'),
             'address' => Yii::t('app', 'Address'),
             'city' => Yii::t('app', 'City'),
             'state' => Yii::t('app', 'State'),
@@ -98,14 +99,14 @@ class Profile extends \yii\db\ActiveRecord {
             'home_phone' => Yii::t('app', 'Home Phone'),
             'birth_date' => Yii::t('app', 'Birth Date'),
             'aniversary_date' => Yii::t('app', 'Aniversary Date'),
-            'spouse_name' => Yii::t('app', 'Spouse Name'),
+            'spouse_name' => Yii::t('app', "Spouse's Name"),
             'hire_date' => Yii::t('app', 'Date Hired'),
             'department_id' => Yii::t('app', 'Department'),
-            'is_management' => Yii::t('app', 'Is Management'),
+            'is_management' => Yii::t('app', 'Management'),
             'extension' => Yii::t('app', 'Extension'),
             'speed_dial' => Yii::t('app', 'Speed Dial'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
+            'created_at' => Yii::t('app', 'Created On'),
+            'updated_at' => Yii::t('app', 'Last Updated'),
         ];
     }
 
@@ -121,6 +122,13 @@ class Profile extends \yii\db\ActiveRecord {
      */
     public function getUser() {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return string
+     */
+    public function getFullname() {
+        return $this->first_name . ' ' . $this->last_name;
     }
 
 }

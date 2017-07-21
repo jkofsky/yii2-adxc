@@ -42,9 +42,18 @@ use dosamigos\datepicker\DatePicker;
 
                     <?= $form->field($model, 'postal_code')->textInput(['maxlength' => true]) ?>
 
-                    <?= $form->field($model, 'cell_phone')->textInput(['maxlength' => true]) ?>
+                    <?=
+                    $form->field($model, 'cell_phone')->widget(\yii\widgets\MaskedInput::className(), [
+                        'mask' => '(999) 999-9999',
+                    ])
+                    ?>
 
-                    <?= $form->field($model, 'home_phone')->textInput(['maxlength' => true]) ?>
+                    <?=
+                    $form->field($model, 'home_phone')->textInput([
+                        'maxlength' => true,
+                        'prompt' => '(999) 999-9999',
+                    ])
+                    ?>
 
                     <?=
                     $form->field($model, 'birth_date')->widget(DatePicker::className(), [
@@ -106,11 +115,9 @@ use dosamigos\datepicker\DatePicker;
                     <?=
                     $form->field($model, 'department_id')->dropDownList(
                             Department::getDepartmentList(), [
-                        'prompt' => 'Not Assigned'
+                        'prompt' => '- Not Assigned -'
                     ])
                     ?>
-
-                    <?= $form->field($model, 'is_management')->checkbox() ?>
 
                     <?= $form->field($model, 'extension')->textInput() ?>
 
@@ -118,13 +125,19 @@ use dosamigos\datepicker\DatePicker;
 
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <?=
-            Html::submitButton(
-                    $model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
-            );
-            ?>
+            <div class="form-group">
+                <?php if (!$model->isNewRecord) : ?>
+                    <p><?= $model->getAttributeLabel('updated_at') ?>:
+                        <?= date('F d, Y', $model->getAttribute('updated_at')) ?></p>
+                <?php endif; ?>
+                <?=
+                Html::submitButton(
+                        $model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), [
+                    'class' => $model->isNewRecord ? 'btn btn-success btn-block' : 'btn btn-primary btn-block',
+                        ]
+                );
+                ?>
+            </div>
         </div>
 
         <?php ActiveForm::end(); ?>

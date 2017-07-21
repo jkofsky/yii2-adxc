@@ -65,6 +65,7 @@ class ProfileController extends Controller {
      */
     public function actionCreate() {
         $model = new Profile();
+        $model->loadDefaultValues();
         $model->user_id = Yii::$app->user->identity->id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
