@@ -27,7 +27,7 @@ use dosamigos\datepicker\DateRangePicker;
             'autoclose' => true,
             'keepEmptyValues' => true,
             'format' => Yii::$app->params['datePickerFormat'],
-            'startDate' => '-1d',
+            //'startDate' => '-1d',
             'clearBtn' => true,
             'todayBtn' => true,
             'todayHighlight' => true,

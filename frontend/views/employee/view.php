@@ -9,7 +9,7 @@ use yii\widgets\DetailView;
 $this->title = Yii::t('app', "{fullName}'s Profile", [
             'fullName' => $model->profile->fullname
         ]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Users'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Employees'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Profile');
 ?>
 <div class="user-view">

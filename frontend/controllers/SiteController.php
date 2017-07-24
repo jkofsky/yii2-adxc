@@ -10,6 +10,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Announcement;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -75,7 +76,16 @@ class SiteController extends Controller {
      * @return mixed
      */
     public function actionIndex() {
-        return $this->render('index');
+        $announceModel = Announcement::find()
+                ->joinWith('postedBy')
+                ->where(['>=','end_date', time()])
+                ->orWhere('end_date IS NULL')
+                ->andWhere(['<=', 'start_date', time()])
+                ->orderBy('Start_date DESC')
+                ->all();
+        return $this->render('index', [
+                    'announceModel' => $announceModel,
+        ]);
     }
 
     /**

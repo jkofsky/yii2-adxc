@@ -56,13 +56,7 @@ class Announcement extends \yii\db\ActiveRecord {
                 'format' => 'm/d/yyyy',
                 'timestampAttribute' => 'end_date'
             ],
-            [['start_date'], 'compare',
-                'compareAttribute' => 'end_date',
-                'operator' => '>=',
-                'type' => 'number',
-                'enableClientValidation' => false
-            ],
-            [['announcement'], 'string', 'max' => 255],
+           [['announcement'], 'string', 'max' => 255],
         ];
     }
 

@@ -115,11 +115,21 @@ class AnnouncementController extends Controller {
      * @return mixed
      */
     public function actionPurge() {
-        throw new \yii\web\HttpException(501, 'Purging has not been implimented.');
+        $announceModel = Announcement::find()
+                ->where(['is not', 'end_date', null])
+                ->andWhere(['<=', 'end_date', time()])
+                ->orderBy('Start_date DESC')
+                ->all();
 
-
-        //$this->findModel($id)->delete();
-        //return $this->redirect(['index']);
+        if ($announceModel) {
+            foreach ($announceModel as $model) {
+                $model->delete();
+            }
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Expired Announcements have been <spam class="alert-link">Purged!</span>'));
+        } else {
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Nothing to purge.'));
+        }
+        return $this->redirect(['index']);
     }
 
     /**
