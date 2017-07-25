@@ -40,10 +40,6 @@ class EngineeringController extends Controller {
                 'class' => 'yii\web\ViewAction',
                 'viewPrefix' => 'info',
             ],
-            'documents' => [
-                'class' => 'yii\web\ViewAction',
-                'viewPrefix' => 'documents',
-            ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
@@ -61,11 +57,41 @@ class EngineeringController extends Controller {
     }
 
     /**
+     * Displays the Documents Listing.
+     *
+     * @return mixed
+     */
+    public function actionDocuments() {
+        $this->viewPath = Yii::getAlias($this->viewPath . '/documents');
+        return $this->render('index', [
+                    'model' => null,
+        ]);
+    }
+
+    /**
      * Displays the Local Area Networking (LAN) homepage.
      *
      * @return mixed
      */
     public function actionLocalNetwork() {
+        return $this->render('networksIndex');
+    }
+
+    /**
+     * Displays the Programming Contactc.
+     *
+     * @return mixed
+     */
+    public function actionProgramming() {
+        return $this->render('networksIndex');
+    }
+
+    /**
+     * Displays the Support Contacts.
+     *
+     * @return mixed
+     */
+    public function actionSupport() {
         return $this->render('networksIndex');
     }
 
