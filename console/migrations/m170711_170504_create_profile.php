@@ -11,6 +11,9 @@ class m170711_170504_create_profile extends Migration {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
+        if (Yii::$app->db->schema->getTableSchema('{{%profile%}}', true) !== null) {
+            $this->dropTable('{{%profile%}}');
+        }
         $this->createTable('{{%profile}}', [
             'user_id' => $this->integer(10)->unsigned()->notNull(),
             'first_name' => $this->string(64)->notNull(),
@@ -34,15 +37,17 @@ class m170711_170504_create_profile extends Migration {
             'PRIMARY KEY(user_id)'
                 ], $tableOptions);
 
+        // create `full_name` index
         $this->createIndex(
                 'idx_full_name', '{{%profile%}}', 'last_name, first_name'
         );
 
+        // create index for `department` table relation
         $this->createIndex(
                 'idx_department', '{{%profile%}}', [new Expression('is_management DESC'), new Expression('department_id ASC')]
         );
 
-        // add foreign key for table `post`
+        // add foreign key for a `{{%user}}` table relation
         $this->addForeignKey(
                 'fk_profile_to_user', '{{%profile%}}', 'user_id', '{{%user%}}', 'id', 'CASCADE', 'CASCADE'
         );

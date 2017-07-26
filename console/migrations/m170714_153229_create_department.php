@@ -19,9 +19,14 @@ class m170714_153229_create_department extends Migration {
             'dept_name' => $this->string()->unique()->notNull(),
                 ], $tableOptions);
 
-        // add foreign key for table `post`
+        // create index for Department Name
+        $this->createIndex(
+                'idx_dept_name', '{{%department%}}', 'dept_name'
+        );
+
+        // add foreign key for a `{{%profile}}` table relation
         $this->addForeignKey(
-                'fk_profile_to_Department', '{{%profile%}}', 'department_id', '{{%department%}}', 'id', 'SET NULL', 'CASCADE'
+                'fk_profile_to_department', '{{%profile%}}', 'department_id', '{{%department%}}', 'id', 'SET NULL', 'CASCADE'
         );
 
         // add default departments

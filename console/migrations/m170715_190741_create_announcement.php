@@ -22,7 +22,8 @@ class m170715_190741_create_announcement extends Migration {
             'posted_by' => $this->integer(10)->unsigned(),
                 ], $tableOptions);
         
-        $this->addForeignKey('fk_announcement_created_by', '{{%announcement}}', 'posted_by', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
+        // add foreign key for a `{{%user}}` table relation
+        $this->addForeignKey('fk_announcement_created_by', '{{%announcement}}', 'posted_by', '{{%user}}', 'id', 'SET NULL', 'CASCADE');
     }
 
     public function safeDown() {
