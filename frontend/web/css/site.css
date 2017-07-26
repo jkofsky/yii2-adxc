@@ -101,6 +101,32 @@ a.desc:after {
     border: none;
 }
 
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+/*
+|==========================================================================
+|  My Stuff
+|==========================================================================
+*/
+li.birth_day { 
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACNklEQVR42oVT32tSURz3qZ5660/wJeihv2BvUQ9BDxV7CQpGjB4zCiGplTUIakFtyxarWavWINSl1XAYXWfWQ4Mm5U/cvGdX3b16N1GvQ9RP53unN21CBz7ccz6/vudeuCYApg7CftPxSNgU7ub+p/cYEhGTVi4dATfa+hX003sMsdX90KrDiK3ua/Wb2NGjP3f1PQXvlh4juDyIOZ+9JghCIs4DNDEUOFvgZ/dzzziWPp/B+Bur1FPARTPH2LS/CNe3LUx+yEPTNBgT+bNQKMD+VoLjo4yLE0mFMkbBV8HjZIzhyaKC+aCKCa8CWs73uxNnPKP6+dpLCQ8XNmGZSoMyRkFQCDT4wusvKjfI8K+U9MCd+Swcn2TceCXpZ4crj6vTDK6AjGVhcccoCAm+Vr1ex7/r+qyER95NWF8wg2s2m5BlGcnvtoZRwFYszUQ8CnqNzqIbOdw5WJ8xLAhFnVNVFfHYb+TTPijhQ38LtkIHGrXMbaSSUf1j5XI5MHENGxtMBxUrioL1tRRKmacgL2WMguzI4VZhZhiV1F0oTEBJnEVNHDWgifexzeZQFe9BS9lBXsoYBUXvwYb84Bwkyykok0PY9l5C5YdNNxNoTxxp5CEvZbpfYaeWuYVS4AqUqQvI2gYhDp3A+umjOmhPHGnkIS9luguc5V8nuXCz5+p9wT3kpUx3gZljjKNWjhxDJX4eWvoyN4/ooD1xpJGn7TXv+Rc4OcBh43BzJDiqbSTaHGkD3Zk/218PdDqRKm4AAAAASUVORK5CYII=); 
+}
+
 a[target="_blank"]:after,a[target="_new"]:after  {
     position: relative;
     top: 1px;
@@ -141,23 +167,4 @@ div.required label.control-label:after {
     display: -webkit-flex;
     display: flex;
     flex:1 0 auto;
-}
-
-
-@media(max-width:767px) {
-    .nav li > form > button.logout {
-        display:block;
-        text-align: left;
-        width: 100%;
-        padding: 10px 15px;
-    }
-}
-
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
-    text-decoration: none;
-}
-
-.nav > li > form > button.logout:focus {
-    outline: none;
 }

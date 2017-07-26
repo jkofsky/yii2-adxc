@@ -9,6 +9,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\User;
 use common\models\LoginForm;
 use common\models\Announcement;
 use frontend\models\PasswordResetRequestForm;
@@ -78,7 +79,7 @@ class SiteController extends Controller {
     public function actionIndex() {
         $announceModel = Announcement::find()
                 ->joinWith('postedBy')
-                ->where(['>=','end_date', time()])
+                ->where(['>=', 'end_date', time()])
                 ->orWhere('end_date IS NULL')
                 ->andWhere(['<=', 'start_date', time()])
                 ->orderBy('Start_date DESC')
@@ -246,6 +247,18 @@ class SiteController extends Controller {
         return $this->render('resetPassword', [
                     'model' => $model,
         ]);
+    }
+
+    /**
+     * Change your own password
+     */
+    public function actionChangePassword() {
+        $model = User::findOne([
+                    'id' => Yii::$app->user->id
+        ]);
+        $model->generatePasswordResetToken();
+        $model->save(false);
+        $this->redirect(['reset-password','token'=>$model->password_reset_token]);
     }
 
 }

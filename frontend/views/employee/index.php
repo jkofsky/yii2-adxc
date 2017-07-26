@@ -1,12 +1,11 @@
 <?php
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\search\UserSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
 use yii\grid\GridView;
 use \common\models\Department;
-
-/* @var $this yii\web\View */
-/* @var $searchModel common\models\search\UserSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Employees');
 $this->params['breadcrumbs'][] = $this->title;
@@ -36,9 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'header' => 'Department',
                 'attribute' => 'dept_id',
                 'value' => 'profile.department.dept_name',
-                'filter' => Html::activeDropDownList($searchModel, 
-                        'dept_id', Department::getDepartmentList(), 
-                        ['class' => 'form-control', 'prompt' => 'All']
+                'filter' => Html::activeDropDownList($searchModel, 'dept_id', Department::getDepartmentList(), ['class' => 'form-control', 'prompt' => 'All']
                 ),
             ],
             [

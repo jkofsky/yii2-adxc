@@ -13,6 +13,10 @@ use kartik\password\StrengthValidator;
 class ResetPasswordForm extends Model {
 
     public $password;
+    
+    // @vars for use with StrengthValidator
+    public $username;
+    public $email;
 
     /**
      * @var \common\models\User
@@ -34,6 +38,8 @@ class ResetPasswordForm extends Model {
         if (!$this->_user) {
             throw new InvalidParamException('Wrong password reset token.');
         }
+        $this->username = $this->_user->username;
+        $this->email = $this->_user->email;
         parent::__construct($config);
     }
 
