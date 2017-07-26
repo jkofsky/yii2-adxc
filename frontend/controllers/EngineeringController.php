@@ -8,6 +8,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\Subnet;
 
 class EngineeringController extends Controller {
 
@@ -62,8 +63,7 @@ class EngineeringController extends Controller {
      * @return mixed
      */
     public function actionDocuments() {
-        $this->viewPath = Yii::getAlias($this->viewPath . '/documents');
-        return $this->render('index', [
+        return $this->render('documents/index', [
                     'model' => null,
         ]);
     }
@@ -74,11 +74,14 @@ class EngineeringController extends Controller {
      * @return mixed
      */
     public function actionLocalNetwork() {
-        return $this->render('networksIndex');
+        $subNet = Subnet::find()->orderBy('name')->all();
+        return $this->render('networksIndex', [
+                    'subnetModel' => $subNet,
+        ]);
     }
 
     /**
-     * Displays the Programming Contactc.
+     * Displays the Programming Contacts.
      *
      * @return mixed
      */
