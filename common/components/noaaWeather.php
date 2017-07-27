@@ -1,5 +1,7 @@
 <?php
 
+//namespace common\components;
+
 /**
  * Description of noaaWeather
  *
@@ -18,22 +20,35 @@
  *
  * @category   Weather
  * @package    noaaWeather
- * @author     jkofsky
+ * @author     Jeff Kofsky
  * @copyright  Copyright (c) 2016
  * @license    BSD License
- * @version    $Id:$
+ * @version    $Id:$ 
+ * @filesource noaaWeather.php
  * 
- * @since      File available since Initial Release 
+ * @since      Initial Release
+ *  
  */
-
 class noaaWeather {
 
     public $latatude = 30.4447;
     public $longitude = -87.1895;
     public $url;
     public $jsonData;
+
+    /**
+     * @var string
+     */
     private $_jsonFile;
+
+    /**
+     * @var float
+     */
     private $_heatIndexF;
+
+    /**
+     * @var float
+     */
     private $_heatIndexStr;
 
     /**

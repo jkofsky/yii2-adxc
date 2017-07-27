@@ -18,7 +18,7 @@ $this->title = 'ADXC IntraNet';
         ?>
 
         <div class="row">
-            <div class="col-lg-4"'>
+            <div class="col-md-4">
                 <div class="panel panel-info">
                     <div class="panel-heading">Business Office</div>
                     <div class="panel-body">
@@ -40,7 +40,7 @@ $this->title = 'ADXC IntraNet';
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-md-4">
                 <div class="panel panel-warning">
                     <div class="panel-heading">Cat Country 98&bullet;7 (WYCT-FM)</div>
                     <div class="panel-body">
@@ -71,7 +71,7 @@ $this->title = 'ADXC IntraNet';
                 </div>
             </div>
 
-            <div class = "col-lg-4">
+            <div class = "col-md-4">
                 <div class = "panel panel-danger">
                     <div class = "panel-heading">Newsradio 1620/92&bullet;3 (WNRP-AM/FM)</div>
                     <div class = "panel-body">

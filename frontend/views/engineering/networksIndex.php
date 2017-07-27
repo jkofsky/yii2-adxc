@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 /* @var $subnetModel common\models\Subnet */
 
-use yii\helpers\Html;
+use kartik\helpers\Html;
 use yii\bootstrap\Nav;
 
 $this->title = Yii::$app->name . ' - ADX Networks';
@@ -45,7 +45,8 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                     ],
                 ]);
                 ?>
-                <p style="font-family: monospace">Password: $6Blu3Go | C9IwSWmB | XP1Med9I | N0$a1nt$ </p>
+                <p style="font-family: monospace">Passwords: G8Blu3Go | C9IwSWmB | XP1Med9I | 
+                    <?= Html::bsLabel('N0$a1nt$', 'primary', ['style'=>'font-size: 100%']); ?></p>
             </div>
         </div>
     </div>

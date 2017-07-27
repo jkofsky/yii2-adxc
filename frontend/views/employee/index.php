@@ -19,7 +19,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'View',
+                'contentOptions' => ['class' => 'text-center'],
+                'template' => '{view}',
+            ],
             [
                 'attribute' => 'first_name',
                 'value' => 'profile.first_name',
@@ -37,12 +42,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => 'profile.department.dept_name',
                 'filter' => Html::activeDropDownList($searchModel, 'dept_id', Department::getDepartmentList(), ['class' => 'form-control', 'prompt' => 'All']
                 ),
-            ],
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'template' => '{view}',
-                'contentOptions' => ['class' => 'text-center'],
-                'header' => 'View',
             ],
         ],
     ]);
