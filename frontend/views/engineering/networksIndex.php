@@ -9,9 +9,10 @@ $this->title = Yii::$app->name . ' - ADX Networks';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
 $this->params['breadcrumbs'][] = 'ADX Networks';
 ?>
-<h1>ADX Main Network Information</h1>
+<h1>Main Networking Information</h1>
 
-<div class="row"><div class="col-md-6">
+<div class="row">
+    <div class="col-md-6">
         <div class="panel panel-info">
             <div class="panel-heading">Internal Network Segments</div>
             <div class="panel-body">
@@ -19,8 +20,8 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                 $items;
                 foreach ($subnetModel as $row) {
                     $items[] = ['label' => $row->subnet_id . ' - ' . $row->name,
-                        'url' => ['networks', 'networkId' => $row->id]
-                            ];
+                        'url' => [$this->context->action->id, 'networkId' => $row->id]
+                    ];
                 }
                 echo Nav::widget(['items' => $items]);
                 ?>  

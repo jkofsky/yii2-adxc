@@ -67,17 +67,32 @@ class EngineeringController extends Controller {
                     'model' => null,
         ]);
     }
+    /**
+     * Displays information about Network IP Addresses
+     */
 
     /**
-     * Displays the Local Area Networking (LAN) homepage.
+     * Display information about the Local Area Networking (LAN) IP Addresses.
      *
+     * @param integer $networkId
      * @return mixed
      */
-    public function actionLocalNetwork() {
-        $subNet = Subnet::find()->orderBy('name')->all();
-        return $this->render('networksIndex', [
-                    'subnetModel' => $subNet,
-        ]);
+    public function actionLocalNetwork($networkId = null) {
+        if (empty($networkId)) {
+            // show the Network index page
+            $subNet = Subnet::find()->orderBy('name')->all();
+            return $this->render('networksIndex', [
+                        'subnetModel' => $subNet,
+            ]);
+        } else {
+            $pageTitle = 'Hello';
+            
+            // show the listing of the Network IP assignments
+            return $this->render('networks', [
+                        'networkModel' => null,
+                        'pageTitle' => $pageTitle,
+            ]);
+        }
     }
 
     /**
@@ -86,7 +101,7 @@ class EngineeringController extends Controller {
      * @return mixed
      */
     public function actionProgramming() {
-        return $this->render('networksIndex');
+        return $this->render('index');
     }
 
     /**
@@ -95,7 +110,7 @@ class EngineeringController extends Controller {
      * @return mixed
      */
     public function actionSupport() {
-        return $this->render('networksIndex');
+        return $this->render('index');
     }
 
 }

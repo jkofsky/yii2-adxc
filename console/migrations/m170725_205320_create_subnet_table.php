@@ -17,7 +17,7 @@ class m170725_205320_create_subnet_table extends Migration {
         $this->createTable('{{%subnet%}}', [
             'id' => $this->smallInteger(3)->unsigned(),
             'name' => $this->string(50)->notNull(),
-            'subnet_id' => $this->string(16)->null(),
+            'network_id' => $this->string(16)->null(),
             'subnet_mask' => $this->string(16)->notNull()->defaultValue('255.255.255.0'),
             'gateway' => $this->string(16)->notNull(),
             'broadcast_address' => $this->string(16)->notNull()->defaultValue('192.168.#.255'),

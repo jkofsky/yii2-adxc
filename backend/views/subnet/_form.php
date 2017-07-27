@@ -20,7 +20,7 @@ use yii\bootstrap\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'subnet_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'network_id')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'subnet_mask')->textInput(['maxlength' => true]) ?>
 

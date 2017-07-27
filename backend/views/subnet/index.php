@@ -7,6 +7,8 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\search\SubnetSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+Yii::$app->formatter->nullDisplay = '';
+
 $this->title = Yii::t('app', 'Subnets');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -22,19 +24,49 @@ $this->params['breadcrumbs'][] = $this->title;
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'headerRowOptions' => ['class' => 'text-center'],
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'id',
-            'name',
-            'subnet_id',
-            'subnet_mask',
-            'gateway',
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Actions',
+                'headerOptions' => ['class' => 'text-center'],
+            ],
+            [
+                'attribute' => 'id',
+                'headerOptions' => ['class' => 'col-sm-1 text-center'],
+            ],
+            [
+                'attribute' => 'name',
+                'headerOptions' => ['class' => 'text-center'],
+            ],
+            [
+                'attribute' => 'network_id',
+                'enableSorting' => false,
+                'headerOptions' => ['class' => 'text-center'],
+            ],
+            [
+                'attribute' => 'subnet_mask',
+                'enableSorting' => false,
+                'headerOptions' => ['class' => 'text-center'],
+            ],
+            [
+                'attribute' => 'gateway',
+                'enableSorting' => false,
+                'headerOptions' => ['class' => 'text-center'],
+            ],
             // 'broadcast_address',
             // 'cidr_notation',
-            'dhcp_range',
-            'vlan_id',
-            'vlan_name',
-            ['class' => 'yii\grid\ActionColumn'],
+            // 'dhcp_range',
+            [
+                'attribute' => 'vlan_id',
+                'enableSorting' => false,
+                'headerOptions' => ['class' => 'text-center'],
+            ],
+            [
+                'attribute' => 'vlan_name',
+                'enableSorting' => false,
+                'headerOptions' => ['class' => 'text-center'],
+            ],
         ],
     ]);
     ?>

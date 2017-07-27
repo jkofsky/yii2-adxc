@@ -8,7 +8,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 1,
             'name' => 'Network Management',
-            'subnet_id' => '192.168.1.0',
+            'network_id' => '192.168.1.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.1.254',
             'broadcast_address' => '192.168.1.255',
@@ -21,7 +21,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 2,
             'name' => 'ADX On-Air Audio Net',
-            'subnet_id' => '192.168.2.0',
+            'network_id' => '192.168.2.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.2.254',
             'broadcast_address' => '192.168.2.255',
@@ -34,7 +34,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 4,
             'name' => 'Guest WiFi',
-            'subnet_id' => '192.168.4.0',
+            'network_id' => '192.168.4.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.4.254',
             'broadcast_address' => '192.168.4.255',
@@ -47,7 +47,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 87,
             'name' => 'Wheatstone (AoIP) Audio Network',
-            'subnet_id' => '192.168.87.0',
+            'network_id' => '192.168.87.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.87.1',
             'broadcast_address' => '192.168.87.255',
@@ -60,7 +60,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 168,
             'name' => 'ADX Main Office',
-            'subnet_id' => '192.168.168.0',
+            'network_id' => '192.168.168.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.168.254',
             'broadcast_address' => '192.168.168.255',
@@ -73,7 +73,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 10,
             'name' => 'Escambia Emergency Operations Center (EEOC)',
-            'subnet_id' => '192.168.10.0',
+            'network_id' => '192.168.10.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.10.254',
             'broadcast_address' => '192.168.10.255',
@@ -84,7 +84,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 11,
             'name' => 'Santa Rosa Emergency Operations Center (SREOC)',
-            'subnet_id' => '192.168.11.0',
+            'network_id' => '192.168.11.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.11.254',
             'broadcast_address' => '192.168.11.255',
@@ -95,7 +95,7 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 12,
             'name' => 'WYCT Transmitter Site',
-            'subnet_id' => '192.168.12.0',
+            'network_id' => '192.168.12.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.12.254',
             'broadcast_address' => '192.168.12.255',
@@ -106,15 +106,14 @@ class m170726_193051_load_subnetTable extends Migration {
         $this->insert('{{%subnet}}', [
             'id' => 13,
             'name' => 'WNRP Transmitter Site',
-            'subnet_id' => '192.168.13.0',
+            'network_id' => '192.168.13.0',
             'subnet_mask' => '255.255.255.0',
             'gateway' => '192.168.13.254',
             'broadcast_address' => '192.168.13.255',
             'cidr_notation' => '192.168.13.0/24',
             'dhcp_range' => '200-250',
         ]);
-
-   }
+    }
 
     public function safeDown() {
         $this->truncateTable('{{%subnet}}');
