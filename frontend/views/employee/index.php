@@ -14,6 +14,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+    <?= Html::a(Yii::t('app', 'Email Employees'), ['contact'], ['class' => 'btn btn-info']) ?>
+    
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,

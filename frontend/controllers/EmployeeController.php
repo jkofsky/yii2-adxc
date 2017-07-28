@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\User;
+use frontend\models\ContactForm;
 use common\models\search\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -40,6 +41,31 @@ class EmployeeController extends Controller {
             ]);
         } else {
             throw new NotFoundHttpException('This Employee does not have a Profile on record.');
+        }
+    }
+
+    /**
+     * Displays contact page.
+     *
+     * @return mixed
+     */
+    public function actionContact() {
+        $model = new ContactForm();
+        $model->scenario = 'employee';
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendDepartmentEmail($model->department)) {
+                Yii::$app->session->setFlash('success', Yii::t('app', 'Emails have been sent.')
+                );
+            } else {
+                Yii::$app->session->setFlash('error', Yii::t('app', 'There was an error sending your message.'));
+            }
+
+            return $this->refresh();
+        } else {
+            return $this->render('/site/contact', [
+                        'model' => $model,
+            ]);
         }
     }
 

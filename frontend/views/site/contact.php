@@ -2,8 +2,9 @@
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\ContactForm */
+/* @var $department \common\models\Department::getDepartmentList() */
 
-use yii\helpers\Html;
+use yii\bootstrap\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
@@ -13,17 +14,34 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-    </p>
+
 
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-            <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+            <?php
+            if ($model->scenario == 'employee') {
+                // Called from EmployeeController
+                ?>
+                <p>
+                    <?= Html::label('Send to', 'department') ?>
 
-            <?= $form->field($model, 'email') ?>
+                    <?=
+                    Html::activeDropDownList($model, 'department', \common\models\Department::getDepartmentList(), ['class' => 'form-control', 'prompt' => 'All Employees'])
+                    ?>
+                </p>
+                <?php
+            } else {
+                // Called from SiteContoller
+                ?>
+                <p>
+                    If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+                </p>
+                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+
+                <?= $form->field($model, 'email') ?>
+            <?php } ?>
 
             <?= $form->field($model, 'subject') ?>
 

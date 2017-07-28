@@ -15,6 +15,7 @@ class ContactForm extends Model {
     public $subject;
     public $body;
     public $verifyCode;
+    public $department;
 
     /**
      * @inheritdoc
@@ -27,7 +28,18 @@ class ContactForm extends Model {
             ['email', 'email'],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
+            //
+            [['department'], 'safe'],
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function scenarios() {
+        $scenarios = parent::scenarios();
+        $scenarios['employee'] = ['subject', 'body', 'verifyCode', 'department'];
+        return $scenarios;
     }
 
     /**
@@ -52,6 +64,36 @@ class ContactForm extends Model {
                         ->setSubject($this->subject)
                         ->setTextBody($this->body)
                         ->send();
+    }
+
+    /**
+     * Sends an email to the specified department members using the information 
+     * collected by this model.
+     *
+     * @param string $email the target email address
+     * @return bool whether the email was sent
+     */
+    public function sendDepartmentEmail($department = null) {
+        $query = \common\models\User::find()->where(['is_active' => \common\models\User::STATUS_ACTIVE])
+                ->joinWith('profile');
+
+        if (!is_null($department)) {
+            $query->andWhere(['profile.department_id' => $department]);
+        }
+        $users = $query->all();
+
+        if ($users) {
+            $messages = [];
+            foreach ($users as $user) {
+                $messages[] = Yii::$app->mailer->compose()
+                        ->setFrom([Yii::$app->user->identity->email => Yii::$app->user->identity->profile->fullName])
+                        ->setSubject($this->subject)
+                        ->setTextBody($this->body)
+                        ->setTo([$user->email => $user->profile->fullName]);
+            }
+            return Yii::$app->mailer->sendMultiple($messages);
+        }
+        return false;
     }
 
 }
