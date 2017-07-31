@@ -118,3 +118,13 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+/*
+|==========================================================================
+|  My Stuff
+|==========================================================================
+*/
+div.required label.control-label:after {
+    content: " *";
+    color: red;
+    font-weight: bolder;
+}

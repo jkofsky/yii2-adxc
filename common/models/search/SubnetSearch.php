@@ -38,7 +38,7 @@ class SubnetSearch extends Subnet {
      * @return ActiveDataProvider
      */
     public function search($params) {
-        $query = Subnet::find();
+        $query = Subnet::find()->orderBy('name');
 
         // add conditions that should always apply here
 
@@ -60,15 +60,8 @@ class SubnetSearch extends Subnet {
             'vlan_id' => $this->vlan_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-                ->andFilterWhere(['like', 'network_id', $this->network_id])
-                ->andFilterWhere(['like', 'subnet_mask', $this->subnet_mask])
-                ->andFilterWhere(['like', 'gateway', $this->gateway])
-                ->andFilterWhere(['like', 'broadcast_address', $this->broadcast_address])
-                ->andFilterWhere(['like', 'cidr_notation', $this->cidr_notation])
-                ->andFilterWhere(['like', 'dhcp_range', $this->dhcp_range])
-                ->andFilterWhere(['like', 'vlan_name', $this->vlan_name]);
-
+        $query->andFilterWhere(['like', 'name', $this->name]);
+        
         return $dataProvider;
     }
 

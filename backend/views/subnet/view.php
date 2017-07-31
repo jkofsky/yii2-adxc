@@ -31,14 +31,13 @@ $this->params['breadcrumbs'][] = $this->title;
     DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'name',
-            'network_id',
-            'subnet_mask',
-            'gateway',
-            'broadcast_address',
             'cidr_notation',
+            'subnet_id',
+            'subnet_mask',
+            'gateway_id',
             'dhcp_range',
+            'broadcast_address',
             'vlan_id',
             'vlan_name',
         ],

@@ -67,6 +67,7 @@ class CIDR {
      * bool(false)
      * 
      * @see http://www.actionsnip.com/snippets/tomo_atlacatl/calculate-if-a-netmask-is-valid--as2-
+     * @see https://stackoverflow.com/questions/4931721/getting-list-ips-from-cidr-notation-in-php
      * 
      * @access public
      * @static
@@ -219,15 +220,28 @@ class CIDR {
      * @access public
      * @static
      * 
-     * @param $cidr string CIDR block
+     * @param string $ipv4 
+     * @param boolean $asLong whether the return is strings or longs
      * @return array low end of range then high end of range.
      */
-    public static function cidrToRange($cidr) {
-        $range = array();
-        $cidr = explode('/', $cidr);
-        $range[0] = long2ip((ip2long($cidr[0])) & ((-1 << (32 - (int) $cidr[1]))));
-        $range[1] = long2ip((ip2long($cidr[0])) + pow(2, (32 - (int) $cidr[1])) - 1);
-        return $range;
+    public static function cidrToRange($ipv4, $asLong = false) {
+        if ($ip = strpos($ipv4, '/')) {
+            $n_ip = (1 << (32 - substr($ipv4, 1 + $ip))) - 1;
+            $ip_dec = ip2long(substr($ipv4, 0, $ip));
+        } else {
+            $n_ip = 0;
+            $ip_dec = ip2long($ipv4);
+        }
+        $ip_min = $ip_dec & ~$n_ip;
+        $ip_max = $ip_min + $n_ip;
+
+        if ($asLong) {
+            //Array(2) of Decimal Values Range
+            return [$ip_min, $ip_max];
+        } else {
+            //Array(2) of Ipv4 Human Readable Range
+            return [long2ip($ip_min), long2ip($ip_max)];
+        }
     }
 
 }

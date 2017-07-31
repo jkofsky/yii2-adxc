@@ -17,16 +17,17 @@ class m170725_205320_create_subnet_table extends Migration {
         $this->createTable('{{%subnet%}}', [
             'id' => $this->primaryKey()->unsigned(),
             'name' => $this->string(50)->notNull(),
-            'network_id' => $this->string(16)->null(),
+            'subnet_id' => $this->string(16)->null(),
             'subnet_mask' => $this->string(16)->notNull()->defaultValue('255.255.255.0'),
-            'gateway' => $this->string(16)->notNull(),
-            'broadcast_address' => $this->string(16)->notNull()->defaultValue('192.168.#.255'),
+            'gateway_id' => $this->integer(10)->unsigned()->notNull(),
+            'broadcast_address' => $this->string(16)->notNull(),
             'cidr_notation' => $this->string(24)->null(),
             'dhcp_range' => $this->string(16)->null(),
             'vlan_id' => $this->smallInteger(4)->unsigned()->null(),
             'vlan_name' => $this->string(32)->null(),
                 ], $tableOptions);
-
+        $this->createIndex('idx_name', '{{%subnet%}}', 'name');
+        $this->createIndex('idx_cidr_notation', '{{%subnet%}}', 'cidr_notation', true);
     }
 
     public function safeDown() {

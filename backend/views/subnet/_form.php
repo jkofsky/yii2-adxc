@@ -16,23 +16,15 @@ use yii\bootstrap\ActiveForm;
     ]);
     ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
-
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'network_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'cidr_notation')->textInput(['maxlength' => true, 'placeholder' => 'ie: 192.168.1.0/24']) ?>
 
-    <?= $form->field($model, 'subnet_mask')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'gateway_id')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'gateway')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'dhcp_range')->textInput(['maxlength' => true, 'placeholder' => '100-199']) ?>
 
-    <?= $form->field($model, 'broadcast_address')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'cidr_notation')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'dhcp_range')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'vlan_id')->textInput() ?>
+    <?= $form->field($model, 'vlan_id')->textInput()->hint('If entered, must be between 1-4096') ?>
 
     <?= $form->field($model, 'vlan_name')->textInput(['maxlength' => true]) ?>
 

@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="subnet-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]);   ?>
 
     <p>
         <?= Html::a(Yii::t('app', 'Create Subnet'), ['create'], ['class' => 'btn btn-success']) ?>
@@ -32,15 +32,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerOptions' => ['class' => 'text-center'],
             ],
             [
-                'attribute' => 'id',
-                'headerOptions' => ['class' => 'col-sm-1 text-center'],
-            ],
-            [
                 'attribute' => 'name',
                 'headerOptions' => ['class' => 'text-center'],
             ],
             [
-                'attribute' => 'network_id',
+                'attribute' => 'cidr_notation',
                 'enableSorting' => false,
                 'headerOptions' => ['class' => 'text-center'],
             ],
@@ -50,13 +46,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'headerOptions' => ['class' => 'text-center'],
             ],
             [
-                'attribute' => 'gateway',
+                'attribute' => 'gateway_id',
                 'enableSorting' => false,
                 'headerOptions' => ['class' => 'text-center'],
+                'value' => function($data) {
+            return substr($data->subnet_id, 0, strripos($data->subnet_id, '.') + 1) . $data->gateway_id;
+        },
             ],
             // 'broadcast_address',
-            // 'cidr_notation',
-            // 'dhcp_range',
+            [
+                'attribute' => 'dhcp_range',
+                'enableSorting' => false,
+            ],
             [
                 'attribute' => 'vlan_id',
                 'enableSorting' => false,
