@@ -6,7 +6,6 @@ class m170726_193051_load_subnetTable extends Migration {
 
     public function safeUp() {
         $this->insert('{{%subnet}}', [
-            'id' => 1,
             'name' => 'Network Management',
             'network_id' => '192.168.1.0',
             'subnet_mask' => '255.255.255.0',
@@ -19,7 +18,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 2,
             'name' => 'ADX On-Air Audio Net',
             'network_id' => '192.168.2.0',
             'subnet_mask' => '255.255.255.0',
@@ -32,7 +30,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 4,
             'name' => 'Guest WiFi',
             'network_id' => '192.168.4.0',
             'subnet_mask' => '255.255.255.0',
@@ -45,7 +42,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 87,
             'name' => 'Wheatstone (AoIP) Audio Network',
             'network_id' => '192.168.87.0',
             'subnet_mask' => '255.255.255.0',
@@ -58,7 +54,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 168,
             'name' => 'ADX Main Office',
             'network_id' => '192.168.168.0',
             'subnet_mask' => '255.255.255.0',
@@ -71,7 +66,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 10,
             'name' => 'Escambia Emergency Operations Center (EEOC)',
             'network_id' => '192.168.10.0',
             'subnet_mask' => '255.255.255.0',
@@ -82,7 +76,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 11,
             'name' => 'Santa Rosa Emergency Operations Center (SREOC)',
             'network_id' => '192.168.11.0',
             'subnet_mask' => '255.255.255.0',
@@ -93,7 +86,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 12,
             'name' => 'WYCT Transmitter Site',
             'network_id' => '192.168.12.0',
             'subnet_mask' => '255.255.255.0',
@@ -104,7 +96,6 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
 
         $this->insert('{{%subnet}}', [
-            'id' => 13,
             'name' => 'WNRP Transmitter Site',
             'network_id' => '192.168.13.0',
             'subnet_mask' => '255.255.255.0',
@@ -118,19 +109,4 @@ class m170726_193051_load_subnetTable extends Migration {
     public function safeDown() {
         $this->truncateTable('{{%subnet}}');
     }
-
-    /*
-      // Use up()/down() to run migration code without a transaction.
-      public function up()
-      {
-
-      }
-
-      public function down()
-      {
-      echo "m170726_193051_load_subnetTable cannot be reverted.\n";
-
-      return false;
-      }
-     */
 }

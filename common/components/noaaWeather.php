@@ -1,15 +1,26 @@
 <?php
 
-//namespace common\components;
+/**
+ * Class for retrieving NOAA Weather forecast
+ *
+ *
+ * @package    noaaWeather
+ * @author     Jeff Kofsky
+ * @copyright  Copyright (c) 2016
+ * @license    BSD License
+ * @version    1.1.0 
+ * @filesource noaaWeather.php
+ */
+
+namespace common\components;
 
 /**
- * Description of noaaWeather
- *
  * Get the current and 7 day forecast weather data from weather.gov.
  * The current conditions is only updated approximately once an hour.
- * Using weather.gov recommendations, that the data is actually only requested 
- * a limited number of times per hour from thier servers. 
- * (I set to 15min intervals) 
+ * 
+ * Using weather.gov recommendations that the data is actually only requested 
+ * a limited number of times per hour from thier servers, I have set this to 
+ * 4 times per hour (15min intervals). 
  * 
  * These default to Pensacola, Florida.
  * @property float $latatude  Latatude for requested weather forecast
@@ -17,18 +28,11 @@
  * 
  * @property-read string $url The URL that was used for the reuest
  * @property-read mixed $jsonData The raw data as Object
- *
- * @category   Weather
- * @package    noaaWeather
- * @author     Jeff Kofsky
- * @copyright  Copyright (c) 2016
- * @license    BSD License
- * @version    $Id:$ 
- * @filesource noaaWeather.php
  * 
- * @since      Initial Release
- *  
+ * @uses Yii::getAlias('@runtime/cache/') cache location 
  */
+use Yii;
+
 class noaaWeather {
 
     public $latatude = 30.4447;

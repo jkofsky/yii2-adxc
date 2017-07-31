@@ -15,7 +15,7 @@ class m170725_205320_create_subnet_table extends Migration {
         }
 
         $this->createTable('{{%subnet%}}', [
-            'id' => $this->smallInteger(3)->unsigned(),
+            'id' => $this->primaryKey()->unsigned(),
             'name' => $this->string(50)->notNull(),
             'network_id' => $this->string(16)->null(),
             'subnet_mask' => $this->string(16)->notNull()->defaultValue('255.255.255.0'),
@@ -27,8 +27,6 @@ class m170725_205320_create_subnet_table extends Migration {
             'vlan_name' => $this->string(32)->null(),
                 ], $tableOptions);
 
-        // add a PRIMARY INDEX without AUTO_INCREMENT
-        $this->addPrimaryKey('PRIMARY KEY', '{{%subnet}}', 'id');
     }
 
     public function safeDown() {

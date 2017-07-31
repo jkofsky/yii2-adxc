@@ -170,12 +170,12 @@ class SiteController extends Controller {
 
     /**
      * Displays the NOAA current weather conditions.
-     *
+     * @uses \common\components\noaaWeather()
+     * 
      * @return mixed
      */
     public function actionWeather() {
-        require_once Yii::getAlias('@common/components/noaaWeather.php');
-        $nw = new \noaaWeather();
+        $nw = new \common\components\noaaWeather();
         $nw->loadData();
         return $this->render('weather', [
                     'nw' => $nw,
@@ -258,7 +258,7 @@ class SiteController extends Controller {
         ]);
         $model->generatePasswordResetToken();
         $model->save(false);
-        $this->redirect(['reset-password','token'=>$model->password_reset_token]);
+        $this->redirect(['reset-password', 'token' => $model->password_reset_token]);
     }
 
 }
