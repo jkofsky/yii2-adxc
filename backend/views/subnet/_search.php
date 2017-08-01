@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name') ?>
 
+    <?= $form->field($model, 'short_name') ?>
+
     <?= $form->field($model, 'network_id') ?>
 
     <?= $form->field($model, 'subnet_mask') ?>

@@ -32,9 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'name',
+            'short_name',
             'cidr_notation',
-            'network_id',
-            'subnet_mask',
+            'network_id:ip',
+            'subnet_mask:ip',
             'gateway_id',
             'dhcp_range',
             'broadcast_address',

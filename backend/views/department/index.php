@@ -26,9 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'dept_name',
             [
                 'class' => 'yii\grid\ActionColumn',
-                'header' => 'Action',
+                'header' => 'Actions',
                 'headerOptions' => ['class' => 'col-sm-1'],
-            //'template' => '{view} {update} {delete}{link}',
+                //'template' => '{view} {update} {delete} {link}',
             ],
         ],
     ]);

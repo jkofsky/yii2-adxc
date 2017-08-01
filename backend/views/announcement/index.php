@@ -38,7 +38,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'start_date:date',
             'end_date:date',
             'announcement',
-            'postedBy.username',
+            [
+                'attribute' => 'postedBy.username',
+                'header' => 'Posted By',
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
