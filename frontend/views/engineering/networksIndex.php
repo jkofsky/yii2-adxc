@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                 <?php
                 $items;
                 foreach ($subnetModel as $row) {
-                    $items[] = ['label' => "$row->name  ($row->cidr_notation)",
+                    $items[] = ['label' => "$row->name  ($row->short_name)",
                         'url' => [$this->context->action->id, 'networkId' => $row->id]
                     ];
                 }

@@ -18,7 +18,7 @@ class SubnetSearch extends Subnet {
     public function rules() {
         return [
             [['id'], 'integer'],
-            [['name'], 'safe'],
+            [['name', 'short_name'], 'safe'],
         ];
     }
 
@@ -60,9 +60,8 @@ class SubnetSearch extends Subnet {
             'vlan_id' => $this->vlan_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name]);
-        
+        $query->andFilterWhere(['like', 'name', $this->name])
+              ->andFilterWhere(['like', 'short_name', $this->short_name]);
         return $dataProvider;
     }
-
 }

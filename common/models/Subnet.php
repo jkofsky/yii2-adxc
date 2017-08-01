@@ -10,6 +10,7 @@ use \common\components\CIDR;
  *
  * @property integer $id
  * @property string $name
+ * @property string $short_name 
  * @property string $network_id
  * @property string $subnet_mask
  * @property string $gateway_id
@@ -33,12 +34,14 @@ class Subnet extends \yii\db\ActiveRecord {
      */
     public function rules() {
         return [
-            [['name', 'gateway_id', 'cidr_notation'], 'required'],
+            [['name', 'short_name', 'gateway_id', 'cidr_notation'], 'required'],
             [['name'], 'string', 'max' => 50],
-            [['gateway_id', 'broadcast_address', 'dhcp_range'], 'string', 'max' => 16],
+            [['short_name', 'network_id', 'dhcp_range'], 'string', 'max' => 16],
             [['cidr_notation'], 'string', 'max' => 24],
             [['vlan_id'], 'integer'],
             [['vlan_name'], 'string', 'max' => 32],
+            [['short_name'], 'unique'],
+            [['cidr_notation'], 'unique'],
         ];
     }
 
@@ -49,6 +52,7 @@ class Subnet extends \yii\db\ActiveRecord {
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
+            'short_name' => Yii::t('app', 'Short Name'),
             'network_id' => Yii::t('app', 'Network ID'),
             'subnet_mask' => Yii::t('app', 'Subnet Mask'),
             'gateway_id' => Yii::t('app', 'Default Gateway'),
