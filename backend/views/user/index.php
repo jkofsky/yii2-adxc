@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use \common\models\Department;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Users');
+$this->title = Yii::t('app', 'Employees');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
@@ -18,25 +19,36 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
+    <?=
+    GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
-            // 'email:email',
-            // 'is_active',
-            // 'last_login',
-            // 'role_id',
-            // 'created_at',
-            // 'updated_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'attribute' => 'first_name',
+                'value' => 'profile.first_name',
+            ],
+            [
+                'attribute' => 'last_name',
+                'value' => 'profile.last_name',
+            ],
+            'email:email',
+            'profile.cell_phone',
+            'profile.home_phone',
+            'is_active:boolean',
+            [
+                'header' => 'Department',
+                'attribute' => 'dept_id',
+                'value' => 'profile.department.dept_name',
+                'filter' => Html::activeDropDownList($searchModel, 'dept_id', Department::getDepartmentList(), ['class' => 'form-control', 'prompt' => 'All']
+                ),
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Actions',
+            ],
         ],
-    ]); ?>
+    ]);
+    ?>
 </div>

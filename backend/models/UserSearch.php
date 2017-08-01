@@ -5,7 +5,8 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\User;
+use common\models\User;
+use common\models\Profile;
 
 /**
  * UserSearch represents the model behind the search form about `backend\models\User`.
@@ -13,12 +14,19 @@ use backend\models\User;
 class UserSearch extends User {
 
     /**
+     * search properties for related Profile model
+     */
+    public $first_name;
+    public $last_name;
+    public $dept_id;
+
+    /**
      * @inheritdoc
      */
     public function rules() {
         return [
-            [['id', 'is_active', 'last_login', 'role_id', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email'], 'safe'],
+            [['id', 'is_active', 'role_id'], 'integer'],
+            [['username', 'email', 'first_name', 'last_name', 'dept_id'], 'safe'],
         ];
     }
 
@@ -41,10 +49,25 @@ class UserSearch extends User {
         $query = User::find();
 
         // add conditions that should always apply here
+        $query->where(['is_active' => User::STATUS_ACTIVE]);
+        $query->joinWith(['profile']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        // provide sort ability for Related tables
+        // First the $first_name
+        $dataProvider->sort->attributes['first_name'] = [
+            // The tables are the ones our relation are configured to
+            'asc' => ['{{%profile}}.first_name' => SORT_ASC],
+            'desc' => ['{{%profile}}.first_name' => SORT_DESC],
+        ];
+        // Lets do the same for $last_name now
+        $dataProvider->sort->attributes['last_name'] = [
+            'asc' => ['{{%profile}}.last_name' => SORT_ASC],
+            'desc' => ['{{%profile}}.last_name' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -56,19 +79,16 @@ class UserSearch extends User {
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'is_active' => $this->is_active,
-            'last_login' => $this->last_login,
-            'role_id' => $this->role_id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'username', $this->username])
-                ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-                ->andFilterWhere(['like', 'password_hash', $this->password_hash])
                 ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-                ->andFilterWhere(['like', 'email', $this->email]);
+                ->andFilterWhere(['like', 'email', $this->email])
+                // Here we search the attributes of our relations 
+                ->andFilterWhere(['like', '{{%profile}}.first_name', $this->first_name])
+                ->andFilterWhere(['like', '{{%profile}}.last_name', $this->last_name])
+                ->andFilterWhere(['=', '{{%profile}}.department_id', $this->dept_id]);
 
         return $dataProvider;
     }

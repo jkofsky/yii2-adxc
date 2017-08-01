@@ -6,7 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\User;
-use \common\models\Profile;
+use common\models\Profile;
 
 /**
  * UserSearch represents the model behind the search form about `common\models\User`.
@@ -57,13 +57,13 @@ class UserSearch extends User {
         ]);
 
         // provide sort ability for Related tables
-        // First the $first_name
+        // $first_name
         $dataProvider->sort->attributes['first_name'] = [
             // The tables are the ones our relation are configured to
             'asc' => ['{{%profile}}.first_name' => SORT_ASC],
             'desc' => ['{{%profile}}.first_name' => SORT_DESC],
         ];
-        // Lets do the same for $last_name now
+        // $last_name
         $dataProvider->sort->attributes['last_name'] = [
             'asc' => ['{{%profile}}.last_name' => SORT_ASC],
             'desc' => ['{{%profile}}.last_name' => SORT_DESC],
@@ -83,8 +83,6 @@ class UserSearch extends User {
             'is_active' => $this->is_active,
             'last_login' => $this->last_login,
             'role_id' => $this->role_id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'username', $this->username])

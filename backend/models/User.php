@@ -3,7 +3,7 @@
 namespace backend\models;
 
 use Yii;
-
+use common\models\Profile;
 /**
  * This is the model class for table "{{%user}}".
  *

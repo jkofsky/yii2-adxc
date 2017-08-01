@@ -33,7 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'postal_code',
                 'cell_phone',
                 'home_phone',
-                'birth_date:date',
+                [
+                    'attribute' =>'birth_date',
+                    'format'=>['date', 'php:F jS'],
+                ],
                 'aniversary_date:date',
                 'spouse_name',
                 'hire_date:date',
