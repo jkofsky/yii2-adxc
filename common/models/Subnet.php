@@ -10,7 +10,7 @@ use \common\components\CIDR;
  *
  * @property integer $id
  * @property string $name
- * @property string $subnet_id
+ * @property string $network_id
  * @property string $subnet_mask
  * @property string $gateway_id
  * @property string $broadcast_address
@@ -49,7 +49,7 @@ class Subnet extends \yii\db\ActiveRecord {
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
-            'subnet_id' => Yii::t('app', 'Subnet ID'),
+            'network_id' => Yii::t('app', 'Network ID'),
             'subnet_mask' => Yii::t('app', 'Subnet Mask'),
             'gateway_id' => Yii::t('app', 'Default Gateway'),
             'broadcast_address' => Yii::t('app', 'Broadcast Address'),
@@ -63,15 +63,17 @@ class Subnet extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function beforeSave($insert) {
-        $range = CIDR::cidrToRange($this->cidr_notation);
-        $this->subnet_id = $range[0];
-        $this->broadcast_address = $range[1];
+    public function beforeValidate() {
+        if (!empty($this->cidr_notation)) {
+            $range = CIDR::cidrToRange($this->cidr_notation);
+            $this->network_id = $range[0];
+            $this->broadcast_address = $range[1];
 
-        $cidr = substr(strrchr($this->cidr_notation, "/"), 1);
-        $this->cidr_notation = $range[0] . '/' . $cidr;
-        $this->subnet_mask = CIDR::CIDRtoMask($cidr);
-        return parent::beforeSave($insert);
+            $cidr = substr(strrchr($this->cidr_notation, "/"), 1);
+            $this->cidr_notation = $range[0] . '/' . $cidr;
+            $this->subnet_mask = CIDR::CIDRtoMask($cidr);
+        }
+        return parent::beforeValidate();
     }
 
 }

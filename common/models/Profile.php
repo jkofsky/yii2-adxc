@@ -61,15 +61,15 @@ class Profile extends \yii\db\ActiveRecord {
             [['birth_date', 'aniversary_date', 'hire_date'], 'default', 'value' => null],
             [['birth_date'], 'date',
                 'format' => Yii::$app->params['datePickerFormat'],
-                'timestampAttribute' => 'birth_date'
+                'timestampAttribute' => 'birth_date',
             ],
             [['aniversary_date'], 'date',
                 'format' => Yii::$app->params['datePickerFormat'],
-                'timestampAttribute' => 'aniversary_date'
+                'timestampAttribute' => 'aniversary_date',
             ],
             [['hire_date'], 'date',
                 'format' => Yii::$app->params['datePickerFormat'],
-                'timestampAttribute' => 'hire_date'
+                'timestampAttribute' => 'hire_date',
             ],
             [['first_name', 'last_name', 'city', 'spouse_name'], 'string', 'max' => 64],
             [['address'], 'string', 'max' => 128],

@@ -4,8 +4,8 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\User;
-use frontend\models\ContactForm;
 use common\models\search\UserSearch;
+use frontend\models\ContactForm;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 

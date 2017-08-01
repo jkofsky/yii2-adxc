@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'name',
             'cidr_notation',
-            'subnet_id',
+            'network_id',
             'subnet_mask',
             'gateway_id',
             'dhcp_range',

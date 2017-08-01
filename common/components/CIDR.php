@@ -10,7 +10,7 @@ namespace common\components;
  * @copyright  Copyright (c) 2009 Jonavon Wilcox
  * 
  * @version    v1.0.1 Modified to work with Yii1.1
- * @filesource ipHelper.php
+ * @filesource CIDR.php
  * @author     Jeff Kofsky
  * 
  * @version    v1.0.2 Modified to work with Yii2 and PHP 5+
@@ -29,11 +29,17 @@ class CIDR {
      * @access public
      * @static
      * 
-     * @param $int integer Between 0 and 32.
+     * @param integer $cidrBlock Between 0 and 32.
+     * @param boolean $asLong whether the return is longs or strings
      * @return string Netmask ip address
      */
-    public static function CIDRtoMask($int) {
-        return long2ip(-1 << (32 - (int) $int));
+    public static function CIDRtoMask($cidrBlock, $asLong = false) {
+        $nm = (-1 << (32 - (int) $cidrBlock));
+        if ($asLong) {
+            return $nm;
+        } else {
+            return long2ip($nm);
+        }
     }
 
     /**
@@ -43,18 +49,19 @@ class CIDR {
      * Result:
      * int(22)
      * 
-     * @see http://stackoverflow.com/questions/109023/best-algorithm-to-count-the-number-of-set-bits-in-a-32-bit-integer
-     *
+     * @see https://stackoverflow.com/questions/109023/how-to-count-the-number-of-set-bits-in-a-32-bit-integer#109117
+     * @see https://stackoverflow.com/questions/16848931/how-to-fastest-count-the-number-of-set-bits-in-php
      * @access public
      * @static
      * 
-     * @param $int integer a number
+     * @param integer $value 
      * @return integer number of bits set.
      */
-    public static function countSetbits($int) {
-        $int = $int - (($int >> 1) & 0x55555555);
-        $int = ($int & 0x33333333) + (($int >> 2) & 0x33333333);
-        return (($int + ($int >> 4) & 0xF0F0F0F) * 0x1010101) >> 24;
+    public static function countSetbits($value) {
+//        $int = $value - (($value >> 1) & 0x55555555);
+//        $int = ($int & 0x33333333) + (($int >> 2) & 0x33333333);
+//        return (($int + ($int >> 4) & 0xF0F0F0F) * 0x1010101) >> 24;
+        return substr_count(decbin($value), '1');
     }
 
     /**
@@ -67,17 +74,16 @@ class CIDR {
      * bool(false)
      * 
      * @see http://www.actionsnip.com/snippets/tomo_atlacatl/calculate-if-a-netmask-is-valid--as2-
-     * @see https://stackoverflow.com/questions/4931721/getting-list-ips-from-cidr-notation-in-php
      * 
      * @access public
      * @static
      * 
-     * @param $netmask string a 1pv4 formatted ip address.
+     * @param string $netmask a IPv4 formatted ip address.
      * @return boolean True if a valid netmask.
      */
     public static function validNetMask($netmask) {
-        $netmask = ip2long($netmask);
-        $neg = ((~(int) $netmask) & 0xFFFFFFFF);
+        $nmLong = ip2long($netmask);
+        $neg = ((~(int) $nmLong) & 0xFFFFFFFF);
         return (($neg + 1) & $neg) === 0;
     }
 
@@ -91,7 +97,7 @@ class CIDR {
      * @access public
      * @static
      * 
-     * @param $netmask string a 1pv4 formatted ip address.
+     * @param string $netmask a 1pv4 formatted ip address.
      * @return integer CIDR number.
      */
     public static function maskToCIDR($netmask) {
@@ -112,39 +118,38 @@ class CIDR {
      * @access public
      * @static
      * 
-     * @param $ipinput string a IPv4 formatted ip address.
-     * @param $netmask string a 1pv4 formatted ip address.
+     * @param string $ipv4 a IPv4 formatted ip address.
+     * @param string $netmask a 1pv4 formatted ip address.
      * @return string CIDR block.
      */
-    public static function alignedCIDR($ipinput, $netmask) {
-        $alignedIP = long2ip((ip2long($ipinput)) & (ip2long($netmask)));
+    public static function alignedCIDR($ipv4, $netmask) {
+        $alignedIP = long2ip((ip2long($ipv4)) & (ip2long($netmask)));
         return "$alignedIP/" . self::maskToCIDR($netmask);
     }
 
     /**
-     * Check whether an IP is within a CIDR block.
+     * Check whether an IP is within a CIDR block, 
+     *  not including the Subnet ID and Broadcast addresses
      * 
      * Usage: CIDR::IPisWithinCIDR('127.0.0.33','127.0.0.1/24');
      *        CIDR::IPisWithinCIDR('127.0.0.33','127.0.0.1/27');
      * Result:
      * bool(true)
      * bool(false)
+     * 
+     * @see https://stackoverflow.com/questions/4931721/getting-list-ips-from-cidr-notation-in-php#42269989
      *
      * @access public
      * @static
      *  
-     * @param $ipinput string a IPv4 formatted ip address.
-     * @param $cidr string a IPv4 formatted CIDR block. Block is aligned during execution.
+     * @param string $ipv4 a IPv4 formatted ip address.
+     * @param string $cidrIpv4 a IPv4 formatted CIDR block.
      * @return string CIDR block.
      */
-    public static function IPisWithinCIDR($ipinput, $cidr) {
-        $cidr = explode('/', $cidr);
-        $cidr = self::alignedCIDR($cidr[0], self::CIDRtoMask((int) $cidr[1]));
-        $cidr = explode('/', $cidr);
-        $ipinput = (ip2long($ipinput));
-        $ip1 = (ip2long($cidr[0]));
-        $ip2 = ($ip1 + pow(2, (32 - (int) $cidr[1])) - 1);
-        return (($ip1 <= $ipinput) && ($ipinput <= $ip2));
+    public static function IPisWithinCIDR($ipv4, $cidrIpv4) {
+        $ipv4Long = (ip2long($ipv4));
+        $range = self::cidrToRange($cidrIpv4, true);
+        return (($ipv4Long > $range[0]) && ($ipv4Long < $range[1]));
     }
 
     /**
@@ -160,11 +165,11 @@ class CIDR {
      * @access public
      * @static
      * 
-     * @param $ipinput string a IPv4 formatted ip address.
+     * @param string $ipv4 a IPv4 formatted ip address.
      * @return integer CIDR number.
      */
-    public static function maxBlock($ipinput) {
-        return self::maskToCIDR(long2ip(-(ip2long($ipinput) & -(ip2long($ipinput)))));
+    public static function maxBlock($ipv4) {
+        return self::maskToCIDR(long2ip(-(ip2long($ipv4) & -(ip2long($ipv4)))));
     }
 
     /**
@@ -188,13 +193,13 @@ class CIDR {
      * @access public
      * @static
      * 
-     * @param $startIPinput string a IPv4 formatted ip address.
-     * @param $startIPinput string a IPv4 formatted ip address.
+     * @param string $ipv4Start a IPv4 formatted ip address.
+     * @param string $ipv4End a IPv4 formatted ip address.
      * @return array CIDR blocks in a numbered array.
      */
-    public static function rangeToCIDRList($startIPinput, $endIPinput = NULL) {
-        $start = ip2long($startIPinput);
-        $end = (empty($endIPinput)) ? $start : ip2long($endIPinput);
+    public static function rangeToCIDRList($ipv4Start, $ipv4End = NULL) {
+        $start = ip2long($ipv4Start);
+        $end = (empty($ipv4End)) ? $start : ip2long($ipv4End);
         while ($end >= $start) {
             $maxsize = self::maxBlock(long2ip($start));
             $maxdiff = 32 - intval(log($end - $start + 1) / log(2));
@@ -217,30 +222,33 @@ class CIDR {
      *   [1]=> string(11) "127.0.0.255"
      * }
      * 
+     * @see https://stackoverflow.com/questions/4931721/getting-list-ips-from-cidr-notation-in-php#42269989
+     * 
      * @access public
      * @static
      * 
      * @param string $ipv4 
-     * @param boolean $asLong whether the return is strings or longs
+     * @param boolean $asLong whether the return is longs or strings
      * @return array low end of range then high end of range.
      */
     public static function cidrToRange($ipv4, $asLong = false) {
-        if ($ip = strpos($ipv4, '/')) {
-            $n_ip = (1 << (32 - substr($ipv4, 1 + $ip))) - 1;
-            $ip_dec = ip2long(substr($ipv4, 0, $ip));
+        $cidrSplitPos = strpos($ipv4, '/');
+        if ($cidrSplitPos) {
+            $cidrNum = (1 << (32 - substr($ipv4, 1 + $cidrSplitPos))) - 1;
+            $ipv4_asLong = ip2long(substr($ipv4, 0, $cidrSplitPos));
         } else {
-            $n_ip = 0;
-            $ip_dec = ip2long($ipv4);
+            $cidrNum = 0;
+            $ipv4_asLong = ip2long($ipv4);
         }
-        $ip_min = $ip_dec & ~$n_ip;
-        $ip_max = $ip_min + $n_ip;
+        $ipBlockMin = $ipv4_asLong & ~$cidrNum;
+        $ipBlockMax = $ipBlockMin + $cidrNum;
 
         if ($asLong) {
-            //Array(2) of Decimal Values Range
-            return [$ip_min, $ip_max];
+//Array(2) of Decimal Values Range
+            return [$ipBlockMin, $ipBlockMax];
         } else {
-            //Array(2) of Ipv4 Human Readable Range
-            return [long2ip($ip_min), long2ip($ip_max)];
+//Array(2) of Ipv4 Human Readable Range
+            return [long2ip($ipBlockMin), long2ip($ipBlockMax)];
         }
     }
 

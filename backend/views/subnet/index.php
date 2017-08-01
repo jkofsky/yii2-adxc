@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'enableSorting' => false,
                 'headerOptions' => ['class' => 'text-center'],
                 'value' => function($data) {
-            return substr($data->subnet_id, 0, strripos($data->subnet_id, '.') + 1) . $data->gateway_id;
+            return substr($data->network_id, 0, strripos($data->network_id, '.') + 1) . $data->gateway_id;
         },
             ],
             // 'broadcast_address',
