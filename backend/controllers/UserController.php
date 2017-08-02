@@ -8,6 +8,7 @@ use backend\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use pheme\grid\actions\ToggleAction;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -25,6 +26,21 @@ class UserController extends Controller {
                     'delete' => ['POST'],
                 ],
             ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actions() {
+        return [
+            'toggle' => [
+                'class' => ToggleAction::className(),
+                'modelClass' => User::class,
+                'attribute'=>'is_active',
+                // Uncomment to enable flash messages
+                //'setFlash' => true,
+            ]
         ];
     }
 

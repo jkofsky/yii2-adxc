@@ -49,7 +49,6 @@ class UserSearch extends User {
         $query = User::find();
 
         // add conditions that should always apply here
-        $query->where(['is_active' => User::STATUS_ACTIVE]);
         $query->joinWith(['profile']);
 
         $dataProvider = new ActiveDataProvider([

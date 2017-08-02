@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use \common\models\Department;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\UserSearch */
@@ -14,13 +15,14 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
 
     <p>
         <?= Html::a(Yii::t('app', 'Create User'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?=
-    GridView::widget([
+    <?php
+    Pjax::begin();
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -36,7 +38,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'profile.cell_phone',
             'profile.home_phone',
-            'is_active:boolean',
+            [
+                'class' => '\pheme\grid\ToggleColumn',
+                'attribute' => 'is_active',
+                // Uncomment if  you don't want AJAX
+                //'enableAjax' => false,
+            ],
             [
                 'header' => 'Department',
                 'attribute' => 'dept_id',
@@ -50,5 +57,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]);
+    Pjax::end();
     ?>
 </div>
