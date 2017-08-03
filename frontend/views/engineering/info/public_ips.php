@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
 <section class="row">
     <div class="col-md-4">
         <div class="panel panel-info">
-            <div class="panel-heading"><?= Html::encode('AT&T Fiber'); ?></div>
+            <div class="panel-heading"><?= Html::encode('AT&T Fiber (AudioNet)'); ?></div>
             <div class="panel-body">
                 <address>
                     <b>Contact Information</b><br />
@@ -39,6 +39,24 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
  12. 41.153.206 | Webrack/Podcast
                 </pre>
                 <i>future assignments</i>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading"><?= Html::encode('UVerse for STL (Jordan)'); ?></div>
+            <div class="panel-body">
+                <address>
+                    <b>Contact Information</b><br />
+                </address>
+                <pre>
+255.255.255.248 | Netmask
+104. 10.109. 70 | Gateway
+---------------------------------
+104. 10.109. 65 | 
+104. 10.109. 66 | LinkSys Router
+104. 10.109. 67 | 
+104. 10.109. 68 |
+104. 10.109. 69 |
+                </pre>
             </div>
         </div>
     </div>
@@ -90,9 +108,10 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             </div>
         </div>
     </div>
+
     <div class="col-md-4">
         <div class="panel panel-info">
-            <div class="panel-heading"><?= Html::encode('DSL for STL (Plantaion)'); ?></div>
+            <div class="panel-heading"><?= Html::encode('DSL for STL (Plantation)'); ?></div>
             <div class="panel-body">
                 <address>
                     <b>Contact Information</b><br />
@@ -108,13 +127,14 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
  74.168.133. 54 | NextGen WNRP-STL
                 </pre>
             </div>
-            <div class="panel panel-info">
-                <div class="panel-heading"><?= Html::encode('DSL for STL (Palafox)'); ?></div>
-                <div class="panel-body">
-                    <address>
-                        <b>Contact Information</b><br />
-                    </address>
-                    <pre>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading"><?= Html::encode('DSL for STL (Palafox)'); ?></div>
+            <div class="panel-body">
+                <address>
+                    <b>Contact Information</b><br />
+                </address>
+                <pre>
 255.255.255.### | Netmask
  68.222.233.13# | Gateway
 ---------------------------------
@@ -124,8 +144,7 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
  68.222.233.13# |
  68.222.233.13# |
  68.222.233.13# |
-                    </pre>
-                </div>
+                </pre>
             </div>
         </div>
     </div>

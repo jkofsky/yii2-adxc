@@ -45,8 +45,10 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                     ],
                 ]);
                 ?>
-                <p style="font-family: monospace">Passwords: G8Blu3Go | C9IwSWmB | XP1Med9I | 
-                    <?= Html::bsLabel('N0$a1nt$', 'primary', ['style'=>'font-size: 100%']); ?></p>
+                <p style="font-family: monospace">Passwords: 
+                    <?= Html::bsLabel('G8Blu3$Go', 'danger', ['style' => 'font-size: 100%']); ?>
+                    | C9IwSWmB | XP1Med9I | 
+                    <?= Html::bsLabel('N0$a1nt$', 'primary', ['style' => 'font-size: 100%']); ?></p>
             </div>
         </div>
     </div>
