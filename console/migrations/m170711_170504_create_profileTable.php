@@ -3,7 +3,7 @@
 use yii\db\Migration;
 use yii\db\Expression;
 
-class m170711_170504_create_profile extends Migration {
+class m170711_170504_create_profileTable extends Migration {
 
     public function safeUp() {
         $tableOptions = null;
@@ -11,8 +11,8 @@ class m170711_170504_create_profile extends Migration {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
-        if (Yii::$app->db->schema->getTableSchema('{{%profile%}}', true) !== null) {
-            $this->dropTable('{{%profile%}}');
+        if (Yii::$app->db->schema->getTableSchema('{{%profile}}', true) !== null) {
+            $this->dropTable('{{%profile}}');
         }
         $this->createTable('{{%profile}}', [
             'user_id' => $this->integer(10)->unsigned()->notNull(),
@@ -39,37 +39,23 @@ class m170711_170504_create_profile extends Migration {
 
         // create `full_name` index
         $this->createIndex(
-                'idx_full_name', '{{%profile%}}', 'last_name, first_name'
+                'idx_full_name', '{{%profile}}', 'last_name, first_name'
         );
 
         // create index for `department` table relation
         $this->createIndex(
-                'idx_department', '{{%profile%}}', [new Expression('is_management DESC'), new Expression('department_id ASC')]
+                'idx_department', '{{%profile}}', [new Expression('is_management DESC'), new Expression('department_id ASC')]
         );
 
-        // add foreign key for a `{{%user}}` table relation
+        // add foreign key for a table relation to the '{{%user}}' table
         $this->addForeignKey(
-                'fk_profile_to_user', '{{%profile%}}', 'user_id', '{{%user%}}', 'id', 'CASCADE', 'CASCADE'
+                'fk_profile_to_user', '{{%profile}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'CASCADE'
         );
     }
 
     public function safeDown() {
-        $this->dropForeignKey('fk_profile_to_user', '{{%profile%}}');
-        $this->dropTable('{{%profile%}}');
+        $this->dropForeignKey('fk_profile_to_user', '{{%profile}}');
+        $this->dropTable('{{%profile}}');
     }
 
-    /*
-      // Use up()/down() to run migration code without a transaction.
-      public function up()
-      {
-
-      }
-
-      public function down()
-      {
-      echo "m170711_170504_create_profile cannot be reverted.\n";
-
-      return false;
-      }
-     */
 }

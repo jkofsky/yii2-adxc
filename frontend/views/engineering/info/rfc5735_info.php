@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = 'RFC 1918/5735 Info';
     <p>The 
         <a title="Link to IETF" href="http://en.wikipedia.org/wiki/Internet_Engineering_Task_Force" target="_blank" rel="nofollow">Internet Engineering Task Force (IETF)</a> 
         has directed the
-        <a title="Link to IANA" href="http://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority" target="_blank" rel="nofollow">Internet Assigned Numbers Authority(IANA)</a>
+        <a title="Link to IANA" href="http://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority" target="_blank" rel="nofollow">Internet Assigned Numbers Authority (IANA)</a>
         to reserve the following IPv4 address ranges for private networks, 
         as published in 
         <a title="Link to IETF - RFC1918" href="http://tools.ietf.org/html/rfc1918" target="_blank" rel="nofollow">RFC 1918:</a></p>
