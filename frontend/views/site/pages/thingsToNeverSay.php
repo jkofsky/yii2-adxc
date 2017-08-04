@@ -39,14 +39,6 @@ $this->params['breadcrumbs'][] = $pageTitle;
             piles another responsibility on your already sore shoulders, it might be
             tempting to pull out this classic gem of work avoidance.</p>
 
-        <p>When you accepted your current position, you had a good idea of what the
-            responsibilities and workload of the role would entail. Throughout the
-            months or years since you settled into your job, however, your role has
-            expanded and changed shape. Some of these changes have probably been good,
-            while others have made you wish for simpler times. When a boss or manager
-            piles another responsibility on your already sore shoulders, it might be
-            tempting to pull out this classic gem of work avoidance.</p>
-
         <p>The better option, however, is to schedule a time to talk to your boss about
             your role. A specific conversation about your place in the organization is
             a good time to bring up the particulars of your job description, not when

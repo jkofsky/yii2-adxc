@@ -1,6 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $announceModel common\models\Announcement */
+/* @var $birthdayModel common\models\Profile */
 
 use yii\helpers\Html;
 
@@ -13,6 +14,7 @@ $this->title = 'ADXC IntraNet';
         if (!Yii::$app->user->isGuest) {
             echo $this->render('_announcements', [
                 'announceModel' => $announceModel,
+                'birthdayModel' => $birthdayModel,
             ]);
         }
         ?>

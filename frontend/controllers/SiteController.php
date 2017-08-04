@@ -86,6 +86,7 @@ class SiteController extends Controller {
                 ->all();
         return $this->render('index', [
                     'announceModel' => $announceModel,
+                    'birthdayModel' => false,
         ]);
     }
 
