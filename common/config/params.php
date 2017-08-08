@@ -7,4 +7,5 @@ return [
     // site params
     'companyName' => 'ADX Communications of Escambia LLC',
     'datePickerFormat'=>'mm/dd/yyyy',
+    'ICUdatePickerFormat'=>'MM/dd/yyyy',
 ];

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 use common\models\Department;
-use dosamigos\datepicker\DatePicker;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Profile */
@@ -60,13 +60,27 @@ use dosamigos\datepicker\DatePicker;
                         'options' => [
                             'placeholder' => Yii::$app->params['datePickerFormat'],
                         ],
+                        'dateFormat'=>Yii::$app->params['ICUdatePickerFormat'],
                         'clientOptions' => [
-                            'autoclose' => true,
-                            'format' => Yii::$app->params['datePickerFormat'],
-                            //'startDate' => '-1d',
-                            'clearBtn' => true,
-                            'todayBtn' => true,
-                            'todayHighlight' => true,
+
+                    'autoSize' => true,
+                    //'defaultDate' => Yii::$app->dateFormatter->formatDateTime($profileModel->birth_date),
+                    'buttonImage' =>  '/css/icons/date.png',
+                    'buttonImageOnly' => true,
+                    'buttonText' => 'Select',
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                    'selectOtherMonths' => true,
+                    'showAnim' => 'fold',
+                    'showButtonPanel' => true,
+                    'showOn' => 'button',
+                    'showOtherMonths' => true,
+//                            'autoclose' => true,
+//                            //'format' => Yii::$app->params['ICUdatePickerFormat'],
+//                            //'startDate' => '-1d',
+//                            'clearBtn' => true,
+//                            'todayBtn' => true,
+//                            'todayHighlight' => true,
                         ]
                     ]);
                     ?>
