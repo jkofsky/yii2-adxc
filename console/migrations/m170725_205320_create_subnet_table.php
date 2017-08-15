@@ -24,6 +24,7 @@ class m170725_205320_create_subnet_table extends Migration {
             'broadcast_address' => $this->string(16)->notNull(),
             'cidr_notation' => $this->string(24)->null()->unique(),
             'dhcp_range' => $this->string(16)->null(),
+            'ipv6_address'=>  $this->string(40)->null(),
             'vlan_id' => $this->smallInteger(4)->unsigned()->null(),
             'vlan_name' => $this->string(32)->null(),
                 ], $tableOptions);
