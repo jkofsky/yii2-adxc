@@ -20,9 +20,9 @@ use yii\bootstrap\ActiveForm;
 
     <?= $form->field($model, 'short_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cidr_notation')->textInput(['maxlength' => true, 'placeholder' => 'ie: 192.168.1.0/24']) ?>
+    <?= $form->field($model, 'cidr_block')->textInput(['maxlength' => true, 'placeholder' => 'ie: 192.168.1.0/24']) ?>
 
-    <?= $form->field($model, 'gateway_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'gateway')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'dhcp_range')->textInput(['maxlength' => true, 'placeholder' => '100-199']) ?>
 

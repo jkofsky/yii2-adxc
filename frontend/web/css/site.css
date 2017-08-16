@@ -168,3 +168,6 @@ div.required label.control-label:after {
     display: flex;
     flex:1 0 auto;
 }
+div.grid-view thead th {
+    text-align: center;
+}

@@ -18,7 +18,8 @@ class m170804_043404_create_ipAssignmentTable extends Migration {
             'id' => $this->primaryKey()->unsigned(),
             'host_type_id' => $this->integer(10)->unsigned()->null(),
             'subnet_id' => $this->integer(10)->unsigned()->null(),
-            'ip_address' => $this->string(16)->notNull(),
+            'ipv4_address' => $this->string(16)->notNull(),
+            //'ipv6_address'=>  $this->string(40)->null(),
             'host_type' => "ENUM('Host','Network','Server','Printer','Power','WheatNet') NOT NULL DEFAULT 'Host'",
             'host_name' => $this->string(32)->notNull(),
             'host_purpose' => $this->string(64)->notNull(),
@@ -26,7 +27,7 @@ class m170804_043404_create_ipAssignmentTable extends Migration {
             'port_access_info' => $this->text()->null(),
             'public_access_ip' => $this->string(16)->notNull()->defaultValue('None'),
                 ], $tableOptions);
-        $this->createIndex('idx_ip_address', '{{%ip_assignment}}', 'subnet_id, ip_address', true);
+        $this->createIndex('idx_ip_address', '{{%ip_assignment}}', 'subnet_id, ipv4_address', true);
 
         // add foreign key for a table relation to the '{{%subnet}}' table
         $this->addForeignKey(

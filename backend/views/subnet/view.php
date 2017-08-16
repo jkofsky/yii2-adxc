@@ -1,10 +1,9 @@
 <?php
+/* @var $this yii\web\View */
+/* @var $model common\models\Subnet */
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
-/* @var $this yii\web\View */
-/* @var $model common\models\Subnet */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Subnets'), 'url' => ['index']];
@@ -33,10 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'name',
             'short_name',
-            'cidr_notation',
-            'network_id:ip',
-            'subnet_mask:ip',
-            'gateway_id',
+            'cidr_block',
+            'network_id',
+            'subnet_mask',
+            'gateway',
             'dhcp_range',
             'broadcast_address',
             'vlan_id',

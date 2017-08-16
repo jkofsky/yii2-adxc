@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\Subnet;
+use common\models\IpAssignment;
+use common\models\search\IpAssignmentSearch;
 
 class EngineeringController extends Controller {
 
@@ -67,6 +69,7 @@ class EngineeringController extends Controller {
                     'model' => null,
         ]);
     }
+
     /**
      * Displays information about Network IP Addresses
      */
@@ -85,12 +88,15 @@ class EngineeringController extends Controller {
                         'subnetModel' => $subNet,
             ]);
         } else {
-            $pageTitle = 'Hello';
-            
+            $searchModel = new IpAssignmentSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            $subnetModel = Subnet::findOne(['id' => $networkId]);
+
             // show the listing of the Network IP assignments
             return $this->render('networks', [
-                        'networkModel' => null,
-                        'pageTitle' => $pageTitle,
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
+                        'subnetModel' => $subnetModel,
             ]);
         }
     }

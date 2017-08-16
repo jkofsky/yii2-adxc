@@ -23,21 +23,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'short_name') ?>
 
+    <?= $form->field($model, 'cidr_block') ?>
+
     <?= $form->field($model, 'network_id') ?>
 
-    <?= $form->field($model, 'subnet_mask') ?>
+    <?php // echo $form->field($model, 'subnet_mask') ?>
 
-    <?= $form->field($model, 'gateway') ?>
+    <?php // echo $form->field($model, 'gateway') ?>
 
     <?php // echo $form->field($model, 'broadcast_address') ?>
 
-    <?php // echo $form->field($model, 'cidr_notation') ?>
-
     <?php // echo $form->field($model, 'dhcp_range') ?>
 
-    <?php // echo $form->field($model, 'vlan_id') ?>
+    <?= $form->field($model, 'vlan_id') ?>
 
-    <?php // echo $form->field($model, 'vlan_name')  ?>
+    <?= $form->field($model, 'vlan_name') ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

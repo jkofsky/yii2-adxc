@@ -1,11 +1,10 @@
 <?php
-
-use yii\helpers\Html;
-use yii\grid\GridView;
-
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\SubnetSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+
+use yii\helpers\Html;
+use yii\grid\GridView;
 
 Yii::$app->formatter->nullDisplay = '';
 
@@ -24,34 +23,29 @@ $this->params['breadcrumbs'][] = $this->title;
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'headerRowOptions' => ['class' => 'text-center'],
         'columns' => [
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => 'Actions',
-                'headerOptions' => ['class' => 'text-center'],
             ],
             [
                 'attribute' => 'name',
-                'headerOptions' => ['class' => 'text-center'],
+                'headerOptions' => ['style' => 'text-align: left;'],
             ],
             [
-                'attribute' => 'cidr_notation',
+                'attribute' => 'cidr_block',
                 'enableSorting' => false,
-                'headerOptions' => ['class' => 'text-center'],
             ],
             [
                 'attribute' => 'subnet_mask',
                 'enableSorting' => false,
-                'headerOptions' => ['class' => 'text-center'],
             ],
             [
-                'attribute' => 'gateway_id',
+                'attribute' => 'gateway',
                 'enableSorting' => false,
-                'headerOptions' => ['class' => 'text-center'],
-                'value' => function($data) {
-            return substr($data->network_id, 0, strripos($data->network_id, '.') + 1) . $data->gateway_id;
-        },
+//                'value' => function($data) {
+//            return substr($data->network_id, 0, strripos($data->network_id, '.') + 1) . $data->gateway_id;
+//        },
             ],
             // 'broadcast_address',
             [

@@ -21,6 +21,7 @@ $this->title = Yii::$app->name;
                     //['label' => 'Documents (Forms) Maintenance Section &raquo', 'url' => ['document/index']],
                     ['label' => 'Employees (Users) Maintenance Section &raquo', 'url' => ['user/index']],
                     ['label' => 'Subnet Maintenance Section &raquo', 'url' => ['subnet/index']],
+                    ['label' => 'Static IP Maintenance Section &raquo', 'url' => ['ip-assignment/index']],
                 ];
                 ?>
 
