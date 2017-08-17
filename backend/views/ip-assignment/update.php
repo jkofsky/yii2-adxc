@@ -6,10 +6,10 @@ use yii\helpers\Html;
 /* @var $model common\models\IpAssignment */
 
 $this->title = Yii::t('app', 'Update {modelClass}: ', [
-    'modelClass' => 'Ip Assignment',
-]) . $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Ip Assignments'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+    'modelClass' => 'IP Assignment',
+]) . $model->ipv4_address;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'IP Assignments'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->ipv4_address, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
 <div class="ip-assignment-update">

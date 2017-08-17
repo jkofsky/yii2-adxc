@@ -10,12 +10,14 @@ use common\models\IpAssignment;
 /**
  * IpAssignmentSearch represents the model behind the search form about `common\models\IpAssignment`.
  */
-class IpAssignmentSearch extends IpAssignment {
+class IpAssignmentSearch extends IpAssignment
+{
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['host_type_id', 'subnet_id'], 'integer'],
             [['ipv4_address', 'host_type', 'host_name', 'host_purpose', 'host_location', 'port_access_info', 'public_access_ip'], 'safe'],
@@ -25,7 +27,8 @@ class IpAssignmentSearch extends IpAssignment {
     /**
      * @inheritdoc
      */
-    public function scenarios() {
+    public function scenarios()
+    {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -37,10 +40,14 @@ class IpAssignmentSearch extends IpAssignment {
      *
      * @return ActiveDataProvider
      */
-    public function search($params) {
-        $query = IpAssignment::find()->orderBy('ipv4_address');
+    public function search($params)
+    {
+        $query = IpAssignment::find()->with('subnet')->orderBy('ipv4_address');
 
         // add conditions that should always apply here
+        if (isset($params['networkId'])) {
+            $query->where(['subnet_id' => $params['networkId']]);
+        }
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -61,7 +68,7 @@ class IpAssignmentSearch extends IpAssignment {
         ]);
 
         $query->andFilterWhere(['like', 'ipv4_address', $this->ipv4_address])
-                ->andFilterWhere(['like', 'host_type', $this->host_type])
+                ->andFilterWhere(['=', 'host_type', $this->host_type])
                 ->andFilterWhere(['like', 'host_name', $this->host_name])
                 ->andFilterWhere(['like', 'host_purpose', $this->host_purpose])
                 ->andFilterWhere(['like', 'host_location', $this->host_location]);

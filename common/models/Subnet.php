@@ -3,6 +3,10 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
+use yii\base\NotSupportedException;
+use yii\db\ActiveRecord;
+use yii\behaviors\TimestampBehavior;
 use \common\components\CIDR;
 
 /**
@@ -20,22 +24,37 @@ use \common\components\CIDR;
  * @property string $dhcp_range
  * @property integer $vlan_id
  * @property string $vlan_name
+ * @property integer $created_at
+ * @property integer $updated_at
  *
  * @property IpAssignment[] $ipAssignments
  */
-class Subnet extends \yii\db\ActiveRecord {
+class Subnet extends ActiveRecord
+{
 
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return '{{%subnet}}';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
         return [
             [['name', 'short_name', 'cidr_block', 'gateway'], 'required'],
             [['cidr_block', 'gateway'], 'ip'],
@@ -53,12 +72,13 @@ class Subnet extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
             'short_name' => Yii::t('app', 'Short Name'),
-            'cidr_block' => Yii::t('app', 'Cidr Block'),
+            'cidr_block' => Yii::t('app', 'CIDR Block'),
             'network_id' => Yii::t('app', 'Network ID'),
             'subnet_mask' => Yii::t('app', 'Subnet Mask'),
             'gateway' => Yii::t('app', 'Default Gateway'),
@@ -73,14 +93,16 @@ class Subnet extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIpAssignments() {
+    public function getIpAssignments()
+    {
         return $this->hasMany(IpAssignment::className(), ['subnet_id' => 'id']);
     }
 
     /**
      * @inheritdoc
      */
-    public function beforeValidate() {
+    public function beforeValidate()
+    {
         if (!empty($this->cidr_block)) {
             $range = CIDR::cidrToRange($this->cidr_block);
             $this->network_id = $range[0];
@@ -91,6 +113,42 @@ class Subnet extends \yii\db\ActiveRecord {
             $this->subnet_mask = CIDR::CIDRtoMask($cidr);
         }
         return parent::beforeValidate();
+    }
+
+    /**
+     * get Subnet name
+     *
+     */
+    public function getSubnetName()
+    {
+        return $this->name ? $this->name : '- not assigned -';
+    }
+
+    /**
+     * get Subnet short name
+     *
+     */
+    public function getSubnetShortName()
+    {
+        return $this->short_name ? $this->short_name : '- not assigned -';
+    }
+
+    /**
+     * get list of Subnets for dropdown
+     */
+    public static function getSubnetList()
+    {
+        $droptions = Subnet::find()->asArray()->all();
+        return ArrayHelper::map($droptions, 'id', 'name');
+    }
+
+    /**
+     * get list of Subnet ShortNames for dropdown
+     */
+    public static function getSubnetShortNameList()
+    {
+        $droptions = Subnet::find()->asArray()->all();
+        return ArrayHelper::map($droptions, 'id', 'short_name');
     }
 
 }

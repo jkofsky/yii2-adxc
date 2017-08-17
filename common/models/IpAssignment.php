@@ -3,6 +3,9 @@
 namespace common\models;
 
 use Yii;
+use yii\base\NotSupportedException;
+use yii\db\ActiveRecord;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%ip_assignment}}".
@@ -17,25 +20,40 @@ use Yii;
  * @property string $host_location
  * @property string $port_access_info
  * @property string $public_access_ip
+ * @property integer $created_at
+ * @property integer $updated_at
  *
  * @property Subnet $subnet
  */
-class IpAssignment extends \yii\db\ActiveRecord {
+class IpAssignment extends ActiveRecord
+{
 
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return '{{%ip_assignment}}';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function behaviors()
+    {
         return [
+            TimestampBehavior::className(),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['ipv4_address', 'host_name', 'host_purpose', 'host_location', 'host_type', 'subnet_id'], 'required'],
             [['host_type_id', 'subnet_id'], 'integer'],
-            [['ipv4_address', 'host_name', 'host_purpose', 'host_location'], 'required'],
             [['host_type', 'port_access_info'], 'string'],
             [['ipv4_address', 'public_access_ip'], 'string', 'max' => 16],
             [['host_name'], 'string', 'max' => 32],
@@ -48,7 +66,8 @@ class IpAssignment extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('app', 'ID'),
             'host_type_id' => Yii::t('app', 'Host Type'),
@@ -66,7 +85,8 @@ class IpAssignment extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSubnet() {
+    public function getSubnet()
+    {
         return $this->hasOne(Subnet::className(), ['id' => 'subnet_id']);
     }
 

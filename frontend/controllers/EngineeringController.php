@@ -12,12 +12,14 @@ use common\models\Subnet;
 use common\models\IpAssignment;
 use common\models\search\IpAssignmentSearch;
 
-class EngineeringController extends Controller {
+class EngineeringController extends Controller
+{
 
     /**
      * @inheritdoc
      */
-    public function behaviors() {
+    public function behaviors()
+    {
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -34,7 +36,8 @@ class EngineeringController extends Controller {
     /**
      * @inheritdoc
      */
-    public function actions() {
+    public function actions()
+    {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -55,7 +58,8 @@ class EngineeringController extends Controller {
      *
      * @return mixed
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         return $this->render('index');
     }
 
@@ -64,7 +68,8 @@ class EngineeringController extends Controller {
      *
      * @return mixed
      */
-    public function actionDocuments() {
+    public function actionDocuments()
+    {
         return $this->render('documents/index', [
                     'model' => null,
         ]);
@@ -80,7 +85,8 @@ class EngineeringController extends Controller {
      * @param integer $networkId
      * @return mixed
      */
-    public function actionLocalNetwork($networkId = null) {
+    public function actionLocalNetwork($networkId = null)
+    {
         if (empty($networkId)) {
             // show the Network index page
             $subNet = Subnet::find()->orderBy('name')->all();
@@ -89,6 +95,7 @@ class EngineeringController extends Controller {
             ]);
         } else {
             $searchModel = new IpAssignmentSearch();
+            $searchModel->find()->with('subnet')->where(['subnet_id' => $networkId]);
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
             $subnetModel = Subnet::findOne(['id' => $networkId]);
 
@@ -106,7 +113,8 @@ class EngineeringController extends Controller {
      *
      * @return mixed
      */
-    public function actionProgramming() {
+    public function actionProgramming()
+    {
         return $this->render('index');
     }
 
@@ -115,7 +123,8 @@ class EngineeringController extends Controller {
      *
      * @return mixed
      */
-    public function actionSupport() {
+    public function actionSupport()
+    {
         return $this->render('index');
     }
 

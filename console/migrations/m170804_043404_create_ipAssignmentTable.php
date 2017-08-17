@@ -26,6 +26,8 @@ class m170804_043404_create_ipAssignmentTable extends Migration {
             'host_location' => $this->string(64)->notNull(),
             'port_access_info' => $this->text()->null(),
             'public_access_ip' => $this->string(16)->notNull()->defaultValue('None'),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
                 ], $tableOptions);
         $this->createIndex('idx_ip_address', '{{%ip_assignment}}', 'subnet_id, ipv4_address', true);
 

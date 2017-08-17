@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
 
     <h1><?= Html::encode("{$subnetModel->name} Segment") ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
- 
+
     <p>
         <?= Html::a(Yii::t('app', 'Network Segment Information'), '#netinfo', ['class' => 'btn btn-info']); ?>
         <?php //= Html::a(Yii::t('app', 'Create Ip Assignment'), ['create'], ['class' => 'btn btn-success']) ?>
@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
                 'filter' => false,
                 'enableSorting' => false,
                 'format' => 'ntext',
-                'value' => 'nl2br($data->port_access_info)',
+                //'value' => 'nl2br($data->port_access_info)',
             ],
         //['class' => 'yii\grid\ActionColumn'],
         ],
@@ -58,13 +58,19 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
     ?>
 </div>
 
-<h2 id="netinfo">Network Segment Information</h2>
-<ul>
-    <li>Network: <?php echo $subnetModel->network_id; ?></li>
-    <li>Netmask: <?php echo $subnetModel->subnet_mask; ?></li>
-    <li>Gateway: <?php echo $subnetModel->gateway; ?></li>
-    <li>DHCP Range: <?php echo $subnetModel->dhcp_range; ?></li>
-    <?php if ($subnetModel->vlan_id > 0): ?>
-        <li>VLAN ID: <?php echo "{$subnetModel->vlan_id} ({$subnetModel->vlan_name})"; ?></li>
-    <?php endif; ?>
-</ul>
+<div id="netinfo" class="panel panel-info">
+    <div class="panel-heading" style="font-weight: bolder;">Network Segment Information</div>
+    <div class="panel-body">
+        <ul>
+            <li><?= $subnetModel->getAttributeLabel('cidr_block') ?>: <b><?= $subnetModel->cidr_block; ?></b></li>
+            <li><?= $subnetModel->getAttributeLabel('network_id') ?>: <b><?= $subnetModel->network_id; ?></b></li>
+            <li><?= $subnetModel->getAttributeLabel('broadcast_address') ?>: <b><?= $subnetModel->broadcast_address; ?></b></li>
+            <li><?= $subnetModel->getAttributeLabel('subnet_mask') ?>: <b><?= $subnetModel->subnet_mask; ?></b></li>
+            <li><?= $subnetModel->getAttributeLabel('gateway') ?>: <b><?= $subnetModel->gateway; ?></b></li>
+            <li><?= $subnetModel->getAttributeLabel('dhcp_range') ?>: <b><?= $subnetModel->dhcp_range; ?></b></li>
+            <?php if ($subnetModel->vlan_id > 0): ?>
+                <li><?= $subnetModel->getAttributeLabel('vlan_id') ?>: <b><?= "{$subnetModel->vlan_id} ({$subnetModel->vlan_name})"; ?></b></li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m170725_205320_create_subnet_table extends Migration {
+class m170725_205320_create_subnetTable extends Migration {
 
     public function safeUp() {
         $tableOptions = null;
@@ -27,6 +27,8 @@ class m170725_205320_create_subnet_table extends Migration {
             'dhcp_range' => $this->string(16)->notNull()->defaultValue('n/a'),
             'vlan_id' => $this->smallInteger(4)->unsigned()->null(),
             'vlan_name' => $this->string(32)->null(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
                 ], $tableOptions);
         $this->createIndex('idx_name', '{{%subnet}}', 'name');
     }

@@ -2,9 +2,11 @@
 
 use yii\db\Migration;
 
-class m170714_153229_create_departmentTable extends Migration {
+class m170714_153229_create_departmentTable extends Migration
+{
 
-    public function safeUp() {
+    public function safeUp()
+    {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
@@ -25,7 +27,7 @@ class m170714_153229_create_departmentTable extends Migration {
         );
 
         // add foreign key for a table relation from the '{{%profile}}' table
-         $this->addForeignKey(
+        $this->addForeignKey(
                 'fk_profile_to_department', '{{%profile}}', 'department_id', '{{%department}}', 'id', 'SET NULL', 'CASCADE'
         );
 
@@ -39,7 +41,8 @@ class m170714_153229_create_departmentTable extends Migration {
         $this->insert('{{%department}}', ['dept_name' => 'Sales Staff']);
     }
 
-    public function safeDown() {
+    public function safeDown()
+    {
         $this->dropForeignKey('fk_profile_to_department', '{{%profile}}');
         $this->dropTable('{{%department}}');
     }

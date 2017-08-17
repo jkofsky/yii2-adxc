@@ -59,7 +59,7 @@ class Department extends \yii\db\ActiveRecord {
     }
 
     /**
-     * get list of Department for dropdown
+     * get list of Departments for dropdown
      */
     public static function getDepartmentList() {
         $droptions = Department::find()->asArray()->all();
