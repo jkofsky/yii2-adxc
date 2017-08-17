@@ -165,8 +165,8 @@ class SiteController extends Controller {
      *
      * @return mixed
      */
-    public function actionAbout() {
-        return $this->render('about');
+    public function actionPhoneList() {
+        return $this->render('phoneList');
     }
 
     /**
