@@ -64,9 +64,9 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
         <ul>
             <li><?= $subnetModel->getAttributeLabel('cidr_block') ?>: <b><?= $subnetModel->cidr_block; ?></b></li>
             <li><?= $subnetModel->getAttributeLabel('network_id') ?>: <b><?= $subnetModel->network_id; ?></b></li>
-            <li><?= $subnetModel->getAttributeLabel('broadcast_address') ?>: <b><?= $subnetModel->broadcast_address; ?></b></li>
             <li><?= $subnetModel->getAttributeLabel('subnet_mask') ?>: <b><?= $subnetModel->subnet_mask; ?></b></li>
             <li><?= $subnetModel->getAttributeLabel('gateway') ?>: <b><?= $subnetModel->gateway; ?></b></li>
+            <li><?= $subnetModel->getAttributeLabel('broadcast_address') ?>: <b><?= $subnetModel->broadcast_address; ?></b></li>
             <li><?= $subnetModel->getAttributeLabel('dhcp_range') ?>: <b><?= $subnetModel->dhcp_range; ?></b></li>
             <?php if ($subnetModel->vlan_id > 0): ?>
                 <li><?= $subnetModel->getAttributeLabel('vlan_id') ?>: <b><?= "{$subnetModel->vlan_id} ({$subnetModel->vlan_name})"; ?></b></li>

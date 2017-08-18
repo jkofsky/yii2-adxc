@@ -1,0 +1,38 @@
+<?php
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+use yii\helpers\Html;
+use frontend\assets\AppAsset;
+
+AppAsset::register($this);
+?>
+<?php $this->beginPage() ?>
+<!DOCTYPE html>
+<html lang="<?= Yii::$app->language ?>">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <?= Html::csrfMetaTags() ?>
+        <title><?= Html::encode($this->title) ?></title>
+        <?php $this->head() ?>
+    </head>
+    <body>
+        <?php $this->beginBody() ?>
+        <div id="kiosk" class="container">
+            <?= $content ?>
+        </div>
+        <?php $this->endBody() ?>
+    </body>
+</html>
+<?php
+$refreshUrl = \yii\helpers\Url::toRoute('refresh');
+$script = <<< JS
+    setInterval(function(){ $("#kiosk").load("{$refreshUrl}"); }, 10000);
+);
+JS;
+$this->registerJs($script);
+?>
+<?php $this->endPage() ?>
