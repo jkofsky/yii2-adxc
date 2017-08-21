@@ -30,8 +30,7 @@ AppAsset::register($this);
 <?php
 $refreshUrl = \yii\helpers\Url::toRoute('refresh');
 $script = <<< JS
-    setInterval(function(){ $("#kiosk").load("{$refreshUrl}"); }, 10000);
-);
+    setInterval(function(){ $("#kiosk").load("{$refreshUrl}"); }, 5000);
 JS;
 $this->registerJs($script);
 ?>

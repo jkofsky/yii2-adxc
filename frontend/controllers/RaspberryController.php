@@ -11,7 +11,8 @@ use yii\helpers\Html;
 /**
  * Raspberry controller
  */
-class RaspberryController extends Controller {
+class RaspberryController extends Controller
+{
 
     /**
      *
@@ -22,7 +23,8 @@ class RaspberryController extends Controller {
     /**
      * @inheritdoc
      */
-    public function behaviors() {
+    public function behaviors()
+    {
         return [
             'access' => [
                 'class' => \yii\filters\AccessControl::className(),
@@ -38,7 +40,8 @@ class RaspberryController extends Controller {
         ]];
     }
 
-    public function actionIndex() {
+    public function actionIndex()
+    {
 //        return $this->render('index');
         $nw = new \common\components\noaaWeather();
         $nw->loadData();
@@ -47,27 +50,15 @@ class RaspberryController extends Controller {
         ]);
     }
 
-    static private $_imageNumber = 5;
-    static private $_imageIdx = 0;
-
-    public function actionRefresh() {
+    public function actionRefresh()
+    {
         $directory = Yii::getAlias('@webroot/piImages');
         $_imageList = array_diff(scandir($directory), array('..', '.'));
-        $imgFile;
+        $imgFile = '@web/piImages/' . $_imageList[array_rand($_imageList)];
 
-        if (self::$_imageIdx++ % self::$_imageNumber) {
-            $imgFile = 'piImages/' . $_imageList[self::$_imageIdx-1];
-            return $this->renderPartial('_refresh', [
-                        'imgFile' => $imgFile,
-            ]);
-        } else {
-            //Show weather
-        }
-        if (self::$_imageIdx >= count($_imageList)) {
-            self::$_imageIdx = 0;
-        }
-
-        //$imgFile = 'piImages/private_sign.png';
+        return $this->renderPartial('_refresh', [
+                    'imgFile' => $imgFile,
+        ]);
     }
 
 }
