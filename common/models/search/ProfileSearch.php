@@ -12,6 +12,7 @@ use common\models\Profile;
  */
 class ProfileSearch extends Profile
 {
+
     /**
      * @inheritdoc
      */
@@ -72,15 +73,16 @@ class ProfileSearch extends Profile
         ]);
 
         $query->andFilterWhere(['like', 'first_name', $this->first_name])
-            ->andFilterWhere(['like', 'last_name', $this->last_name])
-            ->andFilterWhere(['like', 'address', $this->address])
-            ->andFilterWhere(['like', 'city', $this->city])
-            ->andFilterWhere(['like', 'state', $this->state])
-            ->andFilterWhere(['like', 'postal_code', $this->postal_code])
-            ->andFilterWhere(['like', 'cell_phone', $this->cell_phone])
-            ->andFilterWhere(['like', 'home_phone', $this->home_phone])
-            ->andFilterWhere(['like', 'spouse_name', $this->spouse_name]);
+                ->andFilterWhere(['like', 'last_name', $this->last_name])
+                ->andFilterWhere(['like', 'address', $this->address])
+                ->andFilterWhere(['like', 'city', $this->city])
+                ->andFilterWhere(['like', 'state', $this->state])
+                ->andFilterWhere(['like', 'postal_code', $this->postal_code])
+                ->andFilterWhere(['like', 'cell_phone', $this->cell_phone])
+                ->andFilterWhere(['like', 'home_phone', $this->home_phone])
+                ->andFilterWhere(['like', 'spouse_name', $this->spouse_name]);
 
         return $dataProvider;
     }
+
 }

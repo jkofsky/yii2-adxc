@@ -3,9 +3,11 @@
 use yii\db\Migration;
 use yii\db\Expression;
 
-class m170711_170504_create_profileTable extends Migration {
+class m170711_170504_create_profileTable extends Migration
+{
 
-    public function safeUp() {
+    public function safeUp()
+    {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
@@ -53,7 +55,8 @@ class m170711_170504_create_profileTable extends Migration {
         );
     }
 
-    public function safeDown() {
+    public function safeDown()
+    {
         $this->dropForeignKey('fk_profile_to_user', '{{%profile}}');
         $this->dropTable('{{%profile}}');
     }

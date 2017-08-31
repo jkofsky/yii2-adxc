@@ -46,9 +46,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'profile.cell_phone',
             'profile.home_phone',
             [
-                    'attribute' =>'profile.birth_date',
-                    'format'=>['date', 'php:F jS'],
-                ],
+                'attribute' => 'profile.birth_date',
+                'format' => ['date', 'php:F jS'],
+            ],
             'profile.spouse_name',
             'profile.aniversary_date:date',
             'profile.extension',

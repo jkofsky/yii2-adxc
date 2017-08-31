@@ -41,8 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => '\pheme\grid\ToggleColumn',
                 'attribute' => 'is_active',
-                // Uncomment if  you don't want AJAX
-                //'enableAjax' => false,
+            // Uncomment if  you don't want AJAX
+            //'enableAjax' => false,
             ],
             [
                 'header' => 'Department',

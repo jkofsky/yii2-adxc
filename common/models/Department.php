@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
+
 /**
  * This is the model class for table "{{%department}}".
  *
@@ -12,19 +13,22 @@ use yii\helpers\ArrayHelper;
  *
  * @property Profile[] $profiles
  */
-class Department extends \yii\db\ActiveRecord {
+class Department extends \yii\db\ActiveRecord
+{
 
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return '{{%department}}';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['dept_name'], 'filter', 'filter' => 'trim', 'skipOnEmpty' => true],
             [['dept_name'], 'required'],
@@ -36,7 +40,8 @@ class Department extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('app', 'ID'),
             'dept_name' => Yii::t('app', 'Department Name'),
@@ -46,7 +51,8 @@ class Department extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProfiles() {
+    public function getProfiles()
+    {
         return $this->hasMany(Profile::className(), ['department_id' => 'id']);
     }
 
@@ -54,14 +60,16 @@ class Department extends \yii\db\ActiveRecord {
      * get Department name
      *
      */
-    public function getDepartmentName() {
+    public function getDepartmentName()
+    {
         return $this->dept_name ? $this->dept_name : '- not assigned -';
     }
 
     /**
      * get list of Departments for dropdown
      */
-    public static function getDepartmentList() {
+    public static function getDepartmentList()
+    {
         $droptions = Department::find()->asArray()->all();
         return ArrayHelper::map($droptions, 'id', 'dept_name');
     }

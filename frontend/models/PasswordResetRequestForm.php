@@ -9,14 +9,16 @@ use common\models\User;
 /**
  * Password reset request form
  */
-class PasswordResetRequestForm extends Model {
+class PasswordResetRequestForm extends Model
+{
 
     public $email;
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             ['email', 'trim'],
             ['email', 'filter', 'filter' => 'strtolower'],
@@ -35,7 +37,8 @@ class PasswordResetRequestForm extends Model {
      *
      * @return bool whether the email was send
      */
-    public function sendEmail() {
+    public function sendEmail()
+    {
         /* @var $user User */
         $user = User::findOne([
                     'is_active' => User::STATUS_ACTIVE,

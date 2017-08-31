@@ -4,9 +4,11 @@ namespace frontend\tests\functional;
 
 use frontend\tests\FunctionalTester;
 
-class HomeCest {
+class HomeCest
+{
 
-    public function checkOpen(FunctionalTester $I) {
+    public function checkOpen(FunctionalTester $I)
+    {
         $I->amOnPage(\Yii::$app->homeUrl);
         $I->see('My Company');
         $I->seeLink('About');

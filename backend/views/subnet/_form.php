@@ -15,7 +15,7 @@ use yii\bootstrap\ActiveForm;
                 'layout' => 'horizontal',
     ]);
     ?>
-   
+
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'short_name')->textInput(['maxlength' => true]) ?>

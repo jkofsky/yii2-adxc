@@ -12,6 +12,7 @@ use common\models\Department;
  */
 class DepartmentSearch extends Department
 {
+
     /**
      * @inheritdoc
      */
@@ -66,4 +67,5 @@ class DepartmentSearch extends Department
 
         return $dataProvider;
     }
+
 }

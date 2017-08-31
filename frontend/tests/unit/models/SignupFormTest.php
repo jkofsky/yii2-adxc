@@ -5,14 +5,16 @@ namespace frontend\tests\unit\models;
 use common\fixtures\UserFixture;
 use frontend\models\SignupForm;
 
-class SignupFormTest extends \Codeception\Test\Unit {
+class SignupFormTest extends \Codeception\Test\Unit
+{
 
     /**
      * @var \frontend\tests\UnitTester
      */
     protected $tester;
 
-    public function _before() {
+    public function _before()
+    {
         $this->tester->haveFixtures([
             'user' => [
                 'class' => UserFixture::className(),
@@ -21,7 +23,8 @@ class SignupFormTest extends \Codeception\Test\Unit {
         ]);
     }
 
-    public function testCorrectSignup() {
+    public function testCorrectSignup()
+    {
         $model = new SignupForm([
             'username' => 'some_username',
             'email' => 'some_email@example.com',
@@ -37,7 +40,8 @@ class SignupFormTest extends \Codeception\Test\Unit {
         expect($user->validatePassword('some_password'))->true();
     }
 
-    public function testNotCorrectSignup() {
+    public function testNotCorrectSignup()
+    {
         $model = new SignupForm([
             'username' => 'troy.becker',
             'email' => 'nicolas.dianna@hotmail.com',

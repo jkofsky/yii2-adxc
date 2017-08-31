@@ -4,6 +4,7 @@ namespace backend\models;
 
 use Yii;
 use common\models\Profile;
+
 /**
  * This is the model class for table "{{%user}}".
  *
@@ -22,19 +23,22 @@ use common\models\Profile;
  * @property Announcement[] $announcements
  * @property Profile $profile
  */
-class User extends \yii\db\ActiveRecord {
+class User extends \yii\db\ActiveRecord
+{
 
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return '{{%user}}';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
             [['is_active', 'last_login', 'role_id', 'created_at', 'updated_at'], 'integer'],
@@ -49,7 +53,8 @@ class User extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('app', 'ID'),
             'username' => Yii::t('app', 'Username'),
@@ -68,14 +73,16 @@ class User extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAnnouncements() {
+    public function getAnnouncements()
+    {
         return $this->hasMany(Announcement::className(), ['posted_by' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProfile() {
+    public function getProfile()
+    {
         return $this->hasOne(Profile::className(), ['user_id' => 'id']);
     }
 

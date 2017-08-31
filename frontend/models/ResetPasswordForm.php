@@ -10,10 +10,10 @@ use kartik\password\StrengthValidator;
 /**
  * Password reset form
  */
-class ResetPasswordForm extends Model {
+class ResetPasswordForm extends Model
+{
 
     public $password;
-    
     // @vars for use with StrengthValidator
     public $username;
     public $email;
@@ -30,7 +30,8 @@ class ResetPasswordForm extends Model {
      * @param array $config name-value pairs that will be used to initialize the object properties
      * @throws \yii\base\InvalidParamException if token is empty or not valid
      */
-    public function __construct($token, $config = []) {
+    public function __construct($token, $config = [])
+    {
         if (empty($token) || !is_string($token)) {
             throw new InvalidParamException('Password reset token cannot be blank.');
         }
@@ -46,7 +47,8 @@ class ResetPasswordForm extends Model {
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             ['password', 'required'],
             ['password', StrengthValidator::className(), 'preset' => StrengthValidator::NORMAL],
@@ -58,7 +60,8 @@ class ResetPasswordForm extends Model {
      *
      * @return bool if password was reset.
      */
-    public function resetPassword() {
+    public function resetPassword()
+    {
         $user = $this->_user;
         $user->setPassword($this->password);
         $user->removePasswordResetToken();

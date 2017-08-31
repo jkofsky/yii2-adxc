@@ -2,9 +2,11 @@
 
 use yii\db\Migration;
 
-class m170804_043404_create_ipAssignmentTable extends Migration {
+class m170804_043404_create_ipAssignmentTable extends Migration
+{
 
-    public function safeUp() {
+    public function safeUp()
+    {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
@@ -37,7 +39,8 @@ class m170804_043404_create_ipAssignmentTable extends Migration {
         );
     }
 
-    public function safeDown() {
+    public function safeDown()
+    {
         $this->dropForeignKey('fk_assignment_to_subnet', '{{%ip_assignment}}');
         $this->dropTable('{{%ip_assignment}}');
     }

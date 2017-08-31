@@ -12,6 +12,7 @@ use common\models\Announcement;
  */
 class AnnouncementSearch extends Announcement
 {
+
     /**
      * @inheritdoc
      */
@@ -69,4 +70,5 @@ class AnnouncementSearch extends Announcement
 
         return $dataProvider;
     }
+
 }

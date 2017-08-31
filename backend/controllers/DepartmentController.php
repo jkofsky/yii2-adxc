@@ -12,12 +12,14 @@ use yii\filters\VerbFilter;
 /**
  * DepartmentController implements the CRUD actions for Department model.
  */
-class DepartmentController extends Controller {
+class DepartmentController extends Controller
+{
 
     /**
      * @inheritdoc
      */
-    public function behaviors() {
+    public function behaviors()
+    {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -32,7 +34,8 @@ class DepartmentController extends Controller {
      * Lists all Department models.
      * @return mixed
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $searchModel = new DepartmentSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -47,7 +50,8 @@ class DepartmentController extends Controller {
      * @param string $id
      * @return mixed
      */
-    public function actionView($id) {
+    public function actionView($id)
+    {
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -58,7 +62,8 @@ class DepartmentController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
         $model = new Department();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -76,7 +81,8 @@ class DepartmentController extends Controller {
      * @param string $id
      * @return mixed
      */
-    public function actionUpdate($id) {
+    public function actionUpdate($id)
+    {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -94,7 +100,8 @@ class DepartmentController extends Controller {
      * @param string $id
      * @return mixed
      */
-    public function actionDelete($id) {
+    public function actionDelete($id)
+    {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -107,7 +114,8 @@ class DepartmentController extends Controller {
      * @return Department the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id) {
+    protected function findModel($id)
+    {
         if (($model = Department::findOne($id)) !== null) {
             return $model;
         } else {

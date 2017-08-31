@@ -10,7 +10,8 @@ use kartik\password\StrengthValidator;
 /**
  * Signup form
  */
-class SignupForm extends Model {
+class SignupForm extends Model
+{
 
     public $username;
     public $email;
@@ -19,7 +20,8 @@ class SignupForm extends Model {
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             // common validation rules
             [['username', 'email'], 'trim'],
@@ -42,7 +44,8 @@ class SignupForm extends Model {
     /**
      * @inheritdoc
      */
-    public function attributeHints() {
+    public function attributeHints()
+    {
         return [
             'username' => Yii::t('app', '{fieldName} is case insensitve', [
                 'fieldName' => $this->getAttributeLabel('username')]),
@@ -56,7 +59,8 @@ class SignupForm extends Model {
      *
      * @return User|null the saved model or null if saving fails
      */
-    public function signup() {
+    public function signup()
+    {
         if (!$this->validate()) {
             return null;
         }

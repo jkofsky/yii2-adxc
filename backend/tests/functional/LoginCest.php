@@ -10,6 +10,7 @@ use common\fixtures\UserFixture as UserFixture;
  */
 class LoginCest
 {
+
     public function _before(FunctionalTester $I)
     {
         $I->haveFixtures([
@@ -19,6 +20,7 @@ class LoginCest
             ]
         ]);
     }
+
     /**
      * @param FunctionalTester $I
      */
@@ -33,4 +35,5 @@ class LoginCest
         $I->dontSeeLink('Login');
         $I->dontSeeLink('Signup');
     }
+
 }

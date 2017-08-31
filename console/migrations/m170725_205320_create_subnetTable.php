@@ -2,9 +2,11 @@
 
 use yii\db\Migration;
 
-class m170725_205320_create_subnetTable extends Migration {
+class m170725_205320_create_subnetTable extends Migration
+{
 
-    public function safeUp() {
+    public function safeUp()
+    {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
@@ -33,7 +35,8 @@ class m170725_205320_create_subnetTable extends Migration {
         $this->createIndex('idx_name', '{{%subnet}}', 'name');
     }
 
-    public function safeDown() {
+    public function safeDown()
+    {
         $this->dropTable('{{%subnet}}');
     }
 

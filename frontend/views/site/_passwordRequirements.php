@@ -1,5 +1,6 @@
 <?php
 /* Partial view for password strength requirements */
+
 use yii\helpers\Html;
 ?>
 <div class="col-md-6">

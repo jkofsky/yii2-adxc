@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = 'NetComm Details';
 192.168. 12.  0 | Network
 255.255.255.  0 | Netmask
 192.168. 12.  2 | Gateway
-192.168. 13.  1 | Primary Domain Name Server
+192.168. 12.  1 | Primary Domain Name Server
 ----------------+----------------------------
 192.168. 12.200 | DHCP => .12.250
 192.168. 12.254 |                           
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = 'NetComm Details';
                 <pre>
 192.168. 13.  0 | Network
 255.255.255.  0 | Netmask
-192.168. 13.  1 | Gateway
+192.168. 13.  2 | Gateway
 192.168. 13.  1 | Primary Domain Name Server
 ----------------+----------------------------
 192.168. 13.200 | DHCP => .13.250
@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = 'NetComm Details';
                 <pre>
 192.168. 10.  0 | Network
 255.255.255.  0 | Netmask
-192.168. 10.  1 | Gateway
+192.168. 10.  2 | Gateway
 192.168. 10.  1 | Primary Domain Name Server
 ----------------+----------------------------
 192.168. 10.200 | DHCP => .10.250
@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = 'NetComm Details';
                 <pre>
 192.168. 11.  0 | Network
 255.255.255.  0 | Netmask
-192.168. 11.  1 | Gateway
+192.168. 11.  2 | Gateway
 192.168. 11.  1 | Primary Domain Name Server
 ----------------+----------------------------
 192.168. 11.200 | DHCP => .11.250

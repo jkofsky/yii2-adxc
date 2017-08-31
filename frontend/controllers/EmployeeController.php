@@ -12,13 +12,15 @@ use yii\web\NotFoundHttpException;
 /**
  * EmployeeController implements the frontend actions for User model.
  */
-class EmployeeController extends Controller {
+class EmployeeController extends Controller
+{
 
     /**
      * Lists all User models.
      * @return mixed
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -33,7 +35,8 @@ class EmployeeController extends Controller {
      * @param string $id
      * @return mixed
      */
-    public function actionView($id) {
+    public function actionView($id)
+    {
         $model = $this->findModel($id);
         if ($model->profile !== null) {
             return $this->render('view', [
@@ -49,7 +52,8 @@ class EmployeeController extends Controller {
      *
      * @return mixed
      */
-    public function actionContact() {
+    public function actionContact()
+    {
         $model = new ContactForm();
         $model->scenario = 'employee';
 
@@ -76,7 +80,8 @@ class EmployeeController extends Controller {
      * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id) {
+    protected function findModel($id)
+    {
         if (($model = User::findOne($id)) !== null) {
             return $model;
         } else {

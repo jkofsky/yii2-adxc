@@ -16,9 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <a class=""
        <p>
                <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->user_id], ['class' => 'btn btn-primary']) ?>
-               <?= Html::a('<span class="glyphicon glyphicon-lock"></span> ' . Yii::t('app', 'Change Password'), 
-                       ['/site/change-password'], 
-                       ['class' => 'btn btn-danger']) ?>
+               <?=
+               Html::a('<span class="glyphicon glyphicon-lock"></span> ' . Yii::t('app', 'Change Password'), ['/site/change-password'], ['class' => 'btn btn-danger'])
+               ?>
         </p>
 
         <?=
@@ -34,8 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'cell_phone',
                 'home_phone',
                 [
-                    'attribute' =>'birth_date',
-                    'format'=>['date', 'php:F jS'],
+                    'attribute' => 'birth_date',
+                    'format' => ['date', 'php:F jS'],
                 ],
                 'aniversary_date:date',
                 'spouse_name',

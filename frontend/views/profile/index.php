@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'aniversary_date',
             // 'spouse_name',
             // 'hire_date',
-             'department_id.dept_name',
+            'department_id.dept_name',
             // 'is_management',
             // 'extension',
             // 'speed_dial',

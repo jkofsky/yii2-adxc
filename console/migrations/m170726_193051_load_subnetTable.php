@@ -2,9 +2,11 @@
 
 use yii\db\Migration;
 
-class m170726_193051_load_subnetTable extends Migration {
+class m170726_193051_load_subnetTable extends Migration
+{
 
-    public function safeUp() {
+    public function safeUp()
+    {
         $this->insert('{{%subnet}}', [
             'name' => 'ADX Management Network',
             'short_name' => 'ADXC-Net',
@@ -135,7 +137,8 @@ class m170726_193051_load_subnetTable extends Migration {
         ]);
     }
 
-    public function safeDown() {
+    public function safeDown()
+    {
         $this->truncateTable('{{%subnet}}');
     }
 

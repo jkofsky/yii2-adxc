@@ -18,19 +18,22 @@ use yii\behaviors\BlameableBehavior;
  *
  * @property User $postedBy
  */
-class Announcement extends \yii\db\ActiveRecord {
+class Announcement extends \yii\db\ActiveRecord
+{
 
     /**
      * @inheritdoc
      */
-    public static function tableName() {
+    public static function tableName()
+    {
         return '{{%announcement}}';
     }
 
     /**
      * @inheritdoc
      */
-    public function behaviors() {
+    public function behaviors()
+    {
         return [
             [
                 'class' => BlameableBehavior::className(),
@@ -43,7 +46,8 @@ class Announcement extends \yii\db\ActiveRecord {
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['start_date', 'announcement'], 'required'],
             [['end_date'], 'safe'],
@@ -56,14 +60,15 @@ class Announcement extends \yii\db\ActiveRecord {
                 'format' => 'm/d/yyyy',
                 'timestampAttribute' => 'end_date'
             ],
-           [['announcement'], 'string', 'max' => 255],
+            [['announcement'], 'string', 'max' => 255],
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'id' => Yii::t('app', 'ID'),
             'start_date' => Yii::t('app', 'Start Date'),
@@ -76,7 +81,8 @@ class Announcement extends \yii\db\ActiveRecord {
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPostedBy() {
+    public function getPostedBy()
+    {
         return $this->hasOne(User::className(), ['id' => 'posted_by']);
     }
 

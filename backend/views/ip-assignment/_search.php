@@ -10,10 +10,12 @@ use yii\widgets\ActiveForm;
 
 <div class="ip-assignment-search">
 
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
+    <?php
+    $form = ActiveForm::begin([
+                'action' => ['index'],
+                'method' => 'get',
+    ]);
+    ?>
 
     <?= $form->field($model, 'host_type_id') ?>
 
@@ -31,7 +33,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'port_access_info') ?>
 
-    <?php // echo $form->field($model, 'public_access_ip') ?>
+    <?php // echo $form->field($model, 'public_access_ip')  ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>

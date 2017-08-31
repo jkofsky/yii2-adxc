@@ -12,12 +12,14 @@ use yii\filters\VerbFilter;
 /**
  * SubnetController implements the CRUD actions for Subnet model.
  */
-class SubnetController extends Controller {
+class SubnetController extends Controller
+{
 
     /**
      * @inheritdoc
      */
-    public function behaviors() {
+    public function behaviors()
+    {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -32,7 +34,8 @@ class SubnetController extends Controller {
      * Lists all Subnet models.
      * @return mixed
      */
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $searchModel = new SubnetSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -47,7 +50,8 @@ class SubnetController extends Controller {
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id) {
+    public function actionView($id)
+    {
         return $this->render('view', [
                     'model' => $this->findModel($id),
         ]);
@@ -58,7 +62,8 @@ class SubnetController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate() {
+    public function actionCreate()
+    {
         $model = new Subnet();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -76,7 +81,8 @@ class SubnetController extends Controller {
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id) {
+    public function actionUpdate($id)
+    {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -94,7 +100,8 @@ class SubnetController extends Controller {
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id) {
+    public function actionDelete($id)
+    {
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -107,7 +114,8 @@ class SubnetController extends Controller {
      * @return Subnet the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id) {
+    protected function findModel($id)
+    {
         if (($model = Subnet::findOne($id)) !== null) {
             return $model;
         } else {

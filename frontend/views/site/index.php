@@ -19,7 +19,7 @@ $this->title = 'ADXC IntraNet';
         }
         ?>
 
-        <div class="row">
+        <div class="container-fluid">
             <div class="col-md-4">
                 <div class="panel panel-info">
                     <div class="panel-heading">Business Office</div>

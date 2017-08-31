@@ -16,7 +16,8 @@ namespace common\components;
  * @version    v1.0.2 Modified to work with Yii2 and PHP 5+
  * @author     Jeff Kofsky
  */
-class CIDR {
+class CIDR
+{
 
     /**
      * Return a netmask string if given an integer between 0 and 32. I am
@@ -33,7 +34,8 @@ class CIDR {
      * @param boolean $asLong whether the return is longs or strings
      * @return string Netmask ip address
      */
-    public static function CIDRtoMask($cidrBlock, $asLong = false) {
+    public static function CIDRtoMask($cidrBlock, $asLong = false)
+    {
         $nm = (-1 << (32 - (int) $cidrBlock));
         if ($asLong) {
             return $nm;
@@ -57,7 +59,8 @@ class CIDR {
      * @param integer $value 
      * @return integer number of bits set.
      */
-    public static function countSetbits($value) {
+    public static function countSetbits($value)
+    {
 //        $int = $value - (($value >> 1) & 0x55555555);
 //        $int = ($int & 0x33333333) + (($int >> 2) & 0x33333333);
 //        return (($int + ($int >> 4) & 0xF0F0F0F) * 0x1010101) >> 24;
@@ -81,7 +84,8 @@ class CIDR {
      * @param string $netmask a IPv4 formatted ip address.
      * @return boolean True if a valid netmask.
      */
-    public static function validNetMask($netmask) {
+    public static function validNetMask($netmask)
+    {
         $nmLong = ip2long($netmask);
         $neg = ((~(int) $nmLong) & 0xFFFFFFFF);
         return (($neg + 1) & $neg) === 0;
@@ -100,7 +104,8 @@ class CIDR {
      * @param string $netmask a 1pv4 formatted ip address.
      * @return integer CIDR number.
      */
-    public static function maskToCIDR($netmask) {
+    public static function maskToCIDR($netmask)
+    {
         if (self::validNetMask($netmask)) {
             return self::countSetBits(ip2long($netmask));
         } else {
@@ -122,7 +127,8 @@ class CIDR {
      * @param string $netmask a 1pv4 formatted ip address.
      * @return string CIDR block.
      */
-    public static function alignedCIDR($ipv4, $netmask) {
+    public static function alignedCIDR($ipv4, $netmask)
+    {
         $alignedIP = long2ip((ip2long($ipv4)) & (ip2long($netmask)));
         return "$alignedIP/" . self::maskToCIDR($netmask);
     }
@@ -146,7 +152,8 @@ class CIDR {
      * @param string $cidrIpv4 a IPv4 formatted CIDR block.
      * @return string CIDR block.
      */
-    public static function IPisWithinCIDR($ipv4, $cidrIpv4) {
+    public static function IPisWithinCIDR($ipv4, $cidrIpv4)
+    {
         $ipv4Long = (ip2long($ipv4));
         $range = self::cidrToRange($cidrIpv4, true);
         return (($ipv4Long > $range[0]) && ($ipv4Long < $range[1]));
@@ -168,7 +175,8 @@ class CIDR {
      * @param string $ipv4 a IPv4 formatted ip address.
      * @return integer CIDR number.
      */
-    public static function maxBlock($ipv4) {
+    public static function maxBlock($ipv4)
+    {
         return self::maskToCIDR(long2ip(-(ip2long($ipv4) & -(ip2long($ipv4)))));
     }
 
@@ -197,7 +205,8 @@ class CIDR {
      * @param string $ipv4End a IPv4 formatted ip address.
      * @return array CIDR blocks in a numbered array.
      */
-    public static function rangeToCIDRList($ipv4Start, $ipv4End = NULL) {
+    public static function rangeToCIDRList($ipv4Start, $ipv4End = NULL)
+    {
         $start = ip2long($ipv4Start);
         $end = (empty($ipv4End)) ? $start : ip2long($ipv4End);
         while ($end >= $start) {
@@ -231,7 +240,8 @@ class CIDR {
      * @param boolean $asLong whether the return is longs or strings
      * @return array low end of range then high end of range.
      */
-    public static function cidrToRange($ipv4, $asLong = false) {
+    public static function cidrToRange($ipv4, $asLong = false)
+    {
         $cidrSplitPos = strpos($ipv4, '/');
         if ($cidrSplitPos) {
             $cidrNum = (1 << (32 - substr($ipv4, 1 + $cidrSplitPos))) - 1;

@@ -10,12 +10,14 @@ use common\models\Subnet;
 /**
  * SubnetSearch represents the model behind the search form about `common\models\Subnet`.
  */
-class SubnetSearch extends Subnet {
+class SubnetSearch extends Subnet
+{
 
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['id'], 'integer'],
             [['name', 'short_name'], 'safe'],
@@ -25,7 +27,8 @@ class SubnetSearch extends Subnet {
     /**
      * @inheritdoc
      */
-    public function scenarios() {
+    public function scenarios()
+    {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -37,7 +40,8 @@ class SubnetSearch extends Subnet {
      *
      * @return ActiveDataProvider
      */
-    public function search($params) {
+    public function search($params)
+    {
         $query = Subnet::find()->orderBy('name');
 
         // add conditions that should always apply here
@@ -61,7 +65,8 @@ class SubnetSearch extends Subnet {
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-              ->andFilterWhere(['like', 'short_name', $this->short_name]);
+                ->andFilterWhere(['like', 'short_name', $this->short_name]);
         return $dataProvider;
     }
+
 }

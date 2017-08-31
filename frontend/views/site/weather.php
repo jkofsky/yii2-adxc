@@ -151,4 +151,3 @@ $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
         <img src="<?= Yii::getAlias('@web/images/header_nws.png'); ?>" alt="Forecast from The National Weather Service">
     </div>
 </div>
-<br>

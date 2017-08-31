@@ -5,9 +5,11 @@ namespace frontend\tests\unit\models;
 use Yii;
 use frontend\models\ContactForm;
 
-class ContactFormTest extends \Codeception\Test\Unit {
+class ContactFormTest extends \Codeception\Test\Unit
+{
 
-    public function testSendEmail() {
+    public function testSendEmail()
+    {
         $model = new ContactForm();
 
         $model->attributes = [

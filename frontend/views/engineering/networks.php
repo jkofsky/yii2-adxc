@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
                 'filter' => false,
                 'enableSorting' => false,
                 'format' => 'ntext',
-                //'value' => 'nl2br($data->port_access_info)',
+            //'value' => 'nl2br($data->port_access_info)',
             ],
         //['class' => 'yii\grid\ActionColumn'],
         ],

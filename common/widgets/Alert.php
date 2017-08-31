@@ -23,7 +23,8 @@ use Yii;
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @author Alexander Makarov <sam@rmcreative.ru>
  */
-class Alert extends \yii\bootstrap\Widget {
+class Alert extends \yii\bootstrap\Widget
+{
 
     /**
      * @var array the alert types configuration for the flash messages.
@@ -44,7 +45,8 @@ class Alert extends \yii\bootstrap\Widget {
      */
     public $closeButton = [];
 
-    public function init() {
+    public function init()
+    {
         parent::init();
 
         $session = Yii::$app->session;

@@ -11,7 +11,8 @@ use common\models\Profile;
 /**
  * UserSearch represents the model behind the search form about `backend\models\User`.
  */
-class UserSearch extends User {
+class UserSearch extends User
+{
 
     /**
      * search properties for related Profile model
@@ -23,7 +24,8 @@ class UserSearch extends User {
     /**
      * @inheritdoc
      */
-    public function rules() {
+    public function rules()
+    {
         return [
             [['id', 'is_active', 'role_id'], 'integer'],
             [['username', 'email', 'first_name', 'last_name', 'dept_id'], 'safe'],
@@ -33,7 +35,8 @@ class UserSearch extends User {
     /**
      * @inheritdoc
      */
-    public function scenarios() {
+    public function scenarios()
+    {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -45,7 +48,8 @@ class UserSearch extends User {
      *
      * @return ActiveDataProvider
      */
-    public function search($params) {
+    public function search($params)
+    {
         $query = User::find();
 
         // add conditions that should always apply here

@@ -2,9 +2,11 @@
 
 use yii\db\Migration;
 
-class m170715_190741_create_announcementTable extends Migration {
+class m170715_190741_create_announcementTable extends Migration
+{
 
-    public function safeUp() {
+    public function safeUp()
+    {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
@@ -21,12 +23,13 @@ class m170715_190741_create_announcementTable extends Migration {
             'announcement' => $this->string()->notNull(),
             'posted_by' => $this->integer(10)->unsigned(),
                 ], $tableOptions);
-        
+
         // add foreign key for a table relation to the '{{%user}}' table
         $this->addForeignKey('fk_announcement_created_by', '{{%announcement}}', 'posted_by', '{{%user}}', 'id', 'SET NULL', 'CASCADE');
     }
 
-    public function safeDown() {
+    public function safeDown()
+    {
         $this->dropForeignKey('fk_announcement_created_by', '{{%announcement}}');
         $this->dropTable('{{%announcement}}');
     }
