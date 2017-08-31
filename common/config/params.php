@@ -6,6 +6,6 @@ return [
     'user.passwordResetTokenExpire' => 3600,
     // site params
     'companyName' => 'ADX Communications of Escambia LLC',
-    'datePickerFormat'=>'mm/dd/yyyy',
-    'ICUdatePickerFormat'=>'MM/dd/yyyy',
+    'datePickerFormat' => 'mm/dd/yyyy',
+    'ICUdatePickerFormat' => 'MM/dd/yyyy',
 ];
