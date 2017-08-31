@@ -11,23 +11,23 @@ use yii\helpers\Html;
             <div class="panel-heading">Announcements for <?= date('l, F jS'); ?></div>
             <div class="panel-body">
                 <?php
-                if ($birthdayModel) {
+                if (!empty($birthdayModel)) {
                     foreach ($birthdayModel as $item) {
                         $items[] = Html::tag('li', "Happy Birthday: {$item->first_name} ({date($item->birth_date,'F jS')})", ['class' => 'birth_day']);
                     }
                 }
 
                 if (empty($announceModel)) {
-                    $items[] = Html::tag('li', 'Nothing to announce.');
+                    $items[] = Html::tag('li', Yii::t('app', 'There is currently no announcments to be made.'));
                 } else {
                     foreach ($announceModel as $item) {
                         $items[] = Html::tag('li', $item->announcement . ' (' . $item->postedBy->username . ')', ['class' => 'post']);
                     }
                 }
-                echo HTML::ul($items,['encode'=>false]);
+                echo Html::ul($items, ['item' => function($item, $index) {
+                        return $item;
+                    }, 'encode' => false]);
                 ?>
-
-
             </div>
         </div>
     </div>

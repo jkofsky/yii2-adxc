@@ -47,8 +47,8 @@ AppAsset::register($this);
                     'linkOptions' => ['title' => Yii::t('app', 'Home')]
                 ],
                 ['label' => 'Employees', 'url' => ['/employee/index'], 'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Discrepencies', 'url' => ['/discrep/index'], 'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Podcasts', 'url' => ['/podcast/index'], 'items' => [
+                ['label' => 'Discrepencies', 'url' => ['/ticket'], 'visible' => !Yii::$app->user->isGuest],
+                ['label' => 'Podcasts', 'url' => ['/podcast'], 'items' => [
                         ['label' => 'WNRP', 'url' => ['/podcast/wnrp']],
                         ['label' => 'WYCT', 'url' => ['/podcast/wyct']],
                     ],
