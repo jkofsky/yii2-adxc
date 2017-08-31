@@ -11,7 +11,7 @@ use yii\helpers\Html;
             <div class="panel-heading">Announcements for <?= date('l, F jS'); ?></div>
             <div class="panel-body">
                 <?php
-                if ($birthdayModel) {
+                if (!empty($birthdayModel)) {
                     foreach ($birthdayModel as $item) {
                         $items[] = Html::tag('li', "Happy Birthday: {$item->first_name} ({date($item->birth_date,'F jS')})", ['class' => 'birth_day']);
                     }
@@ -24,7 +24,7 @@ use yii\helpers\Html;
                         $items[] = Html::tag('li', $item->announcement . ' (' . $item->postedBy->username . ')', ['class' => 'post']);
                     }
                 }
-                echo HTML::ul($items,['encode'=>false]);
+                echo HTML::ul($items, ['item'=>function ($item, $index) { return $item;}],['encode' => false]);
                 ?>
 
 

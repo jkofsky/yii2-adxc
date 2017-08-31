@@ -99,6 +99,7 @@ AppAsset::register($this);
                 ?>
                 <?= Alert::widget() ?>
                 <?= $content ?>
+                <br>
                 <div class="alert alert-danger" role="alert">
                     Information on this site is <strong>For Internal Use Only!</strong>
                 </div>
