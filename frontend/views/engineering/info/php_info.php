@@ -7,6 +7,7 @@ $this->title = Yii::$app->name . ' - PHP Info';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
 $this->params['breadcrumbs'][] = 'PHP Server Info';
 ?>
+
 <style type="text/css">
     body, td, th, h1, h2 {font-family: sans-serif;}
     pre {margin: 0px; font-family: monospace;}
