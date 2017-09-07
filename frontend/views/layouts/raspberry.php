@@ -28,10 +28,10 @@ AppAsset::register($this);
     </body>
 </html>
 <?php
-$refreshUrl = \yii\helpers\Url::toRoute('refresh');
-$script = <<< JS
-    setInterval(function(){ $("#kiosk").load("{$refreshUrl}"); }, 5000);
-JS;
-$this->registerJs($script);
+//$refreshUrl = \yii\helpers\Url::toRoute('refresh');
+//$script = <<< JS
+//    setInterval(function(){ $("#kiosk").load("{$refreshUrl}"); }, 5000);
+//JS;
+//$this->registerJs($script);
 ?>
 <?php $this->endPage() ?>

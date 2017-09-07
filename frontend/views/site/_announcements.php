@@ -18,7 +18,7 @@ use yii\helpers\Html;
                 }
 
                 if (empty($announceModel)) {
-                    $items[] = Html::tag('li', Yii::t('app', 'There is currently no announcments to be made.'));
+                    $items[] = Html::tag('li', Yii::t('app', 'There are currently no announcments to be made.'));
                 } else {
                     foreach ($announceModel as $item) {
                         $items[] = Html::tag('li', $item->announcement . ' (' . $item->postedBy->username . ')', ['class' => 'post']);
