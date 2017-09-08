@@ -55,7 +55,7 @@ $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
         background-color: rgba(255, 255, 255, 0.5); 
         text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
     }
-    #current_conditions_detail { font-weight: bolder; }
+    #current_conditions_detail { font-weight: bolder; font-size: larger;}
     #kiosk {margin: 1em 0px;}
     .box-shadow { box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5); }
     .container { margin: 1em; width: 100%;}
@@ -115,11 +115,8 @@ $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
                             <tr>
                                 <td class="text-right"><b>Wind Speed:&nbsp;</b></td>
                                 <td><?= $nw->getWindDirectionStr(); ?>&nbsp;
-                                    <?= intval($data->currentobservation->Winds); ?> mph</td>
-                            </tr>
-                            <tr>
-                                <td class="text-right">Gusting to:&nbsp;</td>
-                                <td><?= intval($data->currentobservation->Gust); ?> mph</td>
+                                    <?= intval($data->currentobservation->Winds); ?> mph
+                                    (<?= intval($data->currentobservation->Gust); ?> mph Gusts)</td>
                             </tr>
                         <?php else: ?>
                             <tr>
@@ -160,13 +157,13 @@ $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
     </li>
 
     <?php
-    for ($idx = 0; $idx < 7; ++$idx) {
+    for ($idx = 0; $idx < 7; ++$idx) { // $idx check MAX 14 (ie $idx < 14)
         $dayTimeClass = strtolower($_forecast[$idx]['TemperatureLabel']) == 'low' ? ' night-time ' : ' day-time ';
         $temperatureClass = strtolower($_forecast[$idx]['TemperatureLabel']) == 'low' ? ' low-temperature ' : ' high-temperature ';
         ?>
         <li class="media <?= $dayTimeClass ?>" style="margin: 0px;">
             <div class="media-left">
-                <img class="media-object " src="<?= $_forecast[$idx]['IconLink']; ?>" alt="<?= $_forecast[$idx]['Condition']; ?>">
+                <img class="media-object img-thumbnail" src="<?= $_forecast[$idx]['IconLink']; ?>" alt="<?= $_forecast[$idx]['Condition']; ?>">
             </div>
             <div class="media-body">
                 <div class="media-heading"><?= $_forecast[$idx]['PeriodName']; ?></div>
