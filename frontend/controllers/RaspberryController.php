@@ -25,6 +25,14 @@ class RaspberryController extends \yii\web\Controller {
     public function actionWeather() {
         $nw = new \common\components\noaaWeather();
         $nw->loadData();
+        return $this->render('weatherNoaa', [
+                    'nw' => $nw,
+        ]);
+    }
+
+    public function actionWeather2() {
+        $nw = new \common\components\noaaWeather();
+        $nw->loadData();
         return $this->render('weatherMobile', [
                     'nw' => $nw,
         ]);

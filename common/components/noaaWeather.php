@@ -132,6 +132,7 @@ class noaaWeather
             $_forecast[$idx]['CloudCover'] = strval($data->data->weather[$idx]);
             $_forecast[$idx]['TemperatureLabel'] = strval($data->time->tempLabel[$idx]);
             $_forecast[$idx]['Temperature'] = intval($data->data->temperature[$idx]);
+            $_forecast[$idx]['Condition'] = strval($data->data->weather[$idx]);
             $_forecast[$idx]['Forcast'] = strval($data->data->text[$idx]);
             $_forecast[$idx]['RainChance'] = intval($data->data->pop[$idx]);
             $_forecast[$idx]['IconLink'] = strval($data->data->iconLink[$idx]);
