@@ -7,7 +7,10 @@ use yii\helpers\Html;
 $this->title = 'Newsradio Podcasts';
 ?>
 <div class="wnrp-index">
-    <h1 class="header">These Podcasts available at <?= $feeds->channel->link; ?></h1>
+    <img src="<?= $feeds->channel->image->url; ?>" alt="<?= $feeds->channel->image->title; ?>" class="wnrpLogo">
+    <h1 class="header"><?= $feeds->channel->title; ?></h1>
+    <h2 class="header">These Podcasts available at <u><?= $feeds->channel->link; ?></u></h2>
+    <div class="clearfix"></div>
     <ul class="media-list list-unstyled">
         <?php
         foreach ($feeds->channel->item as $item) {

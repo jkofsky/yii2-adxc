@@ -86,7 +86,7 @@ li.night-time {
     width: 600px;
 }
 /* ------------------------------------------------------------------------*/
-/* Individual Page Stuff                                                   */
+/* WNRP Page Stuff                                                   */
 /* ------------------------------------------------------------------------*/
 .wnrp-index li.media {
     background-color: rgba(200, 200, 200, .5);
@@ -145,4 +145,10 @@ li.night-time {
     box-shadow: 3px 3px 4px rgba(0,0,0,.5);         /* w3c box shadow */
 
     width: 100%;
+}
+.wnrp-index .wnrpLogo {
+    height: 200px;
+    width: 600px;
+    float: left;
+    padding-right: 2em;
 }
