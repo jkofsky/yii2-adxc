@@ -4,11 +4,13 @@ namespace frontend\controllers;
 
 use common\models\Announcement;
 
-class RaspberryController extends \yii\web\Controller {
+class RaspberryController extends \yii\web\Controller
+{
 
     public $layout = 'raspberry';
 
-    public function actionIndex() {
+    public function actionIndex()
+    {
         $announceModel = Announcement::find()
                 ->joinWith('postedBy')
                 ->where(['>=', 'end_date', time()])
@@ -22,7 +24,8 @@ class RaspberryController extends \yii\web\Controller {
         ]);
     }
 
-    public function actionWeather() {
+    public function actionWeather()
+    {
         $nw = new \common\components\noaaWeather();
         $nw->loadData();
         return $this->render('weatherNoaa', [
@@ -30,11 +33,22 @@ class RaspberryController extends \yii\web\Controller {
         ]);
     }
 
-    public function actionWeather2() {
+    public function actionWnrpOnair()
+    {
         $nw = new \common\components\noaaWeather();
         $nw->loadData();
-        return $this->render('weatherMobile', [
+        return $this->render('wnrpOnair', [
                     'nw' => $nw,
+        ]);
+    }
+
+    public function actionWyctOnair()
+    {
+//        $playing = simplexml_load_file('http://music.catcountry987.com/playing.xml');
+        $history = simplexml_load_file('http://music.catcountry987.com/history.xml');
+        return $this->render('wyctOnair', [
+//                    'nowPlaying' => $playing,
+                    'history' => $history,
         ]);
     }
 

@@ -7,6 +7,23 @@ use yii\helpers\Html;
 
 $this->title = 'ADXC IntraNet';
 ?>
+<style> 
+    body {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1f94f+0,a51731+40,2e7dea+100 */
+        background: #f1f94f; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover,  #f1f94f 0%, #a51731 40%, #2e7dea 100%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover,  #f1f94f 0%,#a51731 40%,#2e7dea 100%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center,  #f1f94f 0%,#a51731 40%,#2e7dea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f94f', endColorstr='#2e7dea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#de47ac+0,ad1283+50,1e5799+100 */
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b7deed+0,7ccdea+40,8c3310+70,bf6e4e+100 */
+    }
+    .site-index {
+        margin-top: 2em;
+        font-size: 1.5em;
+    }
+    .container {width: 90%;}
+</style>
 <div class="site-index">
 
     <div class="body-content">

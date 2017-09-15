@@ -1,75 +1,16 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $nw   json formatted weather data */
+/* @var $nw   json formatted weather forecast data */
 
-$this->title = 'Local Weather';
+use yii\bootstrap\Html;
 
 $data = $nw->jsonData;
 $_forecast = $nw->getForecast();
 $tmp = parse_url($_forecast[0]['IconLink']);
 $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
+$this->title = strval($data->location->areaDescription). ' Weather';
 ?>
-<style>
-    html, body {height: 1080px; overflow: hidden;}
-    body {
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1f94f+0,a51731+40,2e7dea+100 */
-        background: #a51731; /* Old browsers */
-        background: -moz-radial-gradient(center, ellipse cover,  #f1f94f 0%, #a51731 40%, #2e7dea 100%); /* FF3.6-15 */
-        background: -webkit-radial-gradient(center, ellipse cover,  #f1f94f 0%,#a51731 40%,#2e7dea 100%); /* Chrome10-25,Safari5.1-6 */
-        background: radial-gradient(ellipse at center,  #f1f94f 0%,#a51731 40%,#2e7dea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f94f', endColorstr='#2e7dea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-    }
-    li.media p{
-        margin: 1px;
-    }
-    li.day-time {
-        border: 1px solid #ccc;
-        background: #eee;
-        font-weight: bold;
-        color: #222;
-        text-shadow: 1px 1px 0px #fff;
-        background-image: -webkit-gradient(linear,left top,left bottom,from( #fff ),to( #f1f1f1 ));
-        background-image: -webkit-linear-gradient( #fff,#f1f1f1 );
-        background-image: -moz-linear-gradient( #fff,#f1f1f1 );
-        background-image: -ms-linear-gradient( #fff,#f1f1f1 );
-        background-image: -o-linear-gradient( #fff,#f1f1f1 );
-        background-image: linear-gradient( #fff,#f1f1f1 );
-        text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
-    }
-    li.night-time {
-        border: 1px solid #4d4d4d;
-        background: #4d4d4d;
-        font-weight: bold;
-        color: #ffffff;
-        text-shadow: 1px 1px 0px #444444;
-        background-image: -webkit-gradient(linear, left top, left bottom, from( #545454 ), to( #454545 ));
-        background-image: -webkit-linear-gradient( #545454, #454545);
-        background-image: -moz-linear-gradient( #545454, #454545);
-        background-image: -ms-linear-gradient( #545454, #454545);
-        background-image: -o-linear-gradient( #545454, #454545 );
-        background-image: linear-gradient( #545454, #454545);
-        text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
-    }
-    #current-conditions { 
-        background-color: rgba(255, 255, 255, 0.5); 
-        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
-    }
-    #current_conditions_detail { font-weight: bolder; }
-    #kiosk {margin: 1em 0px;}
-    .box-shadow { box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5); }
-    .container { margin: 1em; width: 100%;}
-    .forcastLarge {
-        font-size: 4em;
-        font-weight: bold;
-        line-height: 0.5em;
-        margin-top: 0.5em;
-    }
-    .high-temperature { color: red; }
-    .low-temperature { color: lightskyblue;}
-    .media-heading { font-size:1.3em; }
-    .text-small {font-size: smaller;}
-</style>
 <ul class="media-list list-unstyled">
     <li class="media day-time" style="padding: 0.5em 1em;">
         <div class="media-body">
