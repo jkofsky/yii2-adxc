@@ -5,7 +5,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'ADXC IntraNet';
+$this->title = 'ADX Communications';
 ?>
 <div class="site-index">
 
@@ -51,7 +51,7 @@ $this->title = 'ADXC IntraNet';
 
                         $items[] = '<li class="nav-divider"></li>';
                         $items[] = 'Studio Line: (850) 430-1987';
-                        $items[] = 'FM Sales: (850) 262-6000';
+                        $items[] = 'FM Sales Manager: (850) 262-6139';
 
                         echo HTML::ul($items, [
                             'encode' => false,
@@ -74,7 +74,7 @@ $this->title = 'ADXC IntraNet';
 
                         $items[] = '<li class="nav-divider"></li>';
                         $items[] = 'Studio Line: (850) 437-1620';
-                        $items[] = 'AM Sales: (850) 262-6139';
+                        $items[] = 'AM Sales Manager: (850) 262-6139';
 
                         echo HTML::ul($items, [
                             'encode' => false,

@@ -35,10 +35,9 @@ class RaspberryController extends \yii\web\Controller
 
     public function actionWnrpOnair()
     {
-        $nw = new \common\components\noaaWeather();
-        $nw->loadData();
+        $feeds = simplexml_load_file('http://podcast.newsradio1620.com/index.php/rss.xml');
         return $this->render('wnrpOnair', [
-                    'nw' => $nw,
+                    'feeds' => $feeds,
         ]);
     }
 

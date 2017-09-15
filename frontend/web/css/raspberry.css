@@ -1,8 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
+/* CSS file for Raspberry Pi Web Kiosk */
 /* 
     Created on : Sep 15, 2017, 1:59:50 AM
     Author     : jkofsky
@@ -19,6 +15,17 @@ body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b7deed+0,7ccdea+40,8c3310+70,bf6e4e+100 */
 }
 ul { list-style:  none; }
+#kiosk {margin: 1em 0px;}
+.box-shadow { box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5); }
+.container { margin: 1em; width: 100%;}
+.panel { 
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); 
+}
+.text-small {font-size: smaller;}
+
+/* ------------------------------------------------------------------------*/
+/* Weather Page Stuff                                                      */
+/* ------------------------------------------------------------------------*/
 li.media p{
     margin: 1px;
 }
@@ -55,23 +62,6 @@ li.night-time {
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
 }
 #current_conditions_detail { font-weight: bolder; }
-#kiosk {margin: 1em 0px;}
-.box-shadow { box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5); }
-.container { margin: 1em; width: 100%;}
-.site-index {
-    margin-top: 2em;
-    font-size: 1.5em;
-}
-.onair {
-    font-size: 32pt;
-    width: 100%;
-}
-.onair .header-img {
-    height: 200px;
-    width: 600px;
-}
-.onair > .panel
-{ text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); }
 .forcastLarge {
     font-size: 4em;
     font-weight: bold;
@@ -80,5 +70,79 @@ li.night-time {
 }
 .high-temperature { color: red; }
 .low-temperature { color: lightskyblue;}
-.media-heading { font-size:1.3em; }
-.text-small {font-size: smaller;}
+.wx-index .media-heading { font-size:1.3em; }
+
+/* ------------------------------------------------------------------------*/
+/* Individual Page Stuff                                                   */
+/* ------------------------------------------------------------------------*/
+.site-index {
+    font-size: 2em;
+}
+.onair-index {
+    font-size: 32pt;
+}
+.onair-index .header-img {
+    height: 200px;
+    width: 600px;
+}
+/* ------------------------------------------------------------------------*/
+/* Individual Page Stuff                                                   */
+/* ------------------------------------------------------------------------*/
+.wnrp-index li.media {
+    background-color: rgba(200, 200, 200, .5);
+    font-size: 2em;
+    background-color: #ffffcc;
+    border: 2px ridge silver;
+    color: #555;
+    margin: .25em 0;
+
+    -moz-border-radius: 8px;    /* mozilla border radius */
+    -webkit-border-radius: 8px; /* webkit border radius */
+    border-radius: 8px;         /* w3c border radius */
+
+    -moz-box-shadow: 3px 3px 4px rgba(0,0,0,.5);    /* mozilla box shadow */
+    -webkit-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* webkit box shadow */
+    box-shadow: 3px 3px 4px rgba(0,0,0,.5);         /* w3c box shadow */
+
+}
+.wnrp-index .airdate {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3c5bd+0,e86c57+50,ea2803+51,ff6600+75,c72200+100;Red+Gloss */
+    background: #ea2803; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 75%, #c72200 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    color: whitesmoke;
+    line-height: normal;
+    min-width: 4em;  
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 3px 3px 4px rgba(0,0,0,.5);    /* mozilla box shadow */
+    -webkit-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* webkit box shadow */
+    box-shadow: 3px 3px 4px rgba(0,0,0,.5);         /* w3c box shadow */
+}
+.wnrp-index .header {
+    color: whitesmoke;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+.wnrp-index .host {
+    font-size: small;
+}
+.wnrp-index .media-body
+{
+    font-size: .75em;
+    padding: .5em;
+    margin-bottom: .5em;
+}
+.wnrp-index .media-body p {
+
+    -moz-border-radius: 8px;    /* mozilla border radius */
+    -webkit-border-radius: 8px; /* webkit border radius */
+    border-radius: 8px;         /* w3c border radius */
+
+    -moz-box-shadow: 3px 3px 4px rgba(0,0,0,.5);    /* mozilla box shadow */
+    -webkit-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* webkit box shadow */
+    box-shadow: 3px 3px 4px rgba(0,0,0,.5);         /* w3c box shadow */
+
+    width: 100%;
+}
