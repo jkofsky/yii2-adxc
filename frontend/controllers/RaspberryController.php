@@ -33,10 +33,18 @@ class RaspberryController extends \yii\web\Controller
         ]);
     }
 
-    public function actionWnrpOnair()
+    public function actionFoxnews()
+    {
+        $feeds = simplexml_load_file('http://feeds.foxnews.com/foxnews/politics?format=xml');
+        return $this->render('foxNews', [
+                    'feeds' => $feeds,
+        ]);
+    }
+    
+    public function actionWnrpPodcast()
     {
         $feeds = simplexml_load_file('http://podcast.newsradio1620.com/index.php/rss.xml');
-        return $this->render('wnrpOnair', [
+        return $this->render('wnrpPodcasts', [
                     'feeds' => $feeds,
         ]);
     }

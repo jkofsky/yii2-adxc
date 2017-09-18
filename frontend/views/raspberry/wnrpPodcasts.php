@@ -7,9 +7,10 @@ use yii\helpers\Html;
 $this->title = 'Newsradio Podcasts';
 ?>
 <div class="wnrp-index">
-    <img src="<?= $feeds->channel->image->url; ?>" alt="<?= $feeds->channel->image->title; ?>" class="wnrpLogo">
-    <h1 class="header"><?= $feeds->channel->title; ?></h1>
-    <h2 class="header">These Podcasts available at <u><?= $feeds->channel->link; ?></u></h2>
+    <img src="images/NR_PrimaryLogo.jpg" alt="<?= $feeds->channel->image->title; ?>" class="wnrpLogo">
+    <h1 class="header text-right"><?= $feeds->channel->title; ?></h1>
+    <h3 class="header text-right">These Podcasts and more are available at<br>
+        <u><?= $feeds->channel->link; ?></u></h3>
     <div class="clearfix"></div>
     <ul class="media-list list-unstyled">
         <?php
@@ -23,6 +24,11 @@ $this->title = 'Newsradio Podcasts';
                         <span style="font-size: 2em; font-weight:bold;margin:0px;"><?php echo date('j', $airDate); ?></span><br />
                         <span style="font-size:9pt;margin:0px;padding:0px;"><?php echo date('l', $airDate); ?></span><br />
                     </p>
+                    <div class="media-object">
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                            <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" title="Creative Commons License" />
+                        </a>
+                    </div>
                 </div>
                 <div class="media-body">
                     <div class="media-heading"><h2><?= $item->title; ?></h2></div>

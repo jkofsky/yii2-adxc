@@ -13,7 +13,7 @@ $this->title = 'CatCountry - Now Playing';
     </div>
     <div class="panel panel-warning box-shadow">
         <div class="panel-heading">
-            <span class="glyphicon glyphicon-volume-up"></span>&nbsp;&nbsp;Playing Now
+            <span class="glyphicon glyphicon-volume-up"></span>&nbsp;&nbsp;<?= Html::encode("What's Playing Right Now"); ?>
 <!--            <span class="pull-right"><audio controls>
                     <source src="http://12.41.153.203:8080/omniacat.aac" type="audio/x-aac">
                     <source src="http://12.41.153.203:8080/omniacat.mp3" type="audio/mpeg">
@@ -27,7 +27,7 @@ $this->title = 'CatCountry - Now Playing';
         </div>
     </div>
     <div class = "panel panel-info box-shadow">
-        <div class = "panel-heading"><span class="glyphicon glyphicon-volume-off"></span>&nbsp;&nbsp;What You Missed</div>
+        <div class = "panel-heading"><span class="glyphicon glyphicon-volume-off"></span>&nbsp;&nbsp;<?= Html::encode("What You Might Have Missed"); ?></div>
         <div class = "panel-body">
             <?php
             $list = [];

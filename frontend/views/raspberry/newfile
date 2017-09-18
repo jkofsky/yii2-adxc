@@ -1,101 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
-  <channel>
-    <title><![CDATA[Newsradio 1620 Podcast Archives RSS Feed]]></title>
-    <link>http://podcast.newsradio1620.com</link>
-    <description><![CDATA[The News-Makers & News-Shakers they're calling us!]]></description>
-    <pubDate>Fri, 15 Sep 2017 16:07:07 -0500</pubDate>
-    <lastBuildDate>Fri, 15 Sep 2017 16:07:07 -0500</lastBuildDate>
-    <webMaster>webmaster@newsradio1620.com</webMaster>
-    <copyright>Copyright 2017, ADX Communications of Escambia, LLC.</copyright>
-    <image>
-      <url>http://podcast.newsradio1620.com/images/NR92.3 Primary Logo 11.2.16.jpg</url>
-      <title><![CDATA[Newsradio 1620 Podcast Archives RSS Feed]]></title>
-      <link>http://podcast.newsradio1620.com</link>
-    </image>
-    <generator>Zend_Feed</generator>
-    <language>en-us</language>
-    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-    <item>
-      <title><![CDATA[Napa Select Service Centers - Napa ASE Certified Owners]]></title>
-      <author>Wendi Summers</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4670/Napa_Select_Service_Centers_-_Napa_ASE_Certified_Owners</link>
-      <description><![CDATA[Gerald Gillis, from All Pro Tune, and Kevin from Shark Tooth in Gulf Breeze join Wendi Summers on PEP Talk!]]></description>
-      <pubDate>Fri, 15 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170915-WNRP-59bbef9dc089a.mp3" type="audio/mpeg" length="23014656"/>
-    </item>
-    <item>
-      <title><![CDATA[Josh Wood - Senior at Pensacola High School]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4669/Josh_Wood_-_Senior_at_Pensacola_High_School</link>
-      <description><![CDATA[Josh Wood, a Senior at Pensacola High School, joins the show as part of the Pensacola Morning News&#039; weekly high school spotlight.]]></description>
-      <pubDate>Thu, 14 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170914-WNRP-59ba85642b292.mp3" type="audio/mpeg" length="2838361"/>
-    </item>
-    <item>
-      <title><![CDATA[Tommi Lyter - Chief of Police PPD]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4668/Tommi_Lyter_-_Chief_of_Police_PPD</link>
-      <description><![CDATA[Chief Tommi Lyter of the Pensacola Police Department to discuss his police report in which he said ZERO homicides have been reported in Pensacola so far in 2017, along with other issues in Pensacola. ]]></description>
-      <pubDate>Thu, 14 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170914-WNRP-59ba7f685f5a3.mp3" type="audio/mpeg" length="6520581"/>
-    </item>
-    <item>
-      <title><![CDATA[Kim Blair - Spokesperson for Gulf Power]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4667/Kim_Blair_-_Spokesperson_for_Gulf_Power</link>
-      <description><![CDATA[Gulf Power spokesperson, Kim Blair, joins the show to discuss Gulf Power&#039;s efforts to provide relief and power restoration to hurricane-affected areas.
-]]></description>
-      <pubDate>Thu, 14 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170914-WNRP-59ba7e2179902.mp3" type="audio/mpeg" length="2374008"/>
-    </item>
-    <item>
-      <title><![CDATA[Josh Dosh - Emergency Manager SRC Emergency Response]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4666/Josh_Dosh_-_Emergency_Manager_SRC_Emergency_Response</link>
-      <description><![CDATA[John Dosh from the Santa Rosa County Emergency Response team joins the show from Clay County to discuss his team&#039;s efforts to provide relief and assistance to those affected by Hurricane Irma near the Jacksonville area. Clay County experienced record floods as a result of the hurricane. ]]></description>
-      <pubDate>Thu, 14 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170914-WNRP-59ba6ec73d9fb.mp3" type="audio/mpeg" length="5249985"/>
-    </item>
-    <item>
-      <title><![CDATA[Ashton Hayward - Mayor of Pensacola]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4665/Ashton_Hayward_-_Mayor_of_Pensacola</link>
-      <description><![CDATA[Mayor Hayward joins the show, as he does every Wednesday, to discuss important topics in the city, including the Pandhandling Ordinance vote that is coming back up, among other issues.]]></description>
-      <pubDate>Wed, 13 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170913-WNRP-59b92d65700e5.mp3" type="audio/mpeg" length="5174962"/>
-    </item>
-    <item>
-      <title><![CDATA[Matt Gaetz - Congressman for Florida District 1]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4664/Matt_Gaetz_-_Congressman_for_Florida_District_1</link>
-      <description><![CDATA[Congressman of Florida District 1, Matt Gaetz, joins the show to discuss Hurricane Irma, BRAC, and his thoughts on James Comey.]]></description>
-      <pubDate>Wed, 13 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170913-WNRP-59b91ea9e274f.mp3" type="audio/mpeg" length="6712424"/>
-    </item>
-    <item>
-      <title><![CDATA[Winning with Annalee from Mainstay Financial - President of Mainstay Financial Group]]></title>
-      <author>Annalee Leonard and Joan Connell</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4663/Winning_with_Annalee_from_Mainstay_Financial_-_President_of_Mainstay_Financial_Group</link>
-      <description><![CDATA[Annalee and Joan discuss Social Security benefits and more!]]></description>
-      <pubDate>Tue, 12 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170912-WNRP-59b8104d47bc1.mp3" type="audio/mpeg" length="23278655"/>
-    </item>
-    <item>
-      <title><![CDATA[Chip Simmons - Chief Deputy of the Escambia County Sheriff's Office]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4662/Chip_Simmons_-_Chief_Deputy_of_the_Escambia_County_Sheriff%27s_Office</link>
-      <description><![CDATA[Chief Deputy of the Escambia County Sheriff&#039;s Office, Chip Simmons, joins the show to discuss a car burglary that occurred yesterday that resulted in three arrests, and how the ECSO is responding to Hurricane Irma refugees and assisting others who were affected. ]]></description>
-      <pubDate>Tue, 12 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170912-WNRP-59b7daf111ab0.mp3" type="audio/mpeg" length="4895765"/>
-    </item>
-    <item>
-      <title><![CDATA[Doug Underhill - Commissioner of District 2 Escambia County]]></title>
-      <author>Andrew McKay</author>
-      <link>http://podcast.newsradio1620.com/index.php/post/4661/Doug_Underhill_-_Commissioner_of_District_2_Escambia_County</link>
-      <description><![CDATA[Commission of Escambia County District 2, Doug Underhill, joins the show the city budget, and the money that would go into the up-keep of the Bay Center. ]]></description>
-      <pubDate>Tue, 12 Sep 2017 00:00:00 -0500</pubDate>
-      <enclosure url="http://podcast.newsradio1620.com/media/audio/mpeg/2017/170912-WNRP-59b7cc8e598ee.mp3" type="audio/mpeg" length="6826736"/>
-    </item>
-  </channel>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?>
+<?xml-stylesheet type="text/css" media="screen" href="http://feeds.foxnews.com/~d/styles/itemcontent.css"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+    <channel>
+        <title>FOX News</title>
+        <link>http://www.foxnews.com/</link>
+        <description><![CDATA[FOXNews.com - Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.]]></description>
+        <image>
+            <url>http://tools.foxnews.com/sites/tools.foxnews.com/files/images/fox-news-logo.png</url>
+            <title>FOX News</title>
+            <link>http://www.foxnews.com/</link>
+        </image>
+        <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.foxnews.com/foxnews/politics" />
+        <feedburner:info uri="foxnews/politics" />
+        <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/16/california-assembly-oks-plan-for-march-presidential-primary.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/hSfAmrsUW04/california-assembly-oks-plan-for-march-presidential-primary.html</link>
+            <media:group>
+                <media:content url="http://www.foxnews.com/content/dam/fox-news/images/2017/07/25/cali-climate-change-2.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2017/07/25/60/60/cali-climate-change-2.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2017/07/25/60/60/cali-climate-change-2.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">76281b13-37cc-48f8-ba0f-a764fa6cf45b</category>
+            <category domain="foxnews.com/taxonomy">fox-news/us/us-regions/west/california</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/US/US REGIONS/West/California</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>California Assembly OKs plan for March presidential primary</title>
+            <description>The California Assembly has voted to move the 2020 presidential primary to March to give the nation's most populous state more influence in choosing nominees.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/hSfAmrsUW04" height="1" width="1" alt=""/&gt;</description>
+            <pubDate>Sat, 16 Sep 2017 06:07:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">Associated Press</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/16/california-assembly-oks-plan-for-march-presidential-primary.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/jeff-sessions-cant-withhold-grant-money-from-sanctuary-cities-judge-rules.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/KJ4vQzdBXlI/jeff-sessions-cant-withhold-grant-money-from-sanctuary-cities-judge-rules.html</link>
+            <media:group>
+                <media:content url="http://www.foxnews.com/content/dam/fox-news/images/2017/09/15/ap17235058222009.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2017/09/15/60/60/ap17235058222009.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2017/09/15/60/60/ap17235058222009.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">9438686c-327f-4e21-88db-b2a1014dba12</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">fox-news/us/immigration/illegal-immigrants</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/US/IMMIGRATION/Illegal Immigrants</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>Jeff Sessions can't withhold grant money from sanctuary cities, judge rules</title>
+            <description>A federal judge in Chicago has ruled Attorney General Jeff Sessions can't withhold public grant money from so-called sanctuary cities for refusing to follow federal immigration policies.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/KJ4vQzdBXlI" height="1" width="1" alt=""/&gt;</description>
+            <pubDate>Fri, 15 Sep 2017 21:25:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">FoxNews.com</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/jeff-sessions-cant-withhold-grant-money-from-sanctuary-cities-judge-rules.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/chelsea-clinton-tweets-false-story-claiming-michigan-passed-bill-allowing-emts-to-deny-gay-patients-treatment.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/4FVabQoq6l4/chelsea-clinton-tweets-false-story-claiming-michigan-passed-bill-allowing-emts-to-deny-gay-patients-treatment.html</link>
+            <media:group>
+                <media:content url="http://www.foxnews.com/content/dam/fox-news/images/2016/10/28/chelsea_clinton.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2016/10/28/60/60/chelsea_clinton.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2016/10/28/60/60/chelsea_clinton.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">3c40f456-ca5b-4f87-8337-bb98af0f9f7b</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics/elections/democrats</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS/ELECTIONS/Democrats</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>Chelsea Clinton tweets false story claiming Michigan passed bill allowing EMTs to deny gay patients treatment</title>
+            <description>Chelsea Clinton falsely tweeted Friday that the Michigan House of Representatives had voted to allow emergency medical providers choice in treating patients, specifically giving EMTs the option to deny treatment to gay patients.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/4FVabQoq6l4" height="1" width="1" alt=""/&gt;</description>
+            <dc:creator>Alex Griswold</dc:creator>
+            <pubDate>Fri, 15 Sep 2017 20:21:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">Washington Free Beacon</category>
+            <category domain="foxnews.com/metadata/dc.creator">Alex Griswold</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/chelsea-clinton-tweets-false-story-claiming-michigan-passed-bill-allowing-emts-to-deny-gay-patients-treatment.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/maxine-waters-to-humiliated-jeff-sessions-now-know-how-african-americans-feel.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/fQ7Ryjonw_U/maxine-waters-to-humiliated-jeff-sessions-now-know-how-african-americans-feel.html</link>
+            <media:group>
+                <media:content url="http://www.foxnews.com/content/dam/fox-news/images/2017/09/15/picture1-44264.png" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2017/09/15/60/60/picture1-44264.png" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/www.foxnews.com/content/dam/fox-news/images/2017/09/15/60/60/picture1-44264.png" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">26e8159a-fc59-4157-8e3f-672997600abf</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>Maxine Waters to 'humiliated' Jeff Sessions: Now you know how African-Americans feel</title>
+            <description>Rep. Maxine Waters, D-Calif., tweeted Friday that Attorney General Jeff Sessions now knows how African-Americans feel after he was reportedly "humiliated" by President Trump over his recusal in the Russia investigation.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/fQ7Ryjonw_U" height="1" width="1" alt=""/&gt;</description>
+            <pubDate>Fri, 15 Sep 2017 20:08:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">FoxNews.com</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/maxine-waters-to-humiliated-jeff-sessions-now-know-how-african-americans-feel.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/norks-put-trump-in-pickle.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/cJf3TF6Lvrg/norks-put-trump-in-pickle.html</link>
+            <media:group>
+                <media:content url="http://media.foxbusiness.com/BrightCove/854081161001/201709/3887/854081161001_5577470385001_5577440816001-vs.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/media.foxbusiness.com/BrightCove/854081161001/201709/3887/60/60/854081161001_5577470385001_5577440816001-vs.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/media.foxbusiness.com/BrightCove/854081161001/201709/3887/60/60/854081161001_5577470385001_5577440816001-vs.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">b8b4042d-7c32-4290-a017-1e74f8a04f30</category>
+            <category domain="foxnews.com/taxonomy">fox-news/columns/fox-news-halftime-report</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>Norks put Trump in a pickle</title>
+            <description>What will he do next?&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/cJf3TF6Lvrg" height="1" width="1" alt=""/&gt;</description>
+            <dc:creator>Chris Stirewalt</dc:creator>
+            <pubDate>Fri, 15 Sep 2017 18:50:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">FoxNews.com</category>
+            <category domain="foxnews.com/metadata/dc.creator">Chris Stirewalt</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/norks-put-trump-in-pickle.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/slippery-slope-cities-across-country-allowing-non-citizens-to-vote.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/_ExOMjVPoOU/slippery-slope-cities-across-country-allowing-non-citizens-to-vote.html</link>
+            <media:group>
+                <media:content url="http://media2.foxnews.com/BrightCove/694940094001/2017/08/07/694940094001_5534066448001_5534054408001-vs.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/08/07/60/60/694940094001_5534066448001_5534054408001-vs.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/08/07/60/60/694940094001_5534066448001_5534054408001-vs.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">83becfbd-67d3-4f2e-af59-a254d35aff12</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics/state-and-local</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS/STATE AND LOCAL</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>'Slippery Slope'? Cities across the country allowing non-citizens to vote</title>
+            <description>A small Maryland city drew national attention this week for allowing non-citizens including illegal immigrants to cast ballots in local elections – but it's just the latest municipality to do so, in a trend that has some worried the changing definition of 'voter' could erode what it means to be a citizen.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/_ExOMjVPoOU" height="1" width="1" alt=""/&gt;</description>
+            <dc:creator>Brooke Singman</dc:creator>
+            <pubDate>Fri, 15 Sep 2017 18:34:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">FoxNews.com</category>
+            <category domain="foxnews.com/metadata/dc.creator">Brooke Singman</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/slippery-slope-cities-across-country-allowing-non-citizens-to-vote.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/nikki-haley-to-north-korea-no-problem-letting-mattis-deal-with.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/d9WYT-HF8ic/nikki-haley-to-north-korea-no-problem-letting-mattis-deal-with.html</link>
+            <media:group>
+                <media:content url="http://media2.foxnews.com/BrightCove/694940094001/2017/09/15/694940094001_5577442305001_5577397434001-vs.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/15/60/60/694940094001_5577442305001_5577397434001-vs.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/15/60/60/694940094001_5577442305001_5577397434001-vs.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">e6a35e53-7198-4500-802c-1b977d931804</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics/executive/white-house</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS/EXECUTIVE/White House</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>Nikki Haley to North Korea: 'No problem' letting Mattis deal with you</title>
+            <description>U.S. Ambassador to the United Nations Nikki Haley warned North Korea on Friday that she is more than willing to let Defense Secretary Jim Mattis deal with the nuclear threat from Pyongyang if sanctions do not work.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/d9WYT-HF8ic" height="1" width="1" alt=""/&gt;</description>
+            <dc:creator>Alex Pappas</dc:creator>
+            <pubDate>Fri, 15 Sep 2017 18:22:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">FoxNews.com</category>
+            <category domain="foxnews.com/metadata/dc.creator">Alex Pappas</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/nikki-haley-to-north-korea-no-problem-letting-mattis-deal-with.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/11-year-old-frank-does-great-job-mowing-white-house-lawn.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/Z8ipqd-5N_Y/11-year-old-frank-does-great-job-mowing-white-house-lawn.html</link>
+            <media:group>
+                <media:content url="http://media2.foxnews.com/BrightCove/694940094001/2017/09/15/694940094001_5577567822001_5577554260001-vs.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/15/60/60/694940094001_5577567822001_5577554260001-vs.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/15/60/60/694940094001_5577567822001_5577554260001-vs.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">0f2663a5-570d-4295-8582-b95b7083285e</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics/executive/white-house</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS/EXECUTIVE/White House</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics/executive</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>11-year-old Frank does a 'great job' mowing White House lawn</title>
+            <description>Eleven-year-old yard services entrepreneur Frank Giaccio locked down his biggest client ever Friday morning, mowing the White House lawn on the invitation of President Trump.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/Z8ipqd-5N_Y" height="1" width="1" alt=""/&gt;</description>
+            <pubDate>Fri, 15 Sep 2017 18:00:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">FoxNews.com</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/11-year-old-frank-does-great-job-mowing-white-house-lawn.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/pence-spokesman-to-leave-trump-administration.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/sqciGuhfEsk/pence-spokesman-to-leave-trump-administration.html</link>
+            <media:group>
+                <media:content url="http://media2.foxnews.com/BrightCove/694940094001/2017/09/11/694940094001_5572107908001_5572094214001-vs.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/11/60/60/694940094001_5572107908001_5572094214001-vs.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/11/60/60/694940094001_5572107908001_5572094214001-vs.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">5c52b8dc-b6da-4713-8d9f-8e42b97b0a66</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics/executive/white-house</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS/EXECUTIVE/White House</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>Pence spokesman to leave the Trump administration</title>
+            <description>Vice President Mike Pence's press secretary is leaving the Trump administration to serve as an outside surrogate for the White House's political efforts.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/sqciGuhfEsk" height="1" width="1" alt=""/&gt;</description>
+            <pubDate>Fri, 15 Sep 2017 17:12:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">Associated Press</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/pence-spokesman-to-leave-trump-administration.html</feedburner:origLink>
+        </item>
+        <item>
+            <guid isPermaLink="false">http://www.foxnews.com/politics/2017/09/15/white-house-holds-briefing-after-north-korea-missile-launch-over-japan-live-blog.html</guid>
+            <link>http://feeds.foxnews.com/~r/foxnews/politics/~3/pTJdbppvEOc/white-house-holds-briefing-after-north-korea-missile-launch-over-japan-live-blog.html</link>
+            <media:group>
+                <media:content url="http://media2.foxnews.com/BrightCove/694940094001/2017/09/15/694940094001_5577422618001_5577414835001-vs.jpg" medium="image" isDefault="true" />
+                <media:content url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/15/60/60/694940094001_5577422618001_5577414835001-vs.jpg" medium="image" width="60" height="60" />
+            </media:group>
+            <media:thumbnail url="http://a57.foxnews.com/media2.foxnews.com/BrightCove/694940094001/2017/09/15/60/60/694940094001_5577422618001_5577414835001-vs.jpg" width="60" height="60" />
+            <category domain="foxnews.com/metadata/dc.identifier">74399221-b67f-497a-b5aa-e535699c3a16</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics</category>
+            <category domain="foxnews.com/taxonomy">fox-news/politics/executive/white-house</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS</category>
+            <category domain="foxnews.com/taxonomy">/FOX NEWS/POLITICS/EXECUTIVE/White House</category>
+            <category domain="foxnews.com/metadata/prism.channel">fnc</category>
+            <category domain="foxnews.com/section-path">fnc/politics</category>
+            <category domain="foxnews.com/content-type">article</category>
+            <title>White House holds briefing after North Korea missile launch over Japan - live blog</title>
+            <description>White House press secretary Sarah Sanders held a press briefing at the White House Friday.&lt;img src="http://feeds.feedburner.com/~r/foxnews/politics/~4/pTJdbppvEOc" height="1" width="1" alt=""/&gt;</description>
+            <pubDate>Fri, 15 Sep 2017 16:51:00 GMT</pubDate>
+            <category domain="foxnews.com/metadata/dc.source">FoxNews.com</category>
+            <feedburner:origLink>http://www.foxnews.com/politics/2017/09/15/white-house-holds-briefing-after-north-korea-missile-launch-over-japan-live-blog.html</feedburner:origLink>
+        </item>
+    </channel>
 </rss>

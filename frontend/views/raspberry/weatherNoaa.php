@@ -31,7 +31,7 @@ $this->title = strval($data->location->areaDescription) . ' Weather';
                 <img src="<?= $_currIconPath . strval($data->currentobservation->Weatherimage); ?>" class="media-object img-thumbnail" alt="<?= $_currIconPath . strval($data->currentobservation->Weatherimage); ?>">
             </div>
             <div class="media-body">
-                <div class="col-md-5" style="font-size: 2em;">
+                <div class="col-md-4" style="font-size: 2em;">
                     <h4 class="media-heading" style="font-size: 1.5em; font-weight:bolder;"><?= strval($data->currentobservation->Weather); ?></h4>
                     <br>
                     <p class="forcastLarge text-center"><?= strval($data->currentobservation->Temp); ?>&deg;</p>
@@ -45,13 +45,9 @@ $this->title = strval($data->location->areaDescription) . ' Weather';
                         <p class="text-small text-center">Wind Chill<br><b><?= $nw->getWindChillStr(); ?></b></p>
                     <?php endif; ?>
                 </div>
-                <div id="current_conditions_detail" class="media-right col-md-7">
+                <div id="current_conditions_detail" class="media-right col-md-4">
                     <table class="table">
                         <tbody>
-                            <tr>
-                                <td class="text-right">Chance of Rain:&nbsp;</td>
-                                <td><?= strval($data->data->pop[0]); ?>&percnt;</td>
-                            </tr>
                             <tr>
                                 <td class="text-right">Humidity:&nbsp;</td>
                                 <td><?= strval($data->currentobservation->Relh); ?>&percnt;</td>
@@ -101,11 +97,27 @@ $this->title = strval($data->location->areaDescription) . ' Weather';
                         </tfoot>
                     </table>
                 </div>
+                <?php
+                $dayTimeClass = strtolower($_forecast[0]['TemperatureLabel']) == 'low' ? ' night-time ' : ' day-time ';
+                $temperatureClass = strtolower($_forecast[0]['TemperatureLabel']) == 'low' ? ' low-temperature ' : ' high-temperature ';
+                ?>
+                <div class="col-md-4 <?= $dayTimeClass ?>">
+                    <div class="media-left">
+                        <img class="media-object img-thumbnail" src="<?= $_forecast[0]['IconLink']; ?>" alt="<?= $_forecast[0]['Condition']; ?>">
+                    </div>
+                    <div class="media-body">
+                        <div class="media-heading"><?= $_forecast[0]['PeriodName']; ?></div>
+                        <p><?= $_forecast[0]['Condition']; ?></p>
+                        <p><?= $_forecast[0]['TemperatureLabel']; ?> 
+                            <span class="<?= $temperatureClass ?>"><?= $_forecast[0]['Temperature']; ?>&deg;</span></p>
+                        <p style="font-size: 1em; font-weight: normal;"><?= $_forecast[0]['Forcast']; ?></p>
+                    </div><!--/media-body-->
+                </div>
             </div>
         </li>
 
         <?php
-        for ($idx = 0; $idx < 7; ++$idx) { // $idx check MAX 14 (ie $idx < 14)
+        for ($idx = 1; $idx < 8; ++$idx) { // $idx check MAX 14 (ie $idx < 14)
             $dayTimeClass = strtolower($_forecast[$idx]['TemperatureLabel']) == 'low' ? ' night-time ' : ' day-time ';
             $temperatureClass = strtolower($_forecast[$idx]['TemperatureLabel']) == 'low' ? ' low-temperature ' : ' high-temperature ';
             ?>
@@ -121,6 +133,6 @@ $this->title = strval($data->location->areaDescription) . ' Weather';
                     <p style="font-size: 1em; font-weight: normal;"><?= $_forecast[$idx]['Forcast']; ?></p>
                 </div><!--/media-body-->
             </li><!--/media-->
-        <?php } // Next $idx     ?>
+        <?php } // Next $idx      ?>
     </ul>
 </div>
