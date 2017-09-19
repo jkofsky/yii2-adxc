@@ -35,7 +35,7 @@ class RaspberryController extends \yii\web\Controller
 
     public function actionFoxnews()
     {
-        $feeds = simplexml_load_file('http://feeds.foxnews.com/foxnews/politics?format=xml');
+        $feeds = simplexml_load_file('http://feeds.foxnews.com/foxnews/national?format=xml');
         return $this->render('foxNews', [
                     'feeds' => $feeds,
         ]);

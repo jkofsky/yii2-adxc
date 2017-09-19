@@ -118,19 +118,20 @@ $this->title = strval($data->location->areaDescription) . ' Weather';
 
         <?php
         for ($idx = 1; $idx < 8; ++$idx) { // $idx check MAX 14 (ie $idx < 14)
-            $dayTimeClass = strtolower($_forecast[$idx]['TemperatureLabel']) == 'low' ? ' night-time ' : ' day-time ';
-            $temperatureClass = strtolower($_forecast[$idx]['TemperatureLabel']) == 'low' ? ' low-temperature ' : ' high-temperature ';
+            $item = $_forecast[$idx];
+            $dayTimeClass = strtolower($item['TemperatureLabel']) == 'low' ? ' night-time ' : ' day-time ';
+            $temperatureClass = strtolower($item['TemperatureLabel']) == 'low' ? ' low-temperature ' : ' high-temperature ';
             ?>
             <li class="media <?= $dayTimeClass ?>" style="margin: 0px;">
                 <div class="media-left">
-                    <img class="media-object img-thumbnail" src="<?= $_forecast[$idx]['IconLink']; ?>" alt="<?= $_forecast[$idx]['Condition']; ?>">
+                    <img class="media-object img-thumbnail" src="<?= $item['IconLink']; ?>" alt="<?= $item['Condition']; ?>">
                 </div>
                 <div class="media-body">
-                    <div class="media-heading"><?= $_forecast[$idx]['PeriodName']; ?></div>
-                    <p><?= $_forecast[$idx]['Condition']; ?></p>
-                    <p><?= $_forecast[$idx]['TemperatureLabel']; ?> 
-                        <span class="<?= $temperatureClass ?>"><?= $_forecast[$idx]['Temperature']; ?>&deg;</span></p>
-                    <p style="font-size: 1em; font-weight: normal;"><?= $_forecast[$idx]['Forcast']; ?></p>
+                    <div class="media-heading"><?= $item['PeriodName']; ?></div>
+                    <p><?= $item['Condition']; ?></p>
+                    <p><?= $item['TemperatureLabel']; ?> 
+                        <span class="<?= $temperatureClass ?>"><?= $item['Temperature']; ?>&deg;</span></p>
+                    <p style="font-size: 1em; font-weight: normal;"><?= $item['Forcast']; ?></p>
                 </div><!--/media-body-->
             </li><!--/media-->
         <?php } // Next $idx      ?>

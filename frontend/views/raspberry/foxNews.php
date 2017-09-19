@@ -4,22 +4,27 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Newsradio Podcasts';
+$this->title = 'FOX News Headlines';
 ?>
 <div class="fox-index">
-    <h1><?= Html::img($feeds->channel->image->url,[ 'class'=>"img-thumbnail"]); ?></h1>
-    <h3>FOX News Headlines &ndash; Politics</h3>
-    <div class="clearfix"></div>
-    <?php
-    foreach ($feeds->channel->item as $item) {
-        $airDate = strtotime($item->pubDate);
-        ?>
-        <div class="media">
-            <div class="media-body">
-                <div class="media-heading"><h2><?= $item->title; ?></h2></div>
-                <div class="host">with <?= $item->author; ?></div>
-                <p><?= $item->description; ?></p>
-            </div><!--/media-body-->
-        </div><!--/media-->
-    <?php } // Next $idx     ?>
+    <h1 class="panel panel-default">FOX News National Headlines
+        <?= Html::img($feeds->channel->image->url, [ 'class' => "img-thumbnail pull-right"]); ?></h1>
+
+    <ul class="media-list list-unstyled">
+        <?php
+        for ($idx = 0; $idx < 6; ++$idx) {
+            $item = $feeds->channel->item[$idx];
+            $airDate = date('F d, Y @ h:m:s a', strtotime($item->pubDate));
+            ?>
+        <li class="panel panel-info">
+                <div class="panel-heading">
+                    <h2><?= Html::encode($item->title); ?></h2>
+                    <p class="text-small"><?= $airDate; ?></p>
+                </div>
+                <div class="panel-body">
+                    <p><?= $item->description; ?></p>
+                </div><!--/media-body-->
+            </li><!--/media-->
+        <?php } // Next $idx     ?>
+    </ul>
 </div>

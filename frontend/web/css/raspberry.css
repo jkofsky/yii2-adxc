@@ -154,3 +154,11 @@ li.media p{
     float: left;
     padding-right: 2em;
 }
+/* ------------------------------------------------------------------------*/
+/* FOX News Page Stuff                                                   */
+/* ------------------------------------------------------------------------*/
+.fox-index .panel-body,
+.fox-index .media-body {
+    font-size: 1.25em;
+    padding-bottom: .25em;
+}
