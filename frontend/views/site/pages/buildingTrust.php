@@ -9,18 +9,29 @@ $this->title = Html::encode(Yii::$app->name . ' - ' . $pageTitle);
 $this->params['breadcrumbs'][] = ['label' => 'Useful Reading', 'url' => ['site/reading']];
 $this->params['breadcrumbs'][] = $pageTitle;
 ?>
-
-<h1><?= Html::encode('How To Build Relationships Of Trust'); ?></h1>
-
-<address>Originally posted by Andreas von der Heydt on: 
-    <?=
-    Html::a(
-            'LinkedIn', 'https://www.linkedin.com/today/post/article/20140330130915-175081329-how-to-become-a-leader-of-trust', array('target' => '_new')
-    );
-    ?> (2014)</address>
-<hr />
-
-<article>
+<article id="linkedin">
+    <header id="article-header" role="banner">
+        <h1 class="article-title" itemprop="headline">How To Build Relationships Of Trust</h1>
+        <ul class="article-meta">
+            <li>Originally posted on     <?=
+                Html::a(
+                        'LinkedIn', 'https://www.linkedin.com/today/post/article/20140330130915-175081329-how-to-become-a-leader-of-trust', array('target' => '_new')
+                );
+                ?></li>
+            <li><time itemprop="datePublished" datetime="2014-03-30">March 30, 2014</time></li>
+        </ul>
+        <div class="article-author-wrapper">
+            <figure class="entity-image entity-image-user"><a href="https://www.linkedin.com/in/avonderheydt" rel="author">
+                    <img alt="Andreas von der Heydt" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAfaAAAAJDJhM2VlOWM5LTY0MTQtNDVlNC1hOTgyLTRiMDQxNjhlMmNlMQ.jpg"></a>
+            </figure>
+            <div class="entity-content">
+                <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">
+                    <a href="https://www.linkedin.com/in/avonderheydt" rel="author"><span itemprop="name">Andreas von der Heydt</span></a>
+                </h2>
+                <h3 class="entity-headline">Director Talent Acquisition Amazon</h3>
+            </div>
+        </div>
+    </header>
     <p>Trust is a core ingredient to build successful relationships. Both personal
         and professional ones. It is a major leadership characteristic. However,
         you can´t take it for granted. You need to work hard to earn trust and to
@@ -123,3 +134,21 @@ $this->params['breadcrumbs'][] = $pageTitle;
         </li>
     </ol>
 </article>
+
+
+<body class="js guest" id="pagekey-d_flagship2_pulse_read" dir="ltr">
+    <div id="application-body">
+        <main id="layout-main" role="main">
+            <div tabindex="0" id="content-main">
+                <div class="content-wrapper ssr-wrapper" id="pulse-article-wrapper">
+                    <article>
+                        <header id="article-header" role="banner">
+                            <div class="article-author-wrapper">
+                                <div class="entity-content">
+                                    <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">
+                                        <a href="https://www.linkedin.com/in/avonderheydt" rel="author">
+                                            <span itemprop="name">Andreas von der Heydt</span></a>
+                                        </h2>
+                                    <h3 class="entity-headline">Director Talent Acquisition Amazon</h3>
+                                </div></div></header></article></div></div></main></div></body>
+</html>

@@ -9,8 +9,8 @@ $this->title = 'Newsradio Podcasts';
 <div class="wnrp-index">
     <img src="images/NR_PrimaryLogo.jpg" alt="<?= $feeds->channel->image->title; ?>" class="wnrpLogo">
     <h1 class="header text-right"><?= $feeds->channel->title; ?></h1>
-    <h3 class="header text-right">These Podcasts and more are available at<br>
-        <u><?= $feeds->channel->link; ?></u></h3>
+    <h3 class="header text-right">These Podcasts and more are available at<br><br>
+        <span style="font-size: 1.5em;"><u><?= $feeds->channel->link; ?></u></span></h3>
     <div class="clearfix"></div>
     <ul class="media-list list-unstyled">
         <?php
