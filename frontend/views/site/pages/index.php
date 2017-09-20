@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
+use yii\widgets\Menu;
 
 $this->title = Yii::$app->name . ' - Useful Info';
 $this->params['breadcrumbs'][] = 'Useful Reading';
@@ -27,6 +27,8 @@ foreach (scandir(dirname(__FILE__)) as $value) {
         ];
     }
 }
-echo Nav::widget(['items' => $menuItems]);
-
-
+echo Menu::widget([
+    'items' => $menuItems,
+    'options' => ['class' => 'list-group row', 'style' => 'margin:0px;'],
+    'itemOptions' => ['class' => 'list-group-item col-xs-6 col-sm-4 col-md-3']
+]);
