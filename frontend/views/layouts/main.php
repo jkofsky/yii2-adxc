@@ -38,7 +38,9 @@ AppAsset::register($this);
                 'brandLabel' => Yii::$app->name,
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'id' => 'navbar-adxc',
+                    'class' => 'navbar-default navbar-fixed-top',
+                    'role' => 'navigation',
                 ],
             ]);
             $menuItems = [
@@ -94,7 +96,7 @@ AppAsset::register($this);
                 <?=
                 Breadcrumbs::widget([
                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    'options'=>['class'=>'breadcrumb hidden-print']
+                    'options' => ['class' => 'breadcrumb hidden-print']
                 ])
                 ?>
                 <?= Alert::widget() ?>

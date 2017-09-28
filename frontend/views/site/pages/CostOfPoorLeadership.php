@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user">
                 <a href="https://www.linkedin.com/in/johngeades" rel="author">
-                    <img alt="John Eades" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAfZAAAAJDMwOTAzZmMwLWUwMDUtNDE1YS05ODk5LThjYWE5YWQ2ZGJhYg.jpg">
+                    <img alt="John Eades" src="images/reading/john-eades.jpg">
                 </a>
             </figure>
             <div class="entity-content">
@@ -136,6 +136,6 @@ $this->params['breadcrumbs'][] = $pageTitle;
                 <em>F.M.L. Standing Out &amp; Being a Leader</em>
             </a>, and is passionate about the development of modern 
             professionals. Follow him on instagram 
-            <a href="http://bit.ly/2aQJnUW" target="_blank" rel="nofollow noopener">@johngeades</a>.</p>
+            <a href="http://bit.ly/2aQJnUW" target="_blank" rel="nofollow noopener">&commat;johngeades</a>.</p>
     </div>
 </article>

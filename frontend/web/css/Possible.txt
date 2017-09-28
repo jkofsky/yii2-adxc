@@ -14,3 +14,102 @@ background: linear-gradient(135deg, #155799 0%,#159957 100%); /* W3C, IE10+, FF1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#155799', endColorstr='#159957',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 
+#navbar-adxc {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#155799+0,159957+100 */
+    background: #157878; /* Old browsers */
+    background: -moz-linear-gradient(left, #155799 0%, #159957 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #155799 0%,#159957 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #155799 0%,#159957 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#155799', endColorstr='#159957',GradientType=1 ); /* IE6-9 */
+    border-color: #93b68e;
+}
+#navbar-adxc .navbar-brand {
+  color: #fdffff;
+}
+#navbar-adxc .navbar-brand:hover,
+#navbar-adxc .navbar-brand:focus {
+  color: #edf211;
+}
+#navbar-adxc .navbar-text {
+  color: #fdffff;
+}
+#navbar-adxc .navbar-nav > li > a {
+  color: #fdffff;
+}
+#navbar-adxc .navbar-nav > li > a:hover,
+#navbar-adxc .navbar-nav > li > a:focus {
+  color: #edf211;
+}
+#navbar-adxc .navbar-nav > li > .dropdown-menu {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,e0e0e0+100 */
+    background: #fafafa; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fafafa 0%, #e0e0e0 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fafafa 0%,#e0e0e0 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fafafa 0%,#e0e0e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+}
+#navbar-adxc .navbar-nav > li > .dropdown-menu > li > a {
+  color: #fdffff;
+}
+#navbar-adxc .navbar-nav > li > .dropdown-menu > li > a:hover,
+#navbar-adxc .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #edf211;
+  background-color: #93b68e;
+}
+#navbar-adxc .navbar-nav > li > .dropdown-menu > li.divider {
+  background-color: #93b68e;
+}
+#navbar-adxc .navbar-nav .open .dropdown-menu > .active > a,
+#navbar-adxc .navbar-nav .open .dropdown-menu > .active > a:hover,
+#navbar-adxc .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #edf211;
+  background-color: #93b68e;
+}
+#navbar-adxc .navbar-nav > .active > a,
+#navbar-adxc .navbar-nav > .active > a:hover,
+#navbar-adxc .navbar-nav > .active > a:focus {
+  color: #edf211;
+  background-color: #93b68e;
+}
+#navbar-adxc .navbar-nav > .open > a,
+#navbar-adxc .navbar-nav > .open > a:hover,
+#navbar-adxc .navbar-nav > .open > a:focus {
+  color: #edf211;
+  background-color: #93b68e;
+}
+#navbar-adxc .navbar-toggle {
+  border-color: #93b68e;
+}
+#navbar-adxc .navbar-toggle:hover,
+#navbar-adxc .navbar-toggle:focus {
+  background-color: #93b68e;
+}
+#navbar-adxc .navbar-toggle .icon-bar {
+  background-color: #fdffff;
+}
+#navbar-adxc .navbar-collapse,
+#navbar-adxc .navbar-form {
+  border-color: #fdffff;
+}
+#navbar-adxc .navbar-link {
+  color: #fdffff;
+}
+#navbar-adxc .navbar-link:hover {
+  color: #edf211;
+}
+
+@media (max-width: 767px) {
+  #navbar-adxc .navbar-nav .open .dropdown-menu > li > a {
+    color: #fdffff;
+  }
+  #navbar-adxc .navbar-nav .open .dropdown-menu > li > a:hover,
+  #navbar-adxc .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #edf211;
+  }
+  #navbar-adxc .navbar-nav .open .dropdown-menu > .active > a,
+  #navbar-adxc .navbar-nav .open .dropdown-menu > .active > a:hover,
+  #navbar-adxc .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #edf211;
+    background-color: #93b68e;
+  }
+}
