@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user">
                 <a href="https://www.linkedin.com/in/ipozin" rel="author">
-                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/5/005/04c/1b0/3c644db.jpg" alt="Ilya Pozin">
+                    <img src="images/reading/ilya-pozin.jpg" alt="Ilya Pozin">
                 </a>
             </figure>
             <div class="entity-content">

@@ -81,7 +81,7 @@ AppAsset::register($this);
                         . '</li>';
             }
             echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
+                'options' => ['class' => 'navbar-nav navbar-right sticky'],
                 'items' => $menuItems,
                 'activateParents' => true,
                 'encodeLabels' => false,

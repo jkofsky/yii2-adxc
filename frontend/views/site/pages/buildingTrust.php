@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
         </ul>
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user"><a href="https://www.linkedin.com/in/avonderheydt" rel="author">
-                    <img alt="Andreas von der Heydt" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAfaAAAAJDJhM2VlOWM5LTY0MTQtNDVlNC1hOTgyLTRiMDQxNjhlMmNlMQ.jpg"></a>
+                    <img alt="Andreas von der Heydt" src="images/reading/andreas-von-der-heydt.jpg"></a>
             </figure>
             <div class="entity-content">
                 <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">

@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
 
 <div class="rich-text blog-article" itemprop='articleBody'>
     <p>
-        <img class="pull-right" title="Phishing" alt="Phishing" src="images/phishing.png" height="222" width="300" />
+        <img class="pull-right" title="Phishing" alt="Phishing" src="images/reading/phishing.png" height="222" width="300" />
         For as long as there’s been email, there’s been email scams. At least 
         since the time email first started gaining widespread popularity in 
         the 1990s, phishing scams have been showing up in email accounts. 

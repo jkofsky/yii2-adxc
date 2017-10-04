@@ -1,3 +1,17 @@
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#720e9e+0,dd4b39+100 */
+background: #720e9e; /* Old browsers */
+background: -moz-linear-gradient(left,  #720e9e 0, #dd4b39 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #720e9e 0,#dd4b39 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #720e9e 0,#dd4b39 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e9e', endColorstr='#dd4b39',GradientType=1 ); /* IE6-9 */
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,e0e0e0+100 */
+background: #fafafa; /* Old browsers */
+background: -moz-linear-gradient(top,  #fafafa 0%, #e0e0e0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fafafa 0%,#e0e0e0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fafafa 0%,#e0e0e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
+
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#155799+0,159957+100 */
 background: #157878; /* Old browsers */
 background: -moz-linear-gradient(left, #155799 0%, #159957 100%); /* FF3.6-15 */

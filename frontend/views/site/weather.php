@@ -11,36 +11,8 @@ $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
 ?>
 <style>
     body {
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1f94f+0,a51731+40,2e7dea+100 */
-        background: #f1f94f; /* Old browsers */
-        background: -moz-radial-gradient(center, ellipse cover,  #f1f94f 0%, #a51731 40%, #2e7dea 100%); /* FF3.6-15 */
-        background: -webkit-radial-gradient(center, ellipse cover,  #f1f94f 0%,#a51731 40%,#2e7dea 100%); /* Chrome10-25,Safari5.1-6 */
-        background: radial-gradient(ellipse at center,  #f1f94f 0%,#a51731 40%,#2e7dea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f94f', endColorstr='#2e7dea',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#de47ac+0,ad1283+50,1e5799+100 */
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b7deed+0,7ccdea+40,8c3310+70,bf6e4e+100 */
-    }
-    .forcastLarge {
-        font-size: 4em;
-        font-weight: bold;
-        line-height: 0.6em;
-        margin-top: 0.6em;
-    }
-    .largeText { font-size: large;}
-    .smallTxt { font-size: small;  }
-    .panel {
-        background-color: rgba(255,255,255,0.7);
-        overflow-y: hidden;
-    }
-    .panel-heading {
-        text-align: center;
-    }
-    .panel-title {
-        font-size: 1.5em;
-        font-weight: bolder;
-        text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
-    }
-
+        background: url(images/ocean-tide-coming-in.jpg) no-repeat fixed top center
+    }   
     @media(min-width: 992px) {
         .container-fluid {
             display: flex;
@@ -50,7 +22,7 @@ $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
         }
     }
 </style>
-<div class="container-fluid">
+<div id="weather" class="container-fluid">
     <div class="col-md-4">
         <div id="current-conditions" class="panel panel-primary">
             <div class="panel-heading">
