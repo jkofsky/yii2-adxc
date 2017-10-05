@@ -42,27 +42,6 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             </div>
         </div>
         <div class="panel panel-info">
-            <div class="panel-heading"><?= Html::encode('UVerse for STL (Jordan)'); ?></div>
-            <div class="panel-body">
-                <address>
-                    <b>Contact Information</b><br />
-                </address>
-                <pre>
-255.255.255.248 | Netmask
-104. 10.109. 70 | Gateway
----------------------------------
-104. 10.109. 65 | 
-104. 10.109. 66 | LinkSys Router
-104. 10.109. 67 | 
-104. 10.109. 68 |
-104. 10.109. 69 |
-                </pre>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="panel panel-info">
             <div class="panel-heading"><?= Html::encode('Cox in TOC (OFFICENET)'); ?></div>
             <div class="panel-body">
                 <address>
@@ -77,6 +56,9 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
                 </pre>
             </div>
         </div>
+    </div>
+
+    <div class="col-md-4">
         <div class="panel panel-info">
             <div class="panel-heading"><?= Html::encode('Cox for STL (Plantation)'); ?></div>
             <div class="panel-body">
@@ -93,24 +75,6 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             </div>
         </div>
         <div class="panel panel-info">
-            <div class="panel-heading"><?= Html::encode('Cox for STL (Palafox)'); ?></div>
-            <div class="panel-body">
-                <address>
-                    <b>Contact Information</b><br />
-                    Modem s/n:
-                </address>
-                <pre>
-255.255.255.224 | Netmask
- 72.216.237.  1 | Gateway
----------------------------------
- 72.216.237.  3 | LynkSys Router
-                </pre>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="panel panel-info">
             <div class="panel-heading"><?= Html::encode('DSL for STL (Plantation)'); ?></div>
             <div class="panel-body">
                 <address>
@@ -125,6 +89,24 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
  74.168.133. 52 |
  74.168.133. 53 | Bric - 92.3 STL
  74.168.133. 54 | NextGen WNRP-STL
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading"><?= Html::encode('Cox for STL (Palafox)'); ?></div>
+            <div class="panel-body">
+                <address>
+                    <b>Contact Information</b><br />
+                    Modem s/n:
+                </address>
+                <pre>
+255.255.255.224 | Netmask
+ 72.216.237.  1 | Gateway
+---------------------------------
+ 72.216.237.  3 | LynkSys Router
                 </pre>
             </div>
         </div>
@@ -144,6 +126,24 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
  68.222.233.13# |
  68.222.233.13# |
  68.222.233.13# |
+                </pre>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading"><?= Html::encode('UVerse for STL (Jordan)'); ?></div>
+            <div class="panel-body">
+                <address>
+                    <b>Contact Information</b><br />
+                </address>
+                <pre>
+255.255.255.248 | Netmask
+104. 10.109. 70 | Gateway
+---------------------------------
+104. 10.109. 65 | 
+104. 10.109. 66 | LinkSys Router
+104. 10.109. 67 | 
+104. 10.109. 68 |
+104. 10.109. 69 |
                 </pre>
             </div>
         </div>

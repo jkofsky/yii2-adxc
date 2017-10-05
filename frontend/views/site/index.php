@@ -9,17 +9,18 @@ $this->title = 'ADXC IntraNet';
 ?>
 <div class="site-index">
 
-    <div class="body-content">
-        <?php
-        if (!Yii::$app->user->isGuest) {
-            echo $this->render('_announcements', [
-                'announceModel' => $announceModel,
-                'birthdayModel' => $birthdayModel,
-            ]);
-        }
-        ?>
-
-        <div class="container-fluid">
+    <div class="container-fluid">
+        <div class="row-1">
+            <?php
+            if (!Yii::$app->user->isGuest) {
+                echo $this->render('_announcements', [
+                    'announceModel' => $announceModel,
+                    'birthdayModel' => $birthdayModel,
+                ]);
+            }
+            ?>
+        </div>
+        <div class="row  equal-panels">
             <div class="col-md-4">
                 <div class="panel panel-info">
                     <div class="panel-heading">Business Office</div>
@@ -42,6 +43,7 @@ $this->title = 'ADXC IntraNet';
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="panel panel-warning">
                     <div class="panel-heading">Cat Country 98&bullet;7 (WYCT-FM)</div>
