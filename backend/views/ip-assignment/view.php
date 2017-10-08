@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             //'host_type_id',
-            'attribute' => 'subnet.name',
+            'attribute' => 'subnet.short_name',
             'ipv4_address',
             'host_type',
             'host_name',

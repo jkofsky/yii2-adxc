@@ -79,6 +79,8 @@ class IpAssignment extends ActiveRecord
             'host_location' => Yii::t('app', 'Host Location'),
             'port_access_info' => Yii::t('app', 'Port Access Info'),
             'public_access_ip' => Yii::t('app', 'Public Access IP'),
+            'subnet.name'=>Yii::t('app','Subnet Name'),
+            'subnet.short_name'=>Yii::t('app','Subnet'),
         ];
     }
 

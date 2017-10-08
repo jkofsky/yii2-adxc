@@ -33,10 +33,10 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
             'ipv4_address',
             [
                 'attribute' => 'host_type',
+//                'filter' => Html::activeDropDownList($searchModel, 'dept_id', Department::getDepartmentList(), ['class' => 'form-control', 'prompt' => 'All']
             //'filter' => ZHtml::enumDropDownList($ipModel, 'host_type', array('prompt' => '&horbar; All &horbar;')),
             ],
             //'host_type_id',
-            //'subnet_id',
             'host_name',
             'host_purpose',
             'host_location',
