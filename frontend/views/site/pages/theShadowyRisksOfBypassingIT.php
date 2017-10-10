@@ -12,8 +12,8 @@ $this->params['breadcrumbs'][] = $pageTitle;
 
 <h1><?= Html::encode('Data Snapshot: Security, Privacy, and the Shadowy Risks of Bypassing IT'); ?></h1>
 
-<address>Originally posted by <?= Html::a(Html::img('@web/images/reading/peter-tsai.jpg', ['alt'=>'Peter Tsai']), 'https://community.spiceworks.com/people/petertsai') ?>
-    on: 
+<address><?= Html::img('@web/images/reading/peter-tsai.jpg', ['alt' => 'Peter Tsai']) ?>
+    Originally posted by Peter Tsai on: 
     <?=
     Html::a('Spiceworks', 'https://community.spiceworks.com/networking/articles/2516-data-snapshot-security-privacy-and-the-shadowy-risks-of-bypassing-it', [
         'title' => "Link To: Original Article",
@@ -78,11 +78,11 @@ $this->params['breadcrumbs'][] = $pageTitle;
                 using.</p>
 
             <p><?=
-    Html::img("@web/images/reading/cloud_services_behind_back_IT.png", [
-        'title' => "Image: Cloud Services Behind Back IT",
-        'class' => 'img-responsive'
-    ]);
-    ?></p>
+                Html::img("@web/images/reading/cloud_services_behind_back_IT.png", [
+                    'title' => "Image: Cloud Services Behind Back IT",
+                    'class' => 'img-responsive'
+                ]);
+                ?></p>
 
             <p>As to which cloud services IT pros are most worried about, 35% 
                 said cloud storage services are most vulnerable to being hacked.
@@ -97,7 +97,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
                     'title' => "Image:  Most Vulnerable Cloud Applications",
                     'class' => 'img-responsive'
                 ]);
-    ?></p>
+                ?></p>
 
             <h2><b>Is data privacy a top business priority?</b></h2>
 
@@ -130,14 +130,14 @@ $this->params['breadcrumbs'][] = $pageTitle;
                     'title' => "Image:  IT pros who agree with data privacy statements",
                     'class' => 'img-responsive'
                 ]);
-    ?></p>
+                ?></p>
 
             <p><?=
                 Html::img("@web/images/reading/priortization_of_data_privacy.png", [
                     'title' => "Image:  Priortization of Data Privacy",
                     'class' => 'img-responsive'
                 ]);
-    ?></p>
+                ?></p>
 
             <h2><b>Keeping data safe in the cloud</b></h2>
 
@@ -160,7 +160,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
                     'title' => "Image:  Security Measures In The Cloud",
                     'class' => 'img-responsive'
                 ]);
-    ?></p>
+                ?></p>
 
             <h2><b>How organizations can defend against shadow IT</b></h2>
 
