@@ -25,6 +25,11 @@ ul { list-style:  none; }
 /* ------------------------------------------------------------------------*/
 /* Weather Page Stuff                                                      */
 /* ------------------------------------------------------------------------*/
+#current-conditions { 
+    background-color: rgba(255, 255, 255, 0.5); 
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
+}
+#current_conditions_detail { font-weight: bolder; }
 li.media p{
     margin: 1px;
 }
@@ -58,11 +63,6 @@ li.media p{
     color: #ffffff;
     text-shadow: 1px 1px 0px #444444;
 }
-#current-conditions { 
-    background-color: rgba(255, 255, 255, 0.5); 
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.6);
-}
-#current_conditions_detail { font-weight: bolder; }
 .forcastLarge {
     font-size: 4em;
     font-weight: bold;

@@ -101,7 +101,7 @@ $this->title = strval($data->location->areaDescription) . ' Weather';
                 $dayTimeClass = strtolower($_forecast[0]['TemperatureLabel']) == 'low' ? ' night-time ' : ' day-time ';
                 $temperatureClass = strtolower($_forecast[0]['TemperatureLabel']) == 'low' ? ' low-temperature ' : ' high-temperature ';
                 ?>
-                <div class="col-md-4 <?= $dayTimeClass ?>">
+                <div id="current-forcast" class="col-md-4 <?= $dayTimeClass ?>">
                     <div class="media-left">
                         <img class="media-object img-thumbnail" src="<?= $_forecast[0]['IconLink']; ?>" alt="<?= $_forecast[0]['Condition']; ?>">
                     </div>
