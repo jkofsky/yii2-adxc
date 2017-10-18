@@ -8,13 +8,15 @@ use yii\bootstrap\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Contact';
+if ($model->scenario == 'employee') {
+    $this->title = 'Email Employees';
+} else {
+    $this->title = 'Contact Us';
+}
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
-
-
 
     <div class="row">
         <div class="col-lg-5">

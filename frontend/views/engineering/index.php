@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
 <div class="container-fluid">
     <div class="row equal-panels">
         <div class="col-md-3">
-            <div class="panel panel-info">
+            <div class="panel panel-adxc">
                 <div class="panel-heading">
                     <h4><span class="glyphicon glyphicon-duplicate"></span>&nbsp;Documents</h4>
                 </div>
@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
             </div>
         </div>
         <div class="col-md-3">
-            <div class="panel panel-info">
+            <div class="panel panel-adxc">
                 <div class="panel-heading">
                     <h4><span class="glyphicon glyphicon-modal-window"></span>&nbsp;ADX Networks</h4>
                 </div>
@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
             </div>
         </div>
         <div class="col-md-3">
-            <div class="panel panel-info">
+            <div class="panel panel-adxc">
                 <div class="panel-heading">
                     <h4><span class="glyphicon glyphicon-cloud-download"></span>&nbsp;Programming</h4>
                 </div>
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
             </div>
         </div>
         <div class="col-md-3">
-            <div class="panel panel-info">
+            <div class="panel panel-adxc">
                 <div class="panel-heading">
                     <h4><span class="glyphicon glyphicon-cog"></span>&nbsp;Support Contacts</h4>
                 </div>

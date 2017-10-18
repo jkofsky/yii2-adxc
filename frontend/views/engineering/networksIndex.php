@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
 
 <div class="row">
     <div class="col-md-6">
-        <div class="panel panel-info">
+        <div class="panel panel-adxc">
             <div class="panel-heading">Internal Network Segments</div>
             <div class="panel-body">
                 <?php
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
     </div>
 
     <div class="col-md-6">
-        <div class="panel panel-info">
+        <div class="panel panel-adxc">
             <div class="panel-heading">Useful Networking Information</div>
             <div class="panel-body">
                 <?=
