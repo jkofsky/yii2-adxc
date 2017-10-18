@@ -22,9 +22,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
         </ul>
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user">
-                <a href="https://www.linkedin.com/in/johngeades" rel="author">
-                    <img alt="John Eades" src="images/reading/john-eades.jpg">
-                </a>
+                <img alt="John Eades" src="images/reading/john-eades.jpg">
             </figure>
             <div class="entity-content">
                 <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">

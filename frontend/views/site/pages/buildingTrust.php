@@ -21,8 +21,8 @@ $this->params['breadcrumbs'][] = $pageTitle;
             <li><time itemprop="datePublished" datetime="2014-03-30">March 30, 2014</time></li>
         </ul>
         <div class="article-author-wrapper">
-            <figure class="entity-image entity-image-user"><a href="https://www.linkedin.com/in/avonderheydt" rel="author">
-                    <img alt="Andreas von der Heydt" src="images/reading/andreas-von-der-heydt.jpg"></a>
+            <figure class="entity-image entity-image-user">
+                <img alt="Andreas von der Heydt" src="images/reading/andreas-von-der-heydt.jpg">
             </figure>
             <div class="entity-content">
                 <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">

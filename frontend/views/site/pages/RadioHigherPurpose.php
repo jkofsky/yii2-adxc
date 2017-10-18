@@ -22,13 +22,11 @@ $this->params['breadcrumbs'][] = $pageTitle;
         </ul>
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user">
-                <a href="https://www.linkedin.com/in/johngeades" rel="author">
-                    <img alt="John Eades" src="images/reading/eric-rhoads.jpg">
-                </a>
+                <img alt="John Eades" src="images/reading/eric-rhoads.jpg">
             </figure>
             <div class="entity-content">
                 <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">
-                    <a href="https://radioink.com/author/erhoads/" rel="author">
+                    <a href="https://radioink.com/author/erhoads/" rel="author" target="_new">
                         <span itemprop="name">Eric Rhoads</span>
                     </a>
                 </h2>
@@ -98,7 +96,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
             PSA devoted to the charity. Or, a Sunday morning public service 
             broadcast could include an interview with a charity representative. 
             To learn more, please visit the “Homes for our Troops” 
-            <a href="https://www.hfotusa.org/get-involved/support_our_mission/media-center/media_kit/downloads/">download center</a>.</p>
+            <a href="https://www.hfotusa.org/get-involved/support_our_mission/media-center/media_kit/downloads/" target="_new">download center</a>.</p>
         <p>For further inquiries, please contact MSG Marts, U.S. Army Ret., 
             at emarts&commat;wday.com.</p>
         <p>With efforts like this, radio has a little less fear of being forced 
