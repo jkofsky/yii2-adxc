@@ -36,19 +36,20 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                 <?=
                 Nav::widget(['items' => [
                         '<li>Administrator Logon: User: SysCat, Pswd: J8</li>',
-                        '<li>OMT General User: User: mts, Pswd: omt</li>',
                         '<li>OMT On-Air User (default): User: oplog, Pswd: mts</li>',
+                        '<li>OMT General User: User: mts, Pswd: omt</li>',
                         ['label' => 'NetComm WAN Network Details', 'url' => ['info', 'view' => 'netComm']],
                         ['label' => 'External Public IP Assignments', 'url' => ['info', 'view' => 'public_ips']],
                         ['label' => 'IANA IPv4 Address Usage (RFC 1319/5735)', 'url' => ['info', 'view' => 'rfc5735_info']],
-                        '<li class="nav-divider"></li>',
                     ],
                 ]);
                 ?>
-                <p style="font-family: monospace">Passwords: 
-                    <?= Html::bsLabel('G8Blu3$Go', 'danger', ['style' => 'font-size: 100%']); ?>
-                    | C9IwSWmB | XP1Med9I | 
-                    <?= Html::bsLabel('N0$a1nt$', 'primary', ['style' => 'font-size: 100%']); ?></p>
+            </div>
+            <div class="panel-footer" style="font-family: monospace">Passwords: 
+                <?= Html::bsLabel('G8Blu3$Go', 'danger', ['style' => 'font-size: 100%']); ?>
+                <?= Html::bsLabel('C9IwSWmB', 'success', ['style' => 'font-size: 100%']); ?>
+                <?= Html::bsLabel('XP1Med9I', 'warning', ['style' => 'font-size: 100%']); ?>
+                <?= Html::bsLabel('N0$a1nt$', 'primary', ['style' => 'font-size: 100%']); ?>
             </div>
         </div>
     </div>

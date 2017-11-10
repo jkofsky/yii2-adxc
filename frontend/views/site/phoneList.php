@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-phone-list">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    REV. 8.15.17
+    REV. <?= date('m.d.y', filemtime(__FILE__)); ?>
     <table class="table table-condensed table-striped">
         <thead>
             <tr>

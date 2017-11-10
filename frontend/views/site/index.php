@@ -58,8 +58,8 @@ $this->title = 'ADXC IntraNet';
                         }
 
                         $items[] = '<li class="nav-divider"></li>';
-                        $items[] = 'Studio Line: (850) 430-1987';
-                        $items[] = 'FM Sales: (850) 262-6000';
+                        $items[] = 'Listener Line: (850) 430-1987';
+                        $items[] = 'Sales Office: (850) 262-6000';
 
                         if (!Yii::$app->user->isGuest) {
                             $items[] = 'Studio (Hotline): (850) 262-61##';
@@ -89,8 +89,8 @@ $this->title = 'ADXC IntraNet';
                         }
 
                         $items[] = '<li class="nav-divider"></li>';
-                        $items[] = 'Studio Line: (850) 437-1620';
-                        $items[] = 'AM Sales: (850) 262-6139';
+                        $items[] = 'Listener Line: (850) 437-1620';
+                        $items[] = 'Sales Office: (850) 262-6139';
 
                         if (!Yii::$app->user->isGuest) {
                             $items[] = 'Studio (Hotline): (850) 262-6131';

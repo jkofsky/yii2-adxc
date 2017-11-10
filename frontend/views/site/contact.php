@@ -7,6 +7,7 @@
 use yii\bootstrap\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use yii\helpers\ArrayHelper;
 
 if ($model->scenario == 'employee') {
     $this->title = 'Email Employees';
@@ -28,9 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 ?>
                 <p>
                     <?= Html::label('Send to', 'department') ?>
-
                     <?=
-                    Html::activeDropDownList($model, 'department', \common\models\Department::getDepartmentList(), ['class' => 'form-control', 'prompt' => 'All Employees'])
+                    Html::activeDropDownList($model, 'department', ArrayHelper::merge(['management' => 'Management'] ,\common\models\Department::getDepartmentList()), ['class' => 'form-control', 'prompt' => 'All Employees'])
                     ?>
                 </p>
                 <?php

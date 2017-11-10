@@ -8,8 +8,7 @@ use yii\base\Model;
 /**
  * ContactForm is the model behind the contact form.
  */
-class ContactForm extends Model
-{
+class ContactForm extends Model {
 
     public $name;
     public $email;
@@ -21,8 +20,7 @@ class ContactForm extends Model
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             // name, email, subject and body are required
             [['name', 'email', 'subject', 'body'], 'required'],
@@ -38,8 +36,7 @@ class ContactForm extends Model
     /**
      * @inheritdoc
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         $scenarios = parent::scenarios();
         $scenarios['employee'] = ['subject', 'body', 'verifyCode', 'department'];
         return $scenarios;
@@ -48,8 +45,7 @@ class ContactForm extends Model
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'verifyCode' => Yii::t('app', 'Verification Code'),
         ];
@@ -61,8 +57,7 @@ class ContactForm extends Model
      * @param string $email the target email address
      * @return bool whether the email was sent
      */
-    public function sendEmail($email)
-    {
+    public function sendEmail($email) {
         return Yii::$app->mailer->compose()
                         ->setTo($email)
                         ->setFrom([$this->email => $this->name])
@@ -78,13 +73,16 @@ class ContactForm extends Model
      * @param string $email the target email address
      * @return bool whether the email was sent
      */
-    public function sendDepartmentEmail($department = null)
-    {
+    public function sendDepartmentEmail($department = null) {
         $query = \common\models\User::find()->where(['is_active' => \common\models\User::STATUS_ACTIVE])
                 ->joinWith('profile');
 
         if (!is_null($department)) {
-            $query->andWhere(['profile.department_id' => $department]);
+            if ($department == 'management') {
+                $query->andWhere(['profile.is_management' => 1]);
+            } else {
+                $query->andWhere(['profile.department_id' => $department]);
+            }
         }
         $users = $query->all();
 
