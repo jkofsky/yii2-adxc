@@ -41,6 +41,11 @@ $this->title = 'ADXC IntraNet';
                         echo HTML::ul($items, ['style' => 'list-style-type: none;']);
                         ?>
                     </div>
+                    <?php if (!Yii::$app->user->isGuest) : ?>
+                        <div class="panel-footer">
+                            <?= Html::a('Phone List &raquo;', ['/site/phone-list'], ['class' => 'btn btn-block btn-info']) ?>
+                        </div>
+                    <?php endif; ?>    
                 </div>
             </div>
 

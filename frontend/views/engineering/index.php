@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
                     Standard Operating Procedures (SOP)
                 </div>
                 <div class="panel-footer">
-                    <?= Html::a('View &raquo;', ['/engineering/documents'], ['class' => 'btn btn-block btn-success']) ?>
+                    <?= Html::a('View &raquo;', ['/engineering/documents'], ['class' => 'btn btn-block btn-info']) ?>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
                     address segments.
                 </div>
                 <div class="panel-footer">
-                    <?= Html::a('View &raquo;', ['/engineering/local-network'], ['class' => 'btn btn-block btn-success']) ?>
+                    <?= Html::a('View &raquo;', ['/engineering/local-network'], ['class' => 'btn btn-block btn-info']) ?>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
                     aired on ADX stations.
                 </div>
                 <div class="panel-footer">
-                    <?= Html::a('View &raquo;', ['/engineering/programming'], ['class' => 'btn btn-block btn-success']) ?>
+                    <?= Html::a('View &raquo;', ['/engineering/programming'], ['class' => 'btn btn-block btn-info']) ?>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
                     etc used by ADX Communications.
                 </div>
                 <div class="panel-footer">
-                    <?= Html::a('View &raquo;', ['/engineering/support'], ['class' => 'btn btn-block btn-success']) ?>
+                    <?= Html::a('View &raquo;', ['/engineering/support'], ['class' => 'btn btn-block btn-info']) ?>
                 </div>
             </div>
         </div>
