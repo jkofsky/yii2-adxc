@@ -8,6 +8,9 @@ use yii\bootstrap\ActiveForm;
 use kartik\password\PasswordInput;
 
 $this->title = 'Reset password';
+$this->params['breadcrumbs'][] = ['label' =>
+    Yii::t('app', 'My Profile'),
+    'url' => ['/profile/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-reset-password">
@@ -27,6 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php ActiveForm::end(); ?>
         </div>
-        <?= $this->render('_passwordRequirements.php'); ?>
+        <div class="col-md-6">
+            <?= $this->render('_passwordRequirements.php'); ?>
+        </div>
     </div>
 </div>

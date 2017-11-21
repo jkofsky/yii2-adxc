@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
                     Display the Web Server&#039;s Scripting &amp; Environmental information.
                 </div>
                 <div class="panel-footer">
-                    <?= Html::a('View &raquo;', ['/engineering/info', 'view' => 'php_info'], ['class' => 'btn btn-block btn-danger']) ?>
+                    <?= Html::a('View &raquo;', ['/engineering/php-info'], ['class' => 'btn btn-block btn-danger']) ?>
                 </div>
             </div>
         </div>

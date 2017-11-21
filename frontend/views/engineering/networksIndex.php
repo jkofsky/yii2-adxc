@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                 <?=
                 Nav::widget(['items' => [
                         '<li>Administrator Logon: User: SysCat, Pswd: J8</li>',
-                        '<li>OMT On-Air User (default): User: oplog, Pswd: mts</li>',
+                        '<li>OMT On-Air User (default): User: oplog, Pswd: mts1</li>',
                         '<li>OMT General User: User: mts, Pswd: omt</li>',
                         ['label' => 'NetComm WAN Network Details', 'url' => ['info', 'view' => 'netComm']],
                         ['label' => 'External Public IP Assignments', 'url' => ['info', 'view' => 'public_ips']],
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                 ?>
             </div>
             <div class="panel-footer" style="font-family: monospace">Passwords: 
-                <?= Html::bsLabel('G8Blu3$Go', 'danger', ['style' => 'font-size: 100%']); ?>
+                <?= Html::bsLabel('Gr8Blu3$', 'danger', ['style' => 'font-size: 100%']); ?>
                 <?= Html::bsLabel('C9IwSWmB', 'success', ['style' => 'font-size: 100%']); ?>
                 <?= Html::bsLabel('XP1Med9I', 'warning', ['style' => 'font-size: 100%']); ?>
                 <?= Html::bsLabel('N0$a1nt$', 'primary', ['style' => 'font-size: 100%']); ?>

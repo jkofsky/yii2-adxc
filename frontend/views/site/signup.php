@@ -31,6 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <?php ActiveForm::end(); ?>
         </div>
-        <?= $this->render('_passwordRequirements.php'); ?>
+        <div class="col-md-6">
+            <?= $this->render('_passwordRequirements.php'); ?>
+        </div>
     </div>
 </div>

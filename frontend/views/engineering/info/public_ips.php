@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
  12. 41.153.193 | Gateway
 ------------------------------------
  12. 41.153.193 | Cisco Eth 0/0
- 12. 41.153.194 | SonicWall (Audio)
+ 12. 41.153.194 | SonicWall (AudioNet)
  12. 41.153.195 |
  12. 41.153.196 |
  12. 41.153.197 |

@@ -20,8 +20,8 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Profile');
         'model' => $model,
         'attributes' => [
             'email:email',
-            'profile.home_phone',
             'profile.cell_phone',
+            'profile.home_phone',
             'profile.department.dept_name',
             'profile.extension',
             'profile.speed_dial',

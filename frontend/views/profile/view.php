@@ -7,7 +7,6 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Profile */
 
 $this->title = Yii::t('app', 'My Profile');
-
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profile-view">

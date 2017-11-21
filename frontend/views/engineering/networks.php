@@ -6,8 +6,9 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use common\models\IpAssignment;
 
-$this->title = Yii::t('app', 'Network Segment');
+$this->title = Yii::t('app', 'Network IP Assignments');
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['/engineering/index']];
 $this->params['breadcrumbs'][] = ['label' => 'ADX Networks', 'url' => ['/engineering/local-network']];
 $this->params['breadcrumbs'][] = $subnetModel->name;
@@ -15,7 +16,7 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
 
 <div class="ip-assignment-index">
 
-    <h1><?= Html::encode("{$subnetModel->name} Segment") ?></h1>
+    <h1><?= Html::encode("{$subnetModel->name} IP Assignments") ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
 
     <p>
@@ -33,8 +34,7 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
             'ipv4_address',
             [
                 'attribute' => 'host_type',
-//                'filter' => Html::activeDropDownList($searchModel, 'dept_id', Department::getDepartmentList(), ['class' => 'form-control', 'prompt' => 'All']
-            //'filter' => ZHtml::enumDropDownList($ipModel, 'host_type', array('prompt' => '&horbar; All &horbar;')),
+                'filter' => Html::activeDropDownList($searchModel, 'host_type', IpAssignment::getHostTypeList(), ['class' => 'form-control', 'prompt' => 'All Types']),
             ],
             //'host_type_id',
             'host_name',

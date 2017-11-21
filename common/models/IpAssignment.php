@@ -92,4 +92,14 @@ class IpAssignment extends ActiveRecord
         return $this->hasOne(Subnet::className(), ['id' => 'subnet_id']);
     }
 
+    public static function getHostTypeList() {
+        return [ 
+            'Host' => 'Host', 
+            'Network' => 'Network', 
+            'Server' => 'Server', 
+            'Printer' => 'Printer', 
+            'Power' => 'Power', 
+            'WheatNet' => 'WheatNet',
+            ];
+    }
 }

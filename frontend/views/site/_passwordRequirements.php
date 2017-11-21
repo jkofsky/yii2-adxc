@@ -3,7 +3,6 @@
 
 use yii\helpers\Html;
 ?>
-<div class="col-md-6">
     <div class="panel panel-danger">
         <div class="panel-heading" style="font-weight: bolder;">Password Requirements</div>
         <div class="panel-body">
@@ -22,4 +21,3 @@ use yii\helpers\Html;
             </ul>
         </div>
     </div>
-</div>

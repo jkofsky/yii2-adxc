@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Main Office FAX</td>                                <td>850-494-0778</td>   <td>146</td></tr>
             <tr><td>e-Fax Dave</td>                                     <td>850-378-1030</td>   <td></td></tr>
             <tr><td>CatCountry 98.7 Listener Line</td>                  <td>850-430-1987</td>   <td>FM Studio</td></tr>
-            <tr class="text-danger"><td>FM Tower (confidential)</td>    <td>251-931-3302</td>   <td>Bunker</td></tr>
+            <tr class="alert-danger"><td>FM Tower (confidential)</td>    <td>251-931-3302</td>   <td>Bunker</td></tr>
         </tbody>
     </table>
 </div>
