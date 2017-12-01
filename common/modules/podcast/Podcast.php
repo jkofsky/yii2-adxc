@@ -15,6 +15,11 @@ class Podcast extends \yii\base\Module {
     /**
      * @inheritdoc
      */
+    public $defaultRoute = 'podcast';
+
+    /**
+     * @inheritdoc
+     */
     public function init() {
         parent::init();
 

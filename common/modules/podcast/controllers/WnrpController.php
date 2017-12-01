@@ -2,12 +2,10 @@
 
 namespace common\modules\podcast\controllers;
 
-use yii\web\Controller;
-
 /**
- * Default controller for the `podcast` module
+ * Controller for the WNRP Podcasts
  */
-class DefaultController extends Controller {
+class WnrpController extends \yii\web\Controller {
 
     /**
      * Renders the index view for the module
