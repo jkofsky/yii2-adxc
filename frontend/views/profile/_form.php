@@ -58,6 +58,7 @@ use yii\jui\DatePicker;
                     <?=
                     $form->field($model, 'birth_date')->widget(DatePicker::className(), [
                         'options' => [
+                            'class' => 'form-control',
                             'placeholder' => Yii::$app->params['datePickerFormat'],
                         ],
                         'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
