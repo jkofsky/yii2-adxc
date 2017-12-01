@@ -1,0 +1,66 @@
+CREATE TABLE `tbl_comment` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`content` TEXT NOT NULL,
+	`status` INT(11) NOT NULL,
+	`create_time` INT(11) NULL DEFAULT NULL,
+	`author` VARCHAR(128) NOT NULL,
+	`email` VARCHAR(128) NOT NULL,
+	`url` VARCHAR(128) NULL DEFAULT NULL,
+	`post_id` INT(11) NOT NULL,
+	PRIMARY KEY (`id`),
+	INDEX `FK_comment_post` (`post_id`),
+	CONSTRAINT `FK_comment_post` FOREIGN KEY (`post_id`) REFERENCES `tbl_post` (`id`) ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=5259
+;
+
+CREATE TABLE `tbl_post` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`guest_name` VARCHAR(128) NOT NULL,
+	`guest_position` VARCHAR(128) NULL DEFAULT NULL,
+	`host_name` VARCHAR(128) NOT NULL,
+	`content` TEXT NOT NULL,
+	`tags` VARCHAR(128) NULL DEFAULT NULL,
+	`status` INT(11) NOT NULL,
+	`show_type` INT(11) NULL DEFAULT NULL,
+	`create_time` INT(11) NULL DEFAULT NULL,
+	`date_aired` INT(11) NOT NULL,
+	`update_time` INT(11) NULL DEFAULT NULL,
+	`posted_by` VARCHAR(32) NOT NULL,
+	`file_name` VARCHAR(128) NULL DEFAULT NULL,
+	`file_type` VARCHAR(32) NULL DEFAULT NULL,
+	`file_size` INT(11) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`),
+	INDEX `FK_post_author` (`posted_by`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=4806
+;
+
+CREATE TABLE `tbl_tag` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(128) NOT NULL,
+	`frequency` INT(11) NULL DEFAULT '1',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=774
+;
+/* Probably NOT NEEDED */
+CREATE TABLE `tbl_user` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(128) NOT NULL,
+	`password` VARCHAR(128) NOT NULL,
+	`salt` VARCHAR(128) NOT NULL,
+	`email` VARCHAR(128) NOT NULL,
+	`profile` TEXT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=2
+;
