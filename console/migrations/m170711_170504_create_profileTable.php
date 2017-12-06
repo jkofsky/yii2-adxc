@@ -3,6 +3,9 @@
 use yii\db\Migration;
 use yii\db\Expression;
 
+/**
+ * Class m170711_170504_create_profileTable
+ */
 class m170711_170504_create_profileTable extends Migration
 {
 

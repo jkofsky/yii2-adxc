@@ -2,6 +2,9 @@
 
 use yii\db\Migration;
 
+/**
+ * Class m130524_201442_init
+ */
 class m130524_201442_init extends Migration
 {
 

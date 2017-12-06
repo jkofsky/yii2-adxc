@@ -2,6 +2,9 @@
 
 use yii\db\Migration;
 
+/**
+ * Class m170714_153229_create_departmentTable
+ */
 class m170714_153229_create_departmentTable extends Migration
 {
 

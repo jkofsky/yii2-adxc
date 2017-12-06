@@ -2,11 +2,12 @@
 
 use yii\db\Migration;
 
-class m170726_193051_load_subnetTable extends Migration
-{
+/**
+ * Class m170726_193051_load_subnetTable
+ */
+class m170726_193051_load_subnetTable extends Migration {
 
-    public function safeUp()
-    {
+    public function safeUp() {
         $this->insert('{{%subnet}}', [
             'name' => 'ADX Management Network',
             'short_name' => 'ADXC-Net',
@@ -19,6 +20,8 @@ class m170726_193051_load_subnetTable extends Migration
             'dhcp_range' => '100-199',
             'vlan_id' => 1,
             'vlan_name' => 'DEFAULT_VLAN',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -33,6 +36,8 @@ class m170726_193051_load_subnetTable extends Migration
             'dhcp_range' => '100-199',
             'vlan_id' => 2,
             'vlan_name' => 'AUDIO_VLAN',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -47,6 +52,8 @@ class m170726_193051_load_subnetTable extends Migration
             'dhcp_range' => '100-199',
             'vlan_id' => 4,
             'vlan_name' => 'GUEST_VLAN',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -61,6 +68,8 @@ class m170726_193051_load_subnetTable extends Migration
             'dhcp_range' => 'none',
             'vlan_id' => 87,
             'vlan_name' => 'WHEAT_VLAN',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -75,6 +84,8 @@ class m170726_193051_load_subnetTable extends Migration
             'dhcp_range' => '100-199',
             'vlan_id' => 168,
             'vlan_name' => 'OFFICE_VLAN',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -87,6 +98,8 @@ class m170726_193051_load_subnetTable extends Migration
             'broadcast_address' => '192.168.10.255',
             'cidr_block' => '192.168.10.0/24',
             'dhcp_range' => '200-250',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -99,6 +112,8 @@ class m170726_193051_load_subnetTable extends Migration
             'broadcast_address' => '192.168.11.255',
             'cidr_block' => '192.168.11.0/24',
             'dhcp_range' => '200-250',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -111,6 +126,8 @@ class m170726_193051_load_subnetTable extends Migration
             'broadcast_address' => '192.168.12.255',
             'cidr_block' => '192.168.12.0/24',
             'dhcp_range' => '200-250',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%subnet}}', [
@@ -123,6 +140,8 @@ class m170726_193051_load_subnetTable extends Migration
             'broadcast_address' => '192.168.13.255',
             'cidr_block' => '192.168.13.0/24',
             'dhcp_range' => '200-250',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
         $this->insert('{{%subnet}}', [
             'name' => 'WNRP Transmitter Site - Jodran Net1',
@@ -134,11 +153,12 @@ class m170726_193051_load_subnetTable extends Migration
             'broadcast_address' => '192.168.14.128',
             'cidr_block' => '192.168.14.0/25',
             'dhcp_range' => 'n/a',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
     }
 
-    public function safeDown()
-    {
+    public function safeDown() {
         $this->truncateTable('{{%subnet}}');
     }
 

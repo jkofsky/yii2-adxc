@@ -2,6 +2,9 @@
 
 use yii\db\Migration;
 
+/**
+ * Class m170804_043404_create_ipAssignmentTable
+ */
 class m170804_043404_create_ipAssignmentTable extends Migration
 {
 
@@ -37,11 +40,17 @@ class m170804_043404_create_ipAssignmentTable extends Migration
         $this->addForeignKey(
                 'fk_assignment_to_subnet', '{{%ip_assignment}}', 'subnet_id', '{{%subnet}}', 'id', 'SET NULL', 'CASCADE'
         );
+        
+        // add foreign key for a table relation to the '{{%subnet}}' table
+        $this->addForeignKey(
+                'fk_assignment_to_host', '{{%ip_assignment}}', 'host_type_id', '{{%ip_host}}', 'id', 'SET NULL', 'CASCADE'
+        );
     }
 
     public function safeDown()
     {
         $this->dropForeignKey('fk_assignment_to_subnet', '{{%ip_assignment}}');
+        $this->dropForeignKey('fk_assignment_to_host', '{{%ip_assignment}}');
         $this->dropTable('{{%ip_assignment}}');
     }
 

@@ -2,6 +2,9 @@
 
 use yii\db\Migration;
 
+/**
+ * Class m170725_205320_create_subnetTable
+ */
 class m170725_205320_create_subnetTable extends Migration
 {
 

@@ -2,6 +2,9 @@
 
 use yii\db\Migration;
 
+/**
+ * Class m170715_190741_create_announcementTable
+ */
 class m170715_190741_create_announcementTable extends Migration
 {
 
