@@ -13,6 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
     You will need to go the the main sites.</p>
 
 <?=
-Html::a('WNRP - NewsRadio1620', 'http://podcast.newsradio1620.com', ['class' => 'external-link', 'target' => '_new']);
+Html::a('WNRP - NewsRadio1620', 'http://podcast.newsradio1620.com', ['target' => '_new']);
 ?>
 <br>

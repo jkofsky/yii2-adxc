@@ -13,8 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?=
 Html::ul([
-    Html::a('WNRP - NewsRadio1620', ['/podcast/wnrp'], ['class' => 'external-link']),
-    Html::a('WYCT - CatCountry 98&bullet;7', ['/podcast/wyct'], ['class' => 'external-link']),
+    Html::a('WNRP - NewsRadio1620', ['/podcast/wnrp']),
+    Html::a('WYCT - CatCountry 98&bullet;7', ['/podcast/wyct']),
         ], ['encode' => false]);
 ?>
 <!--<nav class="navbar">

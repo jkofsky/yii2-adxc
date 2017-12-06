@@ -7,6 +7,8 @@ namespace common\modules\podcast\controllers;
  */
 class PodcastController extends \yii\web\Controller {
 
+    public $layout = 'column2';
+
     /**
      * Renders the index view for the module
      * @return string

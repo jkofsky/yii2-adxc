@@ -5,7 +5,7 @@ namespace common\modules\podcast\controllers;
 /**
  * Controller for the WNRP Podcasts
  */
-class WnrpController extends \yii\web\Controller {
+class WnrpController extends PodcastController {
 
     /**
      * Renders the index view for the module
