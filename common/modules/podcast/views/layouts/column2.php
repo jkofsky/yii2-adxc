@@ -7,7 +7,7 @@
             </div><!-- content -->
 
             <div class="col-sm-3">
-                <div class="panel panel-adxc">
+                <div class="panel panel-primary">
                     <div class="panel-heading">Archives</div>
                     <div class="panel-body">
                         <ul class="list-unstyled list-striped">
