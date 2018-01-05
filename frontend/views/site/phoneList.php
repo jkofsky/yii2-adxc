@@ -13,9 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p class="text-danger">All extensions can be direct dialed using prefix - (850) 262-6###</p>
     <table class="table table-condensed table-striped">
         <thead>
-            <tr>
-                <th>Location</th>                                       <th>Extension</th>      <th>Room</th>
-            </tr>
+            <tr><th>Location</th>                                       <th>Extension</th>      <th>Room</th></tr>
         </thead>
         <tbody>
             <tr><td>Front Desk</td>                                     <td>100 or 0</td>       <td>102</td></tr>
@@ -30,19 +28,19 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Engineering Satellite Rack (TOC)</td>               <td>159</td>            <td>124</td></tr>
             <tr><td>Promotions Office</td>                              <td>104</td>            <td>121</td></tr>
             <tr><td>Traffic Department</td>                             <td>117</td>            <td>152A</td></tr>
-            <tr><td>3rd Floor Warehouse</td>                            <td>135</td>            <td>221F</td></tr>
-            <tr><td>NewsRadio On-Air (Telos)</td>                       <td>132</td>            <td>109</td></tr>
-            <tr><td>NewsRadio Studio - Talent</td>                      <td>125</td>            <td>109</td></tr>
-            <tr><td>NewsRadio Studio - Board Op</td>                    <td>131</td>            <td>109</td></tr>
+            <tr><td>3rd Floor Warehouse</td>                            <td>135</td>            <td>221</td></tr>
+            <tr class="danger"><td>NewsRadio 1620 On-Air (Telos)</td>   <td>132</td>            <td>109</td></tr>
+            <tr><td>NewsRadio 1620 Studio - Talent</td>                 <td>125</td>            <td>109</td></tr>
+            <tr><td>NewsRadio 1620 Studio - Board Op</td>               <td>131</td>            <td>109</td></tr>
             <tr><td>Newsroom Tip-Line</td>                              <td>119</td>            <td>107</td></tr>
             <tr><td>Newsroom Desk 1 On-Air</td>                         <td>133</td>            <td>107</td></tr>
             <tr><td>Newsroom Desk 2 On-Air</td>                         <td>120</td>            <td>107</td></tr>
             <tr><td>Newsroom FAX</td>                                   <td>119</td>            <td>107</td></tr>
             <tr><td>Newsroom Traffic Reporter/Tip-Line</td>             <td>111</td>            <td>107</td></tr>
             <tr><td>Production Studio (Wedge)</td>                      <td>130</td>            <td>207</td></tr>
-            <tr><td>Production Studio (Digital)</td>                    <td>116</td>            <td>207</td></tr>
-            <tr><td>Production Studio (Board Op)</td>                   <td>138</td>            <td>208H</td></tr>
-            <tr><td>Production Studio (Talent)</td>                     <td>114</td>            <td>208F</td></tr>
+            <tr class="danger"><td>1330 WEBY On-Air (Telos)</td>        <td>116</td>            <td>208</td></tr>
+            <tr><td>1330 WEBY Studio (Talent)</td>                      <td>114</td>            <td>208</td></tr>
+            <tr><td>1330 WEBY Studio (Board Op)</td>                    <td>138</td>            <td>208</td></tr>
             <tr><td>Production Room</td>                                <td>116</td>            <td>206</td></tr>
             <tr><td>Production Rooom (Hybrid)</td>                      <td>109</td>            <td>206</td></tr>
             <tr><td>Production Assistant (Loft)</td>                    <td>136</td>            <td>206</td></tr>
@@ -50,9 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <tr><td>Main Office FAX</td>                                <td>850-494-0778</td>   <td>146</td></tr>
             <tr class="info"><td>CatCountry 98.7 Listener Line</td>     <td>850-430-1987</td>   <td>FM Studio</td></tr>
-            <tr class="info"><td>NewsRadio Listener Line</td>           <td>850-437-1620</td>   <td>AM Studio</td></tr>
+            <tr class="info"><td>NewsRadio 1620 Listener Line</td>      <td>850-437-1620</td>   <td>AM Studio</td></tr>
+            <tr class="info"><td>1330WEBY Listener Line</td>            <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
             <tr class="danger"><td>e-Fax Dave</td>                      <td>850-378-1030</td>   <td></td></tr>
             <tr class="danger"><td>FM Tower (confidential)</td>         <td>251-931-3302</td>   <td>Bunker</td></tr>
+            <tr class="info"><td>1330WEBY Milton Office</td>            <td>850-983-2242</td>   <td>Milton, FL</td></tr>
         </tbody>
     </table>
 </div>
