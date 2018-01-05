@@ -1,14 +1,16 @@
 <?php
+/* @var $this yii\web\View */
+/* @var $model common\models\Profile */
+/* @var $form yii\widgets\ActiveForm */
 
 use yii\helpers\Html;
-use yii\helpers\Url;
+//use yii\helpers\FormatConverter;
 use yii\bootstrap\ActiveForm;
 use common\models\Department;
 use yii\jui\DatePicker;
 
-/* @var $this yii\web\View */
-/* @var $model common\models\Profile */
-/* @var $form yii\widgets\ActiveForm */
+$dateFormat = Yii::$app->formatter->asDate(time());
+//$dateFormat = FormatConverter::convertDateIcuToJui(Yii::$app->formatter->dateFormat, 'date', $language);
 ?>
 
 <div class="profile-form">
@@ -59,22 +61,22 @@ use yii\jui\DatePicker;
                     $form->field($model, 'birth_date')->widget(DatePicker::className(), [
                         'options' => [
                             'class' => 'form-control',
-                            'placeholder' => Yii::$app->params['datePickerFormat'],
+                            'placeholder' => 'i.e: ' . $dateFormat,
                         ],
-                        'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
+//                        'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
                         'clientOptions' => [
 
                             'autoSize' => true,
                             //'defaultDate' => Yii::$app->dateFormatter->formatDateTime($profileModel->birth_date),
-                            'buttonImage' => '/css/icons/date.png',
-                            'buttonImageOnly' => true,
-                            'buttonText' => 'Select',
+                            //'buttonImage' => '/css/icons/date.png',
+                            //'buttonImageOnly' => true,
+                            //'buttonText' => 'Select',
                             'changeMonth' => true,
                             'changeYear' => true,
                             'selectOtherMonths' => true,
                             'showAnim' => 'fold',
                             'showButtonPanel' => true,
-                            'showOn' => 'button',
+                            //'showOn' => 'button',
                             'showOtherMonths' => true,
 //                            'autoclose' => true,
 //                            //'format' => Yii::$app->params['ICUdatePickerFormat'],
@@ -91,12 +93,21 @@ use yii\jui\DatePicker;
                     <?=
                     $form->field($model, 'aniversary_date')->widget(DatePicker::className(), [
                         'options' => [
-                            'placeholder' => Yii::$app->params['datePickerFormat'],
+                            'class' => 'form-control',
+                            'placeholder' => 'i.e: ' . $dateFormat,
                         ],
+                        //'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
                         'clientOptions' => [
                             'autoclose' => true,
-                            'format' => Yii::$app->params['datePickerFormat'],
+                            //'format' => Yii::$app->params['datePickerFormat'],
                             //'startDate' => '-1d',
+                            'changeMonth' => true,
+                            'changeYear' => true,
+                            'selectOtherMonths' => true,
+                            'showAnim' => 'fold',
+                            'showButtonPanel' => true,
+                            //'showOn' => 'button',
+                            'showOtherMonths' => true,
                             'clearBtn' => true,
                             'todayBtn' => true,
                             'todayHighlight' => true,
@@ -114,12 +125,21 @@ use yii\jui\DatePicker;
                     <?=
                     $form->field($model, 'hire_date')->widget(DatePicker::className(), [
                         'options' => [
-                            'placeholder' => Yii::$app->params['datePickerFormat'],
+                            'class' => 'form-control',
+                            'placeholder' => 'i.e: ' . $dateFormat,
                         ],
+                        //'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
                         'clientOptions' => [
                             'autoclose' => true,
-                            'format' => Yii::$app->params['datePickerFormat'],
+                            //'format' => Yii::$app->params['datePickerFormat'],
                             //'startDate' => '-1d',
+                            'changeMonth' => true,
+                            'changeYear' => true,
+                            'selectOtherMonths' => true,
+                            'showAnim' => 'fold',
+                            'showButtonPanel' => true,
+                            //'showOn' => 'button',
+                            'showOtherMonths' => true,
                             'clearBtn' => true,
                             'todayBtn' => true,
                             'todayHighlight' => true,

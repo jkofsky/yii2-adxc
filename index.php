@@ -27,8 +27,8 @@
     <body>
         <h1 style="text-align: center;">yii2-ADXC Website</h1>
         <p style="font-size: large; font-weight: bolder; text-align: center;">
-            <a href="frontend/web/index.php">ADXC Frontend</a><br>
-            <a href="backend/web/index.php">ADXC Admin</a><br>
+            <a href="/frontend/web/index.php">ADXC Frontend</a><br>
+            <a href="/backend/web/index.php">ADXC Admin</a><br>
         </p>
         <br>
 

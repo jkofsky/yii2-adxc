@@ -32,13 +32,17 @@ $this->title = 'ADXC IntraNet';
                         </address>
                         <?php
                         $items = [
+                            '<li class="nav-divider"></li>',
                             'Voice: (850) 494-2800',
                             'FAX: (850) 494-0778',
                             'Newsroom: (850) 262-6119',
                             'Traffic Desk: (850) 262-6111',
                             'National Sales Office: (850) 262-6101',
                         ];
-                        echo HTML::ul($items, ['style' => 'list-style-type: none;']);
+                        echo HTML::ul($items, [
+                            'encode' => false,
+                            'class' => 'nav',
+                        ]);
                         ?>
                     </div>
                     <?php if (!Yii::$app->user->isGuest) : ?>
@@ -64,12 +68,12 @@ $this->title = 'ADXC IntraNet';
 
                         $items[] = '<li class="nav-divider"></li>';
                         $items[] = 'Listener Line: (850) 430-1987';
-                        $items[] = 'Sales Office: (850) 262-6000';
+                        $items[] = 'Sales Office: (850) 262-6139';
 
                         if (!Yii::$app->user->isGuest) {
-                            $items[] = 'Studio (Hotline): (850) 262-61##';
-                            $items[] = 'Studio (On-Air): (850) 262-61##';
-                            $items[] = 'Studio (Talent): (850) 262-61##';
+                            $items[] = 'Studio (Hotline): (850) 262-6###';
+                            $items[] = 'Studio (On-Air): (850) 262-6###';
+                            $items[] = 'Studio (Talent): (850) 262-6###';
                         }
                         echo HTML::ul($items, [
                             'encode' => false,
@@ -95,7 +99,7 @@ $this->title = 'ADXC IntraNet';
 
                         $items[] = '<li class="nav-divider"></li>';
                         $items[] = 'Listener Line: (850) 437-1620';
-                        $items[] = 'Sales Office: (850) 262-6139';
+                        $items[] = 'Sales Office: (850) 262-6140';
 
                         if (!Yii::$app->user->isGuest) {
                             $items[] = 'Studio (Hotline): (850) 262-6131';
