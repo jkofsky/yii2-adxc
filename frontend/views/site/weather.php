@@ -11,7 +11,7 @@ $_currIconPath = $tmp['scheme'] . '://' . $tmp['host'] . "/newimages/large/";
 ?>
 <style>
     body {
-        background: url(images/ocean-tide-coming-in.jpg) no-repeat fixed top center
+        background: url(../images/ocean-tide-coming-in.jpg) no-repeat fixed top center
     }   
 </style>
 <div id="weather" class="container-fluid">
