@@ -4,13 +4,15 @@
 /* @var $form yii\widgets\ActiveForm */
 
 use yii\helpers\Html;
-//use yii\helpers\FormatConverter;
+use yii\helpers\FormatConverter;
 use yii\bootstrap\ActiveForm;
 use common\models\Department;
-use yii\jui\DatePicker;
+use kartik\date\DatePicker;
 
 $dateFormat = Yii::$app->formatter->asDate(time());
-//$dateFormat = FormatConverter::convertDateIcuToJui(Yii::$app->formatter->dateFormat, 'date', $language);
+$juiFormat = FormatConverter::convertDateIcuToJui(
+                Yii::$app->formatter->dateFormat, 'date', Yii::$app->language
+);
 ?>
 
 <div class="profile-form">
@@ -63,27 +65,19 @@ $dateFormat = Yii::$app->formatter->asDate(time());
                             'class' => 'form-control',
                             'placeholder' => 'i.e: ' . $dateFormat,
                         ],
-//                        'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
+                        //'dateFormat' => $juiFormat,
                         'clientOptions' => [
-
                             'autoSize' => true,
-                            //'defaultDate' => Yii::$app->dateFormatter->formatDateTime($profileModel->birth_date),
-                            //'buttonImage' => '/css/icons/date.png',
-                            //'buttonImageOnly' => true,
-                            //'buttonText' => 'Select',
                             'changeMonth' => true,
                             'changeYear' => true,
                             'selectOtherMonths' => true,
                             'showAnim' => 'fold',
                             'showButtonPanel' => true,
-                            //'showOn' => 'button',
                             'showOtherMonths' => true,
-//                            'autoclose' => true,
-//                            //'format' => Yii::$app->params['ICUdatePickerFormat'],
-//                            //'startDate' => '-1d',
-//                            'clearBtn' => true,
-//                            'todayBtn' => true,
-//                            'todayHighlight' => true,
+                            'format' => $juiFormat,
+                            'clearBtn' => true,
+                            'todayBtn' => true,
+                            'todayHighlight' => true,
                         ]
                     ]);
                     ?>
@@ -98,16 +92,14 @@ $dateFormat = Yii::$app->formatter->asDate(time());
                         ],
                         //'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
                         'clientOptions' => [
-                            'autoclose' => true,
-                            //'format' => Yii::$app->params['datePickerFormat'],
-                            //'startDate' => '-1d',
+                            'autoSize' => true,
                             'changeMonth' => true,
                             'changeYear' => true,
                             'selectOtherMonths' => true,
                             'showAnim' => 'fold',
                             'showButtonPanel' => true,
-                            //'showOn' => 'button',
                             'showOtherMonths' => true,
+                            'format' => $juiFormat,
                             'clearBtn' => true,
                             'todayBtn' => true,
                             'todayHighlight' => true,
@@ -130,16 +122,14 @@ $dateFormat = Yii::$app->formatter->asDate(time());
                         ],
                         //'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
                         'clientOptions' => [
-                            'autoclose' => true,
-                            //'format' => Yii::$app->params['datePickerFormat'],
-                            //'startDate' => '-1d',
+                            'autoSize' => true,
                             'changeMonth' => true,
                             'changeYear' => true,
                             'selectOtherMonths' => true,
                             'showAnim' => 'fold',
                             'showButtonPanel' => true,
-                            //'showOn' => 'button',
                             'showOtherMonths' => true,
+                            'format' => $juiFormat,
                             'clearBtn' => true,
                             'todayBtn' => true,
                             'todayHighlight' => true,

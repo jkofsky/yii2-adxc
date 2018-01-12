@@ -31,22 +31,19 @@ use yii\behaviors\TimestampBehavior;
  * @property Department $department
  * @property User $user
  */
-class Profile extends \yii\db\ActiveRecord
-{
+class Profile extends \yii\db\ActiveRecord {
 
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return '{{%profile}}';
     }
 
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             TimestampBehavior::className(),
         ];
@@ -55,23 +52,15 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone', 'home_phone'], 'trim'],
             [['first_name', 'last_name', 'city', 'spouse_name', 'address', 'state', 'postal_code', 'cell_phone',], 'default', 'value' => null],
             [['first_name', 'last_name'], 'required'],
             [['department_id', 'is_management', 'extension', 'speed_dial'], 'integer'],
             [['birth_date', 'aniversary_date', 'hire_date'], 'default', 'value' => null],
-            [['birth_date'], 'date',
-                'timestampAttribute' => 'birth_date',
-            ],
-            [['aniversary_date'], 'date',
-                'timestampAttribute' => 'aniversary_date',
-            ],
-            [['hire_date'], 'date',
-                'timestampAttribute' => 'hire_date',
-            ],
+            [['birth_date', 'aniversary_date', 'hire_date'], 'date'],
+            [['birth_date', 'aniversary_date', 'hire_date'], 'filter', 'filter' => 'strtotime', 'skipOnEmpty' => true],
             [['first_name', 'last_name', 'city', 'spouse_name'], 'string', 'max' => 64],
             [['address'], 'string', 'max' => 128],
             [['state'], 'filter', 'filter' => 'strtoupper'],
@@ -86,8 +75,7 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'user_id' => Yii::t('app', 'User ID'),
             'first_name' => Yii::t('app', 'First Name'),
@@ -115,24 +103,21 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getDepartment()
-    {
+    public function getDepartment() {
         return $this->hasOne(Department::className(), ['id' => 'department_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUser()
-    {
+    public function getUser() {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     /**
      * @return string
      */
-    public function getFullname()
-    {
+    public function getFullname() {
         return $this->first_name . ' ' . $this->last_name;
     }
 

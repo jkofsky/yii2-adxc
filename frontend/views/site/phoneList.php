@@ -39,10 +39,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>1330 WEBY Studio (Talent)</td>                      <td>114</td>            <td>208</td></tr>
             <tr><td>1330 WEBY Studio (Board Op)</td>                    <td>138</td>            <td>208</td></tr>
             <tr><td>Newsroom Desk 1 (News Tip-Line)</td>                <td>119</td>            <td>107</td></tr>
-            <tr><td>Newsroom Desk 1 On-Air</td>                         <td>133</td>            <td>107</td></tr>
-            <tr><td>Newsroom Desk 2 On-Air</td>                         <td>120</td>            <td>107</td></tr>
+            <tr><td>Newsroom Desk 1 (On-Air)</td>                       <td>133</td>            <td>107</td></tr>
+            <tr><td>Newsroom Desk 2</td>                                <td>121</td>            <td>107</td></tr>
             <tr><td>Newsroom Desk 3</td>                                <td>???</td>            <td>107</td></tr>
-            <tr><td>Newsroom Desk 4 (Traffic)</td>                      <td>142</td>            <td>107</td></tr>
+            <tr><td>Newsroom Desk 4 (Traffic Tip-Line)</td>             <td>142</td>            <td>107</td></tr>
             <tr><td>Newsroom (Traffic Tip-Line)</td>                    <td>111</td>            <td>107</td></tr>
             <tr><td>Production Studio (Wedge)</td>                      <td>130</td>            <td>207</td></tr>
             <tr><td>Production Room</td>                                <td>116</td>            <td>206</td></tr>
