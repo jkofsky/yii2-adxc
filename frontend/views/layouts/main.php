@@ -44,7 +44,7 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => '<span class="glyphicon glyphicon-home"></span>',
+                ['label' => 'Home',
                     'url' => ['/site/index'],
                     'linkOptions' => ['title' => Yii::t('app', 'Home')]
                 ],
@@ -57,28 +57,32 @@ AppAsset::register($this);
                     'visible' => !Yii::$app->user->isGuest],
                 ['label' => 'Engineering', 'url' => ['/engineering/index'], 'visible' => !Yii::$app->user->isGuest],
                 ['label' => 'Documents', 'url' => ['/document/index'], 'visible' => !Yii::$app->user->isGuest],
-                ['label' => '<span class="glyphicon glyphicon-info-sign"></span>', 'url' => ['/reading/index'], 'items' => [
-                        ['label' => Yii::t('app', 'Phone List'), 'url' => ['/site/phone-list'], 'visible' => !Yii::$app->user->isGuest],
-                        ['label' => Yii::t('app', 'My Profile'), 'url' => ['/profile/index'], 'visible' => !Yii::$app->user->isGuest],
-                        ['label' => Yii::t('app', 'Weather Information'), 'url' => ['/site/weather']],
-                        ['label' => Yii::t('app', 'Useful Reading'), 'url' => ['/site/reading', 'page' => 'index']],
-                    ],
-                ],
             ];
 
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => Yii::t('app', 'Signup'), 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => '<span class="glyphicon glyphicon-log-in"></span>',
                     'url' => ['/site/login'],
                     'linkOptions' => ['title' => Yii::t('app', 'Login')]];
             } else {
-                $menuItems[] = '<li title="' . Yii::t('app', 'Logout') . '">'
+                $menuItems[] = [
+                    'label' => '<span class="glyphicon glyphicon-info-sign"></span>',
+                    'linkOptions' => ['title' => Yii::t('app', 'Options')],
+                    'items' => [
+                        ['label' => Yii::t('app', 'Phone List'), 'url' => ['/site/phone-list'], 'visible' => !Yii::$app->user->isGuest],
+                        ['label' => Yii::t('app', 'My Profile'), 'url' => ['/profile/index'], 'visible' => !Yii::$app->user->isGuest],
+                        ['label' => Yii::t('app', 'Weather Information'), 'url' => ['/site/weather']],
+                        ['label' => Yii::t('app', 'Useful Reading'), 'url' => ['/site/reading', 'page' => 'index']],
+                        '<li class="divider"></li>',
+                        '<li title="' . Yii::t('app', 'Logout') . '">'
                         . Html::beginForm(['/site/logout'], 'post')
                         . Html::submitButton(
-                                '<span class="glyphicon glyphicon-log-out"></span> (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']
+                                '<span class="glyphicon glyphicon-log-out"></span> Signout (' . Yii::$app->user->identity->username . ')', 
+                                ['class' => 'btn btn-link ']
                         )
                         . Html::endForm()
-                        . '</li>';
+                        . '</li>',
+                    ]
+                ];
             }
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right sticky'],

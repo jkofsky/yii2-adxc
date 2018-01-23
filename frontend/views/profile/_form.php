@@ -10,9 +10,8 @@ use common\models\Department;
 use kartik\date\DatePicker;
 
 $dateFormat = Yii::$app->formatter->asDate(time());
-$juiFormat = FormatConverter::convertDateIcuToJui(
-                Yii::$app->formatter->dateFormat, 'date', Yii::$app->language
-);
+$phpFormat = FormatConverter::convertDateIcuToJui(
+                Yii::$app->formatter->dateFormat, 'date');
 ?>
 
 <div class="profile-form">
@@ -60,23 +59,16 @@ $juiFormat = FormatConverter::convertDateIcuToJui(
                     ?>
 
                     <?=
-                    $form->field($model, 'birth_date')->widget(DatePicker::className(), [
-                        'options' => [
-                            'class' => 'form-control',
-                            'placeholder' => 'i.e: ' . $dateFormat,
-                        ],
-                        //'dateFormat' => $juiFormat,
-                        'clientOptions' => [
-                            'autoSize' => true,
-                            'changeMonth' => true,
-                            'changeYear' => true,
-                            'selectOtherMonths' => true,
-                            'showAnim' => 'fold',
-                            'showButtonPanel' => true,
-                            'showOtherMonths' => true,
-                            'format' => $juiFormat,
+                    $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
+                        'type' => DatePicker::TYPE_COMPONENT_APPEND,
+                        'options' => ['placeholder' => 'i.e: ' . $dateFormat],
+                        //'convertFormat' => true,
+                        'removeButton' => false,
+                        'pluginOptions' => [
+                            'autoclose' => true,
                             'clearBtn' => true,
-                            'todayBtn' => true,
+                            'format' => $phpFormat,
+                            'todayBtn' => 'linked',
                             'todayHighlight' => true,
                         ]
                     ]);
@@ -85,23 +77,16 @@ $juiFormat = FormatConverter::convertDateIcuToJui(
                     <?= $form->field($model, 'spouse_name')->textInput(['maxlength' => true]) ?>
 
                     <?=
-                    $form->field($model, 'aniversary_date')->widget(DatePicker::className(), [
-                        'options' => [
-                            'class' => 'form-control',
-                            'placeholder' => 'i.e: ' . $dateFormat,
-                        ],
-                        //'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
-                        'clientOptions' => [
-                            'autoSize' => true,
-                            'changeMonth' => true,
-                            'changeYear' => true,
-                            'selectOtherMonths' => true,
-                            'showAnim' => 'fold',
-                            'showButtonPanel' => true,
-                            'showOtherMonths' => true,
-                            'format' => $juiFormat,
+                    $form->field($model, 'aniversary_date')->widget(DatePicker::classname(), [
+                        'type' => DatePicker::TYPE_COMPONENT_APPEND,
+                        'options' => ['placeholder' => 'i.e: ' . $dateFormat],
+                        'convertFormat' => true,
+                        'removeButton' => false,
+                        'pluginOptions' => [
+                            'autoclose' => true,
                             'clearBtn' => true,
-                            'todayBtn' => true,
+                            'format' => $phpFormat,
+                            'todayBtn' => 'linked',
                             'todayHighlight' => true,
                         ]
                     ]);
@@ -115,26 +100,39 @@ $juiFormat = FormatConverter::convertDateIcuToJui(
                 <div class="panel-heading">Employment Information</div>
                 <div class="panel-body">
                     <?=
-                    $form->field($model, 'hire_date')->widget(DatePicker::className(), [
-                        'options' => [
-                            'class' => 'form-control',
-                            'placeholder' => 'i.e: ' . $dateFormat,
-                        ],
-                        //'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
-                        'clientOptions' => [
-                            'autoSize' => true,
-                            'changeMonth' => true,
-                            'changeYear' => true,
-                            'selectOtherMonths' => true,
-                            'showAnim' => 'fold',
-                            'showButtonPanel' => true,
-                            'showOtherMonths' => true,
-                            'format' => $juiFormat,
+                    $form->field($model, 'hire_date')->widget(DatePicker::classname(), [
+                        'type' => DatePicker::TYPE_COMPONENT_APPEND,
+                        'options' => ['placeholder' => 'i.e: ' . $dateFormat],
+                        //'convertFormat' => true,
+                        'removeButton' => false,
+                        'pluginOptions' => [
+                            'autoclose' => true,
                             'clearBtn' => true,
-                            'todayBtn' => true,
+                            'format' => $phpFormat,
+                            'todayBtn' => 'linked',
                             'todayHighlight' => true,
                         ]
                     ]);
+//                    $form->field($model, 'hire_date')->widget(DatePicker::className(), [
+//                        'options' => [
+//                            'class' => 'form-control',
+//                            'placeholder' => 'i.e: ' . $dateFormat,
+//                        ],
+//                        //'dateFormat' => Yii::$app->params['ICUdatePickerFormat'],
+//                        'clientOptions' => [
+//                            'autoSize' => true,
+//                            'changeMonth' => true,
+//                            'changeYear' => true,
+//                            'selectOtherMonths' => true,
+//                            'showAnim' => 'fold',
+//                            'showButtonPanel' => true,
+//                            'showOtherMonths' => true,
+//                            'format' => $juiFormat,
+//                            'clearBtn' => true,
+//                            'todayBtn' => true,
+//                            'todayHighlight' => true,
+//                        ]
+//                    ]);
                     ?>
 
                     <?=
