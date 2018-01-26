@@ -62,7 +62,7 @@ $phpFormat = FormatConverter::convertDateIcuToJui(
                     $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
                         'type' => DatePicker::TYPE_COMPONENT_APPEND,
                         'options' => ['placeholder' => 'i.e: ' . $dateFormat],
-                        //'convertFormat' => true,
+                        'value' => Yii::$app->formatter->asDate($model->birth_date),
                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
