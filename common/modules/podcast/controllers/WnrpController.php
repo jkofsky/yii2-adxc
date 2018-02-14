@@ -2,17 +2,20 @@
 
 namespace common\modules\podcast\controllers;
 
+use Yii;
+
 /**
  * Controller for the WNRP Podcasts
  */
-class WnrpController extends PodcastController {
+class WnrpController extends PodcastController
+{
 
     /**
-     * Renders the index view for the module
-     * @return string
+     * @inheritdoc
      */
-    public function actionIndex() {
-        return $this->render('index');
+    public function getViewPath()
+    {
+        return Yii::getAlias('@common/modules/podcast/views/podcast');
     }
 
 }
