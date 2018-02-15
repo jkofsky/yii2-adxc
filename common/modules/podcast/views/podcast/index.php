@@ -13,9 +13,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?=
 Html::ul([
-    Html::a('WNRP - NewsRadio1620', ['/podcast/wnrp']),
-    Html::a('WYCT - CatCountry 98&bullet;7', ['/podcast/wyct']),
-        ], ['encode' => false]);
+    Html::a('WNRP - NewsRadio1620', 'http://podcast.newsradio1620.com', [
+        'target' => '_new'
+    ]),
+    Html::a('WYCT - CatCountry 98&bullet;7', 'http://podcast.catcountry987.com', [
+        'target' => '_new'
+    ]),
+        ], ['encode' => false]
+);
 ?>
 <!--<nav class="navbar">
     <form class="form-inline" action="" method="post" name="search_form">

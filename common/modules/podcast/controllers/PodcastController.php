@@ -7,6 +7,7 @@ namespace common\modules\podcast\controllers;
  */
 class PodcastController extends \yii\web\Controller {
 
+    /* Override the default layout for this controller. */
     public $layout = 'column2';
 
     /**
