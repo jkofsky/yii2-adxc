@@ -17,23 +17,27 @@ $this->params['breadcrumbs'][] = $this->title;
         </thead>
         <tbody>
             <tr><td>Main Office FAX</td>                                <td>850-494-0778</td>   <td>Reception Desk</td></tr>
-            <tr class="info"><td>WNRP Listener Line</td>                <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
-            <tr class="info"><td>WYCT Listener Line</td>                <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
-            <tr class="info"><td>ESPN Listener Line</td>                <td>850-623-1330</td>   <td>HD2 Studio</td></tr>
-            <tr class="info"><td>WEBY Listener Line</td>                <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
-            <tr class="danger"><td>e-Fax Dave</td>                      <td>850-378-1030</td>   <td>Home</td></tr>
-            <tr class="danger"><td>FM Tower (confidential)</td>         <td>251-931-3302</td>   <td>Bunker</td></tr>
-            <tr class="info"><td>1330 WEBY Milton Office</td>           <td>850-983-2242</td>   <td>Milton, FL</td></tr>
+            <tr><td>e-Fax Dave</td>                                     <td>850-378-1030</td>   <td>Home</td></tr>
+            <tr><td>1330 WEBY Milton Office</td>                        <td>850-983-2242</td>   <td>Milton, FL</td></tr>
+            <tr class="success"><td>WNRP Studio/Listener Line</td>      <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
+            <tr class="success"><td>WYCT Studio/Listener Line</td>      <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
+            <tr class="success"><td>ESPN Studio/Listener Line</td>      <td>850-623-1330</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="success"><td>WEBY Studio/Listener Line</td>      <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
+            <tr class="warning"><td>WNRP (confidential)</td>            <td>850-262-6###</td>   <td>WNRP Studio</td></tr>
+            <tr class="warning"><td>WYCT (confidential)</td>            <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
+            <tr class="warning"><td>ESPN (confidential)</td>            <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="warning"><td>WEBY (confidential)</td>            <td>850-262-6088</td>   <td>WEBY Studio</td></tr>
+            <tr class="danger"><td>FM Tower (HotLine)</td>              <td>251-931-3302</td>   <td>Bunker</td></tr>
         </tbody>
     </table>
 
-    <p class="text-danger">All 3 digit extensions can be direct dialed using prefix - (850) 262-6 + Extension</p>
+    <p class="text-danger">All 3 digit extensions can be direct dialed using prefix - (850) 262-6### (### = Extension)</p>
     <table class="table table-condensed table-striped">
         <thead>
             <tr><th style="width:50%">Location</th>                     <th style="width:25%">Extension</th>      <th style="width:25%">Room</th></tr>
         </thead>
         <tbody>
-            <tr><td>Front Desk - can also dial 0</td>                   <td>100</td>            <td>102</td></tr>
+            <tr><td>Front Desk <i>(can also dial 0 within building)</i></td>   <td>100</td>            <td>102</td></tr>
             <tr><td>Front Door Access</td>                              <td>108</td>            <td>Outside</td></tr>
             <tr><td>Conference Room (Speaker Ph.)</td>                  <td>???</td>            <td>202</td></tr>
             <tr><td>Conference Room (Digital)</td>                      <td>141</td>            <td>122</td></tr>
