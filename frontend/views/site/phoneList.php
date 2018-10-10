@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <table class="table table-condensed table-striped">
         <thead>
-            <tr><th style="width:50%">Location</th>                     <th style="width:25%">Number</th>      <th style="width:25%">Room</th></tr>
+            <tr><th style="width:50%">Purpose</th>                     <th style="width:25%">Number</th>      <th style="width:25%">Location</th></tr>
         </thead>
         <tbody>
             <tr><td>Main Office FAX</td>                                <td>850-494-0778</td>   <td>Reception Desk</td></tr>
@@ -23,10 +23,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr class="success"><td>WYCT Studio/Listener Line</td>      <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
             <tr class="success"><td>ESPN Studio/Listener Line</td>      <td>850-623-1330</td>   <td>ESPN (W233CM) Studio</td></tr>
             <tr class="success"><td>WEBY Studio/Listener Line</td>      <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
-            <tr class="warning"><td>WNRP (confidential)</td>            <td>850-262-6###</td>   <td>WNRP Studio</td></tr>
-            <tr class="warning"><td>WYCT (confidential)</td>            <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
-            <tr class="warning"><td>ESPN (confidential)</td>            <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="warning"><td>WEBY (confidential)</td>            <td>850-262-6088</td>   <td>WEBY Studio</td></tr>
+            <tr class="warning"><td>WNRP Guest Call-in (confidential)</td>  <td>850-262-6###</td>   <td>WNRP Studio</td></tr>
+            <tr class="warning"><td>WYCT Guest Call-in (confidential)</td>  <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
+            <tr class="warning"><td>ESPN Guest Call-in (confidential)</td>  <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="warning"><td>WEBY Guest Call-in (confidential)</td>  <td>850-262-6088</td>   <td>WEBY Studio</td></tr>
             <tr class="danger"><td>FM Tower (HotLine)</td>              <td>251-931-3302</td>   <td>Bunker</td></tr>
         </tbody>
     </table>

@@ -17,16 +17,16 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             <div class="panel-heading"><?= Html::encode('AT&T Fiber (AudioNet)'); ?></div>
             <div class="panel-body">
                 <address>
-                    <b>Contact Information</b><br />
+                    <b>Modem s/n: </b>
                 </address>
                 <pre>
 255.255.255.240 | Netmask
  12. 41.153.193 | Gateway
 ------------------------------------
  12. 41.153.193 | Cisco Eth 0/0
- 12. 41.153.194 | SonicWall (AudioNet)
- 12. 41.153.195 |
- 12. 41.153.196 |
+ 12. 41.153.194 | SonicWall (Audio)
+ 12. 41.153.195 | pfSense/Firewall
+ 12. 41.153.196 | UWF BricLink
  12. 41.153.197 |
  12. 41.153.198 |
  12. 41.153.199 |
@@ -42,11 +42,31 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             </div>
         </div>
         <div class="panel panel-info">
+            <div class="panel-heading"><?= Html::encode("WEBY Milton (Printer's Alley)"); ?></div>
+            <div class="panel-body">
+                <address>
+                    <b>Modem s/n: </b>
+                </address>
+                <pre>
+255.255.255.248 | Netmask
+ 66. 72.220.206 | Gateway
+---------------------------------
+ 66. 72.220.201 | Router ?
+ 66. 72.220.202 |
+ 66. 72.220.203 |
+ 66. 72.220.204 |
+ 66. 72.220.205 | NextGen WEBY-STL
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-info">
             <div class="panel-heading"><?= Html::encode('Cox in TOC (OFFICENET)'); ?></div>
             <div class="panel-body">
                 <address>
-                    <b>Contact Information</b><br />
-                    Modem s/n: 214665571
+                    <b>Modem s/n: </b>
                 </address>
                 <pre>
 255.255.255.192 | Netmask
@@ -56,16 +76,12 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
                 </pre>
             </div>
         </div>
-    </div>
-
-    <div class="col-md-4">
         <div class="panel panel-info">
             <div class="panel-heading"><?= Html::encode('Cox for STL (Plantation)'); ?></div>
             <div class="panel-body">
                 <address>
-                    <b>Contact Information</b><br />
-                    Modem s/n: 215482974
-                </address>
+                    <b>Modem s/n: </b>215482974
+               </address>
                 <pre>
 255.255.255.192 | Netmask
  72.204.216.193 | Gateway
@@ -78,7 +94,7 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             <div class="panel-heading"><?= Html::encode('DSL for STL (Plantation)'); ?></div>
             <div class="panel-body">
                 <address>
-                    <b>Contact Information</b><br />
+                    <b>Modem s/n: </b>
                 </address>
                 <pre>
 255.255.255.192 | Netmask
@@ -99,8 +115,7 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             <div class="panel-heading"><?= Html::encode('Cox for STL (Palafox)'); ?></div>
             <div class="panel-body">
                 <address>
-                    <b>Contact Information</b><br />
-                    Modem s/n:
+                    <b>Modem s/n: </b>
                 </address>
                 <pre>
 255.255.255.224 | Netmask
@@ -114,7 +129,7 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             <div class="panel-heading"><?= Html::encode('DSL for STL (Palafox)'); ?></div>
             <div class="panel-body">
                 <address>
-                    <b>Contact Information</b><br />
+                    <b>Modem s/n: </b>
                 </address>
                 <pre>
 255.255.255.### | Netmask
@@ -133,7 +148,7 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
             <div class="panel-heading"><?= Html::encode('UVerse for STL (Jordan)'); ?></div>
             <div class="panel-body">
                 <address>
-                    <b>Contact Information</b><br />
+                    <b>Modem s/n: </b>
                 </address>
                 <pre>
 255.255.255.248 | Netmask
