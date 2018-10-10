@@ -21,7 +21,7 @@ $this->title = 'ADXC IntraNet';
             ?>
         </div>
         <div class="row  equal-panels">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="panel panel-adxc">
                     <div class="panel-heading">Business Office</div>
                     <div class="panel-body">
@@ -49,11 +49,11 @@ $this->title = 'ADXC IntraNet';
                         <div class="panel-footer">
                             <?= Html::a('Phone List &raquo;', ['/site/phone-list'], ['class' => 'btn btn-block btn-info']) ?>
                         </div>
-                    <?php endif; ?>    
+                    <?php endif; ?>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="panel panel-adxc">
                     <div class="panel-heading">Cat Country 98&bullet;7 (WYCT-FM)</div>
                     <div class="panel-body">
@@ -83,8 +83,10 @@ $this->title = 'ADXC IntraNet';
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class = "col-md-4">
+        <div class="row equal-panels">
+            <div class="col-md-6">
                 <div class = "panel panel-adxc">
                     <div class = "panel-heading">Newsradio 1620/92&bullet;3 (WNRP-AM/FM)</div>
                     <div class = "panel-body">
@@ -115,6 +117,39 @@ $this->title = 'ADXC IntraNet';
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <div class = "panel panel-adxc">
+                    <div class = "panel-heading">Talk Radio 1330/92&bullet;3 (WEBY-AM/FM)</div>
+                    <div class = "panel-body">
+                        <?php
+                        $items = [
+                            Html::a('Talk Radio Web Site', 'http://www.1330weby.com/', ['target' => '_new']),
+                            Html::a('Talk Radio Podcast Site', 'http://podcast.1330weby.com/', ['target' => '_new']),
+                        ];
+                        if (!Yii::$app->user->isGuest) {
+                            $items[] = Html::a('WEBY Web Mail Login', 'http://webmail.newsradio1620.com/imp/login.php', ['target' => '_new']);
+                        }
+
+                        $items[] = '<li class="nav-divider"></li>';
+                        $items[] = 'Listener Line: (850) 437-1620';
+                        $items[] = 'Sales Office: (850) 262-6140';
+
+                        if (!Yii::$app->user->isGuest) {
+                            $items[] = 'Studio (Hotline): (850) 262-6131';
+                            $items[] = 'Studio (On-Air): (850) 262-6132';
+                            $items[] = 'Studio (Talent): (850) 262-6125';
+                            $items[] = 'Studio (Prod Booth): (850) 262-6154';
+                        }
+                        echo HTML::ul($items, [
+                            'encode' => false,
+                            'class' => 'nav',
+                        ]);
+                        ?>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
