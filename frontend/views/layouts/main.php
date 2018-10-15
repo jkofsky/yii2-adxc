@@ -29,7 +29,7 @@ AppAsset::register($this);
         \jkofsky\scrollTop\ScrollTop::widget([
             'btnColorClass' => 'btn-info',
             'linkText' => 'Top',
-            'glyphicon' => 'glyphicon-circle-arrow-up',
+            'glyphicon' => 'glyphicon-menu-up',
         ])
         ?>
         <div class="wrap">
@@ -50,10 +50,7 @@ AppAsset::register($this);
                 ],
                 ['label' => 'Employees', 'url' => ['/employee/index'], 'visible' => !Yii::$app->user->isGuest],
                 ['label' => 'Discrepencies', 'url' => ['/ticket'], 'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Podcasts', 'url' => ['/podcast'], 'items' => [
-                        ['label' => 'WNRP', 'url' => ['/podcast/wnrp']],
-                        ['label' => 'WYCT', 'url' => ['/podcast/wyct']],
-                    ],
+                ['label' => 'Podcasts', 'url' => ['/podcast'],
                     'visible' => !Yii::$app->user->isGuest],
                 ['label' => 'Engineering', 'url' => ['/engineering/index'], 'visible' => !Yii::$app->user->isGuest],
                 ['label' => 'Documents', 'url' => ['/document/index'], 'visible' => !Yii::$app->user->isGuest],
@@ -76,8 +73,7 @@ AppAsset::register($this);
                         '<li title="' . Yii::t('app', 'Logout') . '">'
                         . Html::beginForm(['/site/logout'], 'post')
                         . Html::submitButton(
-                                '<span class="glyphicon glyphicon-log-out"></span> Signout (' . Yii::$app->user->identity->username . ')', 
-                                ['class' => 'btn btn-link ']
+                                '<span class="glyphicon glyphicon-log-out"></span> Signout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link ']
                         )
                         . Html::endForm()
                         . '</li>',

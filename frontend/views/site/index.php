@@ -11,26 +11,18 @@ $this->title = 'ADXC IntraNet';
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <?php
-                if (!Yii::$app->user->isGuest) {
-                    echo $this->render('_announcements', [
-                        'announceModel' => $announceModel,
-                        'birthdayModel' => $birthdayModel,
-                    ]);
-                }
-                ?>
-            </div>
+            <?php
+            if (!Yii::$app->user->isGuest) {
+                echo $this->render('_announcements', [
+                    'announceModel' => $announceModel,
+                    'birthdayModel' => $birthdayModel,
+                ]);
+            }
+            ?>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
-                <?php
-                if (!Yii::$app->user->isGuest) {
-                    echo $this->render('_officeinfo');
-                }
-                ?>
-            </div>
+            <?= $this->render('_officeinfo'); ?>
         </div>
 
         <div class="row equal-panels">
@@ -44,7 +36,7 @@ $this->title = 'ADXC IntraNet';
                             Html::a('CatCountry Podcast Site', 'http://podcast.catcountry987.com/', ['target' => '_new']),
                         ];
                         if (!Yii::$app->user->isGuest) {
-                            $items[] = Html::a('CatCountry Web Mail Login', 'http://webmail.catcountry987.com/imp/login.php', ['target' => '_new']);
+                            $items[] = Html::a('WYCT Web Mail Login', 'http://webmail.catcountry987.com/imp/login.php', ['target' => '_new']);
                         }
 
                         $items[] = '<li class="nav-divider"></li>';
@@ -68,15 +60,15 @@ $this->title = 'ADXC IntraNet';
 
             <div class="col-md-6">
                 <div class = "panel panel-adxc">
-                    <div class = "panel-heading">ESPN HD2/94&bullet;5 (WYCT-HD2/FM)</div>
+                    <div class = "panel-heading">ESPN Pensacola HD2/94&bullet;5 (WYCT-HD2/FM)</div>
                     <div class = "panel-body">
                         <?php
                         $items = [
-                            Html::a('Newsradio Web Site', 'http://www.newsradio1620.com/', ['target' => '_new']),
-                            Html::a('Newsradio Podcast Site', 'http://podcast.newsradio1620.com/', ['target' => '_new']),
+                            Html::a('ESPN Pensacola Web Site', 'http://www.espnpensacola.com/', ['target' => '_new']),
+                            Html::a('ESPN Pensacola Podcast Site', 'http://podcast.espnpensacola.com/', ['target' => '_new']),
                         ];
                         if (!Yii::$app->user->isGuest) {
-                            $items[] = Html::a('Newsradio Web Mail Login', 'http://webmail.newsradio1620.com/imp/login.php', ['target' => '_new']);
+                            $items[] = Html::a('ESPN Web Mail Login', 'http://webmail.espnpensacola.com/imp/login.php', ['target' => '_new']);
                         }
 
                         $items[] = '<li class="nav-divider"></li>';
@@ -102,15 +94,15 @@ $this->title = 'ADXC IntraNet';
         <div class="row equal-panels">
             <div class="col-md-6">
                 <div class = "panel panel-adxc">
-                    <div class = "panel-heading">NewsRadio 1620/92&bullet;3 (WNRP-AM/FM)</div>
+                    <div class = "panel-heading">News Radio 1620/92&bullet;3 (WNRP-AM/FM)</div>
                     <div class = "panel-body">
                         <?php
                         $items = [
-                            Html::a('Newsradio Web Site', 'http://www.newsradio1620.com/', ['target' => '_new']),
-                            Html::a('Newsradio Podcast Site', 'http://podcast.newsradio1620.com/', ['target' => '_new']),
+                            Html::a('News Radio Web Site', 'http://www.newsradio1620.com/', ['target' => '_new']),
+                            Html::a('News Radio Podcast Site', 'http://podcast.newsradio1620.com/', ['target' => '_new']),
                         ];
                         if (!Yii::$app->user->isGuest) {
-                            $items[] = Html::a('Newsradio Web Mail Login', 'http://webmail.newsradio1620.com/imp/login.php', ['target' => '_new']);
+                            $items[] = Html::a('WNRP Web Mail Login', 'http://webmail.newsradio1620.com/imp/login.php', ['target' => '_new']);
                         }
 
                         $items[] = '<li class="nav-divider"></li>';
