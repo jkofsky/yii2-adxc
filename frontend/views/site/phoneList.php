@@ -9,7 +9,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-phone-list">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>REV. <?= date('m.d.y', filemtime(__FILE__)); ?></p>
+    <div>
+        <p style="margin-bottom: 1.5em;" class="hidden-print">
+            <span class="text-success bg-success" style="padding: 1em;">These numbers are CAN be given out.</span>
+            <span class="text-warning bg-warning" style="padding: 1em;">These numbers are NOT for General Public.</span>
+            <span class="text-danger bg-danger" style="padding: 1em;">These numbers are for Employees ONLY!</th></span>
+        </p>
+    </div>
+
+    <p>REV. <?= date('d-M-Y h:ia T', filemtime(__FILE__)); ?></p>
 
     <table class="table table-condensed table-striped">
         <thead>
@@ -19,14 +27,18 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Main Office FAX</td>                                <td>850-494-0778</td>   <td>Reception Desk</td></tr>
             <tr><td>e-Fax Dave</td>                                     <td>850-378-1030</td>   <td>Home</td></tr>
             <tr><td>1330 WEBY Milton Office</td>                        <td>850-983-2242</td>   <td>Milton, FL</td></tr>
-            <tr class="success"><td>WNRP Studio/Listener Line</td>      <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
-            <tr class="success"><td>WYCT Studio/Listener Line</td>      <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
-            <tr class="success"><td>ESPN Studio/Listener Line</td>      <td>850-623-1330</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="success"><td>WEBY Studio/Listener Line</td>      <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
-            <tr class="warning"><td>WNRP Guest Call-in (confidential)</td>  <td>850-262-6###</td>   <td>WNRP Studio</td></tr>
-            <tr class="warning"><td>WYCT Guest Call-in (confidential)</td>  <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
-            <tr class="warning"><td>ESPN Guest Call-in (confidential)</td>  <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="warning"><td>WEBY Guest Call-in (confidential)</td>  <td>850-262-6088</td>   <td>WEBY Studio</td></tr>
+            <tr class="success"><td>WNRP Studio Listener Line</td>      <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
+            <tr class="success"><td>WYCT Studio Listener Line</td>      <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
+            <tr class="success"><td>ESPN Studio Listener Line</td>      <td>850-623-1330</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="success"><td>WEBY Studio Listener Line</td>      <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
+            <tr class="warning"><td>WNRP Guest Call-in Line</td>        <td>850-262-6088</td>   <td>WNRP Studio</td></tr>
+            <tr class="warning"><td>WYCT Guest Call-in Line</td>        <td>850-262-6089</td>   <td>WYCT Studio</td></tr>
+            <tr class="warning"><td>ESPN Guest Call-in Line</td>        <td>850-262-6090</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="warning"><td>WEBY Guest Call-in Line</td>        <td>850-262-6091</td>   <td>WEBY Studio</td></tr>
+            <tr class="danger"><td>WNRP Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
+            <tr class="danger"><td>WYCT Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
+            <tr class="danger"><td>ESPN Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
+            <tr class="danger"><td>WEBY Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
             <tr class="danger"><td>FM Tower (HotLine)</td>              <td>251-931-3302</td>   <td>Bunker</td></tr>
         </tbody>
     </table>
@@ -37,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><th style="width:50%">Location</th>                     <th style="width:25%">Extension</th>      <th style="width:25%">Room</th></tr>
         </thead>
         <tbody>
-            <tr><td>Front Desk <i>(can also dial 0 within building)</i></td>   <td>100</td>            <td>102</td></tr>
+            <tr><td>Front Desk <i>(or 0 within building)</i></td>       <td>100</td>            <td>102</td></tr>
             <tr><td>Front Door Access</td>                              <td>108</td>            <td>Outside</td></tr>
             <tr><td>Conference Room (Speaker Ph.)</td>                  <td>???</td>            <td>202</td></tr>
             <tr><td>Conference Room (Digital)</td>                      <td>141</td>            <td>122</td></tr>
@@ -49,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Engineering Satellite Rack (TOC)</td>               <td>159</td>            <td>124</td></tr>
             <tr><td>Promotions Office</td>                              <td>104</td>            <td>121</td></tr>
             <tr><td>Traffic &amp; Continuity (WYCT/WNRP)</td>           <td>117</td>            <td>152</td></tr>
-            <tr><td>Traffic &amp; Continuity (WEBY/HD2)</td>            <td>117</td>            <td>151</td></tr>
+            <tr><td>Traffic &amp; Continuity (WEBY/ESPN)</td>           <td>115</td>            <td>151</td></tr>
             <tr><td>3<sup>rd</sup> Floor Warehouse</td>                 <td>135</td>            <td>221</td></tr>
             <tr class="danger"><td>WNRP On-Air (Telos)</td>             <td>132</td>            <td>109</td></tr>
             <tr><td>WNRP Studio - Talent</td>                           <td>125</td>            <td>109</td></tr>

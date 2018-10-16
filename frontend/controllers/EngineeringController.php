@@ -132,6 +132,15 @@ class EngineeringController extends Controller {
      *
      * @return mixed
      */
+    public function actionAdtran() {
+        return $this->render('adtran');
+    }
+
+    /**
+     * Displays the Web Server/PHP details.
+     *
+     * @return mixed
+     */
     public function actionPhpInfo() {
         return $this->render('php_info');
     }
