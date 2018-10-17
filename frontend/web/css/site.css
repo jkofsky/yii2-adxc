@@ -11,7 +11,8 @@ body { overflow-y: scroll; }
     padding: 0 0 60px;
 }
 
-.wrap > .container {
+.wrap > .container,
+.wrap > .container-fluid {
     padding: 70px 15px 20px;
 }
 
@@ -188,6 +189,8 @@ a.desc:after {
 #navbar-adxc .navbar-nav > li > a:focus {
     color: #edf211;
 }
+ul.navbar-nav:last-child { padding-right: 16px; }
+
 #navbar-adxc .navbar-nav > li > .dropdown-menu {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,e0e0e0+100 */
     background: #fafafa; /* Old browsers */

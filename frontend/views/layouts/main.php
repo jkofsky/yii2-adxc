@@ -24,98 +24,102 @@ AppAsset::register($this);
         <?php $this->head() ?>
     </head>
     <body>
-        <?php $this->beginBody() ?>
-        <?=
-        \jkofsky\scrollTop\ScrollTop::widget([
-            'btnColorClass' => 'btn-info',
-            'linkText' => 'Top',
-            'glyphicon' => 'glyphicon-menu-up',
-        ])
-        ?>
-        <div class="wrap">
-            <?php
-            NavBar::begin([
-                'brandLabel' => Yii::$app->name,
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'id' => 'navbar-adxc',
-                    'class' => 'navbar-default navbar-fixed-top',
-                    'role' => 'navigation',
-                ],
-            ]);
-            $menuItems = [
-                ['label' => 'Home',
-                    'url' => ['/site/index'],
-                    'linkOptions' => ['title' => Yii::t('app', 'Home')]
-                ],
-                ['label' => 'Employees', 'url' => ['/employee/index'], 'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Discrepencies', 'url' => ['/ticket'], 'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Podcasts', 'url' => ['/podcast'],
-                    'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Engineering', 'url' => ['/engineering/index'], 'visible' => !Yii::$app->user->isGuest],
-                ['label' => 'Documents', 'url' => ['/document/index'], 'visible' => !Yii::$app->user->isGuest],
-            ];
-
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => '<span class="glyphicon glyphicon-log-in"></span>',
-                    'url' => ['/site/login'],
-                    'linkOptions' => ['title' => Yii::t('app', 'Login')]];
-            } else {
-                $menuItems[] = [
-                    'label' => '<span class="glyphicon glyphicon-info-sign"></span>',
-                    'linkOptions' => ['title' => Yii::t('app', 'Options')],
-                    'items' => [
-                        ['label' => Yii::t('app', 'Phone List'), 'url' => ['/site/phone-list'], 'visible' => !Yii::$app->user->isGuest],
-                        ['label' => Yii::t('app', 'My Profile'), 'url' => ['/profile/index'], 'visible' => !Yii::$app->user->isGuest],
-                        ['label' => Yii::t('app', 'Weather Information'), 'url' => ['/site/weather']],
-                        ['label' => Yii::t('app', 'Useful Reading'), 'url' => ['/site/reading', 'page' => 'index']],
-                        '<li class="divider"></li>',
-                        '<li title="' . Yii::t('app', 'Logout') . '">'
-                        . Html::beginForm(['/site/logout'], 'post')
-                        . Html::submitButton(
-                                '<span class="glyphicon glyphicon-log-out"></span> Signout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link ']
-                        )
-                        . Html::endForm()
-                        . '</li>',
-                    ]
-                ];
-            }
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right sticky'],
-                'items' => $menuItems,
-                'activateParents' => true,
-                'encodeLabels' => false,
-            ]);
-            NavBar::end();
+        <div class="container-fluid">
+            <?php $this->beginBody() ?>
+            <?=
+            \jkofsky\scrollTop\ScrollTop::widget([
+                'btnColorClass' => 'btn-info',
+                'linkText' => 'Top',
+                'glyphicon' => 'glyphicon-menu-up',
+            ])
             ?>
+            <div class="wrap">
+                <?php
+                NavBar::begin([
+                    'brandLabel' => Yii::$app->name,
+                    'brandUrl' => Yii::$app->homeUrl,
+                    'options' => [
+                        'id' => 'navbar-adxc',
+                        'class' => 'navbar-default navbar-fixed-top',
+                        'role' => 'navigation',
+                    ],
+                    'innerContainerOptions' => [
+                        'class' => 'container-fluid',
+                    ],
+                ]);
+                $menuItems = [
+                    ['label' => 'Home',
+                        'url' => ['/site/index'],
+                        'linkOptions' => ['title' => Yii::t('app', 'Home')]
+                    ],
+                    ['label' => 'Employees', 'url' => ['/employee/index'], 'visible' => !Yii::$app->user->isGuest],
+                    ['label' => 'Discrepencies', 'url' => ['/ticket'], 'visible' => !Yii::$app->user->isGuest],
+                    ['label' => 'Podcasts', 'url' => ['/podcast'],
+                        'visible' => !Yii::$app->user->isGuest],
+                    ['label' => 'Engineering', 'url' => ['/engineering/index'], 'visible' => !Yii::$app->user->isGuest],
+                    ['label' => 'Documents', 'url' => ['/document/index'], 'visible' => !Yii::$app->user->isGuest],
+                ];
 
-            <div class="container">
-                <div class="alert alert-danger" role="alert">
-                    Information on this site is <strong>For Internal Use Only!</strong>
-                </div>
-                <?=
-                Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    'options' => ['class' => 'breadcrumb hidden-print']
-                ])
+                if (Yii::$app->user->isGuest) {
+                    $menuItems[] = ['label' => '<span class="glyphicon glyphicon-log-in"></span>',
+                        'url' => ['/site/login'],
+                        'linkOptions' => ['title' => Yii::t('app', 'Login')]];
+                } else {
+                    $menuItems[] = [
+                        'label' => '<span class="glyphicon glyphicon-info-sign"></span>',
+                        'linkOptions' => ['title' => Yii::t('app', 'Options')],
+                        'items' => [
+                            ['label' => Yii::t('app', 'Phone List'), 'url' => ['/site/phone-list'], 'visible' => !Yii::$app->user->isGuest],
+                            ['label' => Yii::t('app', 'My Profile'), 'url' => ['/profile/index'], 'visible' => !Yii::$app->user->isGuest],
+                            ['label' => Yii::t('app', 'Weather Information'), 'url' => ['/site/weather']],
+                            ['label' => Yii::t('app', 'Useful Reading'), 'url' => ['/site/reading', 'page' => 'index']],
+                            '<li class="divider"></li>',
+                            '<li title="' . Yii::t('app', 'Logout') . '">'
+                            . Html::beginForm(['/site/logout'], 'post')
+                            . Html::submitButton(
+                                    '<span class="glyphicon glyphicon-log-out"></span> Signout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link ']
+                            )
+                            . Html::endForm()
+                            . '</li>',
+                        ]
+                    ];
+                }
+                echo Nav::widget([
+                    'options' => ['class' => 'navbar-nav navbar-right'],
+                    'items' => $menuItems,
+                    'activateParents' => true,
+                    'encodeLabels' => false,
+                ]);
+                NavBar::end();
                 ?>
-                <?= Alert::widget() ?>
-                <?= $content ?>
-                <br>
-                <div class="alert alert-danger" role="alert">
-                    Information on this site is <strong>For Internal Use Only!</strong>
+
+                <div class="container-fluid">
+                    <div class="alert alert-danger" role="alert">
+                        Information on this site is <strong>For Internal Use Only!</strong>
+                    </div>
+                    <?=
+                    Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        'options' => ['class' => 'breadcrumb hidden-print']
+                    ])
+                    ?>
+                    <?= Alert::widget() ?>
+                    <?= $content ?>
+                    <br>
+                    <div class="alert alert-danger" role="alert">
+                        Information on this site is <strong>For Internal Use Only!</strong>
+                    </div>
                 </div>
             </div>
+
+            <footer class="footer">
+                <div class="container">
+                    <p class="pull-left">&copy;<?= date('Y') ?>
+                        <?= Yii::$app->params['companyName'] ?>
+                    </p>
+                </div>
+            </footer>
         </div>
-
-        <footer class="footer">
-            <div class="container">
-                <p class="pull-left">&copy;<?= date('Y') ?>
-                    <?= Yii::$app->params['companyName'] ?>
-                </p>
-            </div>
-        </footer>
-
         <?php $this->endBody() ?>
     </body>
 </html>
