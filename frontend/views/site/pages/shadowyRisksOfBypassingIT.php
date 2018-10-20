@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
     ?> (Oct 12, 2016)</address>
 <hr />
 
-<div class="blog-entry-wrapper hentry">
+<div class="blog-entry-wrapper">
 
     <div class="blog-entry-body sui-opt-in">
         <div class="blog-entry-text entry-content wysiwyg-made-content">

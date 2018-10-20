@@ -13,7 +13,8 @@ $this->params['breadcrumbs'][] = $pageTitle;
     <header id="article-header" role="banner">
         <h1 class="article-title" itemprop="headline">How To Build Relationships Of Trust</h1>
         <ul class="article-meta">
-            <li>Originally posted on     <?=
+            <li>Originally posted on     
+                <?=
                 Html::a(
                         'LinkedIn', 'https://www.linkedin.com/today/post/article/20140330130915-175081329-how-to-become-a-leader-of-trust', array('target' => '_new')
                 );
@@ -22,7 +23,7 @@ $this->params['breadcrumbs'][] = $pageTitle;
         </ul>
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user">
-                <img alt="Andreas von der Heydt" src="images/reading/andreas-von-der-heydt.jpg">
+                <?= Html::img('@web/images/reading/andreas-von-der-heydt.jpg', ['alt' => 'Andreas von der Heydt']) ?>
             </figure>
             <div class="entity-content">
                 <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">

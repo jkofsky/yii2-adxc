@@ -18,13 +18,11 @@ $this->params['breadcrumbs'][] = $pageTitle;
         </ul>
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user">
-                <a href="https://www.linkedin.com/in/erhoads" rel="author">
-                    <img alt="Eric Rhoads" src="images/reading/eric-rhoads.jpg">
-                </a>
+                <?= Html::img('@web/images/reading/eric-rhoads.jpg', ['alt' => 'Eric Rhoads']) ?>
             </figure>
             <div class="entity-content">
                 <h2 class="entity-name" itemscope="" itemtype="http://schema.org/Person" itemprop="author creator">
-                    <a href="https://radioink.com/author/erhoads/" rel="author">
+                    <a href="https://radioink.com/author/erhoads/" rel="author" target="_new">
                         <span itemprop="name">Eric Rhoads</span>
                     </a>
                 </h2>

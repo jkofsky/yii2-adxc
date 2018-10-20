@@ -16,14 +16,14 @@ $this->params['breadcrumbs'][] = $pageTitle;
         <ul class="article-meta">
             <li>Originally posted on     <?=
                 Html::a(
-                        'LinkedIn', 'https://www.linkedin.com/today/post/article/20140401151943-5799319-the-7-things-successful-people-never-say', array('target' => '_new')
+                        'LinkedIn', 'https://www.linkedin.com/today/post/article/20140401151943-5799319-the-7-things-successful-people-never-say', ['target' => '_new']
                 );
                 ?></li>
             <li>Published on <time itemprop="datePublished" datetime="2014-04-01">April 1, 2014</time></li>
         </ul>
         <div class="article-author-wrapper">
             <figure class="entity-image entity-image-user">
-                <img src="images/reading/ilya-pozin.jpg" alt="Ilya Pozin">
+                <?= Html::img('@web/images/reading/ilya-pozin.jpg', ['alt' => 'Ilya Pozin']) ?>
             </figure>
             <div class="entity-content">
                 <h2 class="entity-name" itemprop="author creator" itemscope="" itemtype="http://schema.org/Person">
