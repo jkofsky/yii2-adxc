@@ -72,7 +72,7 @@ $this->title = 'ADXC IntraNet';
                         }
 
                         $items[] = '<li class="nav-divider"></li>';
-                        $items[] = 'Listener Line: (850) 437-1620';
+                        $items[] = 'Listener Line: (850) 262-6064';
                         $items[] = 'Sales Office: (850) 262-6140';
 
                         if (!Yii::$app->user->isGuest) {
@@ -127,7 +127,7 @@ $this->title = 'ADXC IntraNet';
 
             <div class="col-md-6">
                 <div class = "panel panel-adxc">
-                    <div class = "panel-heading">Talk Radio 1330/92&bullet;3 (WEBY-AM/FM)</div>
+                    <div class = "panel-heading">Talk Radio 1330/99&bullet;1 (WEBY-AM/FM)</div>
                     <div class = "panel-body">
                         <?php
                         $items = [
