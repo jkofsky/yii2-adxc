@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>1330 WEBY Milton Office</td>                        <td>850-983-2242</td>   <td>Milton, FL</td></tr>
             <tr class="success"><td>WNRP Studio Listener Line</td>      <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
             <tr class="success"><td>WYCT Studio Listener Line</td>      <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
-            <tr class="success"><td>ESPN Studio Listener Line</td>      <td>850-623-1330</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="success"><td>ESPN Studio Listener Line</td>      <td>850-972-1945</td>   <td>ESPN (W233CM) Studio</td></tr>
             <tr class="success"><td>WEBY Studio Listener Line</td>      <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
             <tr class="warning"><td>WNRP Guest Call-in Line</td>        <td>850-262-6088</td>   <td>WNRP Studio</td></tr>
             <tr class="warning"><td>WYCT Guest Call-in Line</td>        <td>850-262-6089</td>   <td>WYCT Studio</td></tr>
