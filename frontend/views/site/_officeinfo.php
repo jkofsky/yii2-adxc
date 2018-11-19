@@ -19,8 +19,8 @@ use yii\helpers\Html;
             '<li class="nav-divider"></li>',
             'Voice: (850) 494-2800',
             'FAX: (850) 494-0778',
-            'Newsroom: (850) 262-6119',
-            'Traffic Desk: (850) 262-6111',
+            'Newsroom Tip-Line: (850) 262-6119',
+            'Traffic Tip-Line: (850) 262-6111',
             'National Sales Office: (850) 262-6101',
         ];
         echo HTML::ul($items, [

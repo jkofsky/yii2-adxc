@@ -127,7 +127,7 @@ $this->title = 'ADXC IntraNet';
 
             <div class="col-md-6">
                 <div class = "panel panel-adxc">
-                    <div class = "panel-heading">Talk Radio 1330/92&bullet;3 (WEBY-AM/FM)</div>
+                    <div class = "panel-heading">Talk Radio 1330/99&bullet;1 (WEBY-AM/FM)</div>
                     <div class = "panel-body">
                         <?php
                         $items = [

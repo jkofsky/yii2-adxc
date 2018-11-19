@@ -48,7 +48,7 @@ AppAsset::register($this);
                     ],
                 ]);
                 $menuItems = [
-                    ['label' => 'Home',
+                    ['label' => Html::icon('home').' Home',
                         'url' => ['/site/index'],
                         'linkOptions' => ['title' => Yii::t('app', 'Home')]
                     ],
@@ -61,12 +61,12 @@ AppAsset::register($this);
                 ];
 
                 if (Yii::$app->user->isGuest) {
-                    $menuItems[] = ['label' => '<span class="glyphicon glyphicon-log-in"></span>',
+                    $menuItems[] = ['label' => Html::icon('log-in'),
                         'url' => ['/site/login'],
                         'linkOptions' => ['title' => Yii::t('app', 'Login')]];
                 } else {
                     $menuItems[] = [
-                        'label' => '<span class="glyphicon glyphicon-info-sign"></span>',
+                        'label' => Html::icon('info-sign'),
                         'linkOptions' => ['title' => Yii::t('app', 'Options')],
                         'items' => [
                             ['label' => Yii::t('app', 'Phone List'), 'url' => ['/site/phone-list'], 'visible' => !Yii::$app->user->isGuest],
@@ -77,7 +77,7 @@ AppAsset::register($this);
                             '<li title="' . Yii::t('app', 'Logout') . '">'
                             . Html::beginForm(['/site/logout'], 'post')
                             . Html::submitButton(
-                                    '<span class="glyphicon glyphicon-log-out"></span> Signout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link ']
+                                    Html::icon('log-out') . ' Signout (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link ']
                             )
                             . Html::endForm()
                             . '</li>',
