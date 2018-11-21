@@ -9,5 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <h1><?= $this->title ?> Site Update</h1>
 
 <p>Trouble Tickets are still being processed via the
-    <?= Html::a('SysAd Website', 'http://adxtech.sysaidit.com/', ['target' => '_blank']) ?>
+    <?=
+    Html::a('ZendDesk Website', 'https://adxtech.zendesk.com/access/unauthenticated', ['target' => '_blank'])
+    ?>
 </p>
