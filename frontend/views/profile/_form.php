@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 use common\models\Department;
 use kartik\date\DatePicker;
 
-$dateFormat = Yii::$app->formatter->asDate(time());
+$dateFormat = Yii::$app->formatter->asDate(time(),'short');
 $phpFormat = FormatConverter::convertDateIcuToJui(
                 Yii::$app->formatter->dateFormat, 'date');
 ?>
@@ -62,12 +62,11 @@ $phpFormat = FormatConverter::convertDateIcuToJui(
                     $form->field($model, 'birth_date')->widget(DatePicker::classname(), [
                         'type' => DatePicker::TYPE_COMPONENT_APPEND,
                         'options' => ['placeholder' => 'i.e: ' . $dateFormat],
-                        'value' => Yii::$app->formatter->asDate($model->birth_date),
-                        'removeButton' => false,
+                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
                             'clearBtn' => true,
-                            'format' => $phpFormat,
+                            //'format' => $phpFormat,
                             'todayBtn' => 'linked',
                             'todayHighlight' => true,
                         ]
@@ -85,7 +84,7 @@ $phpFormat = FormatConverter::convertDateIcuToJui(
                         'pluginOptions' => [
                             'autoclose' => true,
                             'clearBtn' => true,
-                            'format' => $phpFormat,
+                            //'format' => $phpFormat,
                             'todayBtn' => 'linked',
                             'todayHighlight' => true,
                         ]
@@ -108,7 +107,7 @@ $phpFormat = FormatConverter::convertDateIcuToJui(
                         'pluginOptions' => [
                             'autoclose' => true,
                             'clearBtn' => true,
-                            'format' => $phpFormat,
+                            //'format' => $phpFormat,
                             'todayBtn' => 'linked',
                             'todayHighlight' => true,
                         ]

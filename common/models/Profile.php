@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\FormatConverter;
 
 /**
  * This is the model class for table "{{%profile}}".
@@ -59,7 +60,7 @@ class Profile extends \yii\db\ActiveRecord {
             [['first_name', 'last_name'], 'required'],
             [['department_id', 'is_management', 'extension', 'speed_dial'], 'integer'],
             [['birth_date', 'aniversary_date', 'hire_date'], 'default', 'value' => null],
-            [['birth_date', 'aniversary_date', 'hire_date'], 'date'],
+            [['birth_date', 'aniversary_date', 'hire_date'], 'safe'],
             [['first_name', 'last_name', 'city', 'spouse_name'], 'string', 'max' => 64],
             [['address'], 'string', 'max' => 128],
             [['state'], 'filter', 'filter' => 'strtoupper'],
@@ -99,19 +100,33 @@ class Profile extends \yii\db\ActiveRecord {
         ];
     }
 
-
     public function beforeSave($insert) {
-        if (isset($this->birth_date)&&  is_string($this->birth_date)){
+        if (isset($this->birth_date) && is_string($this->birth_date)) {
             $this->birth_date = strtotime($this->birth_date);
         }
-        if (isset($this->aniversary_date)&&  is_string($this->aniversary_date)){
+        if (isset($this->aniversary_date) && is_string($this->aniversary_date)) {
             $this->aniversary_date = strtotime($this->aniversary_date);
         }
-        if (isset($this->hire_date)&&  is_string($this->hire_date)){
+        if (isset($this->hire_date) && is_string($this->hire_date)) {
             $this->hire_date = strtotime($this->hire_date);
         }
         return parent::beforeSave($insert);
     }
+
+    public function afterFind() {
+        parent::afterFind();
+
+       if (!empty($this->birth_date)) {
+            $this->birth_date = Yii::$app->formatter->asDate($this->birth_date, 'php:m/d/Y');
+        }
+        if (!empty($this->aniversary_date)) {
+            $this->aniversary_date = Yii::$app->formatter->asDate($this->aniversary_date, 'php:m/d/Y');
+        }
+        if (!empty($this->hire_date)) {
+            $this->hire_date = Yii::$app->formatter->asDate($this->hire_date, 'php:m/d/Y');
+        }
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
