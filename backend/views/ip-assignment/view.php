@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ])
         ?>
+        <?= Html::a(Yii::t('app', 'Create Assignment'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?=
@@ -34,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'host_type_id',
             'attribute' => 'subnet.short_name',
             'ipv4_address',
+            'is_dhcp:boolean',
             'host_type',
             'host_name',
             'host_purpose',

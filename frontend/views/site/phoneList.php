@@ -31,19 +31,19 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr class="success"><td>WYCT Studio Listener Line</td>      <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
             <tr class="success"><td>ESPN Studio Listener Line</td>      <td>850-972-1945</td>   <td>ESPN (W233CM) Studio</td></tr>
             <tr class="success"><td>WEBY Studio Listener Line</td>      <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
-            <tr class="warning"><td>WNRP Guest Call-in Line</td>        <td>850-262-6088</td>   <td>WNRP Studio</td></tr>
-            <tr class="warning"><td>WYCT Guest Call-in Line</td>        <td>850-262-6089</td>   <td>WYCT Studio</td></tr>
-            <tr class="warning"><td>ESPN Guest Call-in Line</td>        <td>850-262-6090</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="warning"><td>WEBY Guest Call-in Line</td>        <td>850-262-6091</td>   <td>WEBY Studio</td></tr>
-            <tr class="danger"><td>WNRP Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
-            <tr class="danger"><td>WYCT Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
-            <tr class="danger"><td>ESPN Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
-            <tr class="danger"><td>WEBY Studio HotLine</td>             <td>850-262-6###</td>   <td>Bunker</td></tr>
+            <tr class="warning"><td>WNRP VIP Call-in Line</td>          <td>850-262-6088</td>   <td>WNRP Studio</td></tr>
+            <tr class="warning"><td>WYCT VIP Call-in Line</td>          <td>850-262-6089</td>   <td>WYCT Studio</td></tr>
+            <tr class="warning"><td>ESPN VIP Call-in Line</td>          <td>850-262-6090</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="warning"><td>WEBY VIP Call-in Line</td>          <td>850-262-6091</td>   <td>WEBY Studio</td></tr>
+            <tr class="danger"><td>WNRP Studio HotLine</td>             <td>850-262-6132</td>   <td>WNRP Studio</td></tr>
+            <tr class="danger"><td>WYCT Studio HotLine</td>             <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
+            <tr class="danger"><td>ESPN Studio HotLine</td>             <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="danger"><td>WEBY Studio HotLine</td>             <td>850-262-6###</td>   <td>WEBY Studio</td></tr>
             <tr class="danger"><td>FM Tower (HotLine)</td>              <td>251-931-3302</td>   <td>Bunker</td></tr>
         </tbody>
     </table>
 
-    <p class="text-danger">All 3 digit extensions can be direct dialed using prefix - (850) 262-6### (### = Extension)</p>
+    <p class="text-danger">All 3 digit extensions can be direct dialed using prefix - (850) 262-6-<i>Extension</i></p>
     <table class="table table-condensed table-striped">
         <thead>
             <tr><th style="width:50%">Location</th>                    <th style="width:25%">Extension</th>      <th style="width:25%">Room</th></tr>

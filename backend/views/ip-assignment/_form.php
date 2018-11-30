@@ -22,6 +22,8 @@ use common\models\Subnet;
 
     <?= $form->field($model, 'ipv4_address')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'is_dhcp')->checkbox() ?>
+
     <?= $form->field($model, 'host_type')->dropDownList(IpAssignment::getHostTypeList(), ['prompt' => '']) ?>
 
     <?= $form->field($model, 'host_name')->textInput(['maxlength' => true]) ?>

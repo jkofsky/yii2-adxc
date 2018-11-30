@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create IP Assignment'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create Assignment'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?=
     GridView::widget([
@@ -25,11 +25,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'layout' => "{summary}\n{pager}\n{items}\n{pager}",
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'ipv4_address',
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header' => 'Actions',
+            ],
             [
                 'attribute' => 'host_type',
                 'filter' => Html::activeDropDownList($searchModel, 'host_type', IpAssignment::getHostTypeList(), ['class' => 'form-control', 'prompt' => 'All Types']),
             ],
+            'ipv4_address',
+            'is_dhcp:boolean',
             //'host_type_id',
             'host_name',
             'host_purpose',
@@ -45,10 +50,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'enableSorting' => false,
                 'format' => 'ntext',
             //'value' => 'nl2br($data->port_access_info)',
-            ],
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'header' => 'Actions',
             ],
         ],
     ]);

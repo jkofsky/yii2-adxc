@@ -14,6 +14,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $host_type_id
  * @property string $subnet_id
  * @property string $ipv4_address
+ * @property boolean $is_dhcp
  * @property string $host_type
  * @property string $host_name
  * @property string $host_purpose
@@ -25,22 +26,19 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property Subnet $subnet
  */
-class IpAssignment extends ActiveRecord
-{
+class IpAssignment extends ActiveRecord {
 
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return '{{%ip_assignment}}';
     }
 
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             TimestampBehavior::className(),
         ];
@@ -49,11 +47,10 @@ class IpAssignment extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['ipv4_address', 'host_name', 'host_purpose', 'host_location', 'host_type', 'subnet_id'], 'required'],
-            [['host_type_id', 'subnet_id'], 'integer'],
+            [['ipv4_address', 'is_dhcp', 'host_name', 'host_purpose', 'host_location', 'host_type', 'subnet_id'], 'required'],
+            [['host_type_id', 'subnet_id', 'is_dhcp'], 'integer'],
             [['host_type', 'port_access_info'], 'string'],
             [['ipv4_address', 'public_access_ip'], 'string', 'max' => 16],
             [['host_name'], 'string', 'max' => 32],
@@ -66,40 +63,40 @@ class IpAssignment extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => Yii::t('app', 'ID'),
             'host_type_id' => Yii::t('app', 'Host Type'),
             'subnet_id' => Yii::t('app', 'Subnet'),
-            'ipv4_address' => Yii::t('app', 'Static IP Address'),
+            'ipv4_address' => Yii::t('app', 'Assigned IP Address'),
+            'is_dhcp' => Yii::t('app', 'DHCP Assigned'),
             'host_type' => Yii::t('app', 'Host Type'),
             'host_name' => Yii::t('app', 'Host Name'),
             'host_purpose' => Yii::t('app', 'Host Purpose'),
             'host_location' => Yii::t('app', 'Host Location'),
             'port_access_info' => Yii::t('app', 'Port Access Info'),
             'public_access_ip' => Yii::t('app', 'Public Access IP'),
-            'subnet.name'=>Yii::t('app','Subnet Name'),
-            'subnet.short_name'=>Yii::t('app','Subnet'),
+            'subnet.name' => Yii::t('app', 'Subnet Name'),
+            'subnet.short_name' => Yii::t('app', 'Subnet'),
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSubnet()
-    {
+    public function getSubnet() {
         return $this->hasOne(Subnet::className(), ['id' => 'subnet_id']);
     }
 
     public static function getHostTypeList() {
-        return [ 
-            'Host' => 'Host', 
-            'Network' => 'Network', 
-            'Server' => 'Server', 
-            'Printer' => 'Printer', 
-            'Power' => 'Power', 
+        return [
+            'Host' => 'Host',
+            'Network' => 'Network',
+            'Server' => 'Server',
+            'Printer' => 'Printer',
+            'Power' => 'Power',
             'WheatNet' => 'WheatNet',
-            ];
+        ];
     }
+
 }

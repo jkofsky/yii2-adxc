@@ -5,11 +5,9 @@ use yii\db\Migration;
 /**
  * Class m170804_043404_create_ipAssignmentTable
  */
-class m170804_043404_create_ipAssignmentTable extends Migration
-{
+class m170804_043404_create_ipAssignmentTable extends Migration {
 
-    public function safeUp()
-    {
+    public function safeUp() {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
@@ -24,6 +22,7 @@ class m170804_043404_create_ipAssignmentTable extends Migration
             'host_type_id' => $this->integer(10)->unsigned()->null(),
             'subnet_id' => $this->integer(10)->unsigned()->null(),
             'ipv4_address' => $this->string(16)->notNull(),
+            'is_dhcp' => $this->boolean()->notNull()->defaultValue(0),
             //'ipv6_address'=>  $this->string(40)->null(),
             'host_type' => "ENUM('Host','Network','Server','Printer','Power','WheatNet') NOT NULL DEFAULT 'Host'",
             'host_name' => $this->string(32)->notNull(),
@@ -40,15 +39,14 @@ class m170804_043404_create_ipAssignmentTable extends Migration
         $this->addForeignKey(
                 'fk_assignment_to_subnet', '{{%ip_assignment}}', 'subnet_id', '{{%subnet}}', 'id', 'SET NULL', 'CASCADE'
         );
-        
+
         // add foreign key for a table relation to the '{{%subnet}}' table
         $this->addForeignKey(
                 'fk_assignment_to_host', '{{%ip_assignment}}', 'host_type_id', '{{%ip_host}}', 'id', 'SET NULL', 'CASCADE'
         );
     }
 
-    public function safeDown()
-    {
+    public function safeDown() {
         $this->dropForeignKey('fk_assignment_to_subnet', '{{%ip_assignment}}');
         $this->dropForeignKey('fk_assignment_to_host', '{{%ip_assignment}}');
         $this->dropTable('{{%ip_assignment}}');

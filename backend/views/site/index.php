@@ -19,7 +19,7 @@ $this->title = Yii::$app->name;
                     ['label' => 'Announcements Maintenance Section &raquo', 'url' => ['announcement/index']],
                     ['label' => 'Departments Maintenance Section &raquo', 'url' => ['department/index']],
                     //['label' => 'Documents (Forms) Maintenance Section &raquo', 'url' => ['document/index']],
-                    ['label' => 'Employees (Users) Maintenance Section &raquo', 'url' => ['user/index']],
+                    ['label' => 'Users (Employees) Maintenance Section &raquo', 'url' => ['user/index']],
                     ['label' => 'Subnet Maintenance Section &raquo', 'url' => ['subnet/index']],
                     ['label' => 'Static IP Maintenance Section &raquo', 'url' => ['ip-assignment/index']],
                 ];

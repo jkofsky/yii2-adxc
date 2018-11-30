@@ -26,7 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'id',
+                'options' => ['style' => 'width:6em;'],
+                'contentOptions' => ['class' => 'text-right'],
+            ],
+            //['class' => 'yii\grid\SerialColumn'],
             [
                 'attribute' => 'first_name',
                 'value' => 'profile.first_name',
@@ -39,12 +44,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'profile.cell_phone',
             'profile.home_phone',
             [
-                'class' => '\pheme\grid\ToggleColumn',
-                'attribute' => 'is_active',
-            // Uncomment if  you don't want AJAX
-            //'enableAjax' => false,
-            ],
-            [
                 'header' => 'Department',
                 'attribute' => 'dept_id',
                 'value' => 'profile.department.dept_name',
@@ -54,6 +53,16 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'class' => 'yii\grid\ActionColumn',
                 'header' => 'Actions',
+            ],
+            [
+                'class' => '\pheme\grid\ToggleColumn',
+                'attribute' => 'is_active',
+                'enableSorting' => false,
+                'filter' => Html::activeDropDownList($searchModel, 'is_active', [1 => 'Active', 0 => 'Inactive'], ['class' => 'form-control', 'prompt' => 'All']
+                ),
+                'contentOptions' => ['class' => 'text-center'],
+            // Uncomment if  you don't want AJAX
+            //'enableAjax' => false,
             ],
         ],
     ]);
