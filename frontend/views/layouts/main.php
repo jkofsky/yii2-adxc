@@ -21,6 +21,8 @@ AppAsset::register($this);
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <?php $this->head() ?>
     </head>
     <body>
@@ -48,7 +50,7 @@ AppAsset::register($this);
                     ],
                 ]);
                 $menuItems = [
-                    ['label' => Html::icon('home').' Home',
+                    ['label' => Html::icon('home') . ' Home',
                         'url' => ['/site/index'],
                         'linkOptions' => ['title' => Yii::t('app', 'Home')]
                     ],
@@ -113,7 +115,7 @@ AppAsset::register($this);
             </div>
 
             <footer class="footer">
-                <div class="container">
+                <div class="container-fluid">
                     <p class="pull-left">&copy;<?= date('Y') ?>
                         <?= Yii::$app->params['companyName'] ?>
                     </p>
