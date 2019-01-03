@@ -36,7 +36,8 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
  12. 41.153.202 | 
  12. 41.153.203 | Internet Streaming
  12. 41.153.204 | Remote Comrex #1
- 12. 41.153.205 | <i>Remote Comrex #2</i>
+ 12. 41.153.205 | Comrex @ 192.168.12.6<br>
+                | <i>Remote Comrex #2</i>
  12. 41.153.206 | Webrack/Podcast
                 </pre>
                 <i>future assignments</i>
