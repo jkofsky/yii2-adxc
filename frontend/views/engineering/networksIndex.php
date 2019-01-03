@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                     ];
                 }
                 echo Nav::widget(['items' => $items]);
-                ?>  
+                ?>
             </div>
         </div>
     </div>
@@ -45,10 +45,11 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                 ]);
                 ?>
             </div>
-            <div class="panel-footer" style="font-family: monospace">Passwords: 
-                <?= Html::bsLabel('Gr8Blu3$', 'danger', ['style' => 'font-size: 100%']); ?>
-                <?= Html::bsLabel('C9IwSWmB', 'success', ['style' => 'font-size: 100%']); ?>
-                <?= Html::bsLabel('XP1Med9I', 'warning', ['style' => 'font-size: 100%']); ?>
+            <div class="panel-footer text-center" style="font-family: 'Roboto Mono', monospace;">
+                <p class="text-left">Passwords:</p>
+                <?= Html::bsLabel('Gr8bLu3$', 'danger', ['style' => 'font-size: 100%']); ?>
+                <?= Html::bsLabel('C9iSW@mP', 'success', ['style' => 'font-size: 100%']); ?>
+                <?= Html::bsLabel('XP1Med9i', 'warning', ['style' => 'font-size: 100%']); ?>
                 <?= Html::bsLabel('N0$a1nt$', 'primary', ['style' => 'font-size: 100%']); ?>
             </div>
         </div>

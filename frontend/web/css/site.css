@@ -2,7 +2,10 @@ html,
 body {
     height: 100%;
 }
-body { overflow-y: scroll; }
+body {
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    overflow-y: scroll;
+}
 
 .wrap {
     min-height: 100%;
@@ -137,20 +140,20 @@ a.desc:after {
     color: whitesmoke;
 }
 .panel-adxc {
-    border-color: #720e9e;   
+    border-color: #720e9e;
 }
-#navbar-adxc { 
+#navbar-adxc {
     font-size: 14px;
     border: 0px;
     border-radius: 0;
 }
 #navbar-adxc .navbar-nav>li>a:hover,
 #navbar-adxc .navbar-nav>li>a:focus,
-#navbar-adxc .navbar-nav>li>ul>li>a:hover, 
-#navbar-adxc .navbar-nav>li>ul>li>a:focus, 
+#navbar-adxc .navbar-nav>li>ul>li>a:hover,
+#navbar-adxc .navbar-nav>li>ul>li>a:focus,
 #navbar-adxc .navbar-nav>.active>a,
 #navbar-adxc .navbar-nav>.active>a:hover,
-#navbar-adxc .navbar-nav>.active>a:focus {  
+#navbar-adxc .navbar-nav>.active>a:focus {
     color: rgba(51, 51, 51, 1);
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+50,b68d4c+51,e9d4b3+100;L+Brown+3D */
     background: #c19e67; /* Old browsers */
@@ -170,18 +173,18 @@ a.desc:after {
 #navbar-adxc .navbar-brand,
 #navbar-adxc .navbar-text,
 #navbar-adxc .navbar-nav>li>a {
-    color: #fdffff; 
+    color: #fdffff;
 }
 #navbar-adxc .navbar-toggle .icon-bar,
 #navbar-adxc .navbar-toggle:hover .icon-bar,
 #navbar-adxc .navbar-toggle:focus .icon-bar {
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
-#navbar-adxc .navbar-nav>li>ul>li>a, 
+#navbar-adxc .navbar-nav>li>ul>li>a,
 #navbar-adxc ul.dropdown-menu,
 #navbar-adxc ul.dropdown-menu>li>a,
 #navbar-adxc ul.dropdown-menu>li>ul>li>a {
-    color: #999999; 
+    color: #999999;
 }
 #navbar-adxc .navbar-brand:hover,
 #navbar-adxc .navbar-brand:focus,
@@ -258,8 +261,8 @@ ul.navbar-nav:last-child { padding-right: 16px; }
 |  My Stuff
 |==========================================================================
 */
-li.birth_day { 
-    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACNklEQVR42oVT32tSURz3qZ5660/wJeihv2BvUQ9BDxV7CQpGjB4zCiGplTUIakFtyxarWavWINSl1XAYXWfWQ4Mm5U/cvGdX3b16N1GvQ9RP53unN21CBz7ccz6/vudeuCYApg7CftPxSNgU7ub+p/cYEhGTVi4dATfa+hX003sMsdX90KrDiK3ua/Wb2NGjP3f1PQXvlh4juDyIOZ+9JghCIs4DNDEUOFvgZ/dzzziWPp/B+Bur1FPARTPH2LS/CNe3LUx+yEPTNBgT+bNQKMD+VoLjo4yLE0mFMkbBV8HjZIzhyaKC+aCKCa8CWs73uxNnPKP6+dpLCQ8XNmGZSoMyRkFQCDT4wusvKjfI8K+U9MCd+Swcn2TceCXpZ4crj6vTDK6AjGVhcccoCAm+Vr1ex7/r+qyER95NWF8wg2s2m5BlGcnvtoZRwFYszUQ8CnqNzqIbOdw5WJ8xLAhFnVNVFfHYb+TTPijhQ38LtkIHGrXMbaSSUf1j5XI5MHENGxtMBxUrioL1tRRKmacgL2WMguzI4VZhZhiV1F0oTEBJnEVNHDWgifexzeZQFe9BS9lBXsoYBUXvwYb84Bwkyykok0PY9l5C5YdNNxNoTxxp5CEvZbpfYaeWuYVS4AqUqQvI2gYhDp3A+umjOmhPHGnkIS9luguc5V8nuXCz5+p9wT3kpUx3gZljjKNWjhxDJX4eWvoyN4/ooD1xpJGn7TXv+Rc4OcBh43BzJDiqbSTaHGkD3Zk/218PdDqRKm4AAAAASUVORK5CYII=); 
+li.birth_day {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACNklEQVR42oVT32tSURz3qZ5660/wJeihv2BvUQ9BDxV7CQpGjB4zCiGplTUIakFtyxarWavWINSl1XAYXWfWQ4Mm5U/cvGdX3b16N1GvQ9RP53unN21CBz7ccz6/vudeuCYApg7CftPxSNgU7ub+p/cYEhGTVi4dATfa+hX003sMsdX90KrDiK3ua/Wb2NGjP3f1PQXvlh4juDyIOZ+9JghCIs4DNDEUOFvgZ/dzzziWPp/B+Bur1FPARTPH2LS/CNe3LUx+yEPTNBgT+bNQKMD+VoLjo4yLE0mFMkbBV8HjZIzhyaKC+aCKCa8CWs73uxNnPKP6+dpLCQ8XNmGZSoMyRkFQCDT4wusvKjfI8K+U9MCd+Swcn2TceCXpZ4crj6vTDK6AjGVhcccoCAm+Vr1ex7/r+qyER95NWF8wg2s2m5BlGcnvtoZRwFYszUQ8CnqNzqIbOdw5WJ8xLAhFnVNVFfHYb+TTPijhQ38LtkIHGrXMbaSSUf1j5XI5MHENGxtMBxUrioL1tRRKmacgL2WMguzI4VZhZhiV1F0oTEBJnEVNHDWgifexzeZQFe9BS9lBXsoYBUXvwYb84Bwkyykok0PY9l5C5YdNNxNoTxxp5CEvZbpfYaeWuYVS4AqUqQvI2gYhDp3A+umjOmhPHGnkIS9luguc5V8nuXCz5+p9wT3kpUx3gZljjKNWjhxDJX4eWvoyN4/ooD1xpJGn7TXv+Rc4OcBh43BzJDiqbSTaHGkD3Zk/218PdDqRKm4AAAAASUVORK5CYII=);
 }
 
 a[target="_blank"]:after,
@@ -299,12 +302,12 @@ div.required label.control-label:after {
 .glyphicon-4x{font-size: 4em;}
 .glyphicon-5x{font-size: 5em;}
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
 
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
 
 }
@@ -501,7 +504,7 @@ div.grid-view thead th {
     margin: 2rem 0;
 }
 ul.article-meta {
-    padding: 0px;  
+    padding: 0px;
 }
 #article-header .article-author-wrapper {
     height: 44px;

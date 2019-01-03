@@ -13,10 +13,10 @@ $this->params['breadcrumbs'][] = 'Engineering';
         <div class="col-md-3">
             <div class="panel panel-adxc">
                 <div class="panel-heading">
-                    <h4><span class="glyphicon glyphicon-duplicate"></span>&nbsp;Documents</h4>
+                    <h4><?= Html::icon("duplicate"); ?>&nbsp;Documents</h4>
                 </div>
                 <div class="panel-body">
-                    Provides access to various useful documents, like forms and 
+                    Provides access to various useful documents, like forms and
                     Standard Operating Procedures (SOP)
                 </div>
                 <div class="panel-footer">
@@ -27,10 +27,10 @@ $this->params['breadcrumbs'][] = 'Engineering';
         <div class="col-md-3">
             <div class="panel panel-adxc">
                 <div class="panel-heading">
-                    <h4><span class="glyphicon glyphicon-modal-window"></span>&nbsp;ADX Networks</h4>
+                    <h4><?= Html::icon("modal-window"); ?>&nbsp;ADX Networks</h4>
                 </div>
                 <div class="panel-body">
-                    A listing of the ADX's main networking Internet Protocol (IP) 
+                    A listing of the ADX's main networking Internet Protocol (IP)
                     address segments.
                 </div>
                 <div class="panel-footer">
@@ -41,10 +41,10 @@ $this->params['breadcrumbs'][] = 'Engineering';
         <div class="col-md-3">
             <div class="panel panel-adxc">
                 <div class="panel-heading">
-                    <h4><span class="glyphicon glyphicon-cloud-download"></span>&nbsp;Programming</h4>
+                    <h4><?= Html::icon("cloud"); ?>&nbsp;Programming</h4>
                 </div>
                 <div class="panel-body">
-                    A listing of Contacts for the various syndicated programming 
+                    A listing of Contacts for the various syndicated programming
                     aired on ADX stations.
                 </div>
                 <div class="panel-footer">
@@ -55,10 +55,10 @@ $this->params['breadcrumbs'][] = 'Engineering';
         <div class="col-md-3">
             <div class="panel panel-adxc">
                 <div class="panel-heading">
-                    <h4><span class="glyphicon glyphicon-cog"></span>&nbsp;Support Contacts</h4>
+                    <h4><?= Html::icon("cog");?>&nbsp;Support Contacts</h4>
                 </div>
                 <div class="panel-body">
-                    A listing of various support contacts for equipment, software, 
+                    A listing of various support contacts for equipment, software,
                     etc used by ADX Communications.
                 </div>
                 <div class="panel-footer">
@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
         <div class="col-md-3">
             <div class="panel panel-adxc">
                 <div class="panel-heading">
-                    <h4><?= Html::icon("phone-alt"); ?>&nbsp;ADTRAN Number Routing</h4>
+                    <h4><?= Html::icon("phone-alt"); ?>&nbsp;ADTRAN Numbers</h4>
                 </div>
                 <div class="panel-body">
                     A listing of the 262-6### numbers being routed by the ADTRAN
@@ -85,7 +85,7 @@ $this->params['breadcrumbs'][] = 'Engineering';
         <div class="col-md-3">
             <div class="panel panel-danger">
                 <div class="panel-heading">
-                    <h4><span class="glyphicon glyphicon-signal"></span> PHP Info</h4>
+                    <h4><?= Html::icon("signal");?>&nbsp;PHP Info</h4>
                 </div>
                 <div class="panel-body text-center">
                     Display the Web Server&#039;s Scripting &amp; Environmental information.
