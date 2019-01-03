@@ -25,17 +25,18 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
 ------------------------------------
  12. 41.153.193 | Cisco Eth 0/0
  12. 41.153.194 | SonicWall (Audio)
- 12. 41.153.195 | pfSense/Firewall
+                | <i>(pfSense)</i>
+ 12. 41.153.195 | 
  12. 41.153.196 | UWF BricLink
- 12. 41.153.197 |
- 12. 41.153.198 |
- 12. 41.153.199 |
- 12. 41.153.200 | NextGen WNRP-STL
- 12. 41.153.201 | <i>NextGen WYCT-STL</i>
- 12. 41.153.202 | <i>Audio Stream-WNRP</i>
- 12. 41.153.203 | Audio Stream-WYCT
- 12. 41.153.204 | Remote Comrex-WNRP
- 12. 41.153.205 | <i>Remote Comrex-WYCT</i>
+ 12. 41.153.197 | WEBY BricLink
+ 12. 41.153.198 | opal1.adxc.com
+ 12. 41.153.199 | opal2.adxc.com
+ 12. 41.153.200 | 
+ 12. 41.153.201 | 
+ 12. 41.153.202 | 
+ 12. 41.153.203 | Internet Streaming
+ 12. 41.153.204 | Remote Comrex #1
+ 12. 41.153.205 | <i>Remote Comrex #2</i>
  12. 41.153.206 | Webrack/Podcast
                 </pre>
                 <i>future assignments</i>
