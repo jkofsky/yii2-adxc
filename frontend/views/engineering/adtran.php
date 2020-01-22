@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = 'ADTRAN Routing';
 ?>
 <h1>ADTRAN 550 Number Routing</h1>
 
-<table class="table-condensed table-striped table-responsive">
+<table style="width: 100%;" class="table-condensed table-striped table-responsive">
     <thead>
         <tr><th>Number</th><th>Use</th><th>Type</th><th>Port</th></tr>
     </thead>
@@ -21,7 +21,8 @@ $this->params['breadcrumbs'][] = 'ADTRAN Routing';
         <tr><td>262-6061</td><td>WYCT Hunt Group Lines</td>     <td>BRI</td>    <td>BRI 1/3&amp;4</td></tr>
         <tr><td>262-6062</td><td>WEBY Hunt Group Lines</td>     <td>BRI</td>    <td>BRI 2/1&amp;2</td></tr>
         <tr><td>262-6063</td><td><i>Future ISDN/BRI Lines</i></td><td>BRI</td>  <td>BRI 2/3&amp;4</td></tr>
-        <tr><td>262-6064</td><td>ESPN Hunt Group Lines</td>     <td>Analog</td> <td>FXS 4/5-8</td></tr>
+        <tr><td>262-6064</td><td>Studio 3 Hunt Group Lines</td> <td>Analog</td> <td>FXS 4/5-8</td></tr>
+        <tr><td>262-6077</td><td>Freedom Friday Text Line</td>  <td>Analog</td> <td>???</td></tr>
         <tr><td>262-6080</td><td>Unknown</td>                   <td>Analog</td> <td>FXS 3/1</td></tr>
         <tr><td>262-6081</td><td>Unknown</td>                   <td>Analog</td> <td>FXS 3/2</td></tr>
         <tr><td>262-6082</td><td>Unknown</td>                   <td>Analog</td> <td>FXS 3/3</td></tr>
@@ -33,7 +34,7 @@ $this->params['breadcrumbs'][] = 'ADTRAN Routing';
         <tr><td>262-6088</td><td>WNRP VIP Call-In Line</td>     <td>Analog</td> <td>FXS 4/1</td></tr>
         <tr><td>262-6089</td><td>WYCT VIP Call-In Line</td>     <td>Analog</td> <td>FXS 4/2</td></tr>
         <tr><td>262-6090</td><td>WEBY VIP Call-In Line</td>     <td>Analog</td> <td>FXS 4/3</td></tr>
-        <tr><td>262-6091</td><td>ESPN VIP Call-In Line</td>     <td>Analog</td> <td>FXS 4/4</td></tr>
-        <tr><td>6100-6199</td><td>Office ESI PBX</td>           <td>mixed</td>  <td>&nbsp;</tr>
+        <tr><td>262-6091</td><td>Studio 3 VIP Call-In Line</td> <td>Analog</td> <td>FXS 4/4</td></tr>
+        <tr><td>6100-6199</td><td>Office ESI PBX</td>           <td>PBX</td>  <td>n/a</tr>
     </tbody>
 </table>
