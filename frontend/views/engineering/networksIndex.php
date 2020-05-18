@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
             <div class="panel-body">
                 <?=
                 Nav::widget(['items' => [
-                        '<li>Administrator Logon: User: SysCat, Pswd: J8</li>',
+                        '<li>Administrator Logon: User: SysCat, Pswd: J8!</li>',
                         '<li>OMT On-Air User (default): User: oplog, Pswd: mts1</li>',
                         '<li>OMT General User: User: mts, Pswd: omt</li>',
                         ['label' => 'NetComm WAN Network Details', 'url' => ['info', 'view' => 'netComm']],
@@ -45,12 +45,14 @@ $this->params['breadcrumbs'][] = 'ADX Networks';
                 ]);
                 ?>
             </div>
-            <div class="panel-footer text-center" style="font-family: 'Roboto Mono', monospace;">
-                <p class="text-left">Passwords:</p>
-                <?= Html::bsLabel('Gr8bLu3$', 'danger', ['style' => 'font-size: 100%']); ?>
-                <?= Html::bsLabel('C9iSW@mP', 'success', ['style' => 'font-size: 100%']); ?>
-                <?= Html::bsLabel('XP1Med9i', 'warning', ['style' => 'font-size: 100%']); ?>
-                <?= Html::bsLabel('N0$a1nt$', 'primary', ['style' => 'font-size: 100%']); ?>
+            <div class="panel-footer text-center" style="font-family:  monospace;">
+                <p class="text-left">Passwords:
+                    <?= Html::bsLabel('Gr8bLu3$', 'danger', ['style' => 'font-size: 110%']); ?>
+                    <?= Html::bsLabel('6ooD3@t$', 'success', ['style' => 'font-size: 110%']); ?>
+                    <?= Html::bsLabel('XP1Med9i', 'warning', ['style' => 'font-size: 110%']); ?>
+                    <?= Html::bsLabel('N0$a1nt$', 'primary', ['style' => 'font-size: 110%']); ?>
+                    <?= Html::bsLabel('$a1t@ir', 'info', ['style' => 'font-size: 110%']); ?>
+                </p>
             </div>
         </div>
     </div>

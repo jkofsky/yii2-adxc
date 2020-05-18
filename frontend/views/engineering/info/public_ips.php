@@ -93,6 +93,20 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
                 </pre>
             </div>
         </div>
+        <div class="panel panel-info">
+            <div class="panel-heading"><?= Html::encode("Sprint for STL (Printer's Alley)"); ?></div>
+            <div class="panel-body">
+                <address>
+                    <b>Modem s/n: </b><u>(850) 554-3740</u>
+                </address>
+                <pre>
+255.255.255.248 | Netmask
+   .   .   .    | Gateway
+---------------------------------
+ 24.221. 24. 38 | Router ?
+                </pre>
+            </div>
+        </div>
     </div>
 
     <div class="col-md-4">
