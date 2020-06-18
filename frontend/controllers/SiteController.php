@@ -3,7 +3,7 @@
 namespace frontend\controllers;
 
 use Yii;
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -20,14 +20,12 @@ use frontend\models\ContactForm;
 /**
  * Site controller
  */
-class SiteController extends Controller
-{
+class SiteController extends Controller {
 
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors() {
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -57,15 +55,14 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
-    public function actions()
-    {
+    public function actions() {
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
             'reading' => [
                 'class' => 'yii\web\ViewAction',
-                'viewParam' => 'page',
+                //'viewParam' => 'pages',
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
@@ -79,8 +76,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $announceModel = Announcement::find()
                 ->joinWith('postedBy')
                 ->where(['>=', 'end_date', time()])
@@ -99,8 +95,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionLogin()
-    {
+    public function actionLogin() {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -136,8 +131,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionLogout()
-    {
+    public function actionLogout() {
         Yii::$app->user->logout();
 
         return $this->goHome();
@@ -148,8 +142,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionContact()
-    {
+    public function actionContact() {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
@@ -172,8 +165,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionPhoneList()
-    {
+    public function actionPhoneList() {
         return $this->render('phoneList');
     }
 
@@ -183,8 +175,7 @@ class SiteController extends Controller
      * 
      * @return mixed
      */
-    public function actionWeather()
-    {
+    public function actionWeather() {
         $nw = new \common\components\noaaWeather();
         $nw->loadData();
         return $this->render('weather', [
@@ -197,8 +188,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionSignup()
-    {
+    public function actionSignup() {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
@@ -218,8 +208,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionRequestPasswordReset()
-    {
+    public function actionRequestPasswordReset() {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
@@ -243,8 +232,7 @@ class SiteController extends Controller
      * @return mixed
      * @throws BadRequestHttpException
      */
-    public function actionResetPassword($token)
-    {
+    public function actionResetPassword($token) {
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidParamException $e) {
@@ -265,8 +253,7 @@ class SiteController extends Controller
     /**
      * Change your own password
      */
-    public function actionChangePassword()
-    {
+    public function actionChangePassword() {
         $model = User::findOne([
                     'id' => Yii::$app->user->id
         ]);

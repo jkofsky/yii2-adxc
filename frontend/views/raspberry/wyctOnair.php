@@ -3,7 +3,7 @@
 /* @var $nowPlaying 'http://music.catcountry987.com/playing.xml' */
 /* @var $history 'http://music.catcountry987.com/history.xml' */
 
-use yii\bootstrap\Html;
+use yii\bootstrap4\Html;
 
 $this->title = 'CatCountry - Now Playing';
 ?>

@@ -23,7 +23,7 @@ use Yii;
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @author Alexander Makarov <sam@rmcreative.ru>
  */
-class Alert extends \yii\bootstrap\Widget
+class Alert extends \yii\bootstrap4\Widget
 {
 
     /**
@@ -63,7 +63,7 @@ class Alert extends \yii\bootstrap\Widget
                     /* assign unique id to each alert box */
                     $this->options['id'] = $this->getId() . '-' . $type . '-' . $i;
 
-                    echo \yii\bootstrap\Alert::widget([
+                    echo \yii\bootstrap4\Alert::widget([
                         'body' => $message,
                         'closeButton' => $this->closeButton,
                         'options' => $this->options,

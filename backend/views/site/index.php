@@ -2,18 +2,18 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
+use yii\bootstrap4\Nav;
 
 $this->title = Yii::$app->name;
 ?>
 <div class="site-index">
 
     <div class="body-content">
-        <div class = "panel panel-danger">
-            <div class="panel-heading text-center">
+        <div class = "card shadow">
+            <div class="card-header text-center alert-danger">
                 <p style="font-size: large; font-weight: bolder;">IntraNet Site Administration Options <span class="glyphicon glyphicon-cog"></span></p>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <?php
                 $menuItems = [
                     ['label' => 'Announcements Maintenance Section &raquo', 'url' => ['announcement/index']],

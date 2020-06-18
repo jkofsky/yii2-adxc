@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 
-use yii\bootstrap\Html;
+use yii\bootstrap4\Html;
 
 $this->title = 'WNRP Podcast';
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Podcast'), 'url' => ['/podcast']];

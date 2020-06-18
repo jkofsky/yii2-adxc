@@ -1,9 +1,8 @@
 <?php
 /* @var $this yii\web\View */
 
-use yii\bootstrap\Html;
+use yii\bootstrap4\Html;
 use common\components\PodcastFeedParser;
-use yii\bootstrap\Collapse;
 
 $this->title = 'Podcasts';
 $this->params['breadcrumbs'][] = $this->title;
@@ -28,68 +27,63 @@ $this->params['breadcrumbs'][] = $this->title;
             $wyctContent .= $this->render('_podcastItem', ['node' => $node]);
         }
         ?>
-        <?=
-        Collapse::widget([
-            'items' => [
-                // WNRP
-                [
-                    'label' => 'Recent WNRP Podcasts' .
-                    Html::a('Login to Update', 'http://podcast.newsradio1620.com/site/login.html', [
-                        'target' => '_new', 'class' => 'btn btn-xs btn-warning pull-right'
-                    ]),
-                    'encode' => false,
-                    'content' => $wnrpContent,
-                    // open its content by default
-                    //'contentOptions' => ['class' => 'in'],
-                    'options' => ['class' => 'panel-adxc'],
-                ],
-                // WYCT
-                [
-                    'label' => 'Recent WYCT Podcasts' .
-                    Html::a('Login to Update', 'http://podcast.catcountry987.com/site/login.html', [
-                        'target' => '_new', 'class' => 'btn btn-xs btn-warning pull-right'
-                    ]),
-                    'encode' => false,
-                    'content' => $wyctContent,
-                    //'contentOptions' => [...],
-                    'options' => ['class' => 'panel-adxc'],
-                ],
-                // WEBY
-                [
-                    'label' => 'Recent WEBY Podcasts',
-                    'content' => [
-                        'Anim pariatur cliche...',
-                        'Anim pariatur cliche...'
-                    ],
-                    //'contentOptions' => [...],
-                    'options' => ['class' => 'panel-adxc'],
-                ],
-                // ESPN
-                [
-                    'label' => 'Recent ESPN (W233CM) Podcasts',
-                    'content' => [
-                        'Anim pariatur cliche...',
-                        'Anim pariatur cliche...'
-                    ],
-                    //'contentOptions' => [...],
-                    'options' => ['class' => 'panel-adxc'],
-                ],
-            ]
-        ]);
-        ?>
 
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed text-left w-100" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Recent Newsradio 92.3FM/AM1620 (WNRP) Podcasts
+                        </button>
+                    </h5>
+                </div>
 
-
-    </div>
-    <!--<nav class="navbar">
-        <form class="form-inline" action="" method="post" name="search_form">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
-                <span class="input-group-btn" id="basic-addon1">
-                    <button class="btn btn-info" type="submit">
-                        <span class="glyphicon glyphicon-sunglasses"></span></button>
-                </span>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <p><a href='http://podcast.newsradio1620.com/site/login.html' class="btn btn-danger text-light" target="_new">Logon to Podcast site.</a></p>
+                        <?= $wnrpContent; ?>
+                    </div>
+                </div>
             </div>
-        </form>
-    </nav>-->
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed text-left w-100" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Recent Catcountry 98&bullet;7FM (WYCT) Podcasts
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        <p><a href='http://podcast.catcountry987.com/site/login.html' class="btn btn-danger text-light" target="_new">Logon to Podcast site.</a></p>
+                        <?= $wyctContent; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link btn-block collapsed text-left" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Recent ESPN Pensacola (WEBY) Podcasts
+                        </button>
+                    </h5>
+                </div>
+                <div id = "collapseThree" class = "collapse" aria-labelledby = "headingThree" data-parent = "#accordion">
+                    <div class = "card-body">
+                        <p><a href='http://podcast.espnpensacola.com/site/login.html' class="btn btn-danger text-light" target="_new">Logon to Podcast site.</a></p>
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life
+                        accusamus terry richardson ad squid. 3 wolf moon officia
+                        aute, non cupidatat skateboard dolor brunch. Food truck
+                        quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                        sunt aliqua put a bird on it squid single-origin coffee nulla
+                        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                        beer labore wes anderson cred nesciunt sapiente ea proident.
+                        Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                        beer farm-to-table, raw denim aesthetic synth nesciunt you
+                        probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

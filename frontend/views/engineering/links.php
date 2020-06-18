@@ -3,7 +3,7 @@
 /* @var $model SupportLink */
 /* $this->pageTitle - Set in Controller Action */
 /* $this->breadcrumbs - Set in Controller Action */
-Yii::app()->clientScript->registerScript('search', "
+Yii::$app->clientScript->registerScript('search', "
 $('#search-form form').submit(function(){
 	$('#links-grid').yiiGridView('update', {
 		data: $(this).serialize()

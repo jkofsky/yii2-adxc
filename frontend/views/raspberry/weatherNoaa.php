@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 /* @var $nw   json formatted weather forecast data */
 
-use yii\bootstrap\Html;
+use yii\bootstrap4\Html;
 
 $data = $nw->jsonData;
 $_forecast = $nw->getForecast();

@@ -1,18 +1,19 @@
 <?php
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
 
 $this->title = Yii::$app->name . ' -  Public IP Addresses';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
-$this->params['breadcrumbs'][] = ['label' => 'ADX Networks', 'url' => ['engineering/local-network']];
 $this->params['breadcrumbs'][] = 'ADTRAN Routing';
 
 //$this->menu = $this->getSidebarMenu();
 ?>
 <h1>ADTRAN 550 Number Routing</h1>
 
-<table style="width: 100%;" class="table-condensed table-striped table-responsive">
+<p>Current as of: <?= date('d-M-Y h:ia T', filemtime(__FILE__)); ?></p>
+
+<table class="table table-striped table-sm">
     <thead>
         <tr><th>Number</th><th>Use</th><th>Type</th><th>Port</th></tr>
     </thead>

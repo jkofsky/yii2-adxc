@@ -3,7 +3,7 @@
 /* @var $searchModel common\models\search\ProfileSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
 use yii\grid\GridView;
 
 $this->title = Yii::t('app', 'Profile');

@@ -6,21 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ADXC Development Landing Page</title>
         <style type="text/css">
-            body, td, th, h1, h2 {font-family: sans-serif;}
-            pre {margin: 0px; font-family: monospace;}
-            table {border-collapse: collapse;}
+            /*body {background-color: #fff; color: #222; font-family: sans-serif;}*/
+            pre {margin: 0; font-family: monospace;}
+            table {border-collapse: collapse; border: 0; width: 100%; box-shadow: 1px 2px 3px #ccc;}
             .center {text-align: center;}
-            .center table {margin-left: auto; margin-right: auto; text-align: left;}
-            .center th {text-align: center !important; }
-            td, th {border: 1px solid #000000; vertical-align: baseline;}
-            .p  {text-align: left;}
-            .e  {background-color: #ccccff; font-weight: bold; color: #000000;}
-            .h  {background-color: #9999cc; font-weight: bold; color: #000000;}
-            .v  {background-color: #cccccc; color: #000000;}
-            .vr {background-color: #cccccc; text-align: right; color: #000000;}
-            img {float: right; border: 0px;}
-            hr  {width: 600px; margin: 0 auto; background-color: #cccccc; border: 0px;
-                 height: 1px; color: #000000;}
+            .center table {margin: 1em auto; text-align: left;}
+            .center th {text-align: center !important;}
+            td, th {border: 1px solid #666; font-size: 75%; vertical-align: baseline; padding: 4px 5px;}
+            th {position: sticky; top: 0; background: inherit;}
+            .p {text-align: left;}
+            .e {background-color: #ccf; width: 300px; font-weight: bold;}
+            .h {background-color: #99c; font-weight: bold;}
+            .v {background-color: #ddd; max-width: 300px; overflow-x: auto; word-wrap: break-word;}
+            .v i {color: #999;}
+            img {float: right; border: 0;}
+            hr {background-color: #ccc; border: 0; height: 1px;}
             #phpinfo{width: 90%; margin: 0 auto;}
         </style>
     </head>

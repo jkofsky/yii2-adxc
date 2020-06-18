@@ -1,9 +1,9 @@
 <?php
 
-use kartik\helpers\Html;
+use yii\bootstrap4\Html;
 ?>
-<div class="media well well-sm">
-    <div class="media-left text-center bg-info"><?= date('M d, Y', strtotime($node['airdate'])); ?></div>
+<div class="media">
+    <div class="media-left text-center alert-info  mr-3"><?= date('M d, Y', strtotime($node['airdate'])); ?></div>
     <div class="media-body">
         <div class="media-heading">
             <b><?=

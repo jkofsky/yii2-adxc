@@ -1,162 +1,133 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $announceModel common\models\Announcement */
-/* @var $birthdayModel common\models\Profile */
 
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
+use yii\bootstrap4\Nav;
 
 $this->title = 'ADXC IntraNet';
 ?>
 <div class="site-index">
 
-    <div class="container-fluid">
+    <section id="values" data-section="values">
         <div class="row">
-            <?php
-            if (!Yii::$app->user->isGuest) {
-                echo $this->render('_announcements', [
-                    'announceModel' => $announceModel,
-                    'birthdayModel' => $birthdayModel,
-                ]);
-            }
-            ?>
+            <div class="col-lg-6 col-md-12">
+                <div class="card shadow-lg border-primary  mb-3">
+                    <div class="card-header bg-adxc text-light">
+                        <b><i class="fas fa-map-marker-alt"></i> Business Office</b>
+                    </div>
+                    <?= $this->render('_officeinfo'); ?>
+                </div>
+            </div>
+            <?php if (!Yii::$app->user->isGuest) : ?>
+                <div class="col-lg-6 col-md-12">
+                    <div class="card shadow-lg border-primary mb-3">
+                        <div class="card-header bg-adxc text-light">
+                            <i class="far fa-comments"></i>
+                            <b>Announcements for <?= date('l, F jS'); ?></b>
+                        </div>
+                        <?= $this->render('_announcements.php'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
+    </section>
 
-        <div class="row">
-            <?= $this->render('_officeinfo'); ?>
-        </div>
+    <section id="about" data-section="about">
 
-        <div class="row equal-panels">
-            <div class="col-md-6">
-                <div class="panel panel-adxc">
-                    <div class="panel-heading">Cat Country 98&bullet;7 (WYCT-FM)</div>
-                    <div class="panel-body">
-                        <?php
-                        $items = [
-                            Html::a('CatCountry Web Site', 'http://www.catcountry987.com/', ['target' => '_new']),
-                            Html::a('CatCountry Podcast Site', 'http://podcast.catcountry987.com/', ['target' => '_new']),
-                        ];
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = Html::a('WYCT Web Mail Login', 'http://webmail.catcountry987.com/imp/login.php', ['target' => '_new']);
-                        }
-
-                        $items[] = '<li class="nav-divider"></li>';
-                        $items[] = 'Listener Line: (850) 430-1987';
-                        $items[] = 'Sales Office: (850) 262-6139';
-
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = '<li class="nav-divider"></li>';
-                            $items[] = 'Studio (Hotline): (850) 262-6###';
-                            $items[] = 'Studio (On-Air): (850) 262-6###';
-                            $items[] = 'Studio (Talent): (850) 262-6###';
-                        }
-                        echo HTML::ul($items, [
-                            'encode' => false,
-                            'class' => 'nav',
-                        ]);
-                        ?>
+        <div class="row ">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card shadow-lg border-primary mb-3">
+                    <img src="<?= Yii::getAlias('@web/images/wyctlogo.png'); ?>" 
+                         class="card-img-top p-1" 
+                         alt="Cat Country 98.7 Logo">
+                    <div class="card-body pb-0">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="http://catcountry987.com" class="card-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Website</a></li>
+                            <li><a href="tel:850-430-1987" class="card-link" title="(850) 430-1987">
+                                    <i class="fas fa-mobile-alt"></i> Studio Lines</a></li>
+                            <li><a href="https://adxc-live.streamguys1.com/catcountry987" class="card-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Live Stream</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-youtube"></i> Youtube</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6">
-                <div class = "panel panel-adxc">
-                    <div class = "panel-heading">ESPN Pensacola HD2/94&bullet;5 (WYCT-HD2/FM)</div>
-                    <div class = "panel-body">
-                        <?php
-                        $items = [
-                            Html::a('ESPN Pensacola Web Site', 'http://www.espnpensacola.com/', ['target' => '_new']),
-                            Html::a('ESPN Pensacola Podcast Site', 'http://podcast.espnpensacola.com/', ['target' => '_new']),
-                        ];
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = Html::a('ESPN Web Mail Login', 'http://webmail.espnpensacola.com/imp/login.php', ['target' => '_new']);
-                        }
-
-                        $items[] = '<li class="nav-divider"></li>';
-                        $items[] = 'Listener Line: (850) 972-1945';
-                        $items[] = 'Sales Office: (850) 262-6140';
-
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = '<li class="nav-divider"></li>';
-                            $items[] = 'Studio (Hotline): (850) 262-6###';
-                            $items[] = 'Studio (On-Air): (850) 262-6###';
-                            $items[] = 'Studio (Talent): (850) 262-6###';
-                        }
-                        echo HTML::ul($items, [
-                            'encode' => false,
-                            'class' => 'nav',
-                        ]);
-                        ?>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card shadow-lg border-danger mb-3">
+                    <img class="card-img-top p-1" src="<?= Yii::getAlias('@web/images/wnrplogo.jpg'); ?>" alt="Newsradio 92.3 Logo">
+                    <div class="card-body pb-0">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="http://newsradio1620.com" class="card-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Website</a></li>
+                            <li><a href="tel:850-437-1620" class="card-link" title="(850) 437-1620">
+                                    <i class="fas fa-mobile-alt"></i> Studio Lines</a></li>
+                            <li><a href="https://adxc-live.streamguys1.com/wnrp" class="card-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Live Stream</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-youtube"></i> Youtube</a></li>
+                            <!--li><a href="#" class="card-link" target="_blank">
+                                <i class="fas fa-rss"></i> RSS Feed</a></li-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card shadow-lg border-warning mb-3">
+                    <img class="card-img-top p-1" src="<?= Yii::getAlias('@web/images/webylogo.jpg'); ?>" alt="ESPN Pensacola 99.1 Logo">
+                    <div class="card-body pb-0">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="http://espnpensacola.com" class="card-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Website</a></li>
+                            <li><a href="tel:850-623-1330" class="card-link" title="(850) 623-1330">
+                                    <i class="fas fa-mobile-alt"></i> Studio Lines</a></li>
+                            <li><a href="http://mega5.fast-serv.com:8026/stream" class="card-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Live Stream</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" class="card-link" target="_blank">
+                                    <i class="fab fa-youtube"></i> Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card shadow-lg border-info mb-3">
+                    <img class="card-img-top p-1" src="<?= Yii::getAlias('@web/images/playlistlogo.jpg'); ?>" alt="Pensacola's Playlist 94.5 Logo">
+                    <div class="card-body pb-0">
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="http://playlist945.com" class="card-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Website</a></li>
+                            <li><a href="http://173.193.205.96:7246/stream" class="card-link" target="_blank">
+                                    <i class="fas fa-play-circle"></i> Live Stream</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="row equal-panels">
-            <div class="col-md-6">
-                <div class = "panel panel-adxc">
-                    <div class = "panel-heading">News Radio 1620/92&bullet;3 (WNRP-AM/FM)</div>
-                    <div class = "panel-body">
-                        <?php
-                        $items = [
-                            Html::a('News Radio Web Site', 'http://www.newsradio1620.com/', ['target' => '_new']),
-                            Html::a('News Radio Podcast Site', 'http://podcast.newsradio1620.com/', ['target' => '_new']),
-                        ];
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = Html::a('WNRP Web Mail Login', 'http://webmail.newsradio1620.com/imp/login.php', ['target' => '_new']);
-                        }
-
-                        $items[] = '<li class="nav-divider"></li>';
-                        $items[] = 'Listener Line: (850) 437-1620';
-                        $items[] = 'Sales Office: (850) 262-6140';
-
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = '<li class="nav-divider"></li>';
-                            $items[] = 'Studio (Hotline): (850) 262-6131';
-                            $items[] = 'Studio (On-Air): (850) 262-6132';
-                            $items[] = 'Studio (Talent): (850) 262-6125';
-                            $items[] = 'Studio (Prod Booth): (850) 262-6154';
-                        }
-                        echo HTML::ul($items, [
-                            'encode' => false,
-                            'class' => 'nav',
-                        ]);
-                        ?>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class = "panel panel-adxc">
-                    <div class = "panel-heading">Talk Radio 1330/99&bullet;1 (WEBY-AM/FM)</div>
-                    <div class = "panel-body">
-                        <?php
-                        $items = [
-                            Html::a('Talk Radio Web Site', 'http://www.1330weby.com/', ['target' => '_new']),
-                            Html::a('Talk Radio Podcast Site', 'http://podcast.1330weby.com/', ['target' => '_new']),
-                        ];
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = Html::a('WEBY Web Mail Login', 'http://webmail.newsradio1620.com/imp/login.php', ['target' => '_new']);
-                        }
-
-                        $items[] = '<li class="nav-divider"></li>';
-                        $items[] = 'Listener Line: (850) 623-1330';
-                        $items[] = 'Sales Office: (850) 262-6140';
-
-                        if (!Yii::$app->user->isGuest) {
-                            $items[] = '<li class="nav-divider"></li>';
-                            $items[] = 'Studio (Hotline): (850) 262-6088';
-                            $items[] = 'Studio (On-Air): (850) 262-6###';
-                            $items[] = 'Studio (Talent): (850) 262-6###';
-                        }
-                        echo HTML::ul($items, [
-                            'encode' => false,
-                            'class' => 'nav',
-                        ]);
-                        ?>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <section>
+        <ul class="list-unstyled list-inline" style="font-family: monospace; font-size: 1.5rem;">
+            <li class="list-inline-item badge-pill badge-primary">$6Blu3Go</li>
+            <li class="list-inline-item badge-pill badge-secondary">6ooD3@tz</li>
+            <li class="list-inline-item badge-pill badge-success">4img34i$</li>
+            <li class="list-inline-item badge-pill badge-danger">10KeuBas</li>
+            <li class="list-inline-item badge-pill badge-warning">IQ5wuGm2</li>
+            <li class="list-inline-item badge-pill badge-info">N0$a1nt$</li>
+            <li class="list-inline-item badge-pill badge-dark">C9IwSWmB</li>
+            <li class="list-inline-item badge-pill badge-light">Eu478dhu</li>
+        </ul>
+    </section>
 </div>

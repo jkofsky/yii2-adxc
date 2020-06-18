@@ -1,50 +1,54 @@
 <?php
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
 
 $this->title = 'Phone List';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-phone-list">
+<section class="site-phone-list">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <div>
-        <p style="margin-bottom: 1.5em;" class="hidden-print">
-            <span class="text-success bg-success" style="padding: 1em;">These numbers are CAN be given out.</span>
-            <span class="text-warning bg-warning" style="padding: 1em;">These numbers are NOT for General Public.</span>
-            <span class="text-danger bg-danger" style="padding: 1em;">These numbers are for Employees ONLY!</th></span>
-        </p>
+    <p>Current as of: <?= date('d-M-Y h:ia T', filemtime(__FILE__)); ?></p>
+
+    <div class="card-columns d-print-none">
+        <div class="card shadow">
+            <div class="card-body table-success">For the General Public.</div>
+        </div>
+        <div class="card shadow">
+            <div class="card-body table-warning">NOT for General Public.</div>
+        </div>
+        <div class="card shadow">
+            <div class="card-body table-danger">For Employees ONLY!</div>
+        </div>
     </div>
 
-    <p>REV. <?= date('d-M-Y h:ia T', filemtime(__FILE__)); ?></p>
-
-    <table class="table table-condensed table-striped">
+    <table class="table table-striped table-sm">
         <thead>
             <tr><th style="width:50%">Purpose</th>                     <th style="width:25%">Number</th>      <th style="width:25%">Location</th></tr>
         </thead>
         <tbody>
-            <tr><td>Main Office FAX</td>                                <td>850-494-0778</td>   <td>Reception Desk</td></tr>
-            <tr><td>e-Fax Dave</td>                                     <td>850-378-1030</td>   <td>Home</td></tr>
-            <tr><td>1330 WEBY Milton Office</td>                        <td>850-983-2242</td>   <td>Milton, FL</td></tr>
-            <tr class="success"><td>WNRP Studio Listener Line</td>      <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
-            <tr class="success"><td>WYCT Studio Listener Line</td>      <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
-            <tr class="success"><td>ESPN Studio Listener Line</td>      <td>850-972-1945</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="success"><td>WEBY Studio Listener Line</td>      <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
-            <tr class="warning"><td>WNRP VIP Call-in Line</td>          <td>850-262-6088</td>   <td>WNRP Studio</td></tr>
-            <tr class="warning"><td>WYCT VIP Call-in Line</td>          <td>850-262-6089</td>   <td>WYCT Studio</td></tr>
-            <tr class="warning"><td>ESPN VIP Call-in Line</td>          <td>850-262-6090</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="warning"><td>WEBY VIP Call-in Line</td>          <td>850-262-6091</td>   <td>WEBY Studio</td></tr>
-            <tr class="danger"><td>WNRP Studio HotLine</td>             <td>850-262-6132</td>   <td>WNRP Studio</td></tr>
-            <tr class="danger"><td>WYCT Studio HotLine</td>             <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
-            <tr class="danger"><td>ESPN Studio HotLine</td>             <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="danger"><td>WEBY Studio HotLine</td>             <td>850-262-6###</td>   <td>WEBY Studio</td></tr>
-            <tr class="danger"><td>FM Tower (HotLine)</td>              <td>251-931-3302</td>   <td>Bunker</td></tr>
+            <tr><td>Main Office FAX</td>                                        <td>850-494-0778</td>   <td>Reception Desk</td></tr>
+            <tr><td>e-Fax Dave</td>                                             <td>850-378-1030</td>   <td>Home</td></tr>
+            <tr><td>1330 WEBY Milton Office</td>                                <td>850-983-2242</td>   <td>Milton, FL</td></tr>
+            <tr class="table-success"><td>WNRP Studio Listener Line</td>        <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
+            <tr class="table-success"><td>WYCT Studio Listener Line</td>        <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
+            <tr class="table-success"><td>WEBY/ESPN Studio Listener Line</td>   <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
+            <tr class="table-success"><td>Studio 3 Caller Line</td>             <td>850-262-60##</td>   <td>Studio 3</td></tr>
+            <tr class="table-warning"><td>WNRP VIP Call-in Line</td>            <td>850-262-6088</td>   <td>WNRP Studio</td></tr>
+            <tr class="table-warning"><td>WYCT VIP Call-in Line</td>            <td>850-262-6089</td>   <td>WYCT Studio</td></tr>
+            <tr class="table-warning"><td>ESPN VIP Call-in Line</td>            <td>850-262-6090</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="table-warning"><td>WEBY VIP Call-in Line</td>            <td>850-262-6091</td>   <td>WEBY Studio</td></tr>
+            <tr class="table-danger"><td>WNRP Studio HotLine</td>               <td>850-262-6132</td>   <td>WNRP Studio</td></tr>
+            <tr class="table-danger"><td>WYCT Studio HotLine</td>               <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
+            <tr class="table-danger"><td>WEBY/ESPN Studio HotLine</td>          <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
+            <tr class="table-danger"><td>Studio 3 HotLine</td>                  <td>850-262-6###</td>   <td>WEBY Studio</td></tr>
+            <tr class="table-danger"><td>FM Tower (HotLine)</td>                <td>251-931-3302</td>   <td>Bunker</td></tr>
         </tbody>
     </table>
 
     <p class="text-danger">All 3 digit extensions can be direct dialed using prefix - (850) 262-6-<i>Extension</i></p>
-    <table class="table table-condensed table-striped">
+    <table class="table table-striped table-sm">
         <thead>
             <tr><th style="width:50%">Location</th>                    <th style="width:25%">Extension</th>      <th style="width:25%">Room</th></tr>
         </thead>
@@ -84,4 +88,4 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Production Studio</td>                             <td>105</td>            <td>119</td></tr>
         </tbody>
     </table>
-</div>
+</section>

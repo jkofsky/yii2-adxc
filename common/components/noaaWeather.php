@@ -33,8 +33,7 @@ namespace common\components;
  */
 use Yii;
 
-class noaaWeather
-{
+class noaaWeather {
 
     public $latatude = 30.4447;
     public $longitude = -87.1895;
@@ -59,8 +58,7 @@ class noaaWeather
     /**
      * Pull and Save forecast data in a cache file
      */
-    public function __construct()
-    {
+    public function __construct() {
         // Check & Setup the cache directory
         $this->_jsonFile = Yii::getAlias('@runtime/cache/');
         if (!is_dir($this->_jsonFile)) {
@@ -91,21 +89,23 @@ class noaaWeather
     /**
      * Loads the weather data from the cached file.
      */
-    public function loadData()
-    {
+    public function loadData() {
         $tmp = file_get_contents($this->_jsonFile);
-        $this->jsonData = json_decode($tmp);
-        $tf = floatval($this->jsonData->currentobservation->Temp);
-        $dew = floatval($this->jsonData->currentobservation->Dewp);
-        $this->calcHeatIndexDew($tf, $dew);
+        try {
+            $this->jsonData = json_decode($tmp);
+            $tf = floatval($this->jsonData->currentobservation->Temp);
+            $dew = floatval($this->jsonData->currentobservation->Dewp);
+        } catch (\yii\base\ErrorException $e) {
+            throw new \yii\web\HttpException(503, "Weather Data Currently not Available");
+        }
+            $this->calcHeatIndexDew($tf, $dew);
     }
 
     /**
      * Gets the Location data from data cache
      * @return mixed
      */
-    public function getLocationData()
-    {
+    public function getLocationData() {
         return $this->jsonData->location;
     }
 
@@ -113,8 +113,7 @@ class noaaWeather
      * 
      * @return mixed
      */
-    public function getCurrentObservationData()
-    {
+    public function getCurrentObservationData() {
         return $this->jsonData->currentobservation;
     }
 
@@ -122,8 +121,7 @@ class noaaWeather
      * 
      * @return array
      */
-    public function getForecast()
-    {
+    public function getForecast() {
         $_forecast = array();
         $data = $this->jsonData;
         // put your code here
@@ -158,8 +156,7 @@ class noaaWeather
      * @param int|float $dewPoint    Dew Point in Fahrenheit
      * @return bool Calcuation was sucessful.
      */
-    public function calcHeatIndexDew($temperature, $dewPoint)
-    {
+    public function calcHeatIndexDew($temperature, $dewPoint) {
         $Tc = $this->convertF2C($temperature);
         $Tdc = $this->convertF2C($dewPoint);
         if ($Tc < $Tdc) {
@@ -207,8 +204,7 @@ class noaaWeather
      * @param int|float $Fahr Temperature in Fahrenheit
      * @return float
      */
-    public function convertF2C($Fahr)
-    {
+    public function convertF2C($Fahr) {
         return floatval(($Fahr - 32) * .556);
     }
 
@@ -218,8 +214,7 @@ class noaaWeather
      * @param string $units Requested scale 'f' or 'c', defaults to Fahrenheit.
      * @return float
      */
-    public function getHeatIndex($units = 'f')
-    {
+    public function getHeatIndex($units = 'f') {
         $scale = strtolower(substr($units, 0, 1));
         return ($scale == 'c') ? round($this->convertF2C($this->heatIndexF), 1) : $this->heatIndexF;
     }
@@ -233,8 +228,7 @@ class noaaWeather
      * 
      * @return string 
      */
-    public function getHeatIndexStr()
-    {
+    public function getHeatIndexStr() {
         return isset($this->_heatIndexStr) ? $this->_heatIndexStr :
                 $this->_heatIndexF . "&deg; F" . " (" .
                 round($this->convertF2C($this->_heatIndexF), 1) . "&deg; C)";
@@ -245,8 +239,7 @@ class noaaWeather
      * 
      * @return string 
      */
-    public function getWindChillStr()
-    {
+    public function getWindChillStr() {
         $wcf = $this->jsonData->currentobservation->WindChill;
         if (is_numeric($wcf)) {
             $Fahr = $wcf;
@@ -263,8 +256,7 @@ class noaaWeather
      * @param int|float $degrees Wind direction in degrees
      * @return string 
      */
-    public function getWindDirection($degrees)
-    {
+    public function getWindDirection($degrees) {
         $dir = '';
         switch (true) {
             case ($degrees >= 11.25 && $degrees <= 33.75 ):
@@ -328,8 +320,7 @@ class noaaWeather
      * 
      * @return string
      */
-    public function getWindDirectionStr()
-    {
+    public function getWindDirectionStr() {
         return $this->getWindDirection(floatval($this->jsonData->currentobservation->Windd));
     }
 

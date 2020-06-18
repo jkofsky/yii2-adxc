@@ -1,34 +1,50 @@
-html,
-body {
+html {
     height: 100%;
-}
-body {
-    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    scroll-behavior: smooth;
     overflow-y: scroll;
 }
+html::-webkit-scrollbar { width: 1.75rem; height: 1.75rem; }
+html::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,#ff8a00,#e52e71);
+    border-radius: 0.6rem;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+html::-webkit-scrollbar-track {
+    background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
+}
+body {
+    height: 100%;
+    font-family: Roboto, Verdana, Tahoma, Geneva, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Suez One', serif;
+}
+.navbar { 
+    margin-bottom: 1rem; 
+}
+.bg-adxc {
+    background: linear-gradient(to right, #720e9e 0,#e52e71 50%,#ff8a00 100%);
+}
+section { margin-bottom: 2rem; }
+.card {
+    border-width: 0px 0px 8px 0px;
+    height: 100%;
+}
+
+.jumbotron {
+    background-image: url("images/IP1216-blur.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
 
 .wrap {
     min-height: 100%;
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
-}
-
-.wrap > .container,
-.wrap > .container-fluid {
-    padding: 70px 15px 20px;
-}
-
-.footer {
-    height: 60px;
-    /*background-color: #f5f5f5;*/
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-.jumbotron {
-    text-align: center;
-    background-color: transparent;
 }
 
 .jumbotron .btn {
@@ -46,35 +62,34 @@ a.asc:after, a.desc:after {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; 
     line-height: 1;
     padding-left: 5px;
 }
 
 a.asc:after {
-    content: "\e151";
+    content: "\f15e";
 }
 
 a.desc:after {
-    content: "\e152";
+    content: "\f15d";
 }
 
 .sort-numerical a.asc:after {
-    content: "\e153";
+    content: "\f163";
 }
 
 .sort-numerical a.desc:after {
-    content: "\e154";
+    content: "\f162";
 }
 
 .sort-ordinal a.asc:after {
-    content: "\e155";
+    content: "\f0de";
 }
 
 .sort-ordinal a.desc:after {
-    content: "\e156";
+    content: "\f0dd";
 }
 
 .grid-view td {
@@ -107,155 +122,6 @@ a.desc:after {
     border: none;
 }
 
-@media(max-width:767px) {
-    .nav li > form > button.logout {
-        display:block;
-        text-align: left;
-        width: 100%;
-        padding: 10px 15px;
-    }
-}
-
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
-    text-decoration: none;
-}
-
-.nav > li > form > button.logout:focus {
-    outline: none;
-}
-
-/*
- * ADXC navbar style
- */
-#navbar-adxc,
-.footer,
-.panel-adxc > .panel-heading {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#720e9e+0,ba2a98+50,dd4b39+100 */
-    background: #720e9e; /* Old browsers */
-    background: -moz-linear-gradient(left,  #720e9e 0, #ba2a98 50%, #dd4b39 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #720e9e 0,#ba2a98 50%,#dd4b39 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #720e9e 0,#ba2a98 50%,#dd4b39 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#720e9e', endColorstr='#dd4b39',GradientType=1 ); /* IE6-9 */
-    color: whitesmoke;
-}
-.panel-adxc {
-    border-color: #720e9e;
-}
-#navbar-adxc {
-    font-size: 14px;
-    border: 0px;
-    border-radius: 0;
-}
-#navbar-adxc .navbar-nav>li>a:hover,
-#navbar-adxc .navbar-nav>li>a:focus,
-#navbar-adxc .navbar-nav>li>ul>li>a:hover,
-#navbar-adxc .navbar-nav>li>ul>li>a:focus,
-#navbar-adxc .navbar-nav>.active>a,
-#navbar-adxc .navbar-nav>.active>a:hover,
-#navbar-adxc .navbar-nav>.active>a:focus {
-    color: rgba(51, 51, 51, 1);
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+50,b68d4c+51,e9d4b3+100;L+Brown+3D */
-    background: #c19e67; /* Old browsers */
-    background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
-}
-#navbar-adxc .navbar-toggle {
-    border-color: #99ff00;
-}
-#navbar-adxc .navbar-toggle:hover,
-#navbar-adxc .navbar-toggle:focus {
-    background-color: #ccff00;
-}
-
-#navbar-adxc .navbar-brand,
-#navbar-adxc .navbar-text,
-#navbar-adxc .navbar-nav>li>a {
-    color: #fdffff;
-}
-#navbar-adxc .navbar-toggle .icon-bar,
-#navbar-adxc .navbar-toggle:hover .icon-bar,
-#navbar-adxc .navbar-toggle:focus .icon-bar {
-    background-color: #ffffff;
-}
-#navbar-adxc .navbar-nav>li>ul>li>a,
-#navbar-adxc ul.dropdown-menu,
-#navbar-adxc ul.dropdown-menu>li>a,
-#navbar-adxc ul.dropdown-menu>li>ul>li>a {
-    color: #999999;
-}
-#navbar-adxc .navbar-brand:hover,
-#navbar-adxc .navbar-brand:focus,
-#navbar-adxc .navbar-nav > li > a:hover,
-#navbar-adxc .navbar-nav > li > a:focus {
-    color: #edf211;
-}
-ul.navbar-nav:last-child { padding-right: 16px; }
-
-#navbar-adxc .navbar-nav > li > .dropdown-menu {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fafafa+0,e0e0e0+100 */
-    background: #fafafa; /* Old browsers */
-    background: -moz-linear-gradient(top,  #fafafa 0%, #e0e0e0 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #fafafa 0%,#e0e0e0 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #fafafa 0%,#e0e0e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
-}
-#navbar-adxc .navbar-nav > li > .dropdown-menu > li > a {
-    color: #999999;
-}
-#navbar-adxc .navbar-nav > li > .dropdown-menu > li > a:hover,
-#navbar-adxc .navbar-nav > li > .dropdown-menu > li > a:focus {
-    color: #edf211;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+50,b68d4c+51,e9d4b3+100;L+Brown+3D */
-    background: #c19e67; /* Old browsers */
-    background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li.divider {
-    background-color: #93b68e;
-}
-#navbar-adxc .navbar-nav .open .dropdown-menu > .active > a,
-#navbar-adxc .navbar-nav .open .dropdown-menu > .active > a:hover,
-#navbar-adxc .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: rgba(51, 51, 51, 1);
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+50,b68d4c+51,e9d4b3+100;L+Brown+3D */
-    background: #c19e67; /* Old browsers */
-    background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-    color: #edf211;
-    background-color: #93b68e;
-}
-.navbar-default .navbar-toggle {
-    border-color: #93b68e;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #93b68e;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #fdffff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-    border-color: #fdffff;
-}
-.navbar-default .navbar-link {
-    color: #fdffff;
-}
-.navbar-default .navbar-link:hover {
-    color: #edf211;
-}
-
 /*
 |==========================================================================
 |  My Stuff
@@ -268,21 +134,20 @@ li.birth_day {
 a[target="_blank"]:after,
 a[target="_new"]:after,
 a[class*="external-link"]:after {
-    position: relative;
-    top: 1px;
-    margin-left: 0.5em;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-size: smaller;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 0.6em;
+    font-weight: 900; 
+    line-height: 1;
+    margin-left: 0.5em;
+    position: relative;
+    text-rendering: auto;
+    top: 1px;
     vertical-align: super;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    content: " \e164";
+    content: "\f35d";
 }
 
 .list-striped > li {
@@ -297,6 +162,27 @@ div.required label.control-label:after {
     font-weight: bolder;
 }
 
+.glyphicon {
+    position: relative;
+    display: inline-block;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 0.5em;
+    font-style: normal;
+    font-weight: 900;
+    font-variant: normal;
+}
+.glyphicon-eye-open:before {
+    content: "\f06e";
+}
+.glyphicon-pencil:before {
+    content: "\f044";
+}
+.glyphicon-trash:before {
+    content: "\f2ed";
+}
+.glyphicon-menu-up {
+    content: "\f35b";
+}
 .glyphicon-2x{font-size: 2em;}
 .glyphicon-3x{font-size: 3em;}
 .glyphicon-4x{font-size: 4em;}
@@ -553,30 +439,4 @@ ul.article-meta {
     margin: 0 -192px;
     width: 1128px;
     max-height: calc(100vh - 71px - 13rem);
-}
-
-/*
-|==========================================================================
-|  Weather Page Stuff
-|==========================================================================
-*/
-#weather .forcastLarge {
-    font-size: 4em;
-    font-weight: bold;
-    line-height: 0.6em;
-    margin-top: 0.6em;
-}
-#weather .largeText { font-size: large;}
-#weather .smallTxt { font-size: small;  }
-#weather .panel {
-    background-color: rgba(255,255,255,0.7);
-    overflow-y: hidden;
-}
-#weather .panel-heading {
-    text-align: center;
-}
-#weather .panel-title {
-    font-size: 1.5em;
-    font-weight: bolder;
-    text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
 }

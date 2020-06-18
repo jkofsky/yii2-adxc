@@ -3,35 +3,25 @@
 /* @var $announceModel common\models\Announcement */
 /* @var $birthdayModel common\models\Profile */
 
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
 ?>
 
-<div class="panel panel-adxc">
-    <div class="panel-heading">Business Office</div>
-    <div class="panel-body text-center">
+    <div class="card-body pb-0">
         <address>
             <b>ADX Communications of Escambia, LLC</b><br />
             7251 Plantation Road<br />
             Pensacola, Florida 32504
         </address>
-        <?php
-        $items = [
-            '<li class="nav-divider"></li>',
-            'Voice: (850) 494-2800',
-            'FAX: (850) 494-0778',
-            'Newsroom Tip-Line: (850) 262-6119',
-            'Traffic Tip-Line: (850) 262-6111',
-            'National Sales Office: (850) 262-6101',
-        ];
-        echo HTML::ul($items, [
-            'encode' => false,
-            'class' => 'nav',
-        ]);
-        ?>
+        <ul class="list-unstyled">
+            <li><hr></li>
+            <li>Voice: (850) 494-2800</li>
+            <li>FAX: (850) 494-0778</li>
+            <li>Local Sales Office: (850) 262-6000</li>
+            <li>National Sales Office: (850) 262-6101</li>
+        </ul>
+        <?php if (!Yii::$app->user->isGuest) : ?>
+            <div class="card-footer p-1">
+                <?= Html::a('Company Phone List &raquo;', ['/site/phone-list'], ['class' => 'btn btn-block btn-info']) ?>
+            </div>
+        <?php endif; ?>
     </div>
-    <?php if (!Yii::$app->user->isGuest) : ?>
-        <div class="panel-footer">
-            <?= Html::a('Phone List &raquo;', ['/site/phone-list'], ['class' => 'btn btn-block btn-info']) ?>
-        </div>
-    <?php endif; ?>
-</div>

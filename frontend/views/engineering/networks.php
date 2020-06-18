@@ -4,7 +4,7 @@
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $subnetModel common\models\Subnet */
 
-use yii\helpers\Html;
+use yii\bootstrap4\Html;
 use yii\grid\GridView;
 use common\models\IpAssignment;
 
@@ -58,9 +58,9 @@ $this->params['breadcrumbs'][] = $subnetModel->name;
     ?>
 </div>
 
-<div id="netinfo" class="panel panel-info">
-    <div class="panel-heading" style="font-weight: bolder;">Network Segment Information</div>
-    <div class="panel-body">
+<div id="netinfo" class="card shadow">
+    <div class="card-header text-light bg-info">Network Segment Information</div>
+    <div class="card-body">
         <ul>
             <li><?= $subnetModel->getAttributeLabel('cidr_block') ?>: <b><?= $subnetModel->cidr_block; ?></b></li>
             <li><?= $subnetModel->getAttributeLabel('network_id') ?>: <b><?= $subnetModel->network_id; ?></b></li>
