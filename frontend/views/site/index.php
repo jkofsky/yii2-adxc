@@ -120,7 +120,7 @@ $this->title = 'ADXC IntraNet';
 
     <section>
         <ul class="list-unstyled list-inline" style="font-family: monospace; font-size: 1.5rem;">
-            <li class="list-inline-item badge-pill badge-primary">$6Blu3Go</li>
+            <li class="list-inline-item badge-pill badge-primary">Gr8blu3Z</li>
             <li class="list-inline-item badge-pill badge-secondary">6ooD3@tz</li>
             <li class="list-inline-item badge-pill badge-success">4img34i$</li>
             <li class="list-inline-item badge-pill badge-danger">10KeuBas</li>
