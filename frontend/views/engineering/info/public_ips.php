@@ -202,17 +202,6 @@ tech.adxc.com    => 12. 41.153.206
         </div>
     </div>
 
-    <div class="card shadow border-warning">
-        <div class="card-header alert-warning"><?= Html::encode('Printers Alley via Mediacom'); ?></div>
-        <div class="card-body">
-            <address>
-                <b>Information:</b><br>
-                Account #: <br>
-                weby.dynip.com => DHCP Address
-            </address>
-        </div>
-    </div>
-
     <div class="card shadow border-dark">
         <div class="card-header alert-dark"><?= Html::encode('Printers Alley via Sprint'); ?></div>
         <div class="card-body">
@@ -291,7 +280,8 @@ tech.adxc.com    => 12. 41.153.206
             <address>
                 <b>Information:</b><br>
                 Account #: <br>
-                Modem S/N:
+                Modem S/N: <br>
+                <h5>WNRP/WEBY APT</h5>
             </address>
             <hr>
             <pre>
@@ -312,7 +302,7 @@ tech.adxc.com    => 12. 41.153.206
             <address>
                 <b>Information:</b><br>
                 Account #: 850-###-####<br>
-                <b>Netcom Backup/Phones</b>
+                <h5>Netcom Backup/Phones</h5>
             </address>
             <hr>
             <pre>
@@ -333,7 +323,7 @@ tech.adxc.com    => 12. 41.153.206
             <address>
                 <b>Information:</b><br>
                 Account #: 850-791-3138<br>
-                <b>WYCT APT</b>
+                <h5>WYCT APT</h5>
             </address>
             <hr>
             <pre>
@@ -354,7 +344,7 @@ tech.adxc.com    => 12. 41.153.206
             <address>
                 <b>Information:</b><br>
                 Account #: 850-316-0655<br>
-                <b>Playlist APT</b>
+                <h5>Playlist APT</h5>
             </address>
             <hr>
             <pre>

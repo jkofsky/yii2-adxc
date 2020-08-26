@@ -31,19 +31,19 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Main Office FAX</td>                                        <td>850-494-0778</td>   <td>Reception Desk</td></tr>
             <tr><td>e-Fax Dave</td>                                             <td>850-378-1030</td>   <td>Home</td></tr>
             <tr><td>1330 WEBY Milton Office</td>                                <td>850-983-2242</td>   <td>Milton, FL</td></tr>
-            <tr class="table-success"><td>WNRP Studio Listener Line</td>        <td>850-437-1620</td>   <td>WNRP Studio</td></tr>
-            <tr class="table-success"><td>WYCT Studio Listener Line</td>        <td>850-430-1987</td>   <td>WYCT Studio</td></tr>
-            <tr class="table-success"><td>WEBY/ESPN Studio Listener Line</td>   <td>850-623-1330</td>   <td>WEBY Studio</td></tr>
-            <tr class="table-success"><td>Studio 3 Caller Line</td>             <td>850-262-60##</td>   <td>Studio 3</td></tr>
-            <tr class="table-warning"><td>WNRP VIP Call-in Line</td>            <td>850-262-6088</td>   <td>WNRP Studio</td></tr>
-            <tr class="table-warning"><td>WYCT VIP Call-in Line</td>            <td>850-262-6089</td>   <td>WYCT Studio</td></tr>
-            <tr class="table-warning"><td>ESPN VIP Call-in Line</td>            <td>850-262-6090</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="table-warning"><td>WEBY VIP Call-in Line</td>            <td>850-262-6091</td>   <td>WEBY Studio</td></tr>
-            <tr class="table-danger"><td>WNRP Studio HotLine</td>               <td>850-262-6132</td>   <td>WNRP Studio</td></tr>
-            <tr class="table-danger"><td>WYCT Studio HotLine</td>               <td>850-262-6###</td>   <td>WYCT Studio</td></tr>
-            <tr class="table-danger"><td>WEBY/ESPN Studio HotLine</td>          <td>850-262-6###</td>   <td>ESPN (W233CM) Studio</td></tr>
-            <tr class="table-danger"><td>Studio 3 HotLine</td>                  <td>850-262-6###</td>   <td>WEBY Studio</td></tr>
-            <tr class="table-danger"><td>FM Tower (HotLine)</td>                <td>251-931-3302</td>   <td>Bunker</td></tr>
+            <tr class="table-success"><td>WYCT Studio Listener Line</td>        <td>850-430-1987</td>   <td>Studio 1</td></tr>
+            <tr class="table-success"><td>WNRP Studio Listener Line</td>        <td>850-437-1620</td>   <td>Studio 2</td></tr>
+            <tr class="table-success"><td>Studio 3 Listener Line</td>           <td>850-262-6064</td>   <td>Studio 3</td></tr>
+            <tr class="table-success"><td>WEBY/ESPN Studio Listener Line</td>   <td>850-623-1330</td>   <td>Studio 4</td></tr>
+            <tr class="table-warning"><td>WYCT VIP Call-in Line</td>            <td>850-262-6089</td>   <td>Studio 1</td></tr>
+            <tr class="table-warning"><td>WNRP VIP Call-in Line</td>            <td>850-262-6088</td>   <td>Studio 2</td></tr>
+            <tr class="table-warning"><td>Studio 3 VIP Call-in Line</td>        <td>850-262-6091</td>   <td>Studio 3</td></tr>
+            <tr class="table-warning"><td>WEBY/ESPN VIP Call-in Line</td>       <td>850-262-6090</td>   <td>Studio 4</td></tr>
+            <tr class="table-danger"><td>WYCT Studio HotLine</td>               <td>850-262-6###</td>   <td>Studio 1</td></tr>
+            <tr class="table-danger"><td>WNRP Studio HotLine</td>               <td>850-262-6132</td>   <td>Studio 2</td></tr>
+            <tr class="table-danger"><td>Studio 3 HotLine</td>                  <td>850-262-6###</td>   <td>Studio 3</td></tr>
+            <tr class="table-danger"><td>WEBY/ESPN Studio HotLine</td>          <td>850-262-6###</td>   <td>Studio 4</td></tr>
+            <tr class="table-danger"><td>WYCT-TX (HotLine)</td>                <td>251-931-3302</td>   <td>Bunker</td></tr>
         </tbody>
     </table>
 
@@ -67,14 +67,15 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Traffic &amp; Continuity (WYCT/WNRP)</td>          <td>117</td>            <td>152</td></tr>
             <tr><td>Traffic &amp; Continuity (WEBY/ESPN)</td>          <td>115</td>            <td>151</td></tr>
             <tr><td>3<sup>rd</sup> Floor Warehouse</td>                <td>135</td>            <td>221</td></tr>
-            <tr><td>WEBY Studio - Talent</td>                          <td>114</td>            <td>208</td></tr>
-            <tr><td>WEBY Studio - Board Op</td>                        <td>138</td>            <td>208</td></tr>
-            <tr><td>WNRP Studio - Talent</td>                          <td>125</td>            <td>109</td></tr>
-            <tr><td>WNRP Studio - Board Op</td>                        <td>131</td>            <td>109</td></tr>
-            <tr><td>WYCT Studio - Talent</td>                          <td>???</td>            <td>106</td></tr>
-            <tr><td>WYCT Studio - Board Op</td>                        <td>???</td>            <td>106</td></tr>
-            <tr><td>WYCT-HD2 Studio - Talent</td>                      <td>???</td>            <td>213</td></tr>
-            <tr><td>WYCT-HD2 Studio - Board Op</td>                    <td>???</td>            <td>213</td></tr>
+            <tr><td>Studio 1 (WYCT) - Talent</td>                      <td>???</td>            <td>106</td></tr>
+            <tr><td>Studio 1 (WYCT) - Board Op</td>                    <td>???</td>            <td>106</td></tr>
+            <tr><td>Studio 2 (WNRP) - Talent</td>                      <td>125</td>            <td>109</td></tr>
+            <tr><td>Studio 2 (WNRP) - Board Op</td>                    <td>131</td>            <td>109</td></tr>
+            <tr><td>Studio 3 - Talent</td>                             <td>114</td>            <td>208</td></tr>
+            <tr><td>Studio 3 - Board Op</td>                           <td>138</td>            <td>208</td></tr>
+            <tr><td>Studio 4 (WEBY/ESPN) - Talent</td>                 <td>???</td>            <td>213</td></tr>
+            <tr><td>Studio 4 (WEBY/ESPN) - Board Op</td>               <td>???</td>            <td>213</td></tr>
+            <tr><td>Studio 5 (Production)</td>                         <td>105</td>            <td>119</td></tr>
             <tr><td>Newsroom Desk 1 (News Tip-Line)</td>               <td>119</td>            <td>107</td></tr>
             <tr><td>Newsroom Desk 1 (Hybrid)</td>                      <td>133</td>            <td>107</td></tr>
             <tr><td>Newsroom Desk 2</td>                               <td>121</td>            <td>107</td></tr>
@@ -85,7 +86,6 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr><td>Production Room</td>                               <td>116</td>            <td>206</td></tr>
             <tr><td>Production Room (Hybrid)</td>                      <td>109</td>            <td>206</td></tr>
             <tr><td>Production Assistant (Loft)</td>                   <td>136</td>            <td>216</td></tr>
-            <tr><td>Production Studio</td>                             <td>105</td>            <td>119</td></tr>
         </tbody>
     </table>
 </section>
