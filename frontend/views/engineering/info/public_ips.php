@@ -14,58 +14,8 @@ $this->params['breadcrumbs'][] = 'Public IP Addresses';
 
 <p>Last Updated: <?= date('d-M-Y h:ia T', filemtime(__FILE__)); ?></p>
 
+<h2 class="bg-adxc text-white p-1">7251 Plantation</h2>
 <section class="card-columns mb-0">
-    <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('AT&T Fiber in TOC (AudioNet)'); ?></div>
-        <div class="card-body">
-            <address>
-                <b>Information:</b><br>
-                Account #:
-            </address>
-            <hr>
-            <pre>
-255.255.255.240 | Netmask
- 12. 41.153.193 | Gateway
-------------------------------------
- 12.127. 16. 67 | Primary DSN
-                | Secondary DNS
-====================================
- 12. 41.153.193 | Cisco Eth 0/0
- 12. 41.153.194 | pfSense Firewall
- 12. 41.153.195 | Opal 1 (WYCT)
- 12. 41.153.196 | Opal 2 (WNRP)
- 12. 41.153.197 | Opal 3 (WEBY/ESPN)
- 12. 41.153.198 | <i>Opal 4 (Studio 3)</i>
- 12. 41.153.199 | BricLink 1 - UWF
- 12. 41.153.200 | <i>BricLink 2 - Spare ?</i>
- 12. 41.153.201 | Comrex Access TOC #1 (WYCT)
- 12. 41.153.202 | Comrex Access TOC #2 (WNRP)
- 12. 41.153.203 | Comrex Access TOC #3 (WEBY/ESPN)
- 12. 41.153.204 | Comrex Access Studio 5
- 12. 41.153.205 | Internet Streaming
- 12. 41.153.206 | Webrack/Podcast
-            </pre>
-            <i>future assignments</i>
-            <hr>
-            <b>DNS Records</b>
-            <pre>
-opal1.adxc.com   => 12. 41.153.195
-opal2.adxc.com   => 12. 41.153.196
-opal3.adxc.com   => 12. 41.153.197
-<i>opal4.adxc.com   => 12. 41.153.198</i>
-<i>bric1.adxc.com   => 12. 41.153.199</i>
-<i>bric2.adxc.com   => 12. 41.153.200</i>
-<i>crex1.adxc.com   => 12. 41.153.201</i>
-<i>crex2.adxc.com   => 12. 41.153.202</i>
-<i>crex3.adxc.com   => 12. 41.153.203</i>
-<i>studio5.adxc.com => 12. 41.153.204</i>
--------------    => 12. 41.153.205
-tech.adxc.com    => 12. 41.153.206
-            </pre>
-            <i>future assignments</i>
-        </div>
-    </div>
-
     <div class="card shadow border-danger">
         <div class="card-header alert-danger"><?= Html::encode('Cox Fiber in TOC (OfficeNet)'); ?></div>
         <div class="card-body">
@@ -86,6 +36,64 @@ tech.adxc.com    => 12. 41.153.206
         </div>
     </div>
 
+    <div class="card shadow border-info">
+        <div class="card-header alert-info"><?= Html::encode('AT&T Fiber in TOC (AudioNet)'); ?></div>
+        <div class="card-body">
+            <address>
+                <b>Information:</b><br>
+                Account #:
+            </address>
+            <hr>
+            <pre>
+255.255.255.240 | Netmask
+ 12. 41.153.193 | Gateway
+------------------------------------
+ 12.127. 16. 67 | Primary DSN
+                | Secondary DNS
+====================================
+ 12. 41.153.193 | Cisco Eth 0/0
+ 12. 41.153.194 | pfSense Firewall
+ 12. 41.153.195 | Opal 1 (WYCT)
+ 12. 41.153.196 | Opal 2 (WNRP)
+ 12. 41.153.197 | Opal 3 (WEBY/ESPN)
+ 12. 41.153.198 | Opal 4 (Studio 3)
+ 12. 41.153.199 | BricLink 1 - UWF
+ 12. 41.153.200 | <i>BricLink 2 - Spare ?</i>
+ 12. 41.153.201 | Comrex Access TOC #1 (WYCT)
+ 12. 41.153.202 | Comrex Access TOC #2 (WNRP)
+ 12. 41.153.203 | Comrex Access TOC #3 (WEBY/ESPN)
+ 12. 41.153.204 | Comrex Access Studio 5
+ 12. 41.153.205 | Internet Streaming
+ 12. 41.153.206 | Webrack/Podcast
+            </pre>
+            <i>future assignments</i>
+        </div>
+    </div>
+
+    <div class="card shadow border-info">
+        <div class="card-header alert-info"><?= Html::encode('AT&T Fiber DNS Records'); ?></div>
+        <div class="card-body">
+            <pre>
+opal1.adxc.com   => 12. 41.153.195
+opal2.adxc.com   => 12. 41.153.196
+opal3.adxc.com   => 12. 41.153.197
+<i>opal4.adxc.com   => 12. 41.153.198</i>
+<i>bric1.adxc.com   => 12. 41.153.199</i>
+<i>bric2.adxc.com   => 12. 41.153.200</i>
+<i>crex1.adxc.com   => 12. 41.153.201</i>
+<i>crex2.adxc.com   => 12. 41.153.202</i>
+<i>crex3.adxc.com   => 12. 41.153.203</i>
+<i>studio5.adxc.com => 12. 41.153.204</i>
+-------------    => 12. 41.153.205
+tech.adxc.com    => 12. 41.153.206
+            </pre>
+            <i>future assignments</i>
+        </div>
+    </div>
+</section>
+
+<h2 class="bg-adxc text-white p-1">Jordan Street</h2>
+<section class="card-columns mb-0">
     <div class="card shadow border-info">
         <div class="card-header alert-info"><?= Html::encode('Jordan Street via AT&T'); ?></div>
         <div class="card-body">
@@ -130,7 +138,10 @@ tech.adxc.com    => 12. 41.153.206
             </pre>
         </div>
     </div>
+</section>
 
+<h2 class="bg-adxc text-white p-1">Palafox Street</h2>
+<section class="card-columns mb-0">
     <div class="card shadow border-info">
         <div class="card-header alert-info"><?= Html::encode('Palafox Street via AT&T'); ?></div>
         <div class="card-body">
@@ -169,14 +180,38 @@ tech.adxc.com    => 12. 41.153.206
 255.255.255.224 | Netmask
  72.216.237.  1 | Gateway
 ------------------------------------
-                | Primary DNS
-                | Secondary DNS
+ 68.  1. 16.107 | Primary DNS
+ 68.  1. 16.108 | Secondary DNS
 ====================================
  72.216.237.  3 | LinkSys Router
             </pre>
         </div>
     </div>
 
+    <div class="card shadow border-dark">
+        <div class="card-header alert-dark"><?= Html::encode('Palafox Street via Sprint'); ?></div>
+        <div class="card-body">
+            <address>
+                <b>Information:</b><br>
+                Account #: 850-356-5270<br>
+                <h5>Netcom Backup/Phones</h5>
+            </address>
+            <hr>
+            <pre>
+255.255.255.248 | Netmask
+ 24.221. 27.117 | Gateway
+------------------------------------
+ 68. 28. 31. 30 | Primary DNS
+ 68. 28. 31. 31 | Secondary DNS
+====================================
+ 24.221. 27.116 | Cradlepoint Router
+            </pre>
+        </div>
+    </div>
+</section>
+
+<h2 class="bg-adxc text-white p-1">Printers Alley</h2>
+<section class="card-columns mb-0">
     <div class="card shadow border-info">
         <div class="card-header alert-info"><?= Html::encode('Printers Alley via AT&T'); ?></div>
         <div class="card-body">
@@ -222,7 +257,10 @@ tech.adxc.com    => 12. 41.153.206
             </pre>
         </div>
     </div>
+</section>
 
+<h2 class="bg-adxc text-white p-1">25Kw - Monterey</h2>
+<section class="card-columns mb-0">
     <div class="card shadow border-info">
         <div class="card-header alert-info"><?= Html::encode('25Kw via AT&T'); ?></div>
         <div class="card-body">
@@ -249,21 +287,25 @@ tech.adxc.com    => 12. 41.153.206
         <div class="card-body">
             <address>
                 <b>Information:</b><br>
-                Account #: 850-228-2275<br>
+                Account #: 113992151<br>
+                Phone: 850-316-5453<br>
             </address>
             <hr>
             <pre>
-255.255.255.240 | Netmask
- 24.221.  5.??? | Gateway
+255.255.255.252 | Netmask
+ 24.221.  5.201 | Gateway
 ------------------------------------
  68. 28. 31. 30 | Primary DNS
  68. 28. 31. 31 | Secondary DNS
 ====================================
- 24.221.  5.??? | Cradlepoint Router
+ 24.221.  5.202 | Cradlepoint Router
             </pre>
         </div>
     </div>
+</section>
 
+<h2 class="bg-adxc text-white p-1">Thunder Road</h2>
+<section class="card-columns mb-0">
     <div class="card shadow border-warning">
         <div class="card-header alert-warning"><?= Html::encode('WYCT-TX via NetComm'); ?></div>
         <div class="card-body">
