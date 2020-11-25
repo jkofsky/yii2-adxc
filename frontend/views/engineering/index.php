@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 
 use yii\bootstrap4\Html;
+use yii\bootstrap4\Nav;
 
 $this->title = Yii::$app->name . ' - Engineering';
 $this->params['breadcrumbs'][] = 'Engineering';
@@ -92,6 +93,21 @@ Html::img(
             </div>
             <div class="card-footer text-center">
                 <?= Html::a('View &raquo;', ['/engineering/php-info'], ['class' => 'btn btn-block btn-danger']) ?>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-6 mb-2">
+        <div class="card shadow">
+            <div class="card-header text-light bg-adxc">
+                <i class="fa fa-info-circle" aria-hidden="true"></i> Random Info</div>
+            <div class="card-body text-center">
+                <?=
+                Nav::widget(['items' => [
+                        ['label' => 'Cable Color Codes', 'url' => ['info', 'view' => 'cable_color_codes']],
+                        ['label' => 'Palafox Control Wiring', 'url' => ['info', 'view' => 'palafox_wiring']],
+                    ],
+                ]);
+                ?>
             </div>
         </div>
     </div>

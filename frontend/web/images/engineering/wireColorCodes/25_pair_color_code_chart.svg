@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+   viewBox="-25 -50 250 500"
+   width="375" height="750">
+<defs>
+  <clipPath id="upper">
+     <path d="M -30,0 l 60,0 l 0,-60 l -60,0 z"/>
+  </clipPath>
+  <g id="copperandnumbers">
+    <g stroke="black" stroke-width="1" stroke-linejoin="round">
+      <ellipse cx="10" cy="50" rx="6" ry="5" fill="goldenrod"/>
+      <ellipse cx="-10" cy="50" rx="6" ry="5" fill="goldenrod"/>
+      <g text-anchor="middle" fill="white" font-weight="bold" font-size="20" font-family="Courier New, Tahoma, Arial Black, Arial">
+        <g stroke-width="2">
+          <text x="-10" y="-40">1</text>
+          <text x="10" y="-40">2</text>
+        </g>
+        <g stroke-width="0">
+          <text x="-10" y="-40">1</text>
+          <text x="10" y="-40">2</text>
+        </g>
+      </g>
+    </g>
+  </g> 
+  <path id="outline" d="M -10,50 C -10,30 10,20 10,0 S -10,-30 -10,-50" stroke-width="20" stroke="black"/>
+  <g id="whitepair" fill="none" stroke-linecap="round" transform="scale(1 .75)">
+    <g id="whitewire">
+      <use xlink:href="#outline"/>
+      <path d="M -10,50 C -10,30 10,20 10,0 S -10,-30 -10,-50" stroke-width="16" stroke="white"/>
+    </g>
+    <use xlink:href="#outline" transform="scale(-1 1)"/>
+    <path d="M 10,50 C 10,30 -10,20 -10,0 S 10,-30 10,-50" stroke-width="16"/>
+    <use xlink:href="#whitewire" clip-path="url(#upper)"/>
+    <use xlink:href="#copperandnumbers"/>
+  </g>
+  <g id="redpair" fill="none" stroke-linecap="round" transform="scale(1 .75)">
+    <g id="redwire">
+      <use xlink:href="#outline"/>
+      <path d="M -10,50 C -10,30 10,20 10,0 S -10,-30 -10,-50" stroke-width="16" stroke="red"/>
+    </g>
+    <use xlink:href="#outline" transform="scale(-1 1)"/>
+    <path d="M 10,50 C 10,30 -10,20 -10,0 S 10,-30 10,-50" stroke-width="16"/>
+    <use xlink:href="#redwire" clip-path="url(#upper)"/>
+    <use xlink:href="#copperandnumbers"/>
+  </g>
+  <g id="blackpair" fill="none" stroke-linecap="round" transform="scale(1 .75)">
+    <g id="blackwire">
+      <use xlink:href="#outline"/>
+    </g>
+    <use xlink:href="#outline" transform="scale(-1 1)"/>
+    <path d="M 10,50 C 10,30 -10,20 -10,0 S 10,-30 10,-50" stroke-width="16"/>
+    <use xlink:href="#blackwire" clip-path="url(#upper)"/>
+    <use xlink:href="#copperandnumbers"/>
+  </g>
+  <g id="yellowpair" fill="none" stroke-linecap="round" transform="scale(1 .75)">
+    <g id="yellowwire">
+      <use xlink:href="#outline"/>
+      <path d="M -10,50 C -10,30 10,20 10,0 S -10,-30 -10,-50" stroke-width="16" stroke="yellow"/>
+    </g>
+    <use xlink:href="#outline" transform="scale(-1 1)"/>
+    <path d="M 10,50 C 10,30 -10,20 -10,0 S 10,-30 10,-50" stroke-width="16"/>
+    <use xlink:href="#yellowwire" clip-path="url(#upper)"/>
+    <use xlink:href="#copperandnumbers"/>
+  </g>
+  <g id="violetpair" fill="none" stroke-linecap="round" transform="scale(1 .75)">
+    <g id="violetwire">
+      <use xlink:href="#outline"/>
+      <path d="M -10,50 C -10,30 10,20 10,0 S -10,-30 -10,-50" stroke-width="16" stroke="violet"/>
+    </g>
+    <use xlink:href="#outline" transform="scale(-1 1)"/>
+    <path d="M 10,50 C 10,30 -10,20 -10,0 S 10,-30 10,-50" stroke-width="16"/>
+    <use xlink:href="#violetwire" clip-path="url(#upper)"/>
+    <use xlink:href="#copperandnumbers"/>
+  </g>
+</defs>
+
+  <use xlink:href="#whitepair" stroke="blue" x="0" y="0"/>
+  <use xlink:href="#whitepair" stroke="orange" x="50" y="0"/>
+  <use xlink:href="#whitepair" stroke="lime" x="100" y="0"/>
+  <use xlink:href="#whitepair" stroke="brown" x="150" y="0"/>
+  <use xlink:href="#whitepair" stroke="slategray" x="200" y="0"/>
+
+  <use xlink:href="#redpair" stroke="blue" x="0" y="100"/>
+  <use xlink:href="#redpair" stroke="orange" x="50" y="100"/>
+  <use xlink:href="#redpair" stroke="lime" x="100" y="100"/>
+  <use xlink:href="#redpair" stroke="brown" x="150" y="100"/>
+  <use xlink:href="#redpair" stroke="slategray" x="200" y="100"/>
+
+  <use xlink:href="#blackpair" stroke="blue" x="0" y="200"/>
+  <use xlink:href="#blackpair" stroke="orange" x="50" y="200"/>
+  <use xlink:href="#blackpair" stroke="lime" x="100" y="200"/>
+  <use xlink:href="#blackpair" stroke="brown" x="150" y="200"/>
+  <use xlink:href="#blackpair" stroke="slategray" x="200" y="200"/>
+
+  <use xlink:href="#yellowpair" stroke="blue" x="0" y="300"/>
+  <use xlink:href="#yellowpair" stroke="orange" x="50" y="300"/>
+  <use xlink:href="#yellowpair" stroke="lime" x="100" y="300"/>
+  <use xlink:href="#yellowpair" stroke="brown" x="150" y="300"/>
+  <use xlink:href="#yellowpair" stroke="slategray" x="200" y="300"/>
+
+  <use xlink:href="#violetpair" stroke="blue" x="0" y="400"/>
+  <use xlink:href="#violetpair" stroke="orange" x="50" y="400"/>
+  <use xlink:href="#violetpair" stroke="lime" x="100" y="400"/>
+  <use xlink:href="#violetpair" stroke="brown" x="150" y="400"/>
+  <use xlink:href="#violetpair" stroke="slategray" x="200" y="400"/>
+
+  <g font-family="Courier New, Tahoma, Arial Black, Arial" stroke="black" stroke-width="3" stroke-linejoin="round" text-anchor="middle" fill="white" font-weight="bold" font-size="25">
+    <text y="10" x="0">1</text><text y="10" x="50">2</text><text y="10" x="100">3</text><text y="10" x="150">4</text><text y="10" x="200">5</text>
+    <text y="110" x="0">6</text><text y="110" x="50">7</text><text y="110" x="100">8</text><text y="110" x="150">9</text><text y="110" x="200">10</text>
+    <text y="210" x="0">11</text><text y="210" x="50">12</text><text y="210" x="100">13</text><text y="210" x="150">14</text><text y="210" x="200">15</text>
+    <text y="310" x="0">16</text><text y="310" x="50">17</text><text y="310" x="100">18</text><text y="310" x="150">19</text><text y="310" x="200">20</text>
+    <text y="410" x="0">21</text><text y="410" x="50">22</text><text y="410" x="100">23</text><text y="410" x="150">24</text><text y="410" x="200">25</text>
+    <g stroke-width="1">
+    <text y="10" x="0">1</text><text y="10" x="50">2</text><text y="10" x="100">3</text><text y="10" x="150">4</text><text y="10" x="200">5</text>
+    <text y="110" x="0">6</text><text y="110" x="50">7</text><text y="110" x="100">8</text><text y="110" x="150">9</text><text y="110" x="200">10</text>
+    <text y="210" x="0">11</text><text y="210" x="50">12</text><text y="210" x="100">13</text><text y="210" x="150">14</text><text y="210" x="200">15</text>
+    <text y="310" x="0">16</text><text y="310" x="50">17</text><text y="310" x="100">18</text><text y="310" x="150">19</text><text y="310" x="200">20</text>
+    <text y="410" x="0">21</text><text y="410" x="50">22</text><text y="410" x="100">23</text><text y="410" x="150">24</text><text y="410" x="200">25</text>
+    </g>
+  </g>
+</svg>
