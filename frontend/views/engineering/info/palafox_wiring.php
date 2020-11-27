@@ -8,13 +8,79 @@ $this->title = Yii::$app->name . ' -  Public IP Addresses';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
 $this->params['breadcrumbs'][] = 'Palafox Burk Wiring';
 
-//$this->menu = $this->getSidebarMenu();
 ?>
-<h1>Palafox Burk Control Wiring</h1>
+<h1>Palafox Transmitter Control Wiring</h1>
 
 <section>
     <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('Burk ARCPlus Touch'); ?></div>
+        <div class="card-header alert-info"><?= Html::encode('External Control Wiring'); ?></div>
+        <div class="card-body">
+            <table class="table-bordered table-striped text-center w-100">
+                <thead>
+                    <tr>
+                        <th>Equipment</th>
+                        <th>Purpose</th>
+                        <th>Signal</th>
+                        <th>Wire</th>
+                        <th colspan="2">(+)</th>
+                        <th colspan="2">(-)</th>
+                        <th colspan="2">Equipment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="white-space: normal;">Antenna Controller</td>
+                        <td>Status</td>
+                        <td>Antenna Interlock</td>
+                        <td>Red&Blk</td>
+                        <td>TB1-1</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>TB1-2</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>Harris DX10</td>
+                        <td>&ndash;</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" style="white-space: normal;">Antenna Switch</td>
+                        <td>Status</td>
+                        <td>DX10-1 to Antenna</td>
+                        <td>Red&Blk</td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>S-11</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>DX10-2 to Antenna</td>
+                        <td>Red&Blk</td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>S-12</td>
+                    </tr>
+                    <tr>
+                        <td>Control</td>
+                        <td>Switch Position</td>
+                        <td>Red&Blk</td>
+                        <td>????</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>????</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>R-5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card shadow border-info">
+        <div class="card-header alert-info"><?= Html::encode('Burk Remote Control'); ?></div>
         <div class="card-body">
             <table class="table-bordered table-striped text-center w-100">
                 <thead>
@@ -30,9 +96,9 @@ $this->params['breadcrumbs'][] = 'Palafox Burk Wiring';
                 </thead>
                 <tbody>
 
-                    <!-- Meters -->
+                    <!-- DX10 Meters -->
                     <tr>
-                        <td rowspan="25" style="background-color: bisque;">DX10 #1</td>
+                        <td rowspan="25" style="background-color: bisque;" style="white-space: normal;">DX10 #1<br>(25-pair)</td>
                         <td rowspan="6" class="table-active">Meters</td>
                         <td>Forward Power</td>
                         <td>Blu&amp;Wht</td>
@@ -276,7 +342,7 @@ $this->params['breadcrumbs'][] = 'Palafox Burk Wiring';
                         <td>R1-R4 Comm<br>R7-R10 Comm</td>
                     </tr>
                     <tr class="table-danger">
-                        <td colspan="8" class="text-left">Control relays of the Burk are used to pass
+                        <td colspan="8" class="text-left" style="white-space: normal;">Control relays of the Burk are used to pass
                             a voltage (+15vdc) from the Common to Normally Open (NO) 
                             contacts when activated to trigger the DX10's control.<br>
                             * - In the Burk, the relays are paired: R1 &amp; R7,
@@ -285,14 +351,67 @@ $this->params['breadcrumbs'][] = 'Palafox Burk Wiring';
                             the associated control relay. (ie: For R1 &amp; R7: 
                             Raise triggers R1, Lower triggers R7)</td>
                     </tr>
-                </tbody>
-                <tfoot>
+
+                    <!-- DX10 #2 -->
                     <tr>
-                        <td rowspan="1" class="table-dark">DX10 #2</td>
-                        <td colspan="9" class="text-left">The Harris DX10 #2 is wired exactly the same, except
+                        <td rowspan="1" class="table-dark" style="white-space: normal;">DX10 #2</td>
+                        <td colspan="9" class="text-left" style="white-space: normal;">The Harris DX10 #2 is wired exactly the same, except
                             wired to the Burk PlusX-600 #2, instead of the PlusX-600 #1.</td>
                     </tr>
-                </tfoot>
+
+                    <!-- Temperature Meters -->
+                    <tr>
+                        <td rowspan="25" style="white-space: normal;">Burk Temperature Sensor<br>(4-pair Cat)</td>
+                        <td rowspan="4" class="table-active">Meters</td>
+                        <td>Rack Temperature</td>
+                        <td>Blu/Wht</td>
+                        <td>Pin 1</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_blue_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td rowspan="2">Pin 6</td>
+                        <td rowspan="2"><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_blue_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>Wht/Blu</td>
+                        <td>PlusX-600 #1</td>
+                        <td>M-7</td>
+                    </tr>
+                    <tr>
+                        <td>DX10 #1 Temperature</td>
+                        <td>Org/Wht</td>
+                        <td>Pin 2</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_orange_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>M-8</td>
+                    </tr>
+                    <tr>
+                        <td>DX10 #2 Temperature</td>
+                        <td>Grn/Wht</td>
+                        <td>Pin 3</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_green_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td rowspan="2">Pin 6</td>
+                        <td rowspan="2"><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_green_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>Wht/Grn</td>
+                        <td>PlusX-600 #1</td>
+                        <td>M-9</td>
+                    </tr>
+                    <tr>
+                        <td>Outside Temperature</td>
+                        <td>Wht/Org</td>
+                        <td>Pin 4</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_orange_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>M-10</td>
+                    </tr>
+                    <tr>
+                        <td class="table-light">Status</td>
+                        <td>Temperature Module Power</td>
+                        <td>Brn&amp;Wht</td>
+                        <td>Pin 5</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_brown_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>Pin 6</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_brown_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>S-10</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
