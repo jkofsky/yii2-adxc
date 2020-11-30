@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = 'Color Codes';
 
 <section class="card-columns mb-0">
     <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('25-pair (solid)'); ?></div>
+        <div class="card-header alert-info"><?= Html::encode('25-pair (solid colored)'); ?></div>
         <div class="card-body">
             <table class="table-bordered table-striped w-100">
                 <tbody class="w-100">
@@ -162,65 +162,7 @@ $this->params['breadcrumbs'][] = 'Color Codes';
         </div>
     </div>
 
-    <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('Telephone Wiring'); ?></div>
-        <div class="card-body">
-            <table class="table-bordered table-striped table-responsive">
-                <thead>
-                    <tr>
-                        <td colspan="2">Older telephone wiring inside customer premises used 
-                            4-conductor untwisted wire cable. The 4 conductors were solid red, 
-                            green, yellow & black wires. They match to the current 25-color 
-                            code as follows:</td>
-                    </tr>
-                </thead>
-                <tbody class="text-center">
-                    <tr>
-                        <td width="50%">
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_green.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>green ("Line 1" tip)</td>
-                        <td width="50%">
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_blue_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>white/blue
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>red  ("Line 1" ring)
-                        </td>
-                        <td>
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_blue_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>blue/white
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>black  ("Line 2" tip)
-                        </td>
-                        <td>
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_orange_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>white/orange
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_yellow.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>yellow  ("Line 2" ring)
-                        </td>
-                        <td>
-                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_orange_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
-                            <br>orange/white
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <?= Html::img(Url::To('@web/images/engineering/RJ11-cable.png'), ['class' => 'img-fluid']); ?>
-        </div>
-    </div>
-
-    <div class="card shadow border-info">
+    <div class="card shadow border-info" id='25-pair_color_code'>
         <div class="card-header alert-info"><?= Html::encode('25-pair (stripped)'); ?></div>
         <div class="card-body">
             <table class="table-bordered table-striped table-responsive">
@@ -500,150 +442,262 @@ $this->params['breadcrumbs'][] = 'Color Codes';
     </div>
 
     <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('Industrial Cable (ICEA Method 1)'); ?></div>
+        <div class="card-header alert-info"><?= Html::encode('Network Cable (RJ-45)'); ?></div>
         <div class="card-body">
-            <table class="table-bordered table-striped w-100">
-                <tbody class="w-100 text-center">
+            <table class="table-bordered table-striped text-center w-100">
+                <thead class="w-100">
                     <tr>
-                        <th>#</th>
-                        <th>Color Code</th>
-                        <th width="20%">Primary</th>
-                        <th width="20%">Stripe</th></tr>
+                        <th>Pin</th>
+                        <th colspan="2">Color (T568B &ndash; Networking)</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <td align="center">1</td>
-                        <td>Black</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td></tr>
+                        <td>1</td>
+                        <td>Wht/Org</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_orange_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
                     <tr>
-                        <td align="center">2</td>
-                        <td>Red</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td></tr>
+                        <td>2</td>
+                        <td>Org/Wht</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_orange_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
                     <tr>
-                        <td align="center">3</td>
-                        <td>Blue</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td></tr>
+                        <td>3</td>
+                        <td>Wht/Grn</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_green_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
                     <tr>
-                        <td align="center">4</td>
-                        <td>Orange</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td></tr>
+                        <td>4</td>
+                        <td>Blu/Wht</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_blue_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
                     <tr>
-                        <td align="center">5</td>
-                        <td>Yellow</td>
-                        <td bgcolor="yellow">&nbsp;&nbsp;</td>
-                        <td bgcolor="yellow">&nbsp;&nbsp;</td></tr>
+                        <td>5</td>
+                        <td>Wht/Blu</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_blue_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
                     <tr>
-                        <td align="center">6</td>
-                        <td>Brown</td>
-                        <td bgcolor="saddlebrown">&nbsp;&nbsp;</td>
-                        <td bgcolor="saddlebrown">&nbsp;&nbsp;</td></tr>
+                        <td>6</td>
+                        <td>Grn/Wht</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_green_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
                     <tr>
-                        <td align="center">7</td>
-                        <td>Red/Black</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td></tr>
+                        <td>7</td>
+                        <td>Wht/Brn</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_brown_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
                     <tr>
-                        <td align="center">8</td>
-                        <td>Blue/Black</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td></tr>
+                        <td>8</td>
+                        <td>Brn/Wht</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_brown_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                    </tr>
+                </tbody>
+                <tfoot>
                     <tr>
-                        <td align="center">9</td>
-                        <td>Orange/Black</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td></tr>
+                        <td colspan="3">
+                            <?= Html::img(Url::To('@web/images/engineering/Rj45plug-8p8c.png'), ['class' => 'img-fluid', 'style' => 'height:100%; width:auto']); ?>
+                            <p>Pin numbering on plug. Connected pins on plug and jack have the same number.
+                            </p>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="card shadow border-info">
+        <div class="card-header alert-info"><?= Html::encode('Telephone Wiring'); ?></div>
+        <div class="card-body">
+            <table class="table-bordered table-striped table-responsive">
+                <thead>
                     <tr>
-                        <td align="center">10</td>
-                        <td>Yellow/Black</td>
-                        <td bgcolor="yellow">&nbsp;&nbsp;</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td></tr>
+                        <td colspan="2">Older telephone wiring inside customer premises used 
+                            4-conductor untwisted wire cable. The 4 conductors were solid red, 
+                            green, yellow & black wires. They match to the current 25-color 
+                            code as follows:</td>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
                     <tr>
-                        <td align="center">11</td>
-                        <td>Brown/Black</td>
-                        <td bgcolor="saddlebrown">&nbsp;&nbsp;</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td></tr>
+                        <td width="50%">
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_green.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>green ("Line 1" tip)</td>
+                        <td width="50%">
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_blue_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>white/blue
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">12</td>
-                        <td>Black/Red</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td></tr>
+                        <td>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>red  ("Line 1" ring)
+                        </td>
+                        <td>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_blue_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>blue/white
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">13</td>
-                        <td>Blue/Red</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td></tr>
+                        <td>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>black  ("Line 2" tip)
+                        </td>
+                        <td>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_orange_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>white/orange
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">14</td>
-                        <td>Orange/Red</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td></tr>
+                        <td>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_yellow.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>yellow  ("Line 2" ring)
+                        </td>
+                        <td>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_orange_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>orange/white
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <?= Html::img(Url::To('@web/images/engineering/RJ11-cable.png'), ['class' => 'img-fluid']); ?>
+
+            <table class="table-bordered table-striped table-responsive">
+                <thead class="text-center">
                     <tr>
-                        <td align="center">15</td>
-                        <td>Yellow/Red</td>
-                        <td bgcolor="yellow">&nbsp;&nbsp;</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td></tr>
+                        <th>Pin</th>
+                        <th>Pair</th>
+                        <th>T/R</th>
+                        <th>±</th>
+                        <th>RJ 11</th>
+                        <th>RJ 14</th>
+                        <th>RJ 25</th>
+                        <th>U.S. Bell System colors<sup class="reference plainlinks nourlexpansion" id="ref_Old_colors"><a href="#endnote_Old_colors">[a]</a></sup></th>
+                        <th>25-pair color code<sup class="reference plainlinks nourlexpansion" id="ref_evenpic"><a href="#endnote_evenpic">[b]</a></sup></th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
                     <tr>
-                        <td align="center">16</td>
-                        <td>Brown/Red</td>
-                        <td bgcolor="saddlebrown">&nbsp;&nbsp;</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td></tr>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>T</td>
+                        <td>+</td>
+                        <td></td>
+                        <td></td>
+                        <td>T3
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>white or<br>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_orange.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>orange
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_green_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>white w/green
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">17</td>
-                        <td>Black/Blue</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td></tr>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>T</td>
+                        <td>+</td>
+                        <td></td>
+                        <td>T2</td>
+                        <td>T2
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>black
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_orange_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>white w/orange
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">18</td>
-                        <td>Red/Blue</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td></tr>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>R</td>
+                        <td>−</td>
+                        <td>R1</td>
+                        <td>R1</td>
+                        <td>R1
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>red
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_blue_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>blue w/white
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">19</td>
-                        <td>Orange/Blue</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td></tr>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>T</td>
+                        <td>+</td>
+                        <td>T1</td>
+                        <td>T1</td>
+                        <td>T1
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_green.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>green
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_blue_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>white w/blue
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">20</td>
-                        <td>Yellow/Blue</td>
-                        <td bgcolor="yellow">&nbsp;&nbsp;</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td></tr>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>R</td>
+                        <td>−</td>
+                        <td></td>
+                        <td>R2</td>
+                        <td>R2
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_yellow.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>yellow
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_orange_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>orange w/white
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">21</td>
-                        <td>Brown/Blue</td>
-                        <td bgcolor="saddlebrown">&nbsp;&nbsp;</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td></tr>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>R</td>
+                        <td>−</td>
+                        <td></td>
+                        <td></td>
+                        <td>R3
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_blue.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>blue or<br>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_brown.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>brown
+                        </td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_green_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?>
+                            <br>green w/white
+                        </td>
+                    </tr>
                     <tr>
-                        <td align="center">22</td>
-                        <td>Black/Orange</td>
-                        <td bgcolor="black">&nbsp;&nbsp;</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td></tr>
-                    <tr>
-                        <td align="center">23</td>
-                        <td>Red/Orange</td>
-                        <td bgcolor="red">&nbsp;&nbsp;</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td></tr>
-                    <tr>
-                        <td align="center">24</td>
-                        <td>Blue/Orange</td>
-                        <td bgcolor="blue">&nbsp;&nbsp;</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td></tr>
-                    <tr>
-                        <td align="center">25</td>
-                        <td>Yellow/Orange</td>
-                        <td bgcolor="yellow">&nbsp;&nbsp;</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td></tr>
-                    <tr>
-                        <td align="center">26</td>
-                        <td>Brown/Orange</td>
-                        <td bgcolor="saddlebrown">&nbsp;&nbsp;</td>
-                        <td bgcolor="orange">&nbsp;&nbsp;</td></tr>
+                        <td colspan="11">
+                            <ol style="list-style-type:lower-alpha" class="text-left">
+                                <li id='endnote_Old_colors'>While the old solid color code 
+                                    was well established for pair 1 and usually pair 2, 
+                                    several conflicting conventions exist for pair 3. The 
+                                    colors are from a vendor of silver-satin flat 8-conductor 
+                                    cable that is claimed to be standard. At least one other 
+                                    vendor of flat 8-conductor cable uses the sequence blue, 
+                                    orange, black, red, green, yellow, brown and white/slate.</li>
+                                <li id='endnote_evenpic'><a href="#25-pair_color_code" title="25-pair color code">25-pair color codes</a> 
+                                    established in the 1950s for polyethylene-insulated conductor (PIC) cable.</li>
+                            </ol>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
 </section>
+
 
 

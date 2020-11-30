@@ -6,79 +6,12 @@ use yii\helpers\Url;
 
 $this->title = Yii::$app->name . ' -  Public IP Addresses';
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
-$this->params['breadcrumbs'][] = 'Palafox Burk Wiring';
+$this->params['breadcrumbs'][] = 'Palafox Control Wiring';
 
 ?>
 <h1>Palafox Transmitter Control Wiring</h1>
 
 <section>
-    <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('External Control Wiring'); ?></div>
-        <div class="card-body">
-            <table class="table-bordered table-striped text-center w-100">
-                <thead>
-                    <tr>
-                        <th>Equipment</th>
-                        <th>Purpose</th>
-                        <th>Signal</th>
-                        <th>Wire</th>
-                        <th colspan="2">(+)</th>
-                        <th colspan="2">(-)</th>
-                        <th colspan="2">Equipment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="white-space: normal;">Antenna Controller</td>
-                        <td>Status</td>
-                        <td>Antenna Interlock</td>
-                        <td>Red&Blk</td>
-                        <td>TB1-1</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>TB1-2</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>Harris DX10</td>
-                        <td>&ndash;</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3" style="white-space: normal;">Antenna Switch</td>
-                        <td>Status</td>
-                        <td>DX10-1 to Antenna</td>
-                        <td>Red&Blk</td>
-                        <td>???</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>???</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>PlusX-600 #1</td>
-                        <td>S-11</td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td>DX10-2 to Antenna</td>
-                        <td>Red&Blk</td>
-                        <td>???</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>???</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>PlusX-600 #1</td>
-                        <td>S-12</td>
-                    </tr>
-                    <tr>
-                        <td>Control</td>
-                        <td>Switch Position</td>
-                        <td>Red&Blk</td>
-                        <td>????</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>????</td>
-                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
-                        <td>PlusX-600 #1</td>
-                        <td>R-5</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
     <div class="card shadow border-info">
         <div class="card-header alert-info"><?= Html::encode('Burk Remote Control'); ?></div>
         <div class="card-body">
@@ -415,6 +348,86 @@ $this->params['breadcrumbs'][] = 'Palafox Burk Wiring';
             </table>
         </div>
     </div>
+    
+    <div class="card shadow border-info">
+        <div class="card-header alert-info"><?= Html::encode('External Control Wiring'); ?></div>
+        <div class="card-body">
+            <table class="table-bordered table-striped text-center w-100">
+                <thead>
+                    <tr>
+                        <th>Equipment</th>
+                        <th>Purpose</th>
+                        <th>Signal</th>
+                        <th>Wire</th>
+                        <th colspan="2">(+)</th>
+                        <th colspan="2">(-)</th>
+                        <th colspan="2">Equipment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" style="white-space: normal;">Antenna Controller</td>
+                        <td>Status</td>
+                        <td>Antenna Interlock</td>
+                        <td>Red&Blk</td>
+                        <td>TB1-1</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>TB1-2</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>Harris DX10</td>
+                        <td>&ndash;</td>
+                    </tr>
+                    <tr>
+                        <td>Control</td>
+                        <td>A to Antenna (Raise*)</td>
+                        <td>Red&Blk</td>
+                        <td>????</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>????</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>R-5</td>
+                    </tr>
+                    <tr>
+                        <td>Control</td>
+                        <td>B to Antenna (Lower*)</td>
+                        <td>Red&Blk</td>
+                        <td>????</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>????</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>R-11</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2" style="white-space: normal;">Antenna Switch</td>
+                        <td>Status</td>
+                        <td>DX10-1 to Antenna</td>
+                        <td>Red&Blk</td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>S-11</td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>DX10-2 to Antenna</td>
+                        <td>Red&Blk</td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_red.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>???</td>
+                        <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_black.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
+                        <td>PlusX-600 #1</td>
+                        <td>S-12</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </section>
 
 
