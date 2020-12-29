@@ -3,9 +3,10 @@
 
 use yii\bootstrap4\Html;
 
-$this->title = Yii::$app->name . ' -  Public IP Addresses';
+$_title = 'ADTRAN Routing';
+$this->title = Yii::$app->name . ' - ' . $_title;
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
-$this->params['breadcrumbs'][] = 'ADTRAN Routing';
+$this->params['breadcrumbs'][] = $_title;
 
 //$this->menu = $this->getSidebarMenu();
 ?>

@@ -5,9 +5,10 @@
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 
-$this->title = Yii::$app->name . ' - ADX Networks';
+$_title = 'ADX Networks';
+$this->title = Yii::$app->name . ' - ' . $_title;
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
-$this->params['breadcrumbs'][] = 'ADX Networks';
+$this->params['breadcrumbs'][] = $_title;
 ?>
 <h1>Main Networking Information</h1>
 

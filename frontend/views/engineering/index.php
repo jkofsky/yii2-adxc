@@ -4,8 +4,9 @@
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 
-$this->title = Yii::$app->name . ' - Engineering';
-$this->params['breadcrumbs'][] = 'Engineering';
+$_title = 'Engineering';
+$this->title = Yii::$app->name . ' - ' . $_title;
+$this->params['breadcrumbs'][] = $_title;
 ?>
 <h2>Engineering Information</h2>
 <?=

@@ -4,9 +4,10 @@
 use yii\bootstrap4\Html;
 use yii\helpers\Url;
 
-$this->title = Yii::$app->name . ' -  Public IP Addresses';
+$_title = 'Color Codes';
+$this->title = Yii::$app->name . ' - ' . $_title;
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
-$this->params['breadcrumbs'][] = 'Color Codes';
+$this->params['breadcrumbs'][] = $_title;
 
 //$this->menu = $this->getSidebarMenu();
 ?>
@@ -14,156 +15,51 @@ $this->params['breadcrumbs'][] = 'Color Codes';
 
 <section class="card-columns mb-0">
     <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('25-pair (solid colored)'); ?></div>
+        <div class="card-header alert-info"><?= Html::encode('25-pair Color Code (solid)'); ?></div>
         <div class="card-body">
-            <table class="table-bordered table-striped w-100">
-                <tbody class="w-100">
+            <table class="table-bordered table-striped text-center w-100">
+                <thead>
                     <tr>
-                        <th>Pair #</th>
-                        <th colspan="2">Major color</th>
-                        <th colspan="2">Minor color
-                        </th></tr>
+                        <td>
+                            <p>The major, or primary group of colors consists of the sequence of 
+                                white, red, black, yellow, and violet. The minor, or secondary 
+                                color was chosen from the sequence blue, orange, green, brown, 
+                                and slate.</p>
+                            <p><i>25-pair color coding using twisted pairs with 
+                                solid color coding only, without tracers. This 
+                                method was rarely used. It is used in the phone cable 
+                                at WYCT-TX</i></p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
-                        <td align="center">1</td>
-                        <td rowspan="5" align="right">White</td>
-                        <td rowspan="5" bgcolor="white">&nbsp;&nbsp;</td>
-                        <td bgcolor="royalblue">&nbsp;&nbsp;</td>
-                        <td>Blue</td></tr>
-                    <tr>
-                        <td align="center">2</td>
-                        <td bgcolor="orange"></td>
-                        <td>Orange
-                        </td></tr>
-                    <tr>
-                        <td align="center">3</td>
-                        <td bgcolor="limegreen"></td>
-                        <td>Green
-                        </td></tr>
-                    <tr>
-                        <td align="center">4</td>
-                        <td bgcolor="saddlebrown"></td>
-                        <td>Brown
-                        </td></tr>
-                    <tr>
-                        <td align="center">5</td>
-                        <td bgcolor="slategray"></td>
-                        <td>Slate
-                        </td></tr>
-                    <tr>
-                        <td align="center">6</td>
-                        <td rowspan="5" align="right">Red</td>
-                        <td rowspan="5" bgcolor="red"></td>
-                        <td bgcolor="royalblue"></td>
-                        <td>Blue
-                        </td></tr>
-                    <tr>
-                        <td align="center">7</td>
-                        <td bgcolor="orange"></td>
-                        <td>Orange
-                        </td></tr>
-                    <tr>
-                        <td align="center">8</td>
-                        <td bgcolor="limegreen"></td>
-                        <td>Green
-                        </td></tr>
-                    <tr>
-                        <td align="center">9</td>
-                        <td bgcolor="saddlebrown"></td>
-                        <td>Brown
-                        </td></tr>
-                    <tr>
-                        <td align="center">10</td>
-                        <td bgcolor="slategray"></td>
-                        <td>Slate
-                        </td></tr>
-                    <tr>
-                        <td align="center">11</td>
-                        <td rowspan="5" align="right">Black</td>
-                        <td rowspan="5" bgcolor="black"></td>
-                        <td bgcolor="royalblue"></td>
-                        <td>Blue
-                        </td></tr>
-                    <tr>
-                        <td align="center">12</td>
-                        <td bgcolor="orange"></td>
-                        <td>Orange
-                        </td></tr>
-                    <tr>
-                        <td align="center">13</td>
-                        <td bgcolor="limegreen"></td>
-                        <td>Green
-                        </td></tr>
-                    <tr>
-                        <td align="center">14</td>
-                        <td bgcolor="saddlebrown"></td>
-                        <td>Brown
-                        </td></tr>
-                    <tr>
-                        <td align="center">15</td>
-                        <td bgcolor="slategray"></td>
-                        <td>Slate
-                        </td></tr>
-                    <tr>
-                        <td align="center">16</td>
-                        <td rowspan="5" align="right">Yellow</td>
-                        <td rowspan="5" bgcolor="yellow"></td>
-                        <td bgcolor="royalblue"></td>
-                        <td>Blue
-                        </td></tr>
-                    <tr>
-                        <td align="center">17</td>
-                        <td bgcolor="orange"></td>
-                        <td>Orange
-                        </td></tr>
-                    <tr>
-                        <td align="center">18</td>
-                        <td bgcolor="limegreen"></td>
-                        <td>Green
-                        </td></tr>
-                    <tr>
-                        <td align="center">19</td>
-                        <td bgcolor="saddlebrown"></td>
-                        <td>Brown
-                        </td></tr>
-                    <tr>
-                        <td align="center">20</td>
-                        <td bgcolor="slategray"></td>
-                        <td>Slate
-                        </td></tr>
-                    <tr>
-                        <td align="center">21</td>
-                        <td rowspan="5" align="right">Violet</td>
-                        <td rowspan="5" bgcolor="darkviolet"></td>
-                        <td bgcolor="royalblue"></td>
-                        <td>Blue
-                        </td></tr>
-                    <tr>
-                        <td align="center">22</td>
-                        <td bgcolor="orange"></td>
-                        <td>Orange
-                        </td></tr>
-                    <tr>
-                        <td align="center">23</td>
-                        <td bgcolor="limegreen"></td>
-                        <td>Green
-                        </td></tr>
-                    <tr>
-                        <td align="center">24</td>
-                        <td bgcolor="saddlebrown"></td>
-                        <td>Brown
-                        </td></tr>
-                    <tr>
-                        <td align="center">25</td>
-                        <td bgcolor="slategray"></td>
-                        <td>Slate
+                        <td>
+                            <?= Html::img(Url::To('@web/images/engineering/wireColorCodes/25_pair_color_code_chart.svg'), ['class' => 'img-fluid', 'style' => 'height:auto; width:100%']); ?>
                         </td></tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <p>The wire pairs are referred to either directly by their color 
+                                combination, or by the pair number. For example, <i>pair 9</i>
+                                is also called the <i>red-brown pair</i>.</p>
+                            <p><i>Violet</i> is the standard name in the telecommunications and 
+                                electronics industry, but it is sometimes referred to as 
+                                <i>purple</i>. Similarly, <i>slate</i> is a particular shade of 
+                                <i>gray</i>. The names of most of the colors were taken from 
+                                the conventional  colors of the rainbow or optical spectrum, 
+                                and in the electronic color code, which uses the same 
+                                ten colors, albeit in a different order.</p>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
 
     <div class="card shadow border-info" id='25-pair_color_code'>
-        <div class="card-header alert-info"><?= Html::encode('25-pair (stripped)'); ?></div>
+        <div class="card-header alert-info"><?= Html::encode('25-pair Telco Cable (stripped)'); ?></div>
         <div class="card-body">
             <table class="table-bordered table-striped table-responsive">
                 <thead class="text-center thead-dark">
@@ -442,54 +338,54 @@ $this->params['breadcrumbs'][] = 'Color Codes';
     </div>
 
     <div class="card shadow border-info">
-        <div class="card-header alert-info"><?= Html::encode('Network Cable (RJ-45)'); ?></div>
+        <div class="card-header alert-info"><?= Html::encode('Network Cable (RJ-45 - T568B Wiring)'); ?></div>
         <div class="card-body">
             <table class="table-bordered table-striped text-center w-100">
                 <thead class="w-100">
                     <tr>
                         <th>Pin</th>
-                        <th colspan="2">Color (T568B &ndash; Networking)</th>
+                        <th colspan="2">Color</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Wht/Org</td>
+                        <td>white/orange</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_orange_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Org/Wht</td>
+                        <td>orange/white</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_orange_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>Wht/Grn</td>
+                        <td>white/green</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_green_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>Blu/Wht</td>
+                        <td>blue/white</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_blue_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td>Wht/Blu</td>
+                        <td>white/blue</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_blue_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td>Grn/Wht</td>
+                        <td>green/white</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_green_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td>Wht/Brn</td>
+                        <td>white/brown</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_white_brown_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td>Brn/Wht</td>
+                        <td>brown/white</td>
                         <td><?= Html::img(Url::To('@web/images/engineering/wireColorCodes/Wire_brown_white_stripe.svg'), ['class' => 'img-fluid', 'style' => 'height:24px; width:auto']); ?></td>
                     </tr>
                 </tbody>
@@ -497,8 +393,8 @@ $this->params['breadcrumbs'][] = 'Color Codes';
                     <tr>
                         <td colspan="3">
                             <?= Html::img(Url::To('@web/images/engineering/Rj45plug-8p8c.png'), ['class' => 'img-fluid', 'style' => 'height:100%; width:auto']); ?>
-                            <p>Pin numbering on plug. Connected pins on plug and jack have the same number.
-                            </p>
+                            <p>Pin numbering on plug with locking tab facing away/down. 
+                                Connected pins on plug and jack have the same number.</p>
                         </td>
                     </tr>
                 </tfoot>

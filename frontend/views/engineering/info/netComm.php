@@ -3,10 +3,11 @@
 
 use yii\bootstrap4\Html;
 
-$this->title = Yii::$app->name . ' -  NetComm Details';
+$_title = 'NetComm Details';
+$this->title = Yii::$app->name . ' - ' . $_title;
 $this->params['breadcrumbs'][] = ['label' => 'Engineering', 'url' => ['engineering/index']];
 $this->params['breadcrumbs'][] = ['label' => 'ADX Networks', 'url' => ['engineering/local-network']];
-$this->params['breadcrumbs'][] = 'NetComm Details';
+$this->params['breadcrumbs'][] = $_title;
 
 //$this->menu = $this->getSidebarMenu();
 ?>
